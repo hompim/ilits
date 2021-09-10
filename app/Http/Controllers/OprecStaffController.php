@@ -79,8 +79,6 @@ class OprecStaffController extends Controller
             "komitmen" => "required",
         ], $errorMessage);
 
-        dd($error);
-
         try{
             $calon_staff = OprecStaff::create([
                 "nama_lengkap" => $request->nama_lengkap,
