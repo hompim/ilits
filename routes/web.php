@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OprecStaffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('test/', [OprecStaffController::class, 'create'])->name('oprec.create');
+Route::post('test/', [OprecStaffController::class, 'store'])->name('oprec.store');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

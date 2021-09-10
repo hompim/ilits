@@ -1,0 +1,19 @@
+.form-oprec{
+    width: 90%;
+    max-width: 48rem;
+    min-width: 340px;
+    padding: 5rem 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+.container-form{
+    background-color: white;
+    border-radius: 15px;
+}
+
+body{
+    background-color: aqua;
+}
