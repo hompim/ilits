@@ -1,4 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("../fonts/GothamBold.ttf");
+}
+
+@font-face {
+  font-family: "Gotham-Medium";
+  src: url("../fonts/GothamMedium.ttf");
+}
+
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)

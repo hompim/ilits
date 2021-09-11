@@ -1,0 +1,53 @@
+main {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-family: "Gotham-Bold", sans-serif;
+    color: #1f304a;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.status {
+    font-size: 4rem;
+    top: 25%;
+}
+
+.detail {
+    bottom: 10rem;
+}
+
+.staff-info {
+    font-family: "Gotham-Medium", sans-serif;
+    color: #858585;
+    font-size: 2rem;
+    bottom: 10%;
+}
+
+.helper {
+    font-size: 2.4rem;
+}
+
+.status,
+.staff-info p:last-child,
+.helper {
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 576px) {
+    .status {
+        font-size: 2rem;
+    }
+    .helper {
+        font-size: 1.5rem;
+    }
+    .staff-info {
+        font-size: 1.125rem;
+    }
+}
