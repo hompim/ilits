@@ -15,5 +15,5 @@ label {
 }
 
 body{
-    background-color: aqua;
+    background: linear-gradient(180deg, #F5F5F1 1.02%, #53EA90 37.05%, #487DBC 69.87%, #264882 100%);
 }
