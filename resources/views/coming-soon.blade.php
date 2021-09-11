@@ -10,8 +10,8 @@
     <!-- title section start -->
     <title>Coming soon!</title>
     <!-- link section start -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/comingsoon.css">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/comingsoon.css')}}">
 </head>
 <body>
 

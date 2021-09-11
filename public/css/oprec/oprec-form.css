@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Gotham";
+    src: url("../../font/Gotham-Font/GothamMedium.ttf");
+}
+
+*{
+    font-family: "Gotham";
+}
+
 .form-oprec{
     width: 90%;
     max-width: 48rem;
@@ -15,5 +24,7 @@ label {
 }
 
 body{
-    background-image: linear-gradient(to top, #53ea90, #8aeb99, #afeda6, #cbeeb8, #e0f0ce, #d3e8cd, #c8dfcb, #bfd6c8, #8ec0ba, #5ca9b7, #368eb6, #3f6fad);
+
+    background: rgb(38,38,130);
+    background: linear-gradient(0deg, rgba(38,38,130,1) 0%, rgba(72,125,188,1) 33%, rgba(83,234,144,1) 65%, rgba(245,245,241,1) 100%);
 }
