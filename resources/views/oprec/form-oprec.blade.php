@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Form Open Recruitment Staff</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/oprec/form-size.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/oprec/oprec-form.css') }}">
 </head>
 <body>
     <div class="container-fluid d-flex justify-content-center align-items-center">

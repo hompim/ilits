@@ -15,5 +15,5 @@ label {
 }
 
 body{
-    background-color: aqua;
+    background-image: linear-gradient(to top, #53ea90, #8aeb99, #afeda6, #cbeeb8, #e0f0ce, #d3e8cd, #c8dfcb, #bfd6c8, #8ec0ba, #5ca9b7, #368eb6, #3f6fad);
 }
