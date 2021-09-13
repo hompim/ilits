@@ -10,6 +10,7 @@
     <!-- title section start -->
     <title>Coming soon!</title>
     <!-- link section start -->
+    <link rel="icon" href="{{ asset('ilits22.ico') }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/comingsoon.css')}}">
 </head>
@@ -20,6 +21,9 @@
             <h2><span>INI LHO ITS! 2022</span> akan segera hadir</h2>
             <h2>Stay tune!</h2>
         </div>
-
+        
+    <script>
+        document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
+    </script>
 </body>
 </html>

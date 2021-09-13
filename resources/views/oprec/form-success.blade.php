@@ -8,8 +8,9 @@
     <meta name="description" content="Ini Lho ITS 2020 adalah sebuah event yang membantu calon mahasiswa baru ITS menemukan jurusan yang sesuai minat & bakat yang dimiliki nya. Inilho ITS Memiliki serangkaian event yang terdiri dari: talkshow inspiratif, open campus, welcome, dan lainnya!">
     <meta name="keywords" content="ITS, Institut Teknologi Sepuluh Nopember, ILITS, Ini Lho ITS!, ILITS 2022, Ini Lho ITS! 2022">
     <!-- title section start -->
-    <title>Pengumuman!</title>
+    <title>Anouncement!</title>
     <!-- link section start -->
+    <link rel="icon" href="{{ asset('ilits22.ico') }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/oprec/oprec-success.css') }}">
 </head>
@@ -20,7 +21,7 @@
         <div class="content text-center">
             <div class="text-content">
                 <h1>Pengumpulan Berkas</h1>
-                <p>Jangan lupa untuk melengkapi pendaftaranmu dengan <br>mengisi berkas - berkas melalui link di bawah ini ya!</p>
+                <p>Formulir pendaftaran berhasil diisi. Jangan lupa untuk melengkapi pendaftaranmu dengan <br>mengisi berkas - berkas melalui link di bawah ini ya!</p>
                 <a href="https://intip.in/PengumpulanBerkasILITS2022">https://intip.in/PengumpulanBerkasILITS2022</a>
             </div>
         </div>

@@ -11,7 +11,7 @@ class OprecStaffController extends Controller
     public function create(){
         $departemen = [
             'FISIKA', 'MATEMATIKA', 'STATISTIKA', 'KIMIA', 'BIOLOGI', 'AKTUARIA',
-            'TEKNIK MESIN', 'TEKNIK KIMIA', 'TEKNIK FISIKA', 'TEKNIK INDUSTRI', 'TEKNIK MATERIAL DAN METALURGI',
+            'TEKNIK MESIN', 'TEKNIK KIMIA', 'TEKNIK FISIKA', 'TEKNIK SISTEM DAN INDUSTRI', 'TEKNIK MATERIAL DAN METALURGI',
             'TEKNIK SIPIL', 'ARSITEKTUR', 'TEKNIK LINGKUNGAN', 'PERENCANAAN WILAYAH DAN KOTA', 'TEKNIK GEOMATIKA', 'TEKNIK GEOFISIKA',
             'TEKNIK PERKAPALAN', 'TEKNIK SISTEM PERKAPALAN', 'TEKNIK KELAUTAN', 'TEKNIK TRANSPORTASI LAUT',
             'TEKNIK ELEKTRO', 'TEKNIK BIOMEDIK', 'TEKNIK KOMPUTER', 'TEKNIK INFORMATIKA', 'SISTEM INFORMASI', 'TEKNOLOGI INFORMASI',
@@ -26,7 +26,7 @@ class OprecStaffController extends Controller
             'FAKULTAS TEKNOLOGI KELAUTAN',
             'FAKULTAS TEKNOLOGI ELEKTRO DAN INFORMATIKA CERDAS',
             'FAKULTAS DESAIN KREATIF DAN BISNIS DIGITAL',
-            'VOKASI'
+            'FAKULTAS VOKASI'
         ];
         
         $angkatan = [
@@ -35,19 +35,19 @@ class OprecStaffController extends Controller
         ];
 
         $pil_divisi = [
-            'Divisi IT Development',
-            'Divisi Technical - Subdivisi Acara Pusat',
-            'Divisi Technical - Subdivisi Acara Forda',
-            'Divisi Technical - Subdivisi Materi',
-            'Divisi Technical - Subdivisi Faskamzin',
-            'Divisi Kestari',
-            'Divisi Branding - Subdivisi Documentation',
-            'Divisi Branding - Subdivisi Creative Design',
-            'Divisi Branding - Subdivisi Content Creator',
-            'Divisi Branding - Subdivisi Campaign and Marketing',
-            'Divisi Public Relation',
-            'Divisi Finance - Subdivisi Fundraising',
-            'Divisi Finance - Subdivisi Sponsorship',  
+            'Technical Division - Central Event Subdivision',
+            'Technical Division - Regional Event Subdivision',
+            'Technical Division - Material Subdivision',
+            'Technical Division - Operational Subdivision',
+            'Secretarial Division',
+            'IT Development Division',
+            'Branding Division - Content Creator Subdivision',
+            'Branding Division - Documentation Subdivision',
+            'Branding Division - Creative Subdivision',
+            'Branding Division - Campaign & Marketing Subdivision',
+            'Public Relation Division',
+            'Finance Division - Fundraising Subdivision',
+            'Finance Division - Sponsoship Subdivision' 
         ];
 
         return view('oprec.form-oprec', compact("departemen", "fakultas", "angkatan", "pil_divisi"));
@@ -58,14 +58,14 @@ class OprecStaffController extends Controller
             'required' => "Kolom ini wajib diisi!",
             'max' => "kolom ini harus diisi maksimal :max karakter!",
             'size' => "kolom ini harus diisi tepat :size karakter!",
-            'alpha_numeric' => "kolom ini harus berisi karakter angka",
+            'numeric' => "kolom ini harus berisi karakter angka",
             'different' => "Pilihan 1 dan 2 tidak boleh sama!",
             'unique' => "NRP yang kamu masukkan sudah terdaftar!",
         ];
         
         $error = $request->validate([
             "nama_lengkap" => "required",
-            "nrp" => "required|alpha_num|unique:oprec_staff,nrp",
+            "nrp" => "required|numeric|unique:oprec_staff,nrp",
             "fakultas" => "required",
             "departemen" => "required",
             "angkatan" => "required",
