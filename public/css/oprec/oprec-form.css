@@ -28,3 +28,12 @@ body{
     background: rgb(38,38,130);
     background: linear-gradient(0deg, rgba(38,38,130,1) 0%, rgba(72,125,188,1) 33%, rgba(83,234,144,1) 65%, rgba(245,245,241,1) 100%);
 }
+
+input, input::before, input::after, textarea, select, option{
+     -webkit-user-select: initial;
+     -khtml-user-select: initial;
+     -moz-user-select: initial;
+     -ms-user-select: initial;
+     user-select: initial;
+}
+

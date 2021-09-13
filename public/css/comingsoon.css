@@ -34,6 +34,8 @@ span{
     background: linear-gradient(180deg, #487DBC 0%, #53EA90 139.19%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    display: inline-block;
 }
 
 @media (max-width:1024px) {
