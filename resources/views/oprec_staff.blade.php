@@ -8,8 +8,13 @@
     <title>Operec Staff IlITS 2022</title>
 </head>
 <body>
+    <style>
+        .judul{
+            margin: 15px 0px 15px 0px;
+        }
+    </style>
 <div class="container-sm">
-    <h1>Data Oprec Staff ILITS 2022</h1>
+    <h3 class="judul">Data Oprec Staff ILITS 2022</h3>
     <table class="table">
         <thead class="table-dark">
             <tr>
@@ -19,7 +24,7 @@
                 <th scope="col">Fakultas</th>
                 <th scope="col">Departemen</th>
                 <th scope="col">Angkatan</th>
-                <th scope="col">kota Asal</th>
+                <th scope="col">Kota Asal</th>
                 <th scope="col">Pilihan 1</th>
                 <th scope="col">pilihan 2</th>
             </tr>

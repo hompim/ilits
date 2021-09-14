@@ -1,7 +1,9 @@
 <?php
 
+use App\Exports\OprecStaffExport;
 use App\Http\Controllers\OprecStaffController;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,10 @@ Route::get('/oprec', [OprecStaffController::class, 'index'])->name('oprec_staff'
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
+
+Route::get('export', function () {
+    return Excel::download(new OprecStaffExport, 'oprecexcel.xlsx');
+});
 
 Route::fallback(function () {
     return redirect(route('coming-soon'));
