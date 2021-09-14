@@ -8,7 +8,21 @@ use Illuminate\Http\Request;
 
 class OprecStaffController extends Controller
 {
-    public function create(){
+    public function __construct()
+    {
+        $this->OprecStaff = new OprecStaff();
+    }
+
+    public function index()
+    {
+        $data = [
+            'oprec_staff' => $this->OprecStaff->allData(),
+        ];
+        return view('oprec_staff', $data);
+    }
+
+    public function create()
+    {
         $departemen = [
             'FISIKA', 'MATEMATIKA', 'STATISTIKA', 'KIMIA', 'BIOLOGI', 'AKTUARIA',
             'TEKNIK MESIN', 'TEKNIK KIMIA', 'TEKNIK FISIKA', 'TEKNIK SISTEM DAN INDUSTRI', 'TEKNIK MATERIAL DAN METALURGI',
@@ -18,7 +32,7 @@ class OprecStaffController extends Controller
             'DESAIN PRODUK', 'DESAIN INTERIOR', 'DESAIN KOMUNIKASI VISUAL', 'MANAJEMEN BISNIS', 'STUDI PEMBANGUNAN',
             'TEKNIK INFRASTRUKTUR SIPIL', 'TEKNIK MESIN INDUSTRI', 'TEKNIK ELEKTRO OTOMASI', 'TEKNIK KIMIA INDUSTRI', 'TEKNIK INSTRUMENTASI', 'STATISTIKA BISNIS',
         ];
-        
+
         $fakultas = [
             'FAKULTAS SAINS DAN ANALITIKA DATA',
             'FAKULTAS TEKNOLOGI INDUSTRI DAN REKAYASA SISTEM',
@@ -28,7 +42,7 @@ class OprecStaffController extends Controller
             'FAKULTAS DESAIN KREATIF DAN BISNIS DIGITAL',
             'FAKULTAS VOKASI'
         ];
-        
+
         $angkatan = [
             '2020',
             '2021'
@@ -47,13 +61,14 @@ class OprecStaffController extends Controller
             'Branding Division - Campaign & Marketing Subdivision',
             'Public Relation Division',
             'Finance Division - Fundraising Subdivision',
-            'Finance Division - Sponsoship Subdivision' 
+            'Finance Division - Sponsoship Subdivision'
         ];
 
         return view('oprec.form-oprec', compact("departemen", "fakultas", "angkatan", "pil_divisi"));
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $errorMessage = [
             'required' => "Kolom ini wajib diisi!",
             'max' => "kolom ini harus diisi maksimal :max karakter!",
@@ -62,7 +77,7 @@ class OprecStaffController extends Controller
             'different' => "Pilihan 1 dan 2 tidak boleh sama!",
             'unique' => "NRP yang kamu masukkan sudah terdaftar!",
         ];
-        
+
         $error = $request->validate([
             "nama_lengkap" => "required",
             "nrp" => "required|numeric|unique:oprec_staff,nrp",
@@ -79,7 +94,7 @@ class OprecStaffController extends Controller
             "komitmen" => "required",
         ], $errorMessage);
 
-        try{
+        try {
             $calon_staff = OprecStaff::create([
                 "nama_lengkap" => $request->nama_lengkap,
                 "nrp" => $request->nrp,
@@ -99,12 +114,13 @@ class OprecStaffController extends Controller
             return view('oprec.form-success', [
                 "nama" => $calon_staff->nama_lengkap
             ]);
-        } catch (Exception $e){
+        } catch (Exception $e) {
             return redirect()->back()->withInput()->with('error', $e->getMessage());
         }
     }
 
-    public function anouncement(){
+    public function anouncement()
+    {
         $status = "true";   //pass status - true or false
         return view("oprec.anouncement", compact("status"));
     }
