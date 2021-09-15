@@ -15,6 +15,7 @@
     </style>
 <div class="container-sm">
     <h3 class="judul">Data Oprec Staff ILITS 2022</h3>
+    <a href="{{route('oprecstaffexport')}}" class="btn btn-success">Export</a>
     <table class="table">
         <thead class="table-dark">
             <tr>

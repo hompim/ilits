@@ -2,23 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\OprecStaffExport;
 use App\Models\OprecStaff;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Http\Request;
 
+
 class OprecStaffController extends Controller
 {
-    public function __construct()
-    {
-        $this->OprecStaff = new OprecStaff();
-    }
 
     public function index()
     {
-        $data = [
-            'oprec_staff' => $this->OprecStaff->allData(),
-        ];
-        return view('oprec_staff', $data);
+        $oprec_staff = OprecStaff::all();
+        return view('oprec_staff', compact('oprec_staff'));
+    }
+
+    public function oprecStaffExport()
+    {
+        return Excel::download(new OprecStaffExport, 'oprec_staff.xlsx');
     }
 
     public function create()

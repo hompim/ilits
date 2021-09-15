@@ -32,16 +32,13 @@ Route::get('.well-known/pki-validation/{file}', function () {
 });
 
 
-Route::get('/oprec', [OprecStaffController::class, 'index'])->name('oprec_staff');
+Route::get('/oprec', 'OprecStaffController@index')->name('oprec_staff');
+Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
 // Route::get('PengumumanOprecIlits22', [OprecStaffController::class, 'anouncement'])->name('oprec.anouncement');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
-
-Route::get('export', function () {
-    return Excel::download(new OprecStaffExport, 'oprecexcel.xlsx');
-});
-
+Route::get('/oprectaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
 Route::fallback(function () {
     return redirect(route('coming-soon'));
 });
