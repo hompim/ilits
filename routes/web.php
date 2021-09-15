@@ -1,6 +1,8 @@
 <?php
 
+use App\Exports\OprecStaffExport;
 use App\Http\Controllers\OprecStaffController;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +27,8 @@ Route::get('SiapJadiStaffILITS22Mac/', function() {
     return redirect('https://forms.gle/pxnuiKYNPaHUgbcy6');
 });
 
-Route::get('.well-known/pki-validation/{file}', function() {
-    return response()->file(public_path("1A277CB0BF7C36D856EC5D2ED19B8C22.txt"));
+Route::get('hasilOprecNih/{date}', function($date){
+    return (new OprecStaffExport($date))->download('rekap_oprec_sementara.xlsx');
 });
 
 // Route::get('PengumumanOprecIlits22', [OprecStaffController::class, 'anouncement'])->name('oprec.anouncement');
