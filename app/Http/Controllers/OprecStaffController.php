@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\OprecStaffExport;
+use App\Imports\OprecStaffImport;
 use App\Models\OprecStaff;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
@@ -22,6 +23,16 @@ class OprecStaffController extends Controller
     public function oprecStaffExport()
     {
         return Excel::download(new OprecStaffExport, 'oprec_staff.xlsx');
+    }
+
+    public function oprecStaffImport(Request $request)
+    {
+        $file = $request->file('file');
+        $nameFile = $file->getClientOriginalName();
+        $file->move('DataOprecStaff', $nameFile);
+
+        Excel::import(new oprecStaffImport, public_path('/DataOprecStaff/' . $nameFile));
+        return redirect('oprec_staff');
     }
 
     public function create()
