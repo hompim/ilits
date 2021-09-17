@@ -16,19 +16,28 @@
     <main class="vw-100 vh-100">
         <div class="container-fluid">
             <div class="container">
-                <h1 class="status position-absolute">SELAMAT</h1>
+            @foreach ($oprec_staff as $data)
+                @if ($data->is_staff==true)
+                    <h1 class="status position-absolute">SELAMAT ANDA LULUS</h1>
+                @else
+                    <h1 class="status position-absolute">MAAF ANDA BELUM LULUS</h1>
+                @endif
+
                 <div class="detail position-absolute">
                     <div class="mb-5 staff-info">
                         {{-- <p>Stephen Hawking</p>
                         <p>5026669990</p>
                         <p>DIVISI IT DEVELOPMENT</p> --}}
-                        @foreach ($oprec_staff as $data)
-                        <p>{{ $data ->nama_lengkap}}</p>
-                        <p>{{ $data ->nrp}}</p>
-                        <p>{{ $data ->pilihan_1}}</p>
-                        @endforeach
+                            <p>{{ $data ->nama_lengkap}}</p>
+                            <p>{{ $data ->nrp}}</p>
+                            <p>{{ $data ->pilihan_1}}</p>
                     </div>
-                    <h4 class="helper">KAMU MENJADI BAGIAN DARI ESKALATOR CITA</h4>
+                    @if ($data->is_staff==true)
+                        <h4 class="helper">KAMU MENJADI BAGIAN DARI ESKALATOR CITA</h4>
+                    @else
+                        <h4 class="helper">TETAP SEMANGAT</h4>
+                    @endif
+                @endforeach
                 </div>
             </div>
         </div>
@@ -37,13 +46,13 @@
     <script type="text/javascript">
         ["load", "resize"].forEach((e) => {
         window.addEventListener(e, () => {
-        @foreach ($oprec_staff as $data)
-            if (document.body.clientWidth > 576) {  // $collection[0]->title
-                document.getElementsByTagName("main")[0].style.backgroundImage = {{ $data->is_staff }} ? "url('/images/oprec/bg-anouncement-success.png')" : "url('/images/oprec/bg-anouncement-fail.png')";
-            } else {
-                document.getElementsByTagName("main")[0].style.backgroundImage = {{ $data->is_staff }} ? "url('/images/oprec/bg-anouncement-success-mobile.png')" : "url('/images/oprec/bg-anouncement-fail-mobile.png')";
-            }
-        @endforeach
+            @foreach ($oprec_staff as $data)
+                if (document.body.clientWidth > 576) {
+                    document.getElementsByTagName("main")[0].style.backgroundImage = {{ $data->is_staff }} ? "url('/images/oprec/bg-anouncement-success.png')" : "url('/images/oprec/bg-anouncement-fail.png')";
+                } else {
+                    document.getElementsByTagName("main")[0].style.backgroundImage = {{ $data->is_staff }} ? "url('/images/oprec/bg-anouncement-success-mobile.png')" : "url('/images/oprec/bg-anouncement-fail-mobile.png')";
+                }
+            @endforeach
         });
     });
     </script>

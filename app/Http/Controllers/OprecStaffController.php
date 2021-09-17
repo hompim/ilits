@@ -133,24 +133,11 @@ class OprecStaffController extends Controller
         }
     }
 
-    // public function anouncement($nrp)
-    // {
-    //     //$status = "true";   //pass status - true or false
-    //     $oprec_staff = OprecStaff::where('nrp', $nrp)->get();
-    //     return view("oprec.anouncement", compact("status"));
-    // }
-
-
     public function announcement(Request $request)
     {
-        // menangkap data pencarian
-        $search = $request->search;
-
-        // mengambil data dari table oprec_staff sesuai pencarian data
-        $oprec_staff = OprecStaff::where('nrp', 'LIKE', '%' . $search . '%')->get();
-
-        // mengirim data oprec_staff ke view index
-
-        return view('oprec.anouncement', ['oprec_staff' => $oprec_staff]);
+        //$status = "true";   //pass status - true or false
+        $nrp = $request->nrp;
+        $oprec_staff = OprecStaff::where('nrp', $nrp)->get();
+        return view("oprec.anouncement", ["oprec_staff" => $oprec_staff]);
     }
 }

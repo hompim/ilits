@@ -2,6 +2,7 @@
 
 use App\Exports\OprecStaffExport;
 use App\Http\Controllers\OprecStaffController;
+use App\Models\OprecStaff;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -42,11 +43,18 @@ Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport
 //     return view('oprec.anouncement');
 // })->name('anouncement');
 
+// Route::get('/search', function (Request $nrp) {
+//     return OprecStaff::search($nrp->nrp)->get();
+// });
+
 Route::get('/search', function () {
     return view('oprec.form-search');
-})->name('search');
+})->name('nrp');
 
 Route::get('/oprec/announcement', [OprecStaffController::class, 'announcement'])->name('announcement');
+
+Route::get('/oprec/search', 'OprecStaffController@announcement');
+
 Route::fallback(function () {
     return redirect(route('coming-soon'));
 });

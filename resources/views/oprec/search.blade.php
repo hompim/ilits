@@ -13,7 +13,7 @@
             <form action="{{url('/oprec/announcement')}}" type="get" >
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Masukkan Nrp</label>
-                    <input type="text" name="search" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" name="nrp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <button type="submit" class="btn btn-primary">Cek</button>
             </form>

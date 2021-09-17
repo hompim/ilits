@@ -22,7 +22,7 @@
             </div>
             <form action="{{url('/oprec/announcement')}}" type="get">
                 <div class="input-group input-custom">
-                    <input type="text" id="input" class="form-control form-control-lg" name="search" placeholder="Masukkan NRP...">
+                    <input type="text" id="input" class="form-control form-control-lg" name="nrp" placeholder="Masukkan NRP...">
                     <div class="input-group-prepend" title="Cari!">
                       <button class="btn rounded-circle" type="button"><img src="{{asset('img/form-search/arrow-right.png')}}" alt="arrow-right"></button>
                     </div>
