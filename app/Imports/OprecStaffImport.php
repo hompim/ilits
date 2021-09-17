@@ -28,7 +28,6 @@ class OprecStaffImport implements ToModel
             'pilihan_2'     => $row[11],
             'alasan_pilihan_2'    => $row[12],
             'komitmen'    => $row[13],
-
         ]);
     }
 }

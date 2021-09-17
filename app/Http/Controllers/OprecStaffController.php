@@ -140,32 +140,17 @@ class OprecStaffController extends Controller
     //     return view("oprec.anouncement", compact("status"));
     // }
 
-    // public function announcement($is_staff)
-    // {
-    //     $status = "true";   //pass status - true or false
-    //     $staff = $_GET['nrp'];
-    //     //$staff = OprecStaff::findOrFail($nrp);
-    //     $announcement = OprecStaff::where('nrp', 'LIKE', '%' . $staff . '%')->get();
-    //     if ($this->is_staff == true) {
-    //         if ($this->status_divisi == 1) {
-    //             return ('<span class="badge badge-pill badge-success">Lolos staff ' + $this->pilihan_1 + '</span>');
-    //         } else if ($this->status_divisi == 2) {
-    //             return ('<span class="badge badge-pill badge-success">Lolos staff ' + $this->pilihan_2 + '</span>');
-    //         }
-    //     } else {
-    //         return ('<span class="badge badge-pill badge-success">Tidak lolos staff</span>');
-    //     }
-    //     return view("oprec.anouncement", compact("announcement"));
-    // }
+
     public function announcement(Request $request)
     {
         // menangkap data pencarian
         $search = $request->search;
 
-        // mengambil data dari table pegawai sesuai pencarian data
-        $staff = OprecStaff::where('nrp', 'LIKE', '%' . $search . '%')->get();
+        // mengambil data dari table oprec_staff sesuai pencarian data
+        $oprec_staff = OprecStaff::where('nrp', 'LIKE', '%' . $search . '%')->get();
 
-        // mengirim data pegawai ke view index
-        return view('oprec.anouncement', ['oprec_staff' => $staff]);
+        // mengirim data oprec_staff ke view index
+
+        return view('oprec.anouncement', ['oprec_staff' => $oprec_staff]);
     }
 }

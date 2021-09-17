@@ -37,11 +37,13 @@
     <script type="text/javascript">
         ["load", "resize"].forEach((e) => {
         window.addEventListener(e, () => {
-            if (document.body.clientWidth > 576) {
-                document.getElementsByTagName("main")[0].style.backgroundImage = {{ $status }} ? "url('/images/oprec/bg-anouncement-success.png')" : "url('/images/oprec/bg-anouncement-fail.png')";
+        @foreach ($oprec_staff as $data)
+            if (document.body.clientWidth > 576) {  // $collection[0]->title
+                document.getElementsByTagName("main")[0].style.backgroundImage = {{ $data->is_staff }} ? "url('/images/oprec/bg-anouncement-success.png')" : "url('/images/oprec/bg-anouncement-fail.png')";
             } else {
-                document.getElementsByTagName("main")[0].style.backgroundImage = {{ $status }} ? "url('/images/oprec/bg-anouncement-success-mobile.png')" : "url('/images/oprec/bg-anouncement-fail-mobile.png')";
+                document.getElementsByTagName("main")[0].style.backgroundImage = {{ $data->is_staff }} ? "url('/images/oprec/bg-anouncement-success-mobile.png')" : "url('/images/oprec/bg-anouncement-fail-mobile.png')";
             }
+        @endforeach
         });
     });
     </script>
