@@ -19,9 +19,14 @@
                 <h1 class="status position-absolute">SELAMAT</h1>
                 <div class="detail position-absolute">
                     <div class="mb-5 staff-info">
-                        <p>Stephen Hawking</p>
+                        {{-- <p>Stephen Hawking</p>
                         <p>5026669990</p>
-                        <p>DIVISI IT DEVELOPMENT</p>
+                        <p>DIVISI IT DEVELOPMENT</p> --}}
+                        @foreach ($oprec_staff as $data)
+                        <p>{{ $data ->nama_lengkap}}</p>
+                        <p>{{ $data ->nrp}}</p>
+                        <p>{{ $data ->pilihan_1}}</p>
+                        @endforeach
                     </div>
                     <h4 class="helper">KAMU MENJADI BAGIAN DARI ESKALATOR CITA</h4>
                 </div>

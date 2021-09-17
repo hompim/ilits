@@ -38,10 +38,15 @@ Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_
 // })->name('dashboard');
 Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
 Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport'])->name('oprecstaffimport');
-Route::get('/oprec/anouncement', function () {
-    return view('oprec.anouncement');
-})->name('anouncement');
+// Route::get('/oprec/anouncement', function () {
+//     return view('oprec.anouncement');
+// })->name('anouncement');
 
+Route::get('/search', function () {
+    return view('oprec.form-search');
+})->name('search');
+
+Route::get('/oprec/announcement', [OprecStaffController::class, 'announcement'])->name('announcement');
 Route::fallback(function () {
     return redirect(route('coming-soon'));
 });
