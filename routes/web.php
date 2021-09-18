@@ -2,7 +2,7 @@
 
 use App\Exports\OprecStaffExport;
 use App\Http\Controllers\OprecStaffController;
-use Carbon\Carbon;
+use App\Models\OprecStaff;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -21,25 +21,40 @@ Route::get('/', function () {
     return view('coming-soon');
 })->name('coming-soon');
 
-Route::get('SiapJadiStaffILITS22/', [OprecStaffController::class, 'create'])->name('oprec.create');
-Route::post('SiapJadiStaffILITS22/', [OprecStaffController::class, 'store'])->name('oprec.store');
+// Route::get('SiapJadiStaffILITS22/', [OprecStaffController::class, 'create'])->name('oprec.create');
+// Route::post('SiapJadiStaffILITS22/', [OprecStaffController::class, 'store'])->name('oprec.store');
 
-Route::get('SiapJadiStaffILITS22Mac/', function () {
-    return redirect('https://forms.gle/pxnuiKYNPaHUgbcy6');
-});
+// Route::get('SiapJadiStaffILITS22Mac/', function () {
+//     return redirect('https://forms.gle/pxnuiKYNPaHUgbcy6');
+// });
 
 Route::get('hasilOprecNih/{date}', function($date){
     return (new OprecStaffExport($date))->download('rekap_oprec_sementara.xlsx');
 });
 
-
-Route::get('/oprec', 'OprecStaffController@index')->name('oprec_staff');
 Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
 // Route::get('PengumumanOprecIlits22', [OprecStaffController::class, 'anouncement'])->name('oprec.anouncement');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
-Route::get('/oprectaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
+Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
+Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport'])->name('oprecstaffimport');
+// Route::get('/oprec/anouncement', function () {
+//     return view('oprec.anouncement');
+// })->name('anouncement');
+
+// Route::get('/search', function (Request $nrp) {
+//     return OprecStaff::search($nrp->nrp)->get();
+// });
+
+Route::get('/search', function () {
+    return view('oprec.form-search');
+})->name('nrp');
+
+Route::get('/oprec/announcement', [OprecStaffController::class, 'announcement'])->name('announcement');
+
+Route::get('/oprec/search', 'OprecStaffController@announcement');
+
 Route::fallback(function () {
     return redirect(route('coming-soon'));
 });

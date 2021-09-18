@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Exports\OprecStaffAllExport;
+=======
+use App\Exports\OprecStaffExport;
+use App\Imports\OprecStaffImport;
+>>>>>>> 8dfbd8305beb3359158a3bda9956a020edd7222d
 use App\Models\OprecStaff;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
@@ -21,6 +26,16 @@ class OprecStaffController extends Controller
     public function oprecStaffExport()
     {
         return Excel::download(new OprecStaffAllExport, 'oprec_staff.xlsx');
+    }
+
+    public function oprecStaffImport(Request $request)
+    {
+        $file = $request->file('file');
+        $nameFile = $file->getClientOriginalName();
+        $file->move('DataOprecStaff', $nameFile);
+
+        Excel::import(new oprecStaffImport, public_path('/DataOprecStaff/' . $nameFile));
+        return redirect('oprec_staff');
     }
 
     public function create()
@@ -119,5 +134,13 @@ class OprecStaffController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->withInput()->with('error', $e->getMessage());
         }
+    }
+
+    public function announcement(Request $request)
+    {
+        //$status = "true";   //pass status - true or false
+        $nrp = $request->nrp;
+        $oprec_staff = OprecStaff::where('nrp', $nrp)->get();
+        return view("oprec.anouncement", ["oprec_staff" => $oprec_staff]);
     }
 }
