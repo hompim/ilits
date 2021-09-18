@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Exports\OprecStaffAllExport;
-=======
-use App\Exports\OprecStaffExport;
 use App\Imports\OprecStaffImport;
->>>>>>> 8dfbd8305beb3359158a3bda9956a020edd7222d
 use App\Models\OprecStaff;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
