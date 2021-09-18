@@ -120,10 +120,4 @@ class OprecStaffController extends Controller
             return redirect()->back()->withInput()->with('error', $e->getMessage());
         }
     }
-
-    public function anouncement()
-    {
-        $status = "true";   //pass status - true or false
-        return view("oprec.anouncement", compact("status"));
-    }
 }
