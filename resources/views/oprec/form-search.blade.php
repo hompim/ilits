@@ -10,12 +10,11 @@
     <!-- title section start -->
     <title>Pengumuman!</title>
     <!-- link section start -->
-
+    <link rel="icon" href="{{ asset('ilits22.ico') }}">
     <link rel="stylesheet" href="{{asset('css/oprec/search/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/oprec/search/bootstrap.min.css')}}">
 </head>
 <body>
-
         <div class="content">
             <div class="title">
                 <h1>Apakah kalian bagian<br> dari Staff <span>INI LHO ITS! 2022</span> ?</h1>
@@ -29,7 +28,5 @@
                 </div>
             </form>
         </div>
-
-
 </body>
 </html>

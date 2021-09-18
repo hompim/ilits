@@ -21,31 +21,20 @@ Route::get('/', function () {
     return view('coming-soon');
 })->name('coming-soon');
 
-// Route::get('SiapJadiStaffILITS22/', [OprecStaffController::class, 'create'])->name('oprec.create');
-// Route::post('SiapJadiStaffILITS22/', [OprecStaffController::class, 'store'])->name('oprec.store');
-
-// Route::get('SiapJadiStaffILITS22Mac/', function () {
-//     return redirect('https://forms.gle/pxnuiKYNPaHUgbcy6');
-// });
-
-Route::get('hasilOprecNih/{date}', function($date){
-    return (new OprecStaffExport($date))->download('rekap_oprec_sementara.xlsx');
-});
 
 Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
-// Route::get('PengumumanOprecIlits22', [OprecStaffController::class, 'anouncement'])->name('oprec.anouncement');
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
+
 Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
 Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport'])->name('oprecstaffimport');
-// Route::get('/oprec/anouncement', function () {
-//     return view('oprec.anouncement');
-// })->name('anouncement');
 
-// Route::get('/search', function (Request $nrp) {
-//     return OprecStaff::search($nrp->nrp)->get();
-// });
+Route::get('SiapJadiEskalatorCita/', function () {
+    return redirect('https://docs.google.com/spreadsheets/d/1lWDY3TdcxkDY0SCrfjCOZpuROXeYcmYOipe6vn7eFYY/edit#gid=1510192419');
+});
+
+Route::get('DatabaseEskalatorCita2022/', function () {
+    return redirect('https://docs.google.com/forms/d/e/1FAIpQLSfRumAAzPVoac8rHh0o6R66CMnj9iH851jYhRLwOnaoLMvSMQ/viewform');
+});
+
 
 Route::get('/search', function () {
     return view('oprec.form-search');
