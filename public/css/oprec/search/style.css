@@ -13,16 +13,13 @@ html {
 }
 
 body {
-    margin: 0;
-    background: url("../../../img/form-search/Ellipse-ungu.png"), url("../../../img/form-search/Ellipse-hijau.png"), url("../../../img/form-search/Ellipse-oren.png");
-    background-color: #FFF9EE;
-    background-position: 20cm 9cm, 24cm, 17cm -9cm;
-    background-size: 25em, 40em, 50em;
+    background-image: url("/img/oprec/bg-oprec.png");
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 .content {
-    margin: 35vh 10vw;
+    margin: 40vh 10vw;
 }
 
 .title {
@@ -30,7 +27,7 @@ body {
 }
 
 .title span {
-    background: linear-gradient(180deg, #487DBC 0%, #53EA90 139.19%);
+    background: linear-gradient(180deg, #487dbc 0%, #53ea90 139.19%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -46,7 +43,7 @@ body {
     width: 25em;
 }
 
-.input-custom input[type=text] {
+.input-custom input[type="text"] {
     border: none;
     width: 100%;
     padding-right: 12px;
@@ -63,10 +60,10 @@ body {
 }
 
 .input-custom .input-group-prepend .btn {
-    background-color: #3B71C7;
+    background-color: #3b71c7;
     width: 2.8em;
     height: 2.8em;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
 }
 
 .input-custom .input-group-prepend .btn:hover {
@@ -84,21 +81,21 @@ body {
     bottom: 3x;
 }
 
-@media (max-width:768px) {
+.session-message {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
     body {
-        background-position: -2cm 9cm, -2cm 2cm, -1cm -4cm;
-        background-size: 25em, 40em, 25em;
+        background-position-x: 80%;
     }
-
     .content {
-        margin: 30vh 20px;
+        margin-top: 42vh;
     }
-
     .title h1 {
-        font-size: 24px;
+        font-size: 1.3rem;
     }
-
-    .input-custom {
-        width: 18em;
+    .session-message {
+        font-size: 1.2rem;
     }
 }

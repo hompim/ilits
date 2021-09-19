@@ -132,11 +132,19 @@ class OprecStaffController extends Controller
         }
     }
 
+    public function search()
+    {
+        return view('oprec.form-search');
+    }
+
     public function announcement(Request $request)
     {
         //$status = "true";   //pass status - true or false
         $nrp = $request->nrp;
         $oprec_staff = OprecStaff::where('nrp', $nrp)->get();
+        if(!count($oprec_staff)) {
+            return redirect()->back()->with('message', 'NRP tidak ditemukan!');
+        }
         return view("oprec.anouncement", ["oprec_staff" => $oprec_staff]);
     }
 }
