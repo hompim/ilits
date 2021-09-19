@@ -7,6 +7,7 @@ use App\Imports\OprecStaffImport;
 use App\Models\OprecStaff;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
+use App\Models\OprecStaffResult;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -140,10 +141,14 @@ class OprecStaffController extends Controller
     public function announcement(Request $request)
     {
         $nrp = $request->nrp;
-        $oprec_staff = OprecStaff::where('nrp', $nrp)->get();
-        if(!count($oprec_staff)) {
-            return redirect()->back()->with('message', 'NRP tidak ditemukan!');
+        if(OprecStaff::where('nrp', $nrp)->exists()){
+            $is_staff = false;
+            $oprec_staff = OprecStaffResult::where('nrp', $nrp)->first();
+            if($oprec_staff) {
+               $is_staff = true; 
+            }
+            return view("oprec.anouncement", ["data" => $oprec_staff, "is_staff" => $is_staff]);            
         }
-        return view("oprec.anouncement", ["oprec_staff" => $oprec_staff]);
+        return redirect()->back()->with('message', 'NRP tidak ditemukan!');
     }
 }
