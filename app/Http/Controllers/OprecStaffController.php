@@ -134,7 +134,6 @@ class OprecStaffController extends Controller
 
     public function announcement(Request $request)
     {
-        //$status = "true";   //pass status - true or false
         $nrp = $request->nrp;
         $oprec_staff = OprecStaff::where('nrp', $nrp)->get();
         return view("oprec.anouncement", ["oprec_staff" => $oprec_staff]);
