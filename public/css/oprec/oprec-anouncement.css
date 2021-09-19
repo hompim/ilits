@@ -1,17 +1,18 @@
 main {
-    background-size: 100% 100%;
+    background-image: url("/img/oprec/bg-oprec.png");
+    background-size: cover;
     background-repeat: no-repeat;
     font-family: "Gotham-Bold", sans-serif;
     color: #1f304a;
-    text-align: center;
+}
+
+.container-fluid {
+    height: inherit;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 60%;
+    max-width: 80%;
 }
 
 .status {
@@ -40,14 +41,33 @@ main {
     text-transform: uppercase;
 }
 
+.challenge {
+    font-size: 2rem;
+}
+
+.division {
+    font-size: 1.5rem;
+}
+
 @media only screen and (max-width: 576px) {
+    main {
+        background-position-x: 80%;
+    }
+    .container {
+        justify-content: flex-end !important;
+        /* background-color: skyblue; */
+    }
     .status {
-        font-size: 2rem;
+        text-align: center;
+        font-size: 1.3rem;
+        margin-bottom: 3rem;
     }
     .helper {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .staff-info {
-        font-size: 1.125rem;
+        font-size: 1rem;
+        margin-bottom: 0 !important;
+        line-height: 1rem;
     }
 }

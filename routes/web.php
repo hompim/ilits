@@ -40,9 +40,8 @@ Route::get('/search', function () {
     return view('oprec.form-search');
 })->name('nrp');
 
-Route::get('/oprec/announcement', [OprecStaffController::class, 'announcement'])->name('announcement');
-
-Route::get('/oprec/search', 'OprecStaffController@announcement');
+Route::get('/oprec/search', [OprecStaffController::class, 'search'])->name('oprec.search');
+Route::post('/oprec/announcement', [OprecStaffController::class, 'announcement'])->name('oprec.announcement');
 
 Route::fallback(function () {
     return redirect(route('coming-soon'));
