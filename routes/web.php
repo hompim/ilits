@@ -40,12 +40,8 @@ Route::get('admin/', function(){
     return view('layouts.admin');
 });
 
-Route::get('/search', function () {
-    return view('oprec.form-search');
-})->name('nrp');
-
-Route::get('/oprec/search', [OprecStaffController::class, 'search'])->name('oprec.search');
-Route::post('/oprec/announcement', [OprecStaffController::class, 'announcement'])->name('oprec.announcement');
+Route::get('AkuEskalatorCita/', [OprecStaffController::class, 'search'])->name('oprec.search');
+Route::post('AkuEskalatorCita/', [OprecStaffController::class, 'announcement'])->name('oprec.announcement');
 
 Route::fallback(function () {
     return redirect(route('coming-soon'));

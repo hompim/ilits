@@ -50,12 +50,12 @@
                     <div class="modal-body">
                         <div>
                             <ol type="a">
-                                <li>Temukan teman satu subdivisimu dengan cara cari dan like jawaban tebak-tebakan ini
+                                <li class="text-justify">Temukan teman satu subdivisimu dengan cara cari dan like jawaban tebak-tebakan ini
                                     di
                                     kolom komentar postingan Pengumuman Staff Terpilih Instagram Ini Lho ITS 2022.
                                     “{{ $data->pertanyaan }}”
                                 </li>
-                                <li>Setelah menemukan teman satu subdivisi, ajak zoom bareng, foto bareng, dan bikin
+                                <li class="text-justify">Setelah menemukan teman satu subdivisi, ajak zoom bareng, foto bareng, dan bikin
                                     postingan Instagram Feeds se kreatif mungkin tag @inilhoits @kasub (orang yg memberi
                                     jawaban di kolom komentar). Caption bebas, yang penting menyertakan kalimat “Aku
                                     emang
@@ -64,10 +64,10 @@
                                     22 September 2021 pukul 18:00 WIB. Postingan paling kreatif akan mendapatkan award
                                     di
                                     Welcome Party Eskalator Cita.</li>
-                                <li>Membuat Video Persembahan Kreatif dengan minimal berisi konten perkenalan
+                                <li class="text-justify">Membuat Video Persembahan Kreatif dengan minimal berisi konten perkenalan
                                     masing-masing
                                     staf. Video ini akan ditayangkan di Welcome Party Eskalator Cita.</li>
-                                <li>Datang ke 🎊Welcome Party Eskalator Cita🎊 pada hari Kamis, 23 September 2021 pukul
+                                <li class="text-justify">Datang ke 🎊Welcome Party Eskalator Cita🎊 pada hari Kamis, 23 September 2021 pukul
                                     19:00 WIB. Please be on time and use the Virtual Background! 😉
                                     <a href="https://intip.in/VGBWelparILITS22"
                                         target="_blank">https://intip.in/VGBWelparILITS22</a>
