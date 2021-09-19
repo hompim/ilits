@@ -5,6 +5,7 @@ use App\Http\Controllers\OprecStaffController;
 use App\Models\OprecStaff;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
+use PhpOffice\PhpSpreadsheet\Chart\Layout;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,9 @@ Route::get('DatabaseEskalatorCita2022/', function () {
     return redirect('https://docs.google.com/forms/d/e/1FAIpQLSfRumAAzPVoac8rHh0o6R66CMnj9iH851jYhRLwOnaoLMvSMQ/viewform');
 });
 
+Route::get('admin/', function(){
+    return view('layouts.admin');
+});
 
 Route::get('/search', function () {
     return view('oprec.form-search');
@@ -42,8 +46,8 @@ Route::get('/search', function () {
 
 Route::get('/oprec/announcement', [OprecStaffController::class, 'announcement'])->name('announcement');
 
-Route::get('/oprec/search', 'OprecStaffController@announcement');
+// Route::get('/oprec/search', 'OprecStaffController@announcement');
 
-Route::fallback(function () {
-    return redirect(route('coming-soon'));
-});
+// Route::fallback(function () {
+//     return redirect(route('coming-soon'));
+// });
