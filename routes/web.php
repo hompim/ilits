@@ -2,6 +2,7 @@
 
 use App\Exports\OprecStaffExport;
 use App\Http\Controllers\OprecStaffController;
+use App\Http\Controllers\LinkShortenerController;
 use App\Models\OprecStaff;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
@@ -43,6 +44,11 @@ Route::get('admin/', function(){
 Route::get('AkuEskalatorCita/', [OprecStaffController::class, 'search'])->name('oprec.search');
 Route::post('AkuEskalatorCita/', [OprecStaffController::class, 'announcement'])->name('oprec.announcement');
 
-Route::fallback(function () {
+Route::get('shortener/',[LinkShortenerController::class, 'create'])->name('link.create');
+Route::post('shortener/',[LinkShortenerController::class, 'store'])->name('link.store');
+
+Route::get('/{slug}',[LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
+
+/**Route::fallback(function () {
     return redirect(route('coming-soon'));
-});
+});**/
