@@ -14,7 +14,7 @@
             </div>
     @endif
     
-    <form action="/shortener" method="POST">
+    <form action="{{ route('link.store') }}" method="POST">
         @csrf
         <label>
             inilho.its.ac.id/
