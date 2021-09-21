@@ -20,38 +20,9 @@
     <a href="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Import
     </a>
-    <table class="table">
-        <thead class="table-dark">
-            <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama lengkap</th>
-                <th scope="col">NRP</th>
-                <th scope="col">Fakultas</th>
-                <th scope="col">Departemen</th>
-                <th scope="col">Angkatan</th>
-                <th scope="col">Kota Asal</th>
-                <th scope="col">Pilihan 1</th>
-                <th scope="col">pilihan 2</th>
-            </tr>
-        <tbody>
-            <?php $no=1; ?>
-            @foreach ($oprec_staff as $data)
-                <tr>
-
-                <th scope="row">{{$no++}}</th>
-                <td>{{ $data ->nama_lengkap}}</td>
-                <td>{{ $data ->nrp}}</td>
-                <td>{{ $data ->fakultas}}</td>
-                <td>{{ $data ->departemen}}</td>
-                <td>{{ $data ->angkatan}}</td>
-                <td>{{ $data ->kota_asal}}</td>
-                <td>{{ $data ->pilihan_1}}</td>
-                <td>{{ $data ->pilihan_2}}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-
+    <a href="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ImportMacModal">
+        Import Data Mac
+    </a>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -68,6 +39,31 @@
                         {{ csrf_field() }}
                             <div class="from-group">
                                 <input type="file" name="file" required="required">
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+                        <button type="submit" class="btn btn-primary">Import</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ImportMacModal" tabindex="-1" role="dialog" aria-labelledby="ImportMacModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ImportMacModalLabel">Import Data Staff Mac</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{route('oprecmacimport')}}" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        {{ csrf_field() }}
+                            <div class="from-group">
+                                <input type="file" name="filemac" required="required">
                             </div>
                     </div>
                     <div class="modal-footer">

@@ -11,7 +11,7 @@
     <meta name="keywords"
         content="ITS, Institut Teknologi Sepuluh Nopember, ILITS, Ini Lho ITS!, ILITS 2022, Ini Lho ITS! 2022">
     <!-- title section start -->
-    <title>Pengumuman!</title>
+    <title>Pengumuman Open Recruitment</title>
     <!-- link section start -->
     <link rel="icon" href="{{ asset('ilits22.ico') }}">
     <link rel="stylesheet" href="{{asset('css/oprec/search/style.css')}}">
@@ -23,7 +23,7 @@
         <div class="title">
             <h1>Apakah kalian bagian<br> dari Staff <span>INI LHO ITS! 2022</span> ?</h1>
         </div>
-        <form action="{{url('/oprec/announcement')}}" method="POST">
+        <form action="{{route('oprec.announcement')}}" method="POST">
             @csrf
             <div class="input-group input-custom">
                 <input type="text" id="input" class="form-control form-control-lg" name="nrp"
@@ -46,6 +46,11 @@
         </div>
     </div>
 
+    <script>
+        if (/apple/i.test(navigator.vendor)) {
+            window.location.replace('https://inilho.its.ac.id/nosafari');
+        }
+    </script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 

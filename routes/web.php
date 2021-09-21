@@ -27,6 +27,8 @@ Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_
 
 Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
 Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport'])->name('oprecstaffimport');
+Route::post('/oprecmacimport', [OprecStaffController::class, 'OprecMacImport'])->name('oprecmacimport');
+
 
 Route::get('SiapJadiEskalatorCita/', function () {
     return redirect('https://docs.google.com/spreadsheets/d/1lWDY3TdcxkDY0SCrfjCOZpuROXeYcmYOipe6vn7eFYY/edit#gid=1510192419');
@@ -42,6 +44,10 @@ Route::get('admin/', function(){
 
 Route::get('AkuEskalatorCita/', [OprecStaffController::class, 'search'])->name('oprec.search');
 Route::post('AkuEskalatorCita/', [OprecStaffController::class, 'announcement'])->name('oprec.announcement');
+
+Route::get("nosafari/", function(){
+    return view("nosafari");
+});
 
 Route::fallback(function () {
     return redirect(route('coming-soon'));

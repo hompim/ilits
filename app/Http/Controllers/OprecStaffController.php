@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Exports\OprecStaffAllExport;
 use App\Imports\OprecStaffImport;
 use App\Models\OprecStaff;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
+use App\Imports\StaffMacImport;
 use App\Models\OprecStaffResult;
 use Exception;
 use Illuminate\Http\Request;
@@ -16,8 +18,7 @@ class OprecStaffController extends Controller
 
     public function index()
     {
-        $oprec_staff = OprecStaff::all();
-        return view('oprec_staff', compact('oprec_staff'));
+        return view('oprec_staff');
     }
 
     public function oprecStaffExport()
@@ -32,6 +33,16 @@ class OprecStaffController extends Controller
         $file->move('DataOprecStaff', $nameFile);
 
         Excel::import(new oprecStaffImport, public_path('/DataOprecStaff/' . $nameFile));
+        return redirect('oprec_staff');
+    }
+    
+    public function oprecMacImport(Request $request)
+    {
+        $file = $request->file('filemac');
+        $nameFile = $file->getClientOriginalName();
+        $file->move('DataMacStaff', $nameFile);
+
+        Excel::import(new StaffMacImport, public_path('/DataMacStaff/' . $nameFile));
         return redirect('oprec_staff');
     }
 
@@ -141,11 +152,14 @@ class OprecStaffController extends Controller
     public function announcement(Request $request)
     {
         $nrp = $request->nrp;
-        if(OprecStaff::where('nrp', $nrp)->exists()){
-            $is_staff = false;
-            $oprec_staff = OprecStaffResult::where('nrp', $nrp)->first();
-            if($oprec_staff) {
-               $is_staff = true; 
+        if(OprecStaff::where('nrp', $nrp)->exists()||OprecStaffResult::where('nrp', $nrp)->exists()){
+            if(OprecStaffResult::where('nrp', $nrp)->exists()) {
+                $oprec_staff = OprecStaffResult::where('nrp', $nrp)->first();
+                $is_staff = 1; 
+            } else if (OprecStaff::where('nrp', $nrp)->first()) {
+                $oprec_staff = OprecStaff::where('nrp', $nrp)->first();
+                $oprec_staff->nama = $oprec_staff->nama_lengkap;
+                $is_staff = 0;
             }
             return view("oprec.anouncement", ["data" => $oprec_staff, "is_staff" => $is_staff]);            
         }
