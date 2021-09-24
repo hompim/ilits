@@ -24,12 +24,22 @@ Route::get('/', function () {
 })->name('coming-soon');
 
 
-Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
+// Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
 
-Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
-Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport'])->name('oprecstaffimport');
-Route::post('/oprecmacimport', [OprecStaffController::class, 'OprecMacImport'])->name('oprecmacimport');
+// Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
+// Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport'])->name('oprecstaffimport');
+// Route::post('/oprecmacimport', [OprecStaffController::class, 'OprecMacImport'])->name('oprecmacimport');
 
+Route::middleware('isadmin')->prefix('admin')->group(function(){
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('admin');
+    Route::get('shortener/',[LinkShortenerController::class, 'create'])->name('link.create');
+    Route::post('shortener/',[LinkShortenerController::class, 'store'])->name('link.store');
+    Route::get('shortener/update/{id}',[LinkShortenerController::class, 'update'])->name('link.update');
+    Route::post('shortener/update/{id}',[LinkShortenerController::class, 'storeUpdate'])->name('link.update.store');
+    Route::post('shortener/delete/{id}',[LinkShortenerController::class, 'delete'])->name('link.delete');
+});
 
 Route::get('SiapJadiEskalatorCita/', function () {
     return redirect('https://docs.google.com/spreadsheets/d/1lWDY3TdcxkDY0SCrfjCOZpuROXeYcmYOipe6vn7eFYY/edit#gid=1510192419');
@@ -39,22 +49,6 @@ Route::get('DatabaseEskalatorCita2022/', function () {
     return redirect('https://docs.google.com/forms/d/e/1FAIpQLSfRumAAzPVoac8rHh0o6R66CMnj9iH851jYhRLwOnaoLMvSMQ/viewform');
 });
 
-Route::get('WPnyaEskalatorCita/', function () {
-    return redirect('https://zoom.us/j/94484004331?pwd=YWVDcmtqSjlhbVpZLzJFYUxLRnRlZz09');
-})->name('zoomwp');
-
-Route::get('admin/', function(){
-    return view('layouts.admin');
-});
-
-Route::get('AkuEskalatorCita/', [OprecStaffController::class, 'search'])->name('oprec.search');
-Route::post('AkuEskalatorCita/', [OprecStaffController::class, 'announcement'])->name('oprec.announcement');
-
-Route::get('shortener/',[LinkShortenerController::class, 'create'])->name('link.create');
-Route::post('shortener/',[LinkShortenerController::class, 'store'])->name('link.store');
-
 Route::get('/{slug}',[LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
 
-/**Route::fallback(function () {
-    return redirect(route('coming-soon'));
-});**/
+

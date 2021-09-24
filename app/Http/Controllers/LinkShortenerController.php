@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\LinkShortener;
 use Illuminate\Http\Request;
 use Exception;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Link;
 
 class LinkShortenerController extends Controller
 {
@@ -26,7 +27,7 @@ class LinkShortenerController extends Controller
     public function create()
     {
         $link_all = LinkShortener::all();
-        return view('link-shortener.create', [
+        return view('admin.link-shortener.create', [
             'link_all' => $link_all,
         ]);
     }
@@ -56,11 +57,47 @@ class LinkShortenerController extends Controller
             ]);
             $shortener->save();
 
-            return redirect(route('link.create'));
+            return redirect(route('link.create'))->with('message', 'Link created successfully');
         } catch(Exception $e){
             return redirect()->back()->withErrors(['error', $e->getMessage()]);
         };
     }
+    
+    public function update($id){
+        $old_link = LinkShortener::find($id);
+        return view('admin.link-shortener.update', [
+            'old_link' => $old_link
+        ]);
+    }
+
+    public function storeUpdate(Request $request, $id){
+        $errorMessage =[
+            "required"=> "Kolom harus diisi"
+        ];
+    
+        $error =$request -> validate([
+            "slug"=>"required",
+            "link"=>"required"
+        ],$errorMessage);
+    
+        try{
+            $shorten_link = LinkShortener::find($id);
+            $shorten_link->slug = $request["slug"];
+            $shorten_link->link = $request["link"];
+            $shorten_link->save();
+
+            return redirect(route('link.create'))->with('message', 'Link updated successfully');
+        } catch(Exception $e){
+            return redirect()->back()->withErrors(['error', $e->getMessage()]);
+        };
+    }
+
+    public function delete($id){
+        $shorten_link = LinkShortener::find($id);
+        $shorten_link->delete();
+        return redirect(route('link.create'))->with('message', 'Link deleted successfully');
+    }
+
     public function redirectHandler(String $slug){
         $shortener = LinkShortener::where('slug',$slug)->get();
         if(count($shortener)<1){

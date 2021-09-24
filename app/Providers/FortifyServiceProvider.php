@@ -23,11 +23,19 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->instance(LoginResponse::class, new class implements LoginResponse {
+        $this->app->instance(LoginResponse::class, new class implements LoginResponse{
             public function toResponse($request)
             {
-                $user = User::where('email', $request->email);
-                dd($user);
+                $user = $request->user();
+                if($user->user_type=='App\Models\Admin'){
+                    return redirect(route('admin'));
+                }
+                if($user->user_type=='App\Models\Forda'){
+                    return redirect(route('forda'));
+                }
+                if($user->user_type=='App\Models\Peserta'){
+                    return redirect(route('peserta'));
+                }
             }
         });
     }
