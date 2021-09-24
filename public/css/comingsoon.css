@@ -1,14 +1,11 @@
-@font-face {
-    font-family: "Gotham";
-    src: url("../fonts/Gotham-Font/GothamBold.ttf");
-}
+@import url('fonts.css');
 
 html{
     height: 100%;
 }
 
 *{
-    font-family: "Gotham";
+    font-family: "gothambold";
 }
 body{
     margin: 0;

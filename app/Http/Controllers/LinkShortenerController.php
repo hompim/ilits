@@ -25,7 +25,10 @@ class LinkShortenerController extends Controller
      */
     public function create()
     {
-        return view('link-shortener.create');
+        $link_all = LinkShortener::all();
+        return view('link-shortener.create', [
+            'link_all' => $link_all,
+        ]);
     }
 
     /**
@@ -52,11 +55,8 @@ class LinkShortenerController extends Controller
                 "link" => $request["link"]
             ]);
             $shortener->save();
-            
 
-            return view('link-shortener.create-success',[
-                "slug"=>$shortener->slug
-            ]);
+            return redirect(route('link.create'));
         } catch(Exception $e){
             return redirect()->back()->withErrors(['error', $e->getMessage()]);
         };
@@ -69,7 +69,5 @@ class LinkShortenerController extends Controller
         else{
             return redirect($shortener[0]->link);
         }
-        
     }
-
 }

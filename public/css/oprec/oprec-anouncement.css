@@ -1,20 +1,9 @@
-@font-face {
-    font-family: "GothamBold" ;
-    src: url("../../fonts/Gotham-Font/GothamBold.ttf");
-}
-@font-face {
-    font-family: "GothamMedium";
-    src: url("../../fonts/Gotham-Font/GothamMedium.ttf");
-}
-@font-face {
-    font-family: "GothamLight";
-    src: url("../../fonts/Gotham-Font/GothamLight.ttf");
-}
+@import url('../fonts.css');
 
 main {
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    font-family: "GothamBold";
+    font-family: "gothambold";
     color: #1f304a;
     text-align: center;
 }
@@ -37,14 +26,14 @@ main {
 }
 
 .staff-info {
-    font-family: "GothamMedium";
+    font-family: "gothammedium";
     color: #858585;
     font-size: 2rem;
     bottom: 10%;
 }
 
 #modal-challenge{
-    font-family: "GothamMedium";
+    font-family: "gothammedium";
 }
 
 .helper {

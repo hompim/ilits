@@ -1,10 +1,7 @@
-@font-face {
-    font-family: "Gotham";
-    src: url("../../fonts/Gotham-Font/GothamMedium.ttf");
-}
+@import url('../fonts.css');
 
 *{
-    font-family: "Gotham";
+    font-family: "gothammedium";
 }
 
 .form-oprec{

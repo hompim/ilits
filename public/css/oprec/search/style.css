@@ -1,12 +1,4 @@
-@font-face {
-    font-family: "GothamBold";
-    src: url("../../../fonts/Gotham-Font/GothamBold.ttf");
-}
-
-@font-face {
-    font-family: "GothamMedium";
-    src: url("../../../fonts/Gotham-Font/GothamMedium.ttf");
-}
+@import url('../../fonts.css');
 
 html {
     height: 100%;
@@ -23,7 +15,7 @@ body {
 }
 
 .title {
-    font-family: "GothamBold";
+    font-family: "gothambold";
 }
 
 .title span {
@@ -35,7 +27,7 @@ body {
 #input {
     border-radius: 25px;
     margin: 24px 0;
-    font-family: "GothamMedium";
+    font-family: "gothammedium";
 }
 
 .input-custom {

@@ -11,7 +11,7 @@
     <meta name="keywords"
         content="ITS, Institut Teknologi Sepuluh Nopember, ILITS, Ini Lho ITS!, ILITS 2022, Ini Lho ITS! 2022">
     <!-- title section start -->
-    <title>Pengumuman Open Recruitment</title>
+    <title>Pengumuman Anggota Baru Eskalator Cita</title>
     <!-- link section start -->
     <link rel="icon" href="{{ asset('ilits22.ico') }}">
     <link rel="stylesheet" href="{{asset('css/oprec/search/style.css')}}">
@@ -46,11 +46,6 @@
         </div>
     </div>
 
-    <script>
-        if (/apple/i.test(navigator.vendor)) {
-            window.location.replace('https://inilho.its.ac.id/nosafari');
-        }
-    </script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 

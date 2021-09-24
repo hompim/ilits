@@ -17,7 +17,7 @@
         <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
             <div class="container d-flex flex-column">
                 <h1 class="status">
-                    {{$is_staff ? 'SELAMAT!' : 'MAAF ANDA BELUM LULUS'}}
+                    {{$is_staff ? 'SELAMAT!' : 'MAAF ANDA BELUM LOLOS'}}
                 </h1>
                 <div class="detail my-4">
                     <div class="mb-3 staff-info">
@@ -25,18 +25,21 @@
                         <p>{{ $data ->nrp}}</p>
                     </div>
                     <h4 class="helper">
-                        {{$is_staff ? 'KAMU MENJADI BAGIAN DARI ESKALATOR CITA' : 'KAMU BELUM BERUNTUNG, TETAP SEMANGAT!'}}
+                        {{$is_staff ? 'KAMU MENJADI BAGIAN DARI ESKALATOR CITA' : 'TERIMA KASIH TELAH BERJUANG DAN TETAP SEMANGAT!!'}}
                     </h4>
                 </div>
-                <div>
-                    <p class="challenge">Yuk cek tantangan pertamamu <button type="button" href="#"
-                            class="badge badge-info border-0" data-toggle="modal" data-target="#modal-challenge">di
-                            sini</button>
-                    </p>
-                </div>
+                @if ( $is_staff)
+                    <div>
+                        <p class="challenge">Yuk cek tantangan pertamamu <button type="button" href="#"
+                                class="badge badge-info border-0" data-toggle="modal" data-target="#modal-challenge">di
+                                sini</button>
+                        </p>
+                    </div>
+                @endif
             </div>
         </div>
 
+        @if ( $is_staff)
         <div class="modal fade" id="modal-challenge" tabindex="-1" aria-labelledby="modal-challenge-label"
             aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -54,7 +57,7 @@
                                     <ol type="a">
                                         <li>Cari dan like jawaban tebak-tebakan di bawah ini pada kolom komentar postingan Pengumuman Staf Terpilih di Instagram Ini Lho ITS! 2022.</li>
                                         <li>Lihat siapa saja orang yang like jawaban tersebut, maka itu teman satu divisi/subdivisimu</li>
-                                        <li>Berikut pertanyaannya: “{{ $data->pertanyaan }}”</li>
+                                        <li>Berikut pertanyaannya: {{ $data->pertanyaan }}</li>
                                     </ol>
                                 </li>
                                 <li class="text-justify">Setelah menemukan teman satu divisi/subdivisi, ajak zoom bareng, foto bareng, dan bikin
@@ -74,7 +77,7 @@
                                 </li>
                             </ol>
                             <div class="px-3 text-right">
-                                <a href="#" target="_blank" class="badge badge-info p-2">Link
+                                <a href="{{ route('zoomwp') }}" target="_blank" class="badge badge-info p-2">Link
                                     zoom</a>
                             </div>
                         </div>
@@ -82,8 +85,8 @@
                 </div>
             </div>
         </div>
+        @endif
     </main>
-
     <script type="text/javascript">
         ["load", "resize"].forEach((e) => {
         window.addEventListener(e, () => {

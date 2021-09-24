@@ -1,11 +1,4 @@
-@font-face {
-    font-family: "GothamBold" ;
-    src: url("../../fonts/Gotham-Font/GothamBold.ttf");
-}
-@font-face {
-    font-family: "GothamMedium";
-    src: url("../../fonts/Gotham-Font/GothamMedium.ttf");
-}
+@import url('../fonts.css');
 
 html{
     height: 100%;
@@ -21,7 +14,7 @@ body{
 .container h1{
     margin: 1em 0;
     color: #264882;
-    font-family: "GothamBold";
+    font-family: "gothambold";
     font-size: 48px;
 }
 .content{
@@ -35,13 +28,13 @@ body{
     margin: 0;
 }
 .text-content p{
-    font-family: "GothamMedium";
+    font-family: "gothammedium";
     font-size: 24px;
     margin: 1em;
     color: #264882;
 }
 .text-content a{
-    font-family: "GothamMedium";
+    font-family: "gothammedium";
     font-size: 28px;
     text-decoration: none;
     background-color: #264882;

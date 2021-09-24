@@ -39,6 +39,10 @@ Route::get('DatabaseEskalatorCita2022/', function () {
     return redirect('https://docs.google.com/forms/d/e/1FAIpQLSfRumAAzPVoac8rHh0o6R66CMnj9iH851jYhRLwOnaoLMvSMQ/viewform');
 });
 
+Route::get('WPnyaEskalatorCita/', function () {
+    return redirect('https://zoom.us/j/94484004331?pwd=YWVDcmtqSjlhbVpZLzJFYUxLRnRlZz09');
+})->name('zoomwp');
+
 Route::get('admin/', function(){
     return view('layouts.admin');
 });
