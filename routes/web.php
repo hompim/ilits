@@ -29,15 +29,15 @@ Route::get('/', function () {
 // Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport'])->name('oprecstaffimport');
 // Route::post('/oprecmacimport', [OprecStaffController::class, 'OprecMacImport'])->name('oprecmacimport');
 
-Route::middleware('isadmin')->prefix('admin')->group(function(){
+Route::middleware('isadmin')->prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     })->name('admin');
-    Route::get('shortener/',[LinkShortenerController::class, 'create'])->name('link.create');
-    Route::post('shortener/',[LinkShortenerController::class, 'store'])->name('link.store');
-    Route::get('shortener/update/{id}',[LinkShortenerController::class, 'update'])->name('link.update');
-    Route::post('shortener/update/{id}',[LinkShortenerController::class, 'storeUpdate'])->name('link.update.store');
-    Route::post('shortener/delete/{id}',[LinkShortenerController::class, 'delete'])->name('link.delete');
+    Route::get('shortener/', [LinkShortenerController::class, 'create'])->name('link.create');
+    Route::post('shortener/', [LinkShortenerController::class, 'store'])->name('link.store');
+    Route::get('shortener/update/{id}', [LinkShortenerController::class, 'update'])->name('link.update');
+    Route::post('shortener/update/{id}', [LinkShortenerController::class, 'storeUpdate'])->name('link.update.store');
+    Route::post('shortener/delete/{id}', [LinkShortenerController::class, 'delete'])->name('link.delete');
 });
 
 Route::get('SiapJadiEskalatorCita/', function () {
@@ -48,6 +48,8 @@ Route::get('DatabaseEskalatorCita2022/', function () {
     return redirect('https://docs.google.com/forms/d/e/1FAIpQLSfRumAAzPVoac8rHh0o6R66CMnj9iH851jYhRLwOnaoLMvSMQ/viewform');
 });
 
-Route::get('/{slug}',[LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
+Route::prefix('peserta')->middleware(['cek_peserta'])->group(function () {
+    Route::get('/', [PesertaController::class, 'index'])->name('peserta.dashboard');
+});
 
-
+Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
