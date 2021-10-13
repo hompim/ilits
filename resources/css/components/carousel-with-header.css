@@ -1,0 +1,50 @@
+#carouselWithHeader .card {
+    border-radius: 1.125rem;
+}
+#carouselWithHeader h3.card-header {
+    font-size: 2rem;
+    background: linear-gradient(-45deg, #2076cf, #44e0dc);
+}
+#carouselWithHeader .card-body {
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+}
+#carouselWithHeader .card-body h4 {
+    font-size: 2rem;
+}
+#carouselWithHeader .card-body p {
+    font-size: 1.375rem;
+    font-family: "gothammedium";
+}
+
+#carouselWithHeader a.prev,
+#carouselWithHeader a.next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#carouselWithHeader a.prev {
+    left: 0;
+}
+
+#carouselWithHeader a.next {
+    right: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    #carouselWithHeader img {
+        width: 100% !important;
+    }
+    #carouselWithHeader h3.card-header {
+        font-size: 1.5rem;
+    }
+    #carouselWithHeader .card-body p {
+        font-size: 1.125rem;
+    }
+    #carouselWithHeader a.prev {
+        left: -2rem;
+    }
+    #carouselWithHeader a.next {
+        right: -2rem;
+    }
+}
