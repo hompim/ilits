@@ -3,6 +3,8 @@
 use App\Exports\OprecStaffExport;
 use App\Http\Controllers\OprecStaffController;
 use App\Http\Controllers\LinkShortenerController;
+use App\Http\Controllers\PesertaController;
+use App\Http\Controllers\FordaController;
 use App\Models\OprecStaff;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
@@ -23,12 +25,13 @@ Route::get('/', function () {
     return view('coming-soon');
 })->name('coming-soon');
 
-// Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
+// // Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
 
 // Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
 // Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport'])->name('oprecstaffimport');
 // Route::post('/oprecmacimport', [OprecStaffController::class, 'OprecMacImport'])->name('oprecmacimport');
 
+// Route untuk admin
 Route::middleware('isadmin')->prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');
@@ -52,4 +55,9 @@ Route::prefix('peserta')->middleware(['cek_peserta'])->group(function () {
     Route::get('/', [PesertaController::class, 'index'])->name('peserta.dashboard');
 });
 
-Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
+// Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
+
+// Route untuk forda
+Route::prefix('forda')->middleware(['isforda'])->group(function(){
+    Route::get('/',[FordaController::class,'index'])->name('forda');
+});

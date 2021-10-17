@@ -13,6 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            FordaSeeder::class,
+            //Kalau gk butuh peserta, komen aja line di bawah
+            // PesertaSeeder::class
+        ]);
     }
 }
