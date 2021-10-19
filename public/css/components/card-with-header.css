@@ -1,0 +1,36 @@
+
+/* problem: #CardHeader .card{} tidak bisa menjalankan properti border */
+#CardWithHeader h3.card-header{
+    border-top-left-radius: 1.125rem;
+    border-top-right-radius: 1.125rem;
+    font-family: "gothammedium";
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+#CardWithHeader .card-body {
+    border-bottom-left-radius: 1.125rem;
+    border-bottom-right-radius: 1.125rem;
+    border-end-end-radius: 1.125rem;
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+}
+
+#CardWithHeader .card-body img{
+    border-radius: 1.125rem;
+}
+
+#CardWithHeader .card-body p {
+    font-size: 1.625rem;
+    color: grey;
+    font-family: "gothamlight";
+}
+
+@media only screen and (max-width: 768px) {
+    #CardlWithHeader img {
+        width: 100% !important;
+    }
+    #CardlWithHeader .card-body p {
+        font-size: 1.125rem;
+    }
+}

@@ -1,0 +1,51 @@
+
+#SimpleTwoSideCard div.row {
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+    border-radius: 1.125rem;
+}
+
+#SimpleTwoSideCard .text-side h2{
+    font-family: "gothambold";
+    font-size: 2.4375rem;
+    color: black;
+}
+
+#SimpleTwoSideCard .text-side p{
+    font-family: "gothamlight";
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    color: grey;
+} 
+
+#SimpleTwoSideCard .image-side{
+    padding: 0 ;
+} 
+
+@media only screen and (max-width: 968px) {
+    #SimpleTwoSideCard .image-side img{
+        border-radius: 1.125rem;
+    } 
+}
+@media only screen and (max-width: 768px) {
+    #SimpleTwoSideCard .text-side h2{
+        font-size: 1.5rem;
+    }
+    
+    #SimpleTwoSideCard .text-side p{
+        font-size: 1rem;
+    } 
+}
+
+@media only screen and (max-width: 1200px) {
+    #SimpleTwoSideCard .text-side h2{
+        font-size: 2rem;
+    }
+    
+    #SimpleTwoSideCard .text-side p{
+        font-size: 1.375rem;
+    } 
+}
+
+
+
