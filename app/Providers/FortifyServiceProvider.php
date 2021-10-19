@@ -23,17 +23,18 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->instance(LoginResponse::class, new class implements LoginResponse{
+        $this->app->instance(LoginResponse::class, new class implements LoginResponse
+        {
             public function toResponse($request)
             {
                 $user = $request->user();
-                if($user->user_type=='App\Models\Admin'){
+                if ($user->user_type == 'App\Models\Admin') {
                     return redirect(route('admin'));
                 }
-                if($user->user_type=='App\Models\Forda'){
+                if ($user->user_type == 'App\Models\Forda') {
                     return redirect(route('forda'));
                 }
-                if($user->user_type=='App\Models\Peserta'){
+                if ($user->user_type == 'App\Models\Peserta') {
                     return redirect(route('peserta'));
                 }
             }
@@ -53,11 +54,22 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
         RateLimiter::for('login', function (Request $request) {
-            return Limit::perMinute(5)->by($request->email.$request->ip());
+            return Limit::perMinute(5)->by($request->email . $request->ip());
         });
 
         RateLimiter::for('two-factor', function (Request $request) {
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
+        });
+
+        Fortify::authenticateUsing(function (Request $request) {
+            $user = User::where('email', $request->email)->first();
+
+            if (
+                $user &&
+                Hash::check($request->password, $user->password)
+            ) {
+                return $user;
+            }
         });
     }
 }

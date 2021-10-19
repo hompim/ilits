@@ -13,6 +13,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // $this->app->afterResolving(EmailVerificationNotificationController::class, function ($controller) {
+        //     $controller->middleware('throttle:verification');
+        // });
+        // $this->app->afterResolving(PasswordResetLinkController::class, function ($controller) {
+        //     $controller->middleware('throttle:verification');
+        // });
         //
     }
 
@@ -23,6 +29,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // error_reporting(0);
+        // FacadesRateLimiter::for('verification', function (Request $request) {
+        //     return Limit::perMinute(3)->by($request->ip());
+        // });
     }
 }

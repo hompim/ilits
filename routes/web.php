@@ -34,7 +34,14 @@ Route::get('/', function () {
 // Route untuk admin
 Route::middleware('isadmin')->prefix('admin')->group(function () {
     Route::get('/', function () {
-        return view('admin.dashboard');
+        if (request()->user()->user_type == 'App\Models\Peserta') {
+            return redirect(route('peserta.dashboard'));
+        } else if (request()->user()->user_type == 'App\Models\Forda') {
+            return redirect(route('forda'));
+        } else {
+            return redirect(route('admin.dashboard'));
+        }
+        //return view('admin.dashboard');
     })->name('admin');
     Route::get('shortener/', [LinkShortenerController::class, 'create'])->name('link.create');
     Route::post('shortener/', [LinkShortenerController::class, 'store'])->name('link.store');
@@ -51,13 +58,15 @@ Route::get('DatabaseEskalatorCita2022/', function () {
     return redirect('https://docs.google.com/forms/d/e/1FAIpQLSfRumAAzPVoac8rHh0o6R66CMnj9iH851jYhRLwOnaoLMvSMQ/viewform');
 });
 
-Route::prefix('peserta')->middleware(['cek_peserta'])->group(function () {
+//Route untuk Peserta
+Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
     Route::get('/', [PesertaController::class, 'index'])->name('peserta.dashboard');
+    Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
 });
 
 // Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
 
 // Route untuk forda
-Route::prefix('forda')->middleware(['isforda'])->group(function(){
-    Route::get('/',[FordaController::class,'index'])->name('forda');
+Route::prefix('forda')->middleware(['isforda'])->group(function () {
+    Route::get('/', [FordaController::class, 'index'])->name('forda');
 });

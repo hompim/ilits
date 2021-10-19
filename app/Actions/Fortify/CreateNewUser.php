@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use App\Models\Peserta;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -27,10 +28,20 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
+        $peserta = Peserta::create([
+            'asal_sekolah' => $input['asal_sekolah'],
+            'asal_daerah' => $input['asal_daerah'],
+            'no_wa' => $input['nomor_whatsapp'],
+            'pilihan_tryout' => $input['tryout'],
+            'forda_id' => $input['forda']
+        ]);
+
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'user_type' => 'App\Models\Peserta',
+            'user_id' => $peserta->id
         ]);
     }
 }
