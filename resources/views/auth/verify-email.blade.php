@@ -6,12 +6,12 @@
 
         <div class="card-body">
             <div class="mb-3 small text-muted">
-                {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+                {{ __('Sebelum menggunakan dashboard Try Out ILITS! 2021, harap memverifikasi email anda terlebih dahulu. Kami <strong>sudah mengirimkan</strong> link verifikasi melalui email. Apabila anda tidak menerima email, anda bisa meminta ulang email konfirmasi.') }}
             </div>
 
             @if (session('status') == 'verification-link-sent')
                 <div class="alert alert-success" role="alert">
-                    {{ __('A new verification link has been sent to the email address you provided during registration.') }}
+                    {{ __('Email verifikasi berhasil dikirim') }}
                 </div>
             @endif
 
@@ -21,7 +21,7 @@
 
                     <div>
                         <x-jet-button type="submit">
-                            {{ __('Resend Verification Email') }}
+                            {{ __('Kirim Email Verifikasi') }}
                         </x-jet-button>
                     </div>
                 </form>
@@ -30,7 +30,7 @@
                     @csrf
 
                     <button type="submit" class="btn btn-link">
-                        {{ __('Log Out') }}
+                        {{ __('Keluar') }}
                     </button>
                 </form>
             </div>

@@ -29,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
         VerifyEmail::toMailUsing(function (User $user, string $verificationUrl) {
             return (new MailMessage)
-                ->greeting('Halo peserta Try Out ILITS! 2021')
+                ->greeting('Halo peserta Try Out ILITS! 2022')
                 ->subject('Verifikasi Email Anda')
                 ->line('Untuk memverifikasi email anda, tekan tombol di bawah ini.')
                 ->action('Verifikasi Email Saya', $verificationUrl)
@@ -38,7 +38,7 @@ class AuthServiceProvider extends ServiceProvider
 
         ResetPassword::toMailUsing(function (User $user, string $tokenReset) {
             return (new MailMessage)
-                ->greeting('Halo peserta Try Out ILITS! 2021')
+                ->greeting('Halo peserta Try Out ILITS! 2022')
                 ->subject('Reset Password')
                 ->line('Untuk mereset password anda, tekan tombol di bawah ini.')
                 ->action('Reset Password Saya', route('password.reset', ['token' => $tokenReset]))

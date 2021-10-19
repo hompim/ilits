@@ -17,7 +17,27 @@
                                  :value="old('name')" required autofocus autocomplete="name" />
                     <x-jet-input-error for="name"></x-jet-input-error>
                 </div>
+                <div class="mb-3">
+                    <x-jet-label value="{{ __('Asal Sekolah') }}" />
 
+                    <x-jet-input class="{{ $errors->has('asal_sekolah') ? 'is-invalid' : '' }}" type="text" name="asal_sekolah"
+                                 :value="old('asal_sekolah')" required />
+                    <x-jet-input-error for="asal_sekolah"></x-jet-input-error>
+                </div>
+                <div class="mb-3">
+                    <x-jet-label value="{{ __('Asal Daerah') }}" />
+
+                    <x-jet-input class="{{ $errors->has('asal_daerah') ? 'is-invalid' : '' }}" type="text" name="asal_daerah"
+                                 :value="old('asal_daerah')" required />
+                    <x-jet-input-error for="asal_daerah"></x-jet-input-error>
+                </div>
+                <div class="mb-3">
+                    <x-jet-label value="{{ __('No Whatsapp') }}" />
+
+                    <x-jet-input class="{{ $errors->has('nomor_whatsapp') ? 'is-invalid' : '' }}" type="text" name="nomor_whatsapp"
+                                 :value="old('nomor_whatsapp')" required />
+                    <x-jet-input-error for="nomor_whatsapp"></x-jet-input-error>
+                </div>
                 <div class="mb-3">
                     <x-jet-label value="{{ __('Email') }}" />
 
@@ -25,7 +45,6 @@
                                  :value="old('email')" required />
                     <x-jet-input-error for="email"></x-jet-input-error>
                 </div>
-
                 <div class="mb-3">
                     <x-jet-label value="{{ __('Password') }}" />
 
@@ -33,11 +52,33 @@
                                  name="password" required autocomplete="new-password" />
                     <x-jet-input-error for="password"></x-jet-input-error>
                 </div>
-
                 <div class="mb-3">
                     <x-jet-label value="{{ __('Confirm Password') }}" />
 
                     <x-jet-input class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
+                </div>
+                <div class="mb-3">
+                    <x-jet-label value="{{ __('Forda') }}" />
+                    <x-jet-input class="{{ $errors->has('forda') ? 'is-invalid' : '' }}" type="number" name="forda"
+                                 :value="old('forda')" required />
+                    <x-jet-input-error for="forda"></x-jet-input-error>
+
+                        {{-- <select id="forda" class="rounded-md p-2 shadow-sm block mt-1 w-full" name="forda" :value="old('forda')" required autofocus>
+                            @foreach($forda as $f)
+                                 @if(date('Y-m-d',strtotime('-3 days',strtotime($f->absen->date)))==date('Y-m-d')&&date('H:i:s')<=date('H:i:s',strtotime('17:00:00')))
+                                <option value="{{$f->id}}">{{$f->daerah}} - {{$f->user->name}}</option>
+                                @elseif(date('Y-m-d',strtotime('-3 days',strtotime($f->absen->date)))>date('Y-m-d'))
+                                <option value="{{$f->id}}">{{$f->daerah}} - {{$f->user->name}}</option>
+                                @endif
+                            @endforeach
+                        </select> --}}
+                </div>
+                <div class="mb-3">
+                    <x-jet-label value="{{ __('Pilihan Tryout') }}" />
+                    <select id="tryout" class="p-2 rounded-md shadow-sm block mt-1 w-full" name="tryout" :value="old('tryout')" required autofocus>
+                            <option value="saintek">Saintek</option>
+                            <option value="soshum">Soshum</option>
+                        </select>
                 </div>
 
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
