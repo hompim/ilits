@@ -1,18 +1,9 @@
 @import url("../fonts.css");
-
-footer {
-    font-family: "hindregular";
-}
-
 footer .sosmed-title,
 footer section:nth-child(3),
 footer section h6 {
     font-size: 1.625rem;
-    font-family: "hindbold";
-}
-
-footer section:nth-child(3) {
-    font-family: "hindregular";
+    font-family: "gothambold";
 }
 
 footer .icons img {

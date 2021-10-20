@@ -63,27 +63,3 @@
     font-weight: normal;
     font-style: normal;
 }
-
-@font-face {
-    font-family: "hindregular";
-    src: url("../fonts/hindregular-webfont.woff2") format("woff2"),
-        url("../fonts/hindregular-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "hindbold";
-    src: url("../fonts/hindbold-webfont.woff2") format("woff2"),
-        url("../fonts/hindbold-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "abhayalibreemiold";
-    src: url("../fonts/abhayalibreemiold-webfont.woff2") format("woff2"),
-        url("../fonts/abhayalibreemiold-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
