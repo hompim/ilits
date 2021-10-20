@@ -1,5 +1,5 @@
-<footer class="text-center text-lg-start text-muted">
-  <section class="container p-4 d-flex justify-content-center justify-content-lg-between">
+<footer class="text-center text-lg-start text-white">
+  <section class="container p-4 d-flex justify-content-center justify-content-lg-between border-bottom">
     <div class="ml-auto text-left">
       <p class="text-white sosmed-title">Temukan Kami di Sosial Media!</p>
       <div class="icons d-flex justify-content-between">
@@ -14,7 +14,7 @@
     </div>
   </section>
 
-  <section class="container mt-5">
+  <section class="container p-0 mt-5">
     <div class="row">
       <div class="col-md-2">
         <h6 class="mb-4">

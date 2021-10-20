@@ -2,7 +2,7 @@
 footer .sosmed-title,
 footer section:nth-child(3),
 footer section h6 {
-    font-size: 1.625rem;
+    font-size: 1.5rem;
     font-family: "gothambold";
 }
 
@@ -44,6 +44,13 @@ footer section:nth-child(2) div ul {
 @media only screen and (max-width: 576px) {
     footer .icons img {
         max-width: 1.625rem;
+    }
+    footer section:nth-child(2) div {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    footer section:nth-child(2) div div {
+        text-align: start;
     }
     footer section:first-child div:first-child {
         width: 100% !important;
