@@ -21,6 +21,10 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 |
 */
 
+Route::get('/testing', function () {
+  return view('testing');
+});
+
 Route::get('/', function () {
     return view('coming-soon');
 })->name('coming-soon');
