@@ -13,14 +13,9 @@ const mix = require("laravel-mix");
 
 mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css/app.css")
-    .combine(
-        [
-            "public/css/app.css",
-            "resources/css/fonts.css",
-            "resources/css/globals.css",
-        ],
-        "public/css/app.css"
-    )
+    .combine(["public/css/app.css"], "public/css/app.css")
+    .styles("resources/css/globals.css", "public/css/globals.css")
+    .styles("resources/css/fonts.css", "public/css/fonts.css")
     .styles("resources/css/pages/main.css", "public/css/pages/main.css")
     .styles(
         "resources/css/components/five-items-grid.css",
