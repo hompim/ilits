@@ -1,0 +1,35 @@
+.three-cards h3 {
+    font-family: gothammedium;
+    font-size: 1.4rem;
+}
+
+.three-cards p {
+    font-family: gothamlight;
+    font-size: 1rem;
+}
+
+.box-three-cards {
+    width: 310px;
+    height: 260px;
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    margin-bottom: 60px;
+}
+
+.img-three-cards {
+    background-color: yellowgreen;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 290px) {
+    .box-three-cards {
+        width: 270px;
+    }
+}

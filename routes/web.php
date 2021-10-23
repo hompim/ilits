@@ -21,11 +21,6 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 |
 */
 
-// Hapus ae, cuma utk test comp
-Route::get('/testing', function () {
-  return view('testing-comp');
-});
-
 Route::get('/', function () {
     return view('coming-soon');
 })->name('coming-soon');

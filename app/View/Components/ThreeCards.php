@@ -18,8 +18,7 @@ class ThreeCards extends Component
      *
      * @return void
      */
-    public function __construct($fokus1, $fokus2, $fokus3, $deskripsiFokus1 = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-    $deskripsiFokus2 = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.', $deskripsiFokus3='Lorem ipsum, dolor sit amet consectetur adipisicing elit.')
+    public function __construct($fokus1 = '', $fokus2 = '', $fokus3 = '', $deskripsiFokus1 = '', $deskripsiFokus2 = '', $deskripsiFokus3='')
     {
       $this->fokus1 = $fokus1;
       $this->fokus2 = $fokus2;
