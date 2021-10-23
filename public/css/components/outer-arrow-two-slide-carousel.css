@@ -1,0 +1,47 @@
+/* Aku gatau udah import atau blm */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
+
+.carousel-inner-wrap-two-content {
+    width: 70%;
+}
+
+.inner-carousel-item img {
+    width: 45%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.inner-carousel-item .container-text {
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+    width: 55%;
+    border-radius: 0 14px 14px 0px;
+}
+
+.inner-carousel-item .container-text h1 {
+    font-family: gothammedium;
+}
+
+.inner-carousel-item .container-text p {
+    font-family: gothamlight;
+}
+
+@media screen and (max-width: 760px) {
+    .inner-carousel-item img {
+        height: 200px;
+        width: 100%;
+    }
+
+    .inner-carousel-item .container-text {
+        width: 100%;
+        height: 250px;
+        border-radius: 0;
+        padding: 20px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .inner-carousel-item .container-text {
+        height: 300px;
+    }
+}

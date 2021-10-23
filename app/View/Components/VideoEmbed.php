@@ -6,14 +6,15 @@ use Illuminate\View\Component;
 
 class VideoEmbed extends Component
 {
+    public $src;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($src = "")
     {
-        //
+        $this->src = $src;
     }
 
     /**
