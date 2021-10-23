@@ -24,13 +24,25 @@
     font-size: 1.625rem;
     color: grey;
     font-family: "gothamlight";
+    letter-spacing: -0.02em;
 }
 
 @media only screen and (max-width: 768px) {
+    #CardWithHeader h3.card-header{
+        font-size: 2rem;
+    }
     #CardlWithHeader img {
         width: 100% !important;
     }
-    #CardlWithHeader .card-body p {
-        font-size: 1.125rem;
+}
+
+@media only screen and (max-width: 426px) {
+
+    #CardWithHeader h3.card-header{
+        font-size: 1rem;
+    }
+
+    #CardWithHeader .card-body p {
+        font-size: 0.75rem !important;
     }
 }

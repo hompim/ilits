@@ -1,10 +1,10 @@
 <div class="contaiener py-4">
     <div class="position-relative banner" id="BannerWithCornerHeader">
-        <h4 class="d-block py-3 px-4 text-start bg-light position-absolute header" style="color: {{$color}}">
+        <h2 class="d-block py-1 px-3 py-sm-3 px-sm-4 text-start bg-light position-absolute header" style="color: {{$color}}">
             {{$title}}
-        </h4>
+        </h2>
         
-        <img src="{{$image}}" alt="beasiswa" width="100%">
+        <img class="banner-image" src="{{$image}}" alt="{{$title}}" width="100%">
         
         <div class="direction position-absolute">
           <a class="link" href="#">
