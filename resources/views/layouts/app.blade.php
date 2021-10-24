@@ -19,6 +19,7 @@
     <link rel="icon" href="{{ asset('ilits22.ico') }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/globals.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}">
     @yield('style')

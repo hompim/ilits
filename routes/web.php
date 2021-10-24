@@ -22,7 +22,7 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 */
 
 Route::get('/', function () {
-    return view('coming-soon');
+  return view('coming-soon');
 })->name('coming-soon');
 
 // // Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
@@ -33,40 +33,40 @@ Route::get('/', function () {
 
 // Route untuk admin
 Route::middleware('isadmin')->prefix('admin')->group(function () {
-    Route::get('/', function () {
-        if (request()->user()->user_type == 'App\Models\Peserta') {
-            return redirect(route('peserta.dashboard'));
-        } else if (request()->user()->user_type == 'App\Models\Forda') {
-            return redirect(route('forda'));
-        } else {
-            return redirect(route('admin.dashboard'));
-        }
-        //return view('admin.dashboard');
-    })->name('admin');
-    Route::get('shortener/', [LinkShortenerController::class, 'create'])->name('link.create');
-    Route::post('shortener/', [LinkShortenerController::class, 'store'])->name('link.store');
-    Route::get('shortener/update/{id}', [LinkShortenerController::class, 'update'])->name('link.update');
-    Route::post('shortener/update/{id}', [LinkShortenerController::class, 'storeUpdate'])->name('link.update.store');
-    Route::post('shortener/delete/{id}', [LinkShortenerController::class, 'delete'])->name('link.delete');
+  Route::get('/', function () {
+    if (request()->user()->user_type == 'App\Models\Peserta') {
+      return redirect(route('peserta.dashboard'));
+    } else if (request()->user()->user_type == 'App\Models\Forda') {
+      return redirect(route('forda'));
+    } else {
+      return redirect(route('admin.dashboard'));
+    }
+    //return view('admin.dashboard');
+  })->name('admin');
+  Route::get('shortener/', [LinkShortenerController::class, 'create'])->name('link.create');
+  Route::post('shortener/', [LinkShortenerController::class, 'store'])->name('link.store');
+  Route::get('shortener/update/{id}', [LinkShortenerController::class, 'update'])->name('link.update');
+  Route::post('shortener/update/{id}', [LinkShortenerController::class, 'storeUpdate'])->name('link.update.store');
+  Route::post('shortener/delete/{id}', [LinkShortenerController::class, 'delete'])->name('link.delete');
 });
 
 Route::get('SiapJadiEskalatorCita/', function () {
-    return redirect('https://docs.google.com/spreadsheets/d/1lWDY3TdcxkDY0SCrfjCOZpuROXeYcmYOipe6vn7eFYY/edit#gid=1510192419');
+  return redirect('https://docs.google.com/spreadsheets/d/1lWDY3TdcxkDY0SCrfjCOZpuROXeYcmYOipe6vn7eFYY/edit#gid=1510192419');
 });
 
 Route::get('DatabaseEskalatorCita2022/', function () {
-    return redirect('https://docs.google.com/forms/d/e/1FAIpQLSfRumAAzPVoac8rHh0o6R66CMnj9iH851jYhRLwOnaoLMvSMQ/viewform');
+  return redirect('https://docs.google.com/forms/d/e/1FAIpQLSfRumAAzPVoac8rHh0o6R66CMnj9iH851jYhRLwOnaoLMvSMQ/viewform');
 });
 
 //Route untuk Peserta
 Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
-    Route::get('/', [PesertaController::class, 'index'])->name('peserta.dashboard');
-    Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
+  Route::get('/', [PesertaController::class, 'index'])->name('peserta.dashboard');
+  Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
 });
 
 // Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
 
 // Route untuk forda
 Route::prefix('forda')->middleware(['isforda'])->group(function () {
-    Route::get('/', [FordaController::class, 'index'])->name('forda');
+  Route::get('/', [FordaController::class, 'index'])->name('forda');
 });

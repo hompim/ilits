@@ -1,4 +1,17 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/app.js": "/js/app.js?id=466d7a1a320b0625f061",
+    "/css/app.css": "/css/app.css?id=71694f6cb372e60df8e7",
+    "/css/globals.css": "/css/globals.css?id=1745d12b1a20eb2e901f",
+    "/css/fonts.css": "/css/fonts.css?id=869bf3f7e4b64dd0e3df",
+    "/css/pages/main.css": "/css/pages/main.css?id=0e2ddcf312244882af7c",
+    "/css/components/five-items-grid.css": "/css/components/five-items-grid.css?id=7cf43b04c35bdf7203f7",
+    "/css/components/button-link.css": "/css/components/button-link.css?id=639a5e9065a95ef94863",
+    "/css/components/carousel-with-floating-header.css": "/css/components/carousel-with-floating-header.css?id=0eafea52501f13c7d31e",
+    "/css/components/carousel-with-header.css": "/css/components/carousel-with-header.css?id=4097b32d7a2d885fc863",
+    "/css/components/footer.css": "/css/components/footer.css?id=f4ac6c61013396f4dcd4",
+    "/css/components/header.css": "/css/components/header.css?id=d2ffa2e027fc0e36e732",
+    "/css/components/map.css": "/css/components/map.css?id=75f27df3d81fb8911a5e",
+    "/css/components/two-side-card.css": "/css/components/two-side-card.css?id=13b062fbce712a40923b",
+    "/css/components/two-side-color-carousel.css": "/css/components/two-side-color-carousel.css?id=34a459cb129adb1724f1",
+    "/css/components/three-cards-carousel.css": "/css/components/three-cards-carousel.css?id=a670cb67a3f7aa3f2a15"
 }

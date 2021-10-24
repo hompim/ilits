@@ -1,5 +1,5 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner-wrap-two-content carousel-inner w-75 m-auto">
+  <div class="carousel-inner-wrap-two-content carousel-inner m-auto">
     <div class="carousel-item active">
       <div class="inner-carousel-item d-block d-md-flex">
         <img src="{{ $sourceImg1 }}" alt="{{ $aktivitas1 }}">

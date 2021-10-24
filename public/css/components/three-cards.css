@@ -9,7 +9,7 @@
 }
 
 .box-three-cards {
-    width: 310px;
+    width: 24%;
     height: 260px;
     background: linear-gradient(-45deg, #ffffff64, #ffffff37);
     backdrop-filter: blur(20px);
@@ -28,8 +28,20 @@
     border-radius: 10px;
 }
 
-@media screen and (max-width: 290px) {
+@media screen and (max-width: 992px) {
     .box-three-cards {
-        width: 270px;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .box-three-cards {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .box-three-cards {
+        width: 90%;
     }
 }
