@@ -1,0 +1,12 @@
+.iframe-video-embed {
+    width: 65%;
+    height: 520px;
+    border-radius: 14px;
+}
+
+@media screen and (max-width: 576px) {
+    .iframe-video-embed {
+        width: 100%;
+        height: 400px;
+    }
+}
