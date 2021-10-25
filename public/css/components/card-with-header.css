@@ -1,14 +1,15 @@
 
-/* problem: #CardHeader .card{} tidak bisa menjalankan properti border */
+/* problem: #CardWithHeader .card{} tidak bisa menjalankan properti border*/
 #CardWithHeader h3.card-header{
-    border-top-left-radius: 1.125rem;
+    border-top-left-radius: 1.125rem; 
     border-top-right-radius: 1.125rem;
     font-family: "gothammedium";
     font-size: 2rem;
     color: #ffffff;
+    border: 0;
 }
 
-#CardWithHeader .card-body {
+#CardWithHeader .card-content {
     border-bottom-left-radius: 1.125rem;
     border-bottom-right-radius: 1.125rem;
     border-end-end-radius: 1.125rem;
@@ -16,11 +17,11 @@
     backdrop-filter: blur(20px);
 }
 
-#CardWithHeader .card-body img{
+#CardWithHeader .card-content img{
     border-radius: 1.125rem;
 }
 
-#CardWithHeader .card-body p {
+#CardWithHeader .card-content p {
     font-size: 1.625rem;
     color: grey;
     font-family: "gothamlight";
@@ -29,20 +30,26 @@
 
 @media only screen and (max-width: 768px) {
     #CardWithHeader h3.card-header{
-        font-size: 2rem;
+        border-top-left-radius: 0.3125rem; 
+        border-top-right-radius: 0.3125rem;
+    }
+    
+    #CardWithHeader .card-content {
+        border-bottom-left-radius: 0.3125rem;
+        border-bottom-right-radius: 0.3125rem;
+    }
+    #CardWithHeader .card-content img{
+        border-radius: 0.3125rem;
+    }
+
+    #CardWithHeader h3.card-header{
+        font-size: 1.5rem;
     }
     #CardlWithHeader img {
         width: 100% !important;
     }
-}
-
-@media only screen and (max-width: 426px) {
-
-    #CardWithHeader h3.card-header{
+    
+    #CardWithHeader .card-content p {
         font-size: 1rem;
-    }
-
-    #CardWithHeader .card-body p {
-        font-size: 0.75rem !important;
     }
 }

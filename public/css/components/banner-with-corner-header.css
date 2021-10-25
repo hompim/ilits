@@ -22,9 +22,9 @@
     height: 3.75rem;
 }
 
-@media only screen and (max-width: 426px) {
+@media only screen and (max-width: 576px) {
     #BannerWithCornerHeader h2.header{
-        font-size: 0.75rem !important;
+        font-size: 1rem !important;
         top:-0.75rem;
         min-width: 48%;
         border-top-left-radius: 0.5rem;

@@ -21,30 +21,27 @@
     padding: 0 ;
 } 
 
-@media only screen and (max-width: 426px) {
-
-    #SimpleTwoSideCard .text-side h2.title{
-        margin: 0 !important;
-        font-size: 0.875rem !important;
-    }
-    
-    #SimpleTwoSideCard .text-side p.text{
-        line-height: 0.6875rem !important;
-    }
+@media only screen and (max-width: 576px) {
+    #SimpleTwoSideCard .text-side{
+        text-align: center !important;
+    } 
+    #SimpleTwoSideCard .image-side img{
+        border-radius:  0.3125rem !important;
+    } 
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     #SimpleTwoSideCard div.row {
         border-radius: 0.3125rem !important;
     }
-    #SimpleTwoSideCard .text-side .text{
-        font-size: 0.75rem !important;
-    } 
+    #SimpleTwoSideCard .text-side h2{
+        font-size: 1.5rem !important ;
+    }
 }
 
 @media only screen and (max-width: 992px) {
     #SimpleTwoSideCard .text-side h2{
-        font-size: 1.5rem !important;
+        font-size: 2rem ;
     }
     #SimpleTwoSideCard .text-side p{
         font-size: 1rem !important;
