@@ -15,6 +15,10 @@ class CreateFordaDaerahTable extends Migration
     {
         Schema::create('forda_daerah', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('forda_id');
+            $table->foreign('forda_id')->references('id')->on('forda');
+            $table->unsignedBigInteger('kota_kab_id');
+            $table->foreign('kota_kab_id')->references('id')->on('kota_kab');
             $table->timestamps();
         });
     }
