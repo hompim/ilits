@@ -13,7 +13,15 @@ class CreateFordasTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('forda');
+        Schema::create('forda', function (Blueprint $table) {
+            $table->id();
+            $table->string('daerah');
+            $table->string('nama_pj');
+            $table->string('id_line_pj');
+            $table->string('hp_pj');
+            $table->string('link_meet')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
