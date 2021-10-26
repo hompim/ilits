@@ -49,7 +49,7 @@ class FordaSeeder extends Seeder
             ["Surabaya", "Surabaya", "Daniel Hermawan", "fpgys2018", "082112864924", [["Rilo Adi", "BCA", "2310263969"], ["Amelia Rizky Avrilia Putri Wiyono", "Bank Mandiri", "1450013493248"], ["Oryza", "OVO", "081333708150"], ["Oryza", "Gopay", "082195790800"]], [[15000, "Harga Normal"]], '2021-02-20', '08:00', '11:30'],
             ["LAROS ITS", "Banyuwangi", "Zulfa Syaifana Muslih", "543kbpsh", "081226115835", [["Ayunda Iga Indraswari", "Bank Mandiri", "1430019880341"], ["Ayunda Iga", "OVO", "082338768680"]], [[10000, "Presale 1"], [15000, "Presale 2"]], '2021-02-21', '13:00', '16:30'],
             ["FORBBITS", "Bojonegoro", "Sophie Alivia Syaharani", "sophiealivias", "085796451168", [["Rafi Mubarak", "BRI", "812301003850533"], ["Nur Aida Febrianti", "BNI", "0615517646"], ["Rafi Mubarak", "DANA", "085212489351"]], [[20000, "Presale 1"], [25000, "Presale 2"]], '2021-02-21', '08:00', '11:30'],
-            ["Atlantis", "Tulungagung", "Muhammad Dimas Fikri Alvian", "markname", "082231090281", [["-", "Bank Mandiri", "1710005177269"], ["-", "OVO", "082228303042"]], [[10000, "Presale"], ["12000", "Harga Normal"]],'2021-02-21', '08:00', '11:30'],
+            ["Atlantis", "Tulungagung", "Muhammad Dimas Fikri Alvian", "markname", "082231090281", [["-", "Bank Mandiri", "1710005177269"], ["-", "OVO", "082228303042"]], [[10000, "Presale"], ["12000", "Harga Normal"]], '2021-02-21', '08:00', '11:30'],
             ["Saburai Community (SACOM)", "Lampung", "Shandy Satria Sambudi", "shandysatria_87", "085379167837", [["-", "Gopay", "-"], ["-", "OVO", "-"], ["-", "DANA", "-"], ["-", "ShopeePay", "-"]], [[10000, "Harga Normal"]], '2021-02-28', '13:00', '16:30'],
             ["Sahitya", "Jogjakarta", "Chika Ananda", "chikananda30", "085645973827", [["Chika Ananda", "BCA", "4560990672"], ["Chika Ananda", "GOPAY", "085645973827"], ["Chika Ananda", "OVO", "081318496516"]], [[15000, "Pembelian 1 tiket"], [12000, "Pembelian 3 tiket"], [10000, "Pembelian lebih dari 5 tiket"]], '2021-02-20', '08:00', '11:30'],
             ["KEMASS", "Situbondo", "Muhammad Hero P. A.", "mheropermana", "081234461819", [["Nur Indria Y.", "BNI", "0537815301"], ["Farah Roihana", "BRI", "009001066550509"], ["Azriel Dimas F.", "BCA", "1210590630"], ["Muhammad Hero", "Bank Mandiri", "1430017448422"], ["Nada Shakirah", "GOPAY", "085704731399"]], [[10000, "Presale 1 (Buy 4 get 1)"], [15000, "Presale 2 (Buy 4 get 1)"]], '2021-02-20', '13:00', '16:30'],
@@ -75,7 +75,7 @@ class FordaSeeder extends Seeder
             //         'no_rek' => $rek[2]
             //     ]);
             // }
-            
+
             // foreach ($data[6] as $biaya) {
             //     Biaya::create(['forda_id' => $forda->id, 'biaya' => $biaya[0], 'keterangan' => $biaya[1]]);
             // }
@@ -100,8 +100,8 @@ class FordaSeeder extends Seeder
             ]);
             $x++;
         }
-        
-        
+
+
         //admin user
         User::create([
             'name' => 'admin',
