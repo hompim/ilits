@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFordasTable extends Migration
+class CreateKotaKabTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateFordasTable extends Migration
      */
     public function up()
     {
-        Schema::create('forda', function (Blueprint $table) {
+        Schema::create('kota_kab', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->unsignedBigInteger('provinsi_id');
+            $table->foreign('provinsi_id')->references('id')->on('provinsi');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateFordasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('forda');
+        Schema::dropIfExists('kota_kab');
     }
 }
