@@ -13,15 +13,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // $this->call([
+        //     FordaSeeder::class,
+        //     //Kalau gk butuh peserta, komen aja line di bawah
+        //     // PesertaSeeder::class
+        // ]);
+        // $this->call([
+        //     PesertaSeeder::class,
+        //     //Kalau gk butuh peserta, komen aja line di bawah
+        //     // PesertaSeeder::class
+        // ]);
         $this->call([
-            FordaSeeder::class,
-            //Kalau gk butuh peserta, komen aja line di bawah
-            // PesertaSeeder::class
-        ]);
-        $this->call([
-            PesertaSeeder::class,
-            //Kalau gk butuh peserta, komen aja line di bawah
-            // PesertaSeeder::class
+            WilayahSeeder::class,
         ]);
     }
 }
