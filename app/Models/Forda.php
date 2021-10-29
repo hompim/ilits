@@ -10,38 +10,14 @@ class Forda extends Model
     use HasFactory;
     protected $table='forda';
     protected $fillable=[
-        'daerah',
-        'nama_pj',
-        'id_line_pj',
-        'hp_pj',
-        'nama_rek',
-        'nama_bank',
-        'no_rek',
-        'link_meet',
-        'cp_lain'
+        'nama'
     ];
 
     public function user(){
         return $this->morphOne(User::class,'user');
     }
 
-    public function peserta(){
-        return $this->hasMany(Peserta::class);
-    }
-
-    public function biaya(){
-        return $this->hasMany(Biaya::class);
-    }
-    
-    public function rekening(){
-        return $this->hasMany(Rekening::class);
-    }
-
-    public function absen(){
-        return $this->hasOne(Absen::class);
-    }
-    
-    public function group(){
-        return $this->hasMany(Group::class);
+    public function daerah(){
+        return $this->belongsToMany(KotaKab::class, 'forda_daerah', 'forda_id', 'kota_kab_id')->withPivot('created_at', 'updated_at');
     }
 }

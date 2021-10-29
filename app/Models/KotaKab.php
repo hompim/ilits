@@ -17,4 +17,8 @@ class KotaKab extends Model
     public function provinsi(){
         return $this->belongsTo(Provinsi::class, 'provinsi_id');
     }
+
+    public function forda(){
+        return $this->belongsToMany(Forda::class, 'forda_daerah', 'kota_kab_id', 'forda_id')->withPivot('created_at', 'updated_at');
+    }
 }
