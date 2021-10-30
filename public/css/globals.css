@@ -16,3 +16,8 @@ h3,
 h4 {
     font-family: "gothammedium";
 }
+
+section:not(nav section, footer section, section#jumbotron) {
+    padding-top: 5.625rem;
+    padding-bottom: 5.625rem;
+}
