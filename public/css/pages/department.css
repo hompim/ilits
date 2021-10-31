@@ -1,0 +1,96 @@
+
+body{
+    background: linear-gradient(180deg, #111028 0%, #264882 6.57%, #305EA0 23.73%, #251F4A 42.19%, #571277 56.91%, #CD91EA 73.96%, #251F4A 94.94%);
+    color: white !important;
+}
+body h2{
+    font-size: 3.05rem;;
+}
+body section{
+    min-height: 45.625rem !important;
+    /* footernya kena */
+}
+
+/* card sementara */
+.carouselWithFloatingHeader {
+    background: linear-gradient(95.81deg, rgba(255, 255, 255, 0.448) 0%, rgba(255, 255, 255, 0.259) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 1.125rem;
+}
+.carousel-control {
+    top: 50%;
+}
+.carousel-control:first-child {
+    right: 0;
+}
+.carousel-control:last-child {
+    right: 0;
+}
+section:not(:first-child, #ongoing-info) {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+section#jumbotron {
+    min-height: calc(100vh - 66.516px);
+    background: linear-gradient(270deg, #F5F5F1 0.9%, #A9E4E3 100%);
+}
+section#jumbotron h1 {
+    font-size: 3.05rem;
+}
+
+section#video-profile iframe{
+    border-radius: 1rem;
+}
+
+header{
+    background-color: #1B1438;
+}
+footer{
+    background-color: #1B1438;
+}
+/*  */
+
+section#facility article .container {
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+    border-radius: 1.125rem;
+}
+
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 2rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+    a.button-link:not(section#faculty a.button-link, section#jumbotron
+            a.button-link) {
+        margin: auto !important;
+        font-size: 0.875rem !important;
+    }
+    section#jumbotron h1 {
+        font-size: 3rem;
+    }
+    section#jumbotron a {
+        font-size: 0.875rem;
+    }
+    section#faculty a.btn-main {
+        width: 100%;
+    }
+    section#faculty-detail .row h3 {
+        font-size: 1.5rem;
+    }
+    section#achievement a.btn-floating-prev {
+        transform: translateX(-0.5rem);
+    }
+    section#achievement a.btn-floating-next {
+        transform: translateX(0.5rem);
+    }
+    section#facility div.container .row:last-child div:first-child {
+        margin-bottom: 3rem;
+    }
+    section#alumnus div div.row > div {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}

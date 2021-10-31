@@ -55,7 +55,6 @@ section#ongoing-info {
 section#ongoing-info h2 {
     font-size: 3rem;
 }
-
 section#faculty {
     background: linear-gradient(to bottom, #282c5c, #4e3d6d);
 }
@@ -73,7 +72,6 @@ section#achievement {
 section#achievement h2 {
     font-size: 3rem;
 }
-
 section#facility {
     background: linear-gradient(to bottom, #712e90, #aa6bc7);
 }
@@ -82,7 +80,6 @@ section#facility article .container {
     backdrop-filter: blur(20px);
     border-radius: 1.125rem;
 }
-
 section#alumnus {
     background: linear-gradient(to bottom, #aa6bc7, #b681d3);
 }
@@ -104,7 +101,6 @@ section#scholarship {
 section#scholarship h2 {
     font-size: 3rem;
 }
-
 @media only screen and (max-width: 768px) {
     h2 {
         font-size: 2rem !important;
