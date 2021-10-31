@@ -14,5 +14,6 @@
     "/css/components/two-side-card.css": "/css/components/two-side-card.css",
     "/css/components/two-side-color-carousel.css": "/css/components/two-side-color-carousel.css",
     "/css/components/three-cards-carousel.css": "/css/components/three-cards-carousel.css",
-    "/css/components/card-with-floating-header.css": "/css/components/card-with-floating-header.css"
+    "/css/components/card-with-floating-header.css": "/css/components/card-with-floating-header.css",
+    "/css/partials/section-header.css": "/css/partials/section-header.css"
 }
