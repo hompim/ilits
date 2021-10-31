@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Form Registrasi</title>
+
+        <!-- AdminLTE App -->
+        <script src="adminlte.js"></script>
+
+        <!-- Google Font: Source Sans Pro -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+        />
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="plugins/fontawesome-free/css/all.min.css"
+        />
+        <!-- Ionicons -->
+        <link
+            rel="stylesheet"
+            href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+        />
+        <!-- Tempusdominus Bootstrap 4 -->
+        <link
+            rel="stylesheet"
+            href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
+        />
+        <!-- iCheck -->
+        <link
+            rel="stylesheet"
+            href="plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+        />
+        <!-- JQVMap -->
+        <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css" />
+        <!-- Theme style -->
+        <link rel="stylesheet" href="dist/css/adminlte.min.css" />
+        <!-- overlayScrollbars -->
+        <link
+            rel="stylesheet"
+            href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
+        />
+        <!-- Daterange picker -->
+        <link
+            rel="stylesheet"
+            href="plugins/daterangepicker/daterangepicker.css"
+        />
+        <!-- summernote -->
+        <link
+            rel="stylesheet"
+            href="plugins/summernote/summernote-bs4.min.css"
+        />
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <!-- My CSS -->
+        <link rel="stylesheet" href="css/main.css" />
+        <style>
+            body {
+                padding-top: 20rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
+                <title>AdminLTE 3 | Registration Page</title>
+
+                <!-- Google Font: Source Sans Pro -->
+                <link
+                    rel="stylesheet"
+                    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+                />
+                <!-- Font Awesome -->
+                <link
+                    rel="stylesheet"
+                    href="../../plugins/fontawesome-free/css/all.min.css"
+                />
+                <!-- icheck bootstrap -->
+                <link
+                    rel="stylesheet"
+                    href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+                />
+                <!-- Theme style -->
+                <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
+            </head>
+            <body class="hold-transition register-page">
+                <div class="register-box">
+                    <div class="register-logo">
+                        <a href="../../index2.html"><b>Ini Lho ITS</b>2022</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body register-card-body">
+                            <p class="login-box-msg">Daftar akun baru</p>
+
+                            <form action="../../index.html" method="post">
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="Email"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span
+                                                class="fas fa-envelope"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        placeholder="Kata Sandi"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        placeholder="Ketik Ulang Kata Sandi"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Nama Lengkap"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-user"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Dropdown Provinsi & Kabupaten -->
+                                <select
+                                    class="custom-select"
+                                    style="margin-bottom: 15px"
+                                >
+                                    <option selected>Provinsi Domisili</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <br />
+                                <select
+                                    class="custom-select"
+                                    style="margin-bottom: 15px"
+                                >
+                                    <option selected>
+                                        Kabupaten/Kota Domisili
+                                    </option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <br />
+                                <!-- Akhir Dropdown Provinsi & Kabupaten -->
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Alamat"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-user"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Asal Sekolah"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-user"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Dropdown kota/kab asal sekolah -->
+                                <select
+                                    class="custom-select"
+                                    style="margin-bottom: 15px"
+                                >
+                                    <option selected>
+                                        Kota/Kabupaten Asal Sekolah
+                                    </option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <!-- Akhir Dropdown kota/kab asal sekolah-->
+
+                                <!-- Radio -->
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Nomor WhatsApp"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-user"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="flexRadioDefault1"
+                                    >
+                                        Pelajar Aktif
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault2"
+                                        checked
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="flexRadioDefault2"
+                                    >
+                                        Bukan Pelajar Aktif
+                                    </label>
+                                </div>
+                                <br />
+                                <!-- Akhir radio -->
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Kamu tau ILITS dari mana?"
+                                        style="padding-bottom: 5rem"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-user"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div class="icheck-primary">
+                                            <input
+                                                type="checkbox"
+                                                id="agreeTerms"
+                                                name="terms"
+                                                value="agree"
+                                            />
+                                            <label for="agreeTerms">
+                                                Saya setuju dengan
+                                                <a href="#">S&K</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-4">
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary btn-block"
+                                        >
+                                            Daftar
+                                        </button>
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                            </form>
+
+                            <div class="social-auth-links text-center">
+                                <p>- ATAU -</p>
+                                <a href="#" class="btn btn-block btn-primary">
+                                    <i class="fab fa-facebook mr-2"></i>
+                                    Daftar dengan Facebook
+                                </a>
+                                <a href="#" class="btn btn-block btn-danger">
+                                    <i class="fab fa-google-plus mr-2"></i>
+                                    Daftar dengan Google+
+                                </a>
+                            </div>
+
+                            <a href="login.html" class="text-center"
+                                >Saya sudah memiliki akun</a
+                            >
+                        </div>
+                        <!-- /.form-box -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.register-box -->
+
+                <!-- jQuery -->
+                <script src="../../plugins/jquery/jquery.min.js"></script>
+                <!-- Bootstrap 4 -->
+                <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <!-- AdminLTE App -->
+                <script src="adminlte.js"></script>
+            </body>
+        </html>
+    </body>
+</html>
+<!-- Preloader -->
+<div class="preloader flex-column justify-content-center align-items-center">
+    <img
+        class="animation__shake"
+        src="lambang/Group 7197.png"
+        alt="AdminLTELogo"
+        height="60"
+        width="60"
+    />
+</div>
