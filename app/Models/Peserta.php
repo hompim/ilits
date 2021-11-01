@@ -33,10 +33,6 @@ class Peserta extends Model
         return $this->belongsTo(KotaKab::class, 'kab_domisili_id');
     }
 
-    public function provDomisili(){
-        return $this->belongsTo(Provinsi::class, 'provinsi_domisili_id');
-    }
-
     public function user(){
         return $this->morphOne(User::class, 'user');
     }
