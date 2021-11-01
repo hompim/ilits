@@ -36,7 +36,7 @@ class Peserta extends Model
     }
     public function kabupaten()
     {
-        return $this->belongsTo(Kabupaten::class);
+        return $this->belongsTo(KotaKab::class);
     }
     public function nilai()
     {
