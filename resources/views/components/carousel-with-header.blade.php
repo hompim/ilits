@@ -1,4 +1,4 @@
-<div class="overflow-hidden text-center bg-transparent card" id="carouselWithHeader">
+<div class="overflow-hidden text-center bg-transparent card CarouselWithHeader">
     <h3 class="p-4 text-center card-header">{{ $headerTitle }}</h3>
     <div class="p-5 card-body position-relative">
         <div id="carouselWithHeaderList" class="mb-5 bg-transparent carousel slide" data-ride="carousel">
@@ -12,13 +12,13 @@
         </div>
         <a class="position-absolute prev" href="#carouselWithHeaderList" role="button" data-slide="prev">
             <span aria-hidden="true">
-                <i class="text-white fa fa-3x fa-arrow-circle-o-left" aria-hidden="true"></i>
+                <i class="text-white fa fa-3x fa-arrow-left" aria-hidden="true"></i>
             </span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="position-absolute next" href="#carouselWithHeaderList" role="button" data-slide="next">
             <span aria-hidden="true">
-                <i class="text-white fa fa-3x fa-arrow-circle-o-right" aria-hidden="true"></i>
+                <i class="text-white fa fa-3x fa-arrow-right" aria-hidden="true"></i>
             </span>
             <span class="sr-only">Next</span>
         </a>
