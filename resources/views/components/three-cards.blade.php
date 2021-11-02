@@ -1,19 +1,42 @@
-<div class="three-cards d-flex flex-column align-items-center flex-lg-row justify-content-lg-around">
-  <div class="box-three-cards text-center position-relative pt-5">
-    <img src="/img/departmen/{{ $fokus1 }}.png" alt="{{ $fokus1 }}" class="img-three-cards position-absolute" style="background-color: #3FC7C3">
-    <h3 class="pt-2">{{ $fokus1 }}</h3>
-    <p class="lead">{{ $deskripsiFokus1 }}</p>
-  </div>
+<div class="three-cards m-auto text-white d-flex justify-content-md-between justify-content-lg-around">
 
-  <div class="box-three-cards text-center position-relative pt-5">
-    <img src="/img/departmen/{{ $fokus2 }}.png" alt="{{ $fokus2 }}" class="img-three-cards position-absolute" style="background-color: #9829CC">
-    <h3 class="pt-2">{{ $fokus2 }}</h3>
-    <p class="lead">{{ $deskripsiFokus2 }}</p>
-  </div>
+    <div class="item-three-cards">
+      <img src="{{ $img1 }}" alt="{{ $title1 }}">
+      <div class="container-text">
+        <h2>{{ $title1 }}</h2>
+        <p>{{ $text1 }}</p>
+        <ul>
+          @foreach (json_decode($list1, true) as $item)
+            <li>{{ $item }}</li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
 
-  <div class="box-three-cards text-center position-relative pt-5">
-    <img src="/img/departmen/{{ $fokus3 }}.png" alt="{{ $fokus3 }}" class="img-three-cards position-absolute" style="background-color: #264882">
-    <h3 class="pt-2">{{ $fokus3 }}</h3>
-    <p class="lead">{{ $deskripsiFokus3 }}</p>
-  </div>
+    <div class="item-three-cards">
+      <img src="{{ $img2 }}" alt="{{ $title2 }}">
+      <div class="container-text">
+        <h2>{{ $title2 }}</h2>
+        <p>{{ $text2 }}</p>
+        <ul class="d-flex flex-column pl-0">
+          @foreach (json_decode($list2, true) as $item)
+            <li>{{ $item }}</li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
+
+    <div class="item-three-cards">
+      <img src="{{ $img3 }}" alt="{{ $title3 }}">
+      <div class="container-text">
+        <h2>{{ $title3 }}</h2>
+        <p>{{ $text3 }}</p>
+        <ul>
+          @foreach (json_decode($list3, true) as $item)
+            <li>{{ $item }}</li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
+
 </div>
