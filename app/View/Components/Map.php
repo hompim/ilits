@@ -8,18 +8,18 @@ class Map extends Component
 {
     public $src;
     public $href;
-    public $background;
+    public $text;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($src = '', $href='/', $background='')
+    public function __construct($src = '', $href='/', $text='')
     {
         $this->src = $src;
         $this->href = $href;
-        $this->background = $background;
+        $this->text = $text;
     }
 
     /**
