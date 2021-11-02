@@ -22,7 +22,6 @@ class FordaSeeder extends Seeder
         $records = Reader::createFromPath(database_path("seeders/csv/fordas.csv"), 'r');
         $records->setDelimiter(',');
         $records->setHeaderOffset(0);
-        $x = 1;
         foreach ($records as $record) {
             $forda = Forda::create([
                 'nama' => $record['Nama Forda']
@@ -37,12 +36,11 @@ class FordaSeeder extends Seeder
             User::create([
                 'name' => $record['Nama Forda'],
                 'email_verified_at' => Carbon::now(),
-                'email' => 'forda' . $x . '@forda',
-                'password' => Hash::make('passwordasdefg'),
+                'email' => str_replace(' ', '', $forda->nama).'@inilhoits.ac.id',
+                'password' => Hash::make(str_replace(' ', '', $forda->nama).'123'),
                 'user_type' => 'App\Models\Forda',
                 'user_id' => $forda->id
             ]);
-            $x++;
         }
     }
 }
