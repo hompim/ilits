@@ -1,0 +1,32 @@
+#threeCardsCarouselWithHeader a.btn-floating-prev{
+    left:-5%;top:50%;transform:translate(-3rem,-50%);
+    z-index:2
+}
+#threeCardsCarouselWithHeader a.btn-floating-next{
+    right:-5%;top:50%;transform:translate(3rem,-50%);
+    z-index:2
+}
+#threeCardsCarouselWithHeader .card{
+    border-radius:1.125rem;
+    background-color: #FFFFFF;
+    backdrop-filter:blur(20px)
+}
+#threeCardsCarouselWithHeader .card.card-body{
+    background-color:white;
+}
+#threeCardsCarouselWithHeader .card h4{
+    background-color:white;
+    color:#772859;
+    font-size:1.625rem;
+    font-family:gothammedium;
+    font-weight: 700;
+}
+#threeCardsCarouselWithHeader div.rounded-circle{
+    width: 3.75rem;
+    height: 3.75rem;
+    
+}
+#threeCardsCarouselWithHeader .direction{
+    bottom: 0.3125rem;
+    right: 0.3125rem;
+}

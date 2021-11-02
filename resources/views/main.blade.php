@@ -14,6 +14,12 @@
 <link rel="stylesheet" href="{{ asset('css/components/two-side-card.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/five-items-grid.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/three-cards-carousel.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/simple-two-side-carousel.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/simple-two-side-carousel2.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/four-cards-carousel.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/four-cards-carousel2.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/three-cards-carousel-with-header.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/single-glass-two-side-carousel.css') }}">
 @endsection
 
 @section('content')
@@ -37,6 +43,79 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ducimus dicta earum! Inventore explicabo ipsa
       aliquam excepturi id autem obcaecati sequi! Nemo doloremque voluptatibus veniam temporibus rerum accusamus
       repellat vero.</p>
+  </article>
+</section>
+
+<section class="d-flex justify-content-center flex-column" id='about'>
+  <article class="container text-center text-white">
+    <div class="container">
+      <x-simple-two-side-carousel title='Lorem Ipsum' text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eius
+      eligendi, tempore vel
+      ipsa! Provident, possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur
+      officia' images='img/main/party-gelas.png, img/main/party-gelas.png' />
+    </div>
+  </article>
+</section> 
+<section class="d-flex justify-content-center flex-column" id='about'>
+  <article class="container text-center text-white">
+    <div class="container">
+      <x-simple-two-side-carousel2 title='Lorem Ipsum' text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eius
+      eligendi, tempore vel
+      ipsa! Provident, possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur
+      officia' images='img/main/party-gelas.png, img/main/party-gelas.png' />
+    </div>
+  </article>
+</section> 
+
+
+ <section class="text-white d-flex justify-content-center align-items-center flex-column" id='achievement'>
+  <div class="container text-center">
+    <h2 class='mb-5'>Prestasi</h2>
+    <x-three-cards-carousel-with-header titles="Beasiswa Bank Indonesia, Beasiswa Bank Indonesia, Beasiswa Bank Indonesia, Beasiswa Bank Indonesia, Beasiswa Bank Indonesia, Beasiswa Bank Indonesia"
+      images="img/main/beasiswa-bank-indonesia.png,img/main/beasiswa-bank-indonesia.png,img/main/beasiswa-bank-indonesia.png,img/main/beasiswa-bank-indonesia.png,img/main/beasiswa-bank-indonesia.png,img/main/beasiswa-bank-indonesia.png"
+      texts="Some quick example text to build on the card title and make up the bulk
+      of the
+      card's content.|Some quick example text to build on the card title and make up the bulk
+      of the
+      card's content.|Some quick example text to build on the card title and make up the bulk
+      of the
+      card's content.|Some quick example text to build on the card title and make up the bulk
+      of the
+      card's content.|Some quick example text to build on the card title and make up the bulk
+      of the
+      card's content.|Some quick example text to build on the card title and make up the bulk
+      of the
+      card's content." />
+  </div>
+</section> 
+<section class="text-white d-flex justify-content-center align-items-center flex-column" id='achievement'>
+  <div class="container text-center">
+    <x-four-cards-carousel titles="Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum"
+      images="img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png" />
+  </div>
+</section>
+
+<section class="text-white d-flex justify-content-center align-items-center flex-column" id='achievement'>
+  <div class="container text-center">
+    <x-four-cards-carousel2 titles="Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum"
+      images="img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png"
+      texts="CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram" />
+  </div>
+</section>
+<section class="d-flex justify-content-center flex-column" id="about">
+  <article class="container text-center text-white">
+    <h2 class="mb-5"style="font-size:36px">Kerja Sama yang Telah Kami Lakukan</h2>
+    <x-single-glass-two-side-carousel titles="Rektor 1, Rektor 2, Rektor 3, Rektor 4"
+      images="img/main/rektor.png,img/main/rektor.png,img/main/rektor.png,img/main/rektor.png"
+      texts="Some quick example text to build on the card title and make up the bulk
+      of the
+      card's content.| Some quick example text to build on the card title and make up the bulk
+      of the
+      card's content.| Some quick example text to build on the card title and make up the bulk
+      of the
+      card's content.| Some quick example text to build on the card title and make up the bulk
+      of the
+      card's content." />
   </article>
 </section>
 

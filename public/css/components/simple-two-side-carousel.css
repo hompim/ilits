@@ -1,41 +1,44 @@
-#twoSideColorCarousel.row{
+#simpleTwoSideCarousel{
+    margin: 2rem auto;    
+}
+
+#simpleTwoSideCarousel.row{
     background:linear-gradient(-45deg,#ffffff64,#ffffff37);
     backdrop-filter:blur(20px);
     border-radius:1.125rem
 }
-#twoSideColorCarousel div{
+#simpleTwoSideCarousel div{
     flex:1
 }
-#twoSideColorCarousel.row div.desc{
-    background:linear-gradient(-45deg,#ffffff64,#ffffff37);
-    backdrop-filter:blur(20px)
-}
-#twoSideColorCarousel h3{
+
+#simpleTwoSideCarousel h2{
     font-size:3rem;
     font-family:gothammedium
 }
-#twoSideColorCarousel p{
+#simpleTwoSideCarousel p{
+    text-align:justify;
     font-size:1.375rem;
     font-family:gothammedium
 }
-#twoSideColorCarousel .carousel-indicators li{
+
+#simpleTwoSideCarousel .carousel-indicators li{
     width:.8rem;
     height:.8rem
 }
 @media only screen and (max-width:768px){
-    #twoSideColorCarousel.row.d-flex{
+    #simpleTwoSideCarousel.row.d-flex{
         flex-direction:column-reverse
     }
-    #twoSideColorCarousel h2{
+    #simpleTwoSideCarousel h2{
         font-size:2rem
     }
-    #twoSideColorCarousel h3{
+    #simpleTwoSideCarousel h3{
         font-size:2rem
     }
-    #twoSideColorCarousel p{
+    #simpleTwoSideCarousel p{
         font-size:1rem
     }
-    #twoSideColorCarousel a{
+    #simpleTwoSideCarousel a{
         margin:auto;font-size:.875rem
     }
 }

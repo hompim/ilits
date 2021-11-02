@@ -1,0 +1,36 @@
+#fourCardsCarousel a.btn-floating-prev{
+    left:4%;top:50%;transform:translate(-3rem,-50%);
+    z-index:2
+}
+#fourCardsCarousel a.btn-floating-next{
+    right:4%;top:50%;transform:translate(3rem,-50%);
+    z-index:2
+}
+#fourCardsCarousel .card{
+    border-radius:1.125rem;
+    background:linear-gradient(-45deg,#ffffff64,#ffffff37);
+    backdrop-filter:blur(20px);
+}
+#fourCardsCarousel .card h4{
+    margin-bottom: 4.25rem;
+    font-size:1.625rem;
+    font-family:gothammedium;
+    letter-spacing: -0.02em;
+    color:black;
+}
+#fourCardsCarousel .card p{
+    font-size:1.125rem;
+    font-family:gothamlight
+}
+#fourCardsCarousel .grad{
+    width:13.75rem;
+    height:3.125rem;
+    background: linear-gradient(91.6deg, #9829CC 2.71%, #3FC7C3 97.29%);
+}
+#fourCardsCarousel .card-body{
+
+}
+#fourCardsCarousel div.rounded-circle{
+    width: 3.75rem;
+    height: 3.75rem;
+}
