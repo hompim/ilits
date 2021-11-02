@@ -10,11 +10,6 @@
     right: 0;
 }
 
-section:not(:first-child, #ongoing-info) {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-}
-
 section#jumbotron {
     min-height: calc(100vh - 66.516px);
     background: linear-gradient(to bottom, #111028, #456395);

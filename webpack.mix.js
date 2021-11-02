@@ -54,6 +54,14 @@ mix.js("resources/js/app.js", "public/js")
         "resources/css/components/three-cards-carousel.css",
         "public/css/components/three-cards-carousel.css"
     )
+    .styles(
+        "resources/css/components/card-with-floating-header.css",
+        "public/css/components/card-with-floating-header.css"
+    )
+    .styles(
+        "resources/css/partials/section-header.css",
+        "public/css/partials/section-header.css"
+    )
     .webpackConfig(require("./webpack.config"));
 
 if (mix.inProduction()) {
