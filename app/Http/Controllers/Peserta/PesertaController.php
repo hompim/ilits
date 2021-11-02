@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Peserta;
 
+use App\Http\Controllers\Controller;
+use App\Models\Peserta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PesertaController extends Controller
 {

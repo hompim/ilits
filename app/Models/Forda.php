@@ -2,46 +2,29 @@
 
 namespace App\Models;
 
+use App\Models\TryoutForda;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Forda extends Model
 {
     use HasFactory;
-    protected $table='forda';
-    protected $fillable=[
-        'daerah',
-        'nama_pj',
-        'id_line_pj',
-        'hp_pj',
-        'nama_rek',
-        'nama_bank',
-        'no_rek',
-        'link_meet',
-        'cp_lain'
+    protected $table = 'forda';
+    protected $fillable = [
+        'nama'
     ];
 
-    public function user(){
-        return $this->morphOne(User::class,'user');
+    public function user()
+    {
+        return $this->morphOne(User::class, 'user');
     }
 
-    public function peserta(){
-        return $this->hasMany(Peserta::class);
+    public function daerah()
+    {
+        return $this->belongsToMany(KotaKab::class, 'forda_daerah', 'forda_id', 'kota_kab_id')->withPivot('created_at', 'updated_at');
     }
-
-    public function biaya(){
-        return $this->hasMany(Biaya::class);
-    }
-    
-    public function rekening(){
-        return $this->hasMany(Rekening::class);
-    }
-
-    public function absen(){
-        return $this->hasOne(Absen::class);
-    }
-    
-    public function group(){
-        return $this->hasMany(Group::class);
+    public function tryoutForda()
+    {
+        return $this->hasone(TryoutForda::class, 'forda_id');
     }
 }

@@ -10,32 +10,30 @@ class Peserta extends Model
     use HasFactory;
     protected $table = 'peserta';
     protected $fillable = [
+        'nama_lengkap',
+        'provinsi_domisili_id',
+        'kab_domisili_id',
+        'alamat',
         'asal_sekolah',
-        'asal_daerah',
-        'forda_id',
+        'kab_sekolah_sekolah',
         'no_wa',
-        'bukti_bayar',
-        'status',
-        'kartu_pelajar',
-        'pilihan_tryout',
-        'session_id_tryout',
-        'token_tryout',
-        'status_absen',
-        'keterangan_absen',
-        'jam_absen'
+        'is_pelajar_aktif',
+        'tau_ilits',
+        'forda_id'
     ];
-    public function user()
-    {
+    public function forda(){
+        return $this->belongsTo(Forda::class, 'forda_id');
+    }
+
+    public function kabSekolah(){
+        return $this->belongsTo(KotaKab::class, 'kab_sekolah_id');
+    }
+    
+    public function kabDomisili(){
+        return $this->belongsTo(KotaKab::class, 'kab_domisili_id');
+    }
+
+    public function user(){
         return $this->morphOne(User::class, 'user');
-    }
-
-    public function forda()
-    {
-        return $this->belongsTo(Forda::class);
-    }
-
-    public function nilai()
-    {
-        return $this->hasMany(Nilai::class);
     }
 }
