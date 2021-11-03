@@ -23,7 +23,7 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    protected $table='users';
+    protected $table = 'users';
     protected $fillable = [
         'name',
         'email',
@@ -62,7 +62,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
 
-    public function user(){
+    public function user()
+    {
         return $this->morphTo();
+    }
+    public function tryoutUser()
+    {
+        return $this->hasOne(TryoutUser::class, 'user_id');
     }
 }
