@@ -69,6 +69,24 @@
     </head>
 
     <body>
+        <!-- Preloader -->
+        <div
+            class="
+                preloader
+                flex-column
+                justify-content-center
+                align-items-center
+            "
+        >
+            <img
+                class="animation__shake"
+                src="lambang/Group 7197.png"
+                alt="AdminLTELogo"
+                height="60"
+                width="60"
+            />
+        </div>
+
         <!DOCTYPE html>
         <html lang="en">
             <head>
@@ -113,6 +131,7 @@
                                         type="email"
                                         class="form-control"
                                         placeholder="Email"
+                                        name="email"
                                     />
                                     <div class="input-group-append">
                                         <div class="input-group-text">
@@ -127,6 +146,7 @@
                                         type="password"
                                         class="form-control"
                                         placeholder="Kata Sandi"
+                                        name="password"
                                     />
                                     <div class="input-group-append">
                                         <div class="input-group-text">
@@ -139,6 +159,7 @@
                                         type="password"
                                         class="form-control"
                                         placeholder="Ketik Ulang Kata Sandi"
+                                        name="passwor_confirm"
                                     />
                                     <div class="input-group-append">
                                         <div class="input-group-text">
@@ -151,6 +172,7 @@
                                         type="text"
                                         class="form-control"
                                         placeholder="Nama Lengkap"
+                                        name="nama_lengkap"
                                     />
                                     <div class="input-group-append">
                                         <div class="input-group-text">
@@ -162,6 +184,7 @@
                                 <select
                                     class="custom-select"
                                     style="margin-bottom: 15px"
+                                    name="provinsi_domisili"
                                 >
                                     <option selected>Provinsi Domisili</option>
                                     <option value="1">One</option>
@@ -172,6 +195,7 @@
                                 <select
                                     class="custom-select"
                                     style="margin-bottom: 15px"
+                                    name=" kab_domisili"
                                 >
                                     <option selected>
                                         Kabupaten/Kota Domisili
@@ -187,10 +211,11 @@
                                         type="text"
                                         class="form-control"
                                         placeholder="Alamat"
+                                        name="alamat"
                                     />
                                     <div class="input-group-append">
                                         <div class="input-group-text">
-                                            <span class="fas fa-user"></span>
+                                            <span class="fas fa-home"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -199,10 +224,11 @@
                                         type="text"
                                         class="form-control"
                                         placeholder="Asal Sekolah"
+                                        name="asal_sekolah"
                                     />
                                     <div class="input-group-append">
                                         <div class="input-group-text">
-                                            <span class="fas fa-user"></span>
+                                            <span class="fas fa-school"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -210,6 +236,7 @@
                                 <select
                                     class="custom-select"
                                     style="margin-bottom: 15px"
+                                    name="kota_kab_asal_sekolah"
                                 >
                                     <option selected>
                                         Kota/Kabupaten Asal Sekolah
@@ -220,24 +247,27 @@
                                 </select>
                                 <!-- Akhir Dropdown kota/kab asal sekolah-->
 
-                                <!-- Radio -->
                                 <div class="input-group mb-3">
                                     <input
                                         type="text"
                                         class="form-control"
                                         placeholder="Nomor WhatsApp"
+                                        name="no_wa"
                                     />
                                     <div class="input-group-append">
                                         <div class="input-group-text">
-                                            <span class="fas fa-user"></span>
+                                            <span
+                                                class="fab fa-whatsapp"
+                                            ></span>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Radio  -->
                                 <div class="form-check">
                                     <input
                                         class="form-check-input"
                                         type="radio"
-                                        name="flexRadioDefault"
+                                        name="is_pelajar_aktif"
                                         id="flexRadioDefault1"
                                     />
                                     <label
@@ -251,7 +281,7 @@
                                     <input
                                         class="form-check-input"
                                         type="radio"
-                                        name="flexRadioDefault"
+                                        name="is_pelajar_aktif"
                                         id="flexRadioDefault2"
                                         checked
                                     />
@@ -270,10 +300,13 @@
                                         class="form-control"
                                         placeholder="Kamu tau ILITS dari mana?"
                                         style="padding-bottom: 5rem"
+                                        name=" text is_pelajar_aktif "
                                     />
                                     <div class="input-group-append">
                                         <div class="input-group-text">
-                                            <span class="fas fa-user"></span>
+                                            <span
+                                                class="fas fa-question-circle"
+                                            ></span>
                                         </div>
                                     </div>
                                 </div>
@@ -326,13 +359,3 @@
         </html>
     </body>
 </html>
-<!-- Preloader -->
-<div class="preloader flex-column justify-content-center align-items-center">
-    <img
-        class="animation__shake"
-        src="lambang/Group 7197.png"
-        alt="AdminLTELogo"
-        height="60"
-        width="60"
-    />
-</div>
