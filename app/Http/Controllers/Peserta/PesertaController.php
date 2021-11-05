@@ -19,6 +19,10 @@ class PesertaController extends Controller
     {
         return view('peserta.uploadpage');
     }
+    public function absen()
+    {
+        return view('peserta.absensi');
+    }
     public function UploadKartu(Request $request)
     {
         $id = Peserta::find(Auth::user()->user->id);
