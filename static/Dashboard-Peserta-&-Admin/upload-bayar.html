@@ -90,9 +90,6 @@
                             ><i class="fas fa-bars"></i
                         ></a>
                     </li>
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
                 </ul>
 
                 <!-- Right navbar links -->
@@ -164,7 +161,7 @@
                             <!-- Presensi -->
                             <li class="nav-item">
                                 <a
-                                    href="absen-peserta-forda.html"
+                                    href="absen-peserta.html"
                                     class="nav-link"
                                 >
                                     <i class="nav-icon fas fa-edit"></i>
@@ -197,19 +194,8 @@
                 <div class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2">
-                            <div class="col-sm-6">
+                            <div class="col-12">
                                 <h1 class="m-0">Dashboard</h1>
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-sm-6">
-                                <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item">
-                                        <a href="#">Home</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">
-                                        Dashboard
-                                    </li>
-                                </ol>
                             </div>
                             <!-- /.col -->
                         </div>
@@ -316,23 +302,25 @@
                         <!-- /. warning row -->
 
                         <!-- Upload File Bayar -->
-                        <div class="card" style="width: 25rem">
-                            <!-- kalau bisa di img ada foto hasil upload -->
-                            <img
-                                src="dist/img/logo-with-text.png"
-                                class="card-img-top"
-                                alt="..."
-                            />
-                            <div class="card-body">
+                        <div class="card elevation-2">
+                            <div class="card-header">
                                 <h5 class="card-title">Unggah Bukti Bayar</h5>
                                 <p class="card-text">
                                     Foto bukti bayar harus terlihat dengan
                                     jelas!
                                 </p>
-                                <a href="#" class="btn btn-primary"
-                                    >Unggah Bukti Bayar</a
-                                >
                             </div>
+                            <form action="#">
+                            <div class="card-body">
+                                    <input type="file" class="form-control-file border" onchange="preview()" name="bukti_bayar" required style="cursor: pointer;">
+                                    <img id="frame" src="" width="100%"/>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button class="btn btn-primary">
+                                    Submit
+                                </button>
+                            </div>
+                            </form>
                         </div>
 
                         <!-- Akhir File Bayar -->
@@ -393,5 +381,10 @@
         <script src="dist/js/demo.js"></script>
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src="dist/js/pages/dashboard.js"></script>
+        <script type="text/javascript">
+            function preview() {
+                frame.src=URL.createObjectURL(event.target.files[0]);
+            }
+        </script>
     </body>
 </html>
