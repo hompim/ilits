@@ -1,6 +1,9 @@
 section#kekekatan #BarChart .bars{
     background: rgba(255, 255, 255, 0.5);
     border-radius: 2px;
+    height:21.25rem;
+    width: 64%;
+    margin: auto;
 }
 section#kekekatan #BarChart .bars .percent{
     background: linear-gradient(10.6deg, #53EA90 0%, #3B71C7 101.64%);

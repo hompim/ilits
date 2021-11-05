@@ -4,29 +4,22 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class CarouselWithFloatingHeader extends Component
+class SimpleThreeCardsCarousel extends Component
 {
-    public $headerTitle;
     public $titles;
-    public $texts;
     public $images;
-
+    public $carouselId;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($headerTitle, $titles = [], $texts = [], $images = [])
+    public function __construct($titles, $images, $carouselId="simpleThreeCardsCarousel")
     {
-        $this->headerTitle = $headerTitle;
-        if($titles)
             $this->titles = explode(',', $titles);
-        if($texts)
-            $this->texts = explode('|', $texts);
-        if($images)
             $this->images = explode(',', $images);
+            $this->carouselId= $carouselId;
     }
-
 
     /**
      * Get the view / contents that represent the component.
@@ -35,6 +28,6 @@ class CarouselWithFloatingHeader extends Component
      */
     public function render()
     {
-        return view('components.carousel-with-floating-header');
+        return view('components.simple-three-cards-carousel');
     }
 }

@@ -3,12 +3,34 @@ body{
     background: linear-gradient(180deg, #111028 0%, #264882 6.57%, #305EA0 23.73%, #251F4A 42.19%, #571277 56.91%, #CD91EA 73.96%, #251F4A 94.94%);
     color: white !important;
 }
-body h2{
-    font-size: 3.05rem;;
-}
-body section{
+
+body main section{
     min-height: 45.625rem !important;
-    /* footernya kena */
+}
+
+body .SectionHeader{
+    margin-bottom: 4rem;
+}
+section#jumbotron h1 {
+    font-size: 3.05rem;
+}
+section#jumbotron h1, section#jumbotron h2 {
+    background: linear-gradient(267.99deg, #A562E9 0%, #3B71C7 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+section#kenali p{
+    line-height: 1.875rem;
+}
+section#kenali img{
+    object-fit: cover;
+    widows: 100%;
+    height: 100%;
+}
+
+section#video-profile iframe{
+    border-radius: 1rem;
 }
 
 /* card sementara */
@@ -34,13 +56,8 @@ section#jumbotron {
     min-height: calc(100vh - 66.516px);
     background: linear-gradient(270deg, #F5F5F1 0.9%, #A9E4E3 100%);
 }
-section#jumbotron h1 {
-    font-size: 3.05rem;
-}
 
-section#video-profile iframe{
-    border-radius: 1rem;
-}
+
 
 header{
     background-color: #1B1438;
