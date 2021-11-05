@@ -1,0 +1,27 @@
+#simpleThreeCardsCarousel a.btn-floating-prev {
+    left: 0;
+    top: 50%;
+    transform: translate(-3rem, -50%);
+    z-index: 2;
+}
+#simpleThreeCardsCarousel a.btn-floating-next {
+    right: 0;
+    top: 50%;
+    transform: translate(3rem, -50%);
+    z-index: 2;
+}
+#simpleThreeCardsCarousel .card {
+    border-radius: 1.125rem;
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+}
+#simpleThreeCardsCarousel .card img {
+    padding: 3rem 5rem 3rem 5rem ;
+}
+#simpleThreeCardsCarousel .card h4 {
+    display: block;
+    font-size: 1.625rem;
+    font-family: "gothammedium";
+    min-height: 4rem;
+    margin-bottom: 2rem;
+}
