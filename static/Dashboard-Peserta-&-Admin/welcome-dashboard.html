@@ -129,7 +129,7 @@
                             <div class="card card-info">
                                 <div class="card-header">
                                     <h3 class="text-center mt-1">
-                                       <span class="p-2 rounded">Data Diri</span>
+                                        <span class="p-2 rounded">Data Diri</span>
                                     </h3>
                                 </div>
 
@@ -140,68 +140,55 @@
                                         <div class="form-group">
                                             <label for="nama_lengkap">Nama Lengkap</label>
                                             <input type="text" class="form-control" id="nama_lengkap"
-                                                value="Nama Lengkap Peserta" name="nama_lengkap"  readonly/>
+                                                value="Nama Lengkap Peserta" name="nama_lengkap" required />
                                         </div>
                                         <div class="form-group">
                                             <label for="asal_sekolah">Asal Sekolah</label>
                                             <input type="text" class="form-control" id="asal_sekolah"
-                                            value="Asal Sekolah Peserta" name="asal_sekolah"  readonly/>
+                                                value="Asal Sekolah Peserta" name="asal_sekolah" required />
                                         </div>
                                         <div class="form-group">
                                             <label for="kota_kab_asal_sekolah">Kota/Kabupaten Asal Sekolah</label>
                                             <input type="text" class="form-control" id="kota_kab_asal_sekolah"
-                                            value="Kota/Kabupaten Asal Sekolah Peserta" name="kota_kab_asal_sekolah"  readonly/>
+                                                value="Kota/Kabupaten Asal Sekolah Peserta" name="kota_kab_asal_sekolah"
+                                                required />
                                         </div>
                                         <div class="form-group">
                                             <label for="no_wa">No. Whatsapp</label>
                                             <input type="text" class="form-control" id="no_wa"
-                                            value="Kota/Kabupaten Asal Sekolah Peserta" name="no_wa" readonly/>
+                                                value="Kota/Kabupaten Asal Sekolah Peserta" name="no_wa" required />
                                         </div>
                                         <div class="form-group">
                                             <label for="is_pelajar_aktif">Pelajar Aktif</label>
-                                            <input type="text" class="form-control" id="is_pelajar_aktif"
-                                            value="Aktif" name="is_pelajar_aktif" readonly/>
+                                            <input type="text" class="form-control" id="is_pelajar_aktif" value="Aktif"
+                                                name="is_pelajar_aktif" readonly/>
                                         </div>
-                                    </div>
-                                    <!-- /.card-body -->
-                                </form>
-                            </div>
-                            <!-- /. card -->
-                        </div>
-                        <!-- /. col -->
-                    </div>
-                    <!-- /.row -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-primary">
-                                <div class="card-header">
-                                    <h3 class="text-center mt-1">
-                                        <span class="p-2 rounded">
-                                            Pilihan tryout
-                                        </span>
-                                    </h3>
-                                </div>
-                                <form action="">
-                                    <div class="card-body">
+                                        <div class="form-group bg-primary rounded pt-3 pb-2">
+                                            <h3 class="text-center">Pilihan Tryout</h3>
+                                        </div>
                                         <div class="form-group">
                                             <label for="pilihan_tryout">Pilih Tryout</label>
-                                            <select name="" id="" class="form-control" required>
+                                            <select name="pilihan_tryout" id="pilihan_tryout" class="form-control" required>
                                                 <option value="">Pilih Jenis Tryout</option>
                                                 <option value="Saintek">Saintek</option>
                                                 <option value="Soshum">Soshum</option>
                                             </select>
                                         </div>
                                         <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="validasi_data" required/>
-                                            <label class="form-check-label" for="validasi_data">Saya menyatakan bahwa data yang ada telah benar</label>
+                                            <input type="checkbox" class="form-check-input" id="validasi_data" required />
+                                            <label class="form-check-label" for="validasi_data">Saya menyatakan bahwa
+                                                data yang ada telah benar</label>
                                         </div>
                                     </div>
+                                    <!-- /.card-body -->
                                     <div class="card-footer text-center">
                                         <button type="submit" class="btn btn-primary px-5">Submit</button>
                                     </div>
                                 </form>
                             </div>
+                            <!-- /. card -->
                         </div>
+                        <!-- /. col -->
                     </div>
                 </div>
                 <!-- /.container-fluid -->
@@ -225,6 +212,14 @@
 
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#validasi_data').on('click', function () {
+                $('#nama_lengkap, #asal_sekolah, #kota_kab_asal_sekolah, #no_wa, #pilihan_tryout').attr('disabled', $(this).is(':checked'));
+            });
+        });
+    </script>
+
     <!-- jQuery UI 1.11.4 -->
     <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
