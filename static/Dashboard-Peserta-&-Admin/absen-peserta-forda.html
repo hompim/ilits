@@ -43,6 +43,9 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.html" class="nav-link">Home</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -78,8 +81,8 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-header"></li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Dashboard
@@ -97,8 +100,8 @@
             </a>
           </li>
           <!-- Presensi -->
-          <li class="nav-item">
-            <a href="absen-peserta-forda.html" class="nav-link">
+          <li class="nav-item  menu-open">
+            <a href="absen-peserta-forda.html" class="nav-link  active">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Presensi
@@ -131,6 +134,12 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -213,58 +222,125 @@
         </div>
         <!-- /. warning row -->
 
+        <!-- Absen -->
+        <div class="card" style="width: 25rem;">
+            <div class="card-body">
+              <h5 class="card-title">Forda: Forda dummy</h5>
+              <br>
+              <br>
+              <h6 class="card-subtitle"><u>TENTANG TRY OUT</u> </h6>
+              <br>
+              <p class="card-text"><strong>Tanggal : </strong>1 November 2021</p>
+              <p class="card-text"><strong>Waktu   : </strong>23.59 - 00.00</p>
+              <a href="#" class="btn btn-success">Hadir</a>
+              <a href="#" class="btn btn-danger">Tidak Hadir</a>
+            </div>
+          </div>
+        <!-- Akhir Absen -->
+
         <!-- Main row -->
         <div class="row">
-          <section class="col-12">
-            <div class="card elevation-2">
-              <div class="card-header">
-                <h1 class="card-title">
-                  Selamat datang, nama peserta
-                </h1>
-              </div>
-              <div class="card-body">
-                <p>
-                  Untuk bertanya mengenai tryout, hubungi contact person berikut :
-                </p>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-2 col-sm-3 col-6">
-                        Nama
-                      </div>
-                      <div class="col-0">
-                        :
-                      </div>
-                      <div class="col-8">
-                        <span><strong>Lorem, ipsum.</strong></span>
-                      </div>
+            <section class="col-12">
+                <div class="card elevation-2">
+                    <div class="card-header">
+                        <h1 class="card-title">
+                            Absensi Peserta
+                        </h1>
                     </div>
-                    <div class="row">
-                      <div class="col-md-2 col-sm-3 col-6">
-                        ID Line
-                      </div>
-                      <div class="col-0">
-                        :
-                      </div>
-                      <div class="col-8">
-                        <span><strong>Lorem, ipsum.</strong></span>
-                      </div>
+                    <!-- card-body -->
+                    <div class="card-body">
+                        <table
+                            id="example1"
+                            class="
+                                table
+                                table-bordered
+                                table-striped
+                            "
+                        >
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Asal Sekolah</th>
+                                    <th>Jurusan Tryout</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nama Peserta</td>
+                                    <td>SMAN 5 Surabaya</td>
+                                    <td>Saintek</td>
+                                    <td>Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peserta</td>
+                                    <td>SMAN 5 Surabaya</td>
+                                    <td>Saintek</td>
+                                    <td>Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peserta</td>
+                                    <td>SMAN 5 Surabaya</td>
+                                    <td>Saintek</td>
+                                    <td>Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peserta</td>
+                                    <td>SMAN 5 Surabaya</td>
+                                    <td>Saintek</td>
+                                    <td>Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peserta</td>
+                                    <td>SMAN 5 Surabaya</td>
+                                    <td>Saintek</td>
+                                    <td>Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peserta</td>
+                                    <td>SMAN 5 Surabaya</td>
+                                    <td>Saintek</td>
+                                    <td>Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peserta</td>
+                                    <td>SMAN 5 Surabaya</td>
+                                    <td>Saintek</td>
+                                    <td>Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peserta</td>
+                                    <td>SMAN 5 Surabaya</td>
+                                    <td>Saintek</td>
+                                    <td>Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peserta</td>
+                                    <td>SMAN 5 Surabaya</td>
+                                    <td>Saintek</td>
+                                    <td>Pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peserta</td>
+                                    <td>SMAN 5 Surabaya</td>
+                                    <td>Saintek</td>
+                                    <td>Pending</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Asal Sekolah</th>
+                                    <th>Jurusan Tryout</th>
+                                    <th>Status</th>
+                                </tr>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
-                    <div class="row">
-                      <div class="col-md-2 col-sm-3 col-6">
-                        Whatsapp
-                      </div>
-                      <div class="col-0">
-                        :
-                      </div>
-                      <div class="col-8">
-                        <a href="https://wa.me/xxxxxxxx" target="_blank"><span><strong>Lorem, ipsum.</strong></span></a>
-                      </div>
-                    </div>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </section>
+                    <!-- /. card-body -->
+                </div>
+            </section>
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
