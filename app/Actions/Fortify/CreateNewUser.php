@@ -29,10 +29,14 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
 
         $peserta = Peserta::create([
+            'provinsi_domisili_id' => $input['provinsi_domisili_id'],
+            'kab_domisili_id' => $input['kab_domisili_id'],
+            'alamat' => $input['alamat'],
             'asal_sekolah' => $input['asal_sekolah'],
-            'asal_daerah' => $input['asal_daerah'],
+            'kab_sekolah_id' => $input['kab_sekolah_id'],
             'no_wa' => $input['nomor_whatsapp'],
-            'pilihan_tryout' => $input['tryout'],
+            'is_pelajar_aktif' => $input['is_pelajar_aktif'],
+            'tau_ilits' => $input['tau_ilits'],
             'forda_id' => $input['forda']
         ]);
 
