@@ -11,20 +11,6 @@
     z-index:2
 }
 
-#threeCardsContainerCarousel .card-container-1{
-    margin-right: 30px;
-}
-
-#threeCardsContainerCarousel .card-container-2{
-    margin: 0 30px;
-}
-
-#threeCardsContainerCarousel .card-container-3{
-    margin-left: 30px;
-}
-
-
-
 #threeCardsContainerCarousel .card{
     border-radius:1.125rem;
     background:linear-gradient(-45deg,#ffffff64,#ffffff37);
@@ -32,7 +18,7 @@
 }
 
 #threeCardsContainerCarousel .card.card-body{
-    padding: 28px 40px 40px 40px;
+    padding: 28px 60px 40px 60px; 
 }
 
 #threeCardsContainerCarousel .card h4{

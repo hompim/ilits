@@ -8,15 +8,17 @@ class ThreeCardsContainerCarousel extends Component
 {
     public $titles;
     public $images;
+    public $carouselId;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($titles, $images)
+    public function __construct($titles, $images, $carouselId="threeCardsContainerCarousel")
     {
             $this->titles = explode(',', $titles);
             $this->images = explode(',', $images);
+            $this->carouselId= $carouselId;
     }
 
     /**

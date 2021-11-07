@@ -8,6 +8,7 @@ class ThreeCardsCarouselWithHeader extends Component
 {
         public $titles;
         public $images;
+        
         /**
          * Create a new component instance.
          *
