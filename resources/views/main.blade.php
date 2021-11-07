@@ -41,12 +41,6 @@
     </article>
   </section>
 
-<section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
-  <article class="container text-center position-relative">
-    <x-map href='/' background='linear-gradient(-45deg, #305ea0 0%, #a562e9 70%, #fff9ee 100%)'
-      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634595959033!2d112.79273125123773!3d-7.28235067356743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1633755459057!5m2!1sen!2sid' />
-  </article>
-</section>
   <section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
     <article class="container text-center position-relative">
       <x-map text='Virtual Tour ITS' href='/'
