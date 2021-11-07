@@ -1,0 +1,60 @@
+#threeCardsContainerCarousel a.btn-floating-prev{
+    left:-5%;
+    top:50%;
+    transform:translate(-3rem,-50%);
+    z-index:2
+}
+#threeCardsContainerCarousel a.btn-floating-next{
+    right:-5%;
+    top:50%;
+    transform:translate(3rem,-50%);
+    z-index:2
+}
+
+#threeCardsContainerCarousel .card-container-1{
+    margin-right: 30px;
+}
+
+#threeCardsContainerCarousel .card-container-2{
+    margin: 0 30px;
+}
+
+#threeCardsContainerCarousel .card-container-3{
+    margin-left: 30px;
+}
+
+
+
+#threeCardsContainerCarousel .card{
+    border-radius:1.125rem;
+    background:linear-gradient(-45deg,#ffffff64,#ffffff37);
+    backdrop-filter:blur(20px);
+}
+
+#threeCardsContainerCarousel .card.card-body{
+    padding: 28px 40px 40px 40px;
+}
+
+#threeCardsContainerCarousel .card h4{
+    margin-bottom: 28px;
+    font-size:1.625rem;
+    font-family:gothammedium;
+    color:white;
+}
+#threeCardsContainerCarousel .card p{
+    font-size:1.125rem;
+    font-family:gothamlight
+}
+#threeCardsContainerCarousel .grad{
+    font-size:26px;
+    width:13.75rem;
+    height:3.125rem;
+    background: linear-gradient(91.6deg, #53ea90 2.71%, #3b71c7 97.29%);
+}
+#threeCardsContainerCarousel .card-body{
+
+}
+#threeCardsContainerCarousel div.rounded-circle{
+    width: 3.75rem;
+    height: 3.75rem;
+}
