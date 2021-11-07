@@ -63,6 +63,7 @@ Route::get('DatabaseEskalatorCita2022/', function () {
 Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
     Route::get('/', [PesertaController::class, 'index'])->name('peserta.dashboard');
     Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
+    Route::get('/absen', [PesertaController::class, 'absen'])->name('peserta.absen');
 });
 // Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
 

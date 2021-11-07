@@ -6,17 +6,22 @@ use App\Http\Controllers\Controller;
 use App\Models\Peserta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PesertaController extends Controller
 {
     //
     public function index()
     {
-        return view('peserta.index');
+        return view('peserta.dashboard');
     }
     public function UploadPage()
     {
         return view('peserta.uploadpage');
+    }
+    public function absen()
+    {
+        return view('peserta.absensi');
     }
     public function UploadKartu(Request $request)
     {

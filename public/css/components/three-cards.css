@@ -1,47 +1,59 @@
-.three-cards h3 {
-    font-family: gothammedium;
-    font-size: 1.4rem;
+.three-cards {
+  width: 85%;
 }
 
-.three-cards p {
-    font-family: gothamlight;
-    font-size: 1rem;
+.three-cards .item-three-cards {
+  width: 25%;
+  border-bottom: 3px solid grey;
+  background: linear-gradient(to right, #ffffff64, #ffffff37);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
 }
 
-.box-three-cards {
-    width: 24%;
-    height: 260px;
-    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
-    backdrop-filter: blur(20px);
-    border-radius: 18px;
-    margin-bottom: 60px;
+.three-cards .item-three-cards img {
+  width: 100%;
+  border-radius: 18px 18px 0 0;
+  height: 13rem;
+  filter: grayscale(100%);
 }
 
-.img-three-cards {
-    background-color: yellowgreen;
-    padding: 10px;
-    width: 70px;
-    height: 70px;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 10px;
+.item-three-cards li {
+  list-style-type: none;
+}
+
+.container-text {
+  padding: 18px;
+}
+
+@media screen and (max-width: 1200px) {
+  .three-cards {
+    width: 90%;
+  }
+
+  .three-cards .item-three-cards {
+    width: 30%;
+  }
 }
 
 @media screen and (max-width: 992px) {
-    .box-three-cards {
-        width: 40%;
-    }
+  .three-cards .item-three-cards img {
+    height: 10rem;
+  }
 }
 
-@media screen and (max-width: 768px) {
-    .box-three-cards {
-        width: 60%;
-    }
+@media screen and (max-width: 768px){
+  .three-cards {
+    display: block !important;
+  }
+
+  .three-cards .item-three-cards {
+    margin: 0 auto 30px auto;
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .box-three-cards {
-        width: 90%;
-    }
+  .three-cards .item-three-cards {
+    width: 80%;
+  }
 }

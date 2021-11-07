@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="{{ asset('css/components/three-cards-carousel-with-header.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/three-cards-container-carousel.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/single-glass-two-side-carousel.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/two-side-separated-carousel.css') }}">
 @endsection
 
 @section('content')
@@ -94,16 +95,39 @@
 <section class="text-white d-flex justify-content-center align-items-center flex-column" id='achievement'>
   <div class="container text-center">
     <h1>three cards container carousel</h1>
-    <x-three-cards-container-carousel titles="Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi"
-      images="img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png" />
+    <x-three-cards-container-carousel  titles="Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi"
+      images="img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png" />
   </div>
 </section>
 
+<section class="text-white d-flex justify-content-center align-items-center flex-column" id='achievement'>
+  <div class="container text-center">
+    <h1>three cards container carousel2</h1>
+    <x-three-cards-container-carousel carouselId="threecards2" titles="Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi, Departemen Sistem Informasi"
+      images="img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png,img/main/gd-teknik-informatika.png" />
+  </div>
+</section>
+
+<section class="text-white d-flex justify-content-center align-items-center flex-column" id='achievement'>
+  <div class="container text-center">
+    <x-three-cards-carousel titles="Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum"
+      images="img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png"
+      texts="CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram" />
+  </div>
+</section>
+
+  <section class="text-white d-flex justify-content-center align-items-center flex-column" id='achievement'>
+  <div class="container text-center">
+    <x-three-cards-carousel carouselId="threecards2" titles="Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum"
+      images="img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png"
+      texts="CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram" />
+  </div>
+</section>
 
 <section class="text-white d-flex justify-content-center align-items-center flex-column" id='achievement'>
   <div class="container text-center">
     <x-four-cards-carousel titles="Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum, Kevin Systrum"
-      images="img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png" />
+      images="img/main/gd-teknik-informatika.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png,img/main/kevin-systrum.png" />
   </div>
 </section>
 
@@ -114,6 +138,19 @@
       texts="CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram|CEO Of Instagram" />
   </div>
 </section>
+
+<section class="d-flex justify-content-center flex-column" id="about">
+  <article class="container text-center text-white">
+    <h2 class="mb-5"style="font-size:36px">Kerja Sama yang Telah Kami Lakukan</h2>
+    <x-two-side-separated-carousel titles="Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet"
+      images="img/main/rektor.png,img/main/rektor.png,img/main/rektor.png,img/main/rektor.png"
+      texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ipsum eget et et nisl adipiscing orci. Eu ipsum eget et et nisl adipiscing orci.| 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ipsum eget et et nisl adipiscing orci. Eu ipsum eget et et nisl adipiscing orci.|
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ipsum eget et et nisl adipiscing orci. Eu ipsum eget et et nisl adipiscing orci.| 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ipsum eget et et nisl adipiscing orci. Eu ipsum eget et et nisl adipiscing orci." />
+  </article>
+</section>
+
 <section class="d-flex justify-content-center flex-column" id="about">
   <article class="container text-center text-white">
     <h2 class="mb-5"style="font-size:36px">Kerja Sama yang Telah Kami Lakukan</h2>
@@ -137,6 +174,12 @@
       src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634595959033!2d112.79273125123773!3d-7.28235067356743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1633755459057!5m2!1sen!2sid' />
   </article>
 </section>
+  <section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
+    <article class="container text-center position-relative">
+      <x-map text='Virtual Tour ITS' href='/'
+        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634595959033!2d112.79273125123773!3d-7.28235067356743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1633755459057!5m2!1sen!2sid' />
+    </article>
+  </section>
 
   <section class="d-flex justify-content-center flex-column" id='general-info'>
     <article class="container text-center text-white">
