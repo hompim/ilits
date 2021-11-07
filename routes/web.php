@@ -5,6 +5,7 @@ use App\Http\Controllers\OprecStaffController;
 use App\Http\Controllers\LinkShortenerController;
 use App\Http\Controllers\Peserta\PesertaController;
 use App\Http\Controllers\FordaController;
+use App\Http\Controllers\DropdownController;
 use App\Http\Controllers\Peserta\dashboard\Home;
 use App\Models\OprecStaff;
 use Illuminate\Support\Facades\Route;
@@ -61,7 +62,7 @@ Route::get('DatabaseEskalatorCita2022/', function () {
 
 //Route untuk Peserta
 Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
-    Route::get('/', [PesertaController::class, 'index'])->name('peserta.dashboard');
+    Route::get('/', [PesertaController::class, 'index'])->name('peserta');
     Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
     Route::get('/absen', [PesertaController::class, 'absen'])->name('peserta.absen');
 });

@@ -2,6 +2,8 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\Forda;
+use App\Models\FordaDaerah;
 use App\Models\User;
 use App\Models\Peserta;
 use Illuminate\Support\Facades\Hash;
@@ -28,7 +30,10 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
+        $forda_daerah = FordaDaerah::first();
+
         $peserta = Peserta::create([
+            'nama_lengkap' => $input['name'],
             'provinsi_domisili_id' => $input['provinsi_domisili_id'],
             'kab_domisili_id' => $input['kab_domisili_id'],
             'alamat' => $input['alamat'],
@@ -37,7 +42,7 @@ class CreateNewUser implements CreatesNewUsers
             'no_wa' => $input['nomor_whatsapp'],
             'is_pelajar_aktif' => $input['is_pelajar_aktif'],
             'tau_ilits' => $input['tau_ilits'],
-            'forda_id' => $input['forda']
+            'forda_id' => '1'
         ]);
 
         return User::create([

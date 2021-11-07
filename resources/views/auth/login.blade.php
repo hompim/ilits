@@ -81,14 +81,14 @@
 
                             <x-jet-validation-errors class="mb-3 rounded-0" />
 
-          @if (session('status'))
-              <div class="alert alert-success mb-3 rounded-0" role="alert">
-                  {{ session('status') }}
-              </div>
-          @endif
+                            @if (session('status'))
+                                <div class="alert alert-success mb-3 rounded-0" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
 
                             <form action="{{ route('login') }}" method="post">
-                                 @csrf
+                                @csrf
                                 <div class="input-group mb-3">
                                     <input
                                         type="email"
@@ -162,7 +162,7 @@
                             </p>
                             <p class="mb-0">
                                 <a
-                                    href="authentifikasi.html"
+                                    href="{{ route('register') }}"
                                     class="text-center"
                                     >Daftar akun baru</a
                                 >
