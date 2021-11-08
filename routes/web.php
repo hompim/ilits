@@ -23,7 +23,7 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 */
 
 Route::get('/', function () {
-    return view('coming-soon');
+  return view('coming-soon');
 })->name('coming-soon');
 
 // // Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');

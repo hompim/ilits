@@ -1,0 +1,46 @@
+#simpleTwoSideCarousel2{
+    margin: 2rem auto;    
+}
+
+#simpleTwoSideCarousel2.row{
+    background:linear-gradient(-45deg,#ffffff64,#ffffff37);
+    backdrop-filter:blur(20px);
+    border-radius:1.125rem
+}
+#simpleTwoSideCarousel2 div{
+    flex:1
+}
+
+#simpleTwoSideCarousel2 h2{
+    color:black;
+    font-size:2.444rem;
+    font-family:gothammedium
+}
+#simpleTwoSideCarousel2 p{
+    color:#616070;
+    font-size:1.625rem;
+    font-family:gothammedium;
+    text-align: justify;
+}
+
+#simpleTwoSideCarousel2 .carousel-indicators li{
+    width:.8rem;
+    height:.8rem
+}
+@media only screen and (max-width:768px){
+    #simpleTwoSideCarousel2.row.d-flex{
+        flex-direction:column-reverse
+    }
+    #simpleTwoSideCarousel2 h2{
+        font-size:2rem
+    }
+    #simpleTwoSideCarousel2 h3{
+        font-size:2rem
+    }
+    #simpleTwoSideCarousel2 p{
+        font-size:1rem
+    }
+    #simpleTwoSideCarousel2 a{
+        margin:auto;font-size:.875rem
+    }
+}
