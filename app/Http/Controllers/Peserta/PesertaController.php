@@ -4,13 +4,16 @@ namespace App\Http\Controllers\Peserta;
 
 use App\Http\Controllers\Controller;
 use App\Models\Peserta;
+use App\Models\TryoutUser;
+use App\Models\TryoutForda;
+use App\Models\Forda;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PesertaController extends Controller
 {
-    //
+
     public function index()
     {
         return view('peserta.dashboard');
@@ -19,9 +22,34 @@ class PesertaController extends Controller
     {
         return view('peserta.uploadpage');
     }
+
     public function absen()
     {
         return view('peserta.absensi');
+    }
+    public function prosesAbsensi(Request $request)
+    {
+        $kode_presensi_forda = TryoutForda::find(Auth::user()->forda->tryoutForda->id)->kode_presensi;
+        $kode_presensi = $request->kode_presensi;
+        $keterangan_absen = $request->keterangan_absen;
+
+        if ($kode_presensi_forda == $kode_presensi) {
+            //$id = TryoutUser::find(Auth::user()->tryoutUser->id);
+            $status_absen = TryoutUser::findOrFail($id);
+            if ($status_absen) {
+                $status_absen->status_absen = True;
+                $status_absen->keterangan_absen = null;
+                $status_absen->save();
+            }
+        }
+        if ($keterangan_absen != null) {
+            $status_absen = TryoutUser::findOrFail($id);
+            if ($status_absen) {
+                $status_absen->status_absen = False;
+                $status_absen->keterangan_absen = $keterangan_absen;
+                $status_absen->save();
+            }
+        }
     }
     public function UploadKartu(Request $request)
     {
