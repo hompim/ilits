@@ -61,7 +61,7 @@ Route::get('DatabaseEskalatorCita2022/', function () {
 
 //Route untuk Peserta
 Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
-    Route::get('/', [PesertaController::class, 'index'])->name('peserta.dashboard');
+    Route::get('/', [PesertaController::class, 'index'])->name('peserta');
     Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
     Route::get('/absen', [PesertaController::class, 'absen'])->name('peserta.absen');
     Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
