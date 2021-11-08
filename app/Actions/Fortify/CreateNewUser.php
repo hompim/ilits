@@ -2,7 +2,6 @@
 
 namespace App\Actions\Fortify;
 
-use App\Models\Forda;
 use App\Models\FordaDaerah;
 use App\Models\User;
 use App\Models\Peserta;
@@ -33,16 +32,16 @@ class CreateNewUser implements CreatesNewUsers
         $forda_daerah = FordaDaerah::first();
 
         $peserta = Peserta::create([
-            'nama_lengkap' => $input['name'],
+            'nama_lengkap' => $input['name'], // udah ada di kolom users
             'provinsi_domisili_id' => $input['provinsi_domisili_id'],
-            'kab_domisili_id' => $input['kab_domisili_id'],
+            'kab_domisili_id' => $input['kab_domisili_id'], // dependant dropdown?
             'alamat' => $input['alamat'],
             'asal_sekolah' => $input['asal_sekolah'],
             'kab_sekolah_id' => $input['kab_sekolah_id'],
             'no_wa' => $input['nomor_whatsapp'],
             'is_pelajar_aktif' => $input['is_pelajar_aktif'],
             'tau_ilits' => $input['tau_ilits'],
-            'forda_id' => '1'
+            'forda_id' => '1' // apply logic
         ]);
 
         return User::create([
