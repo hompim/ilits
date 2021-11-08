@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
               <label for="redirect">Redirect to</label>
-              <input type="text" name="link" id="redirect" class="form-control" placeholder="Masukkan link yang dituju">
+              <input type="url" name="link" id="redirect" class="form-control" placeholder="Masukkan link yang dituju">
             </div>
             <div class="w-100 d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
