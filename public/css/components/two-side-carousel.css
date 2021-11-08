@@ -1,0 +1,52 @@
+.TwoSideCarousel {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+    border-radius: 1.125rem;
+}
+.TwoSideCarousel h3 {
+    font-size: 3rem;
+}
+.TwoSideCarousel p {
+    font-size: 1.375rem;
+}
+.TwoSideCarousel .carousel-indicators li {
+    width: 0.8rem;
+    height: 0.8rem;
+}
+.TwoSideCarousel a.carousel-control-prev {
+    left: 2rem;
+}
+.TwoSideCarousel a.carousel-control-next {
+    right: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .TwoSideCarousel {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .TwoSideCarousel div div div div div {
+        flex-direction: column;
+    }
+    .TwoSideCarousel div div div div div div {
+        margin-bottom: 1rem;
+        padding-right: 0 !important;
+    }
+    .TwoSideCarousel h3 {
+        font-size: 2rem;
+    }
+    .TwoSideCarousel a {
+        margin: auto;
+    }
+    .TwoSideCarousel a i {
+        font-size: 2rem;
+    }
+    .TwoSideCarousel a.carousel-control-prev {
+        left: 1rem;
+    }
+    .TwoSideCarousel a.carousel-control-next {
+        right: 1rem;
+    }
+}

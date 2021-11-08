@@ -1,3 +1,11 @@
+.carouselWithFloatingHeader .row p{
+        -ms-overflow-style: none; /* for Internet Explorer, Edge */
+        scrollbar-width: none; /* for Firefox */
+        overflow-y: scroll;     
+}
+.carouselWithFloatingHeader .row p::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
 
 .carouselWithFloatingHeader div.floating-header {
     background: linear-gradient(90.75deg, #53EA90 1.37%, #3B71C7 98.71%);

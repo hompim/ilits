@@ -18,8 +18,9 @@ class TryoutUser extends Model
         'keterangan_absen',
         'user_id'
     ];
+
     public function user()
     {
-        return $this->morphOne(User::class, 'user');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

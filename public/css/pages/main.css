@@ -110,14 +110,10 @@ section#scholarship h2 {
     }
     a.button-link:not(section#faculty a.button-link, section#jumbotron
             a.button-link) {
-        margin: auto !important;
-        font-size: 0.875rem !important;
+        margin: auto;
     }
     section#jumbotron h1 {
         font-size: 3rem;
-    }
-    section#jumbotron a {
-        font-size: 0.875rem;
     }
     section#faculty a.btn-main {
         width: 100%;

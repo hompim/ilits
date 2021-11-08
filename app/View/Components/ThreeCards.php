@@ -6,26 +6,39 @@ use Illuminate\View\Component;
 
 class ThreeCards extends Component
 {
-    public $fokus1;
-    public $fokus2;
-    public $fokus3;
-    public $deskripsiFokus1;
-    public $deskripsiFokus2;
-    public $deskripsiFokus3;
+    public $title1;
+    public $title2;
+    public $title3;
+    public $img1;
+    public $img2;
+    public $img3;
+    public $text1;
+    public $text2;
+    public $text3;
+    public $list1;
+    public $list2;
+    public $list3;
+    // Depends on your three cards structure, using text or list.
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($fokus1 = '', $fokus2 = '', $fokus3 = '', $deskripsiFokus1 = '', $deskripsiFokus2 = '', $deskripsiFokus3='')
+    public function __construct($title1 = '', $title2 = '', $title3 = '', $img1 = '', $img2 = '', $img3 = '', $text1 = '', $text2 = '', $text3 = '', $list1 = '', $list2 = '', $list3 = '')
     {
-      $this->fokus1 = $fokus1;
-      $this->fokus2 = $fokus2;
-      $this->fokus3 = $fokus3;
-      $this->deskripsiFokus1 = $deskripsiFokus1;
-      $this->deskripsiFokus2 = $deskripsiFokus2;
-      $this->deskripsiFokus3 = $deskripsiFokus3;
+      $this->title1 = $title1;
+      $this->title2 = $title2;
+      $this->title3 = $title3;
+      $this->img1 = $img1;
+      $this->img2 = $img2;
+      $this->img3 = $img3;
+      $this->text1 = $text1;
+      $this->text2 = $text2;
+      $this->text3 = $text3;
+      $this->list1 = json_encode($list1);
+      $this->list2 = json_encode($list2);
+      $this->list3 = json_encode($list3);
     }
 
     /**
