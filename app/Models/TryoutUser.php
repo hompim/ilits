@@ -16,7 +16,8 @@ class TryoutUser extends Model
         'password_tryout',
         'status_absen',
         'keterangan_absen',
-        'user_id'
+        'user_id',
+        'peserta_id'
     ];
 
     public function user()

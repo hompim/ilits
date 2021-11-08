@@ -64,10 +64,12 @@ Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
     Route::get('/', [PesertaController::class, 'index'])->name('peserta.dashboard');
     Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
     Route::get('/absen', [PesertaController::class, 'absen'])->name('peserta.absen');
+    Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
 });
 // Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
 
 // Route untuk forda
 Route::prefix('forda')->middleware(['isforda'])->group(function () {
     Route::get('/', [FordaController::class, 'index'])->name('forda');
+    Route::get('/absensi', [PesertaController::class, 'absensi'])->name('forda.absensi');
 });

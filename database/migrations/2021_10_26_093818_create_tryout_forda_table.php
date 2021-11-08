@@ -26,6 +26,7 @@ class CreateTryoutFordaTable extends Migration
             $table->string('id_line_pj');
             $table->string('hp_pj');
             $table->string('link_meet')->nullable();
+            $table->string('kode_presensi')->nullable();
             $table->foreign('forda_id')->references('id')->on('forda');
             $table->timestamps();
         });
