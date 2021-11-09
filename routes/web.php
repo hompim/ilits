@@ -23,7 +23,7 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 */
 
 Route::get('/', function () {
-  return view('coming-soon');
+    return view('coming-soon');
 })->name('coming-soon');
 
 // // Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
@@ -65,6 +65,7 @@ Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
     Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
     Route::get('/absen', [PesertaController::class, 'absen'])->name('peserta.absen');
     Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
+    Route::post('/welcome{id}', [PesertaController::class, 'welcome'])->name('peserta.welcome');
 });
 // Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
 
