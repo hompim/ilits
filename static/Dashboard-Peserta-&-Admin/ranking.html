@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ini Lho ITS! 2022 - Dashboard</title>
+  <!-- Icon -->
+  <link rel="icon" href="dist/img/logo.png">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="dist/img/logo.png" alt="Logo ILITS 2022" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <div class="user-panel mt-1 mb-2 d-flex">
+            <div class="info">
+              <a href="#" class="d-block">Nama Peserta</a>
+            </div>
+            <div class="image">
+              <img src="dist/img/avatar5.png" class="img-circle elevation-1" alt="User Image">
+            </div>
+          </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-light-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link logo-switch">
+      <img src="dist/img/logo-with-text.png" alt="Logo ILITS 2022" class="brand-image-xl logo-xl">
+      <img src="dist/img/logo.png" alt="Logo ILITS 2022" class="brand-image-xs logo-xs" style="left: 12px">
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-header"></li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-columns"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-header"></li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-money-bill-wave"></i>
+              <p>
+                Upload Bukti Bayar
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Presensi
+                <span class="right badge badge-danger"> 1</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item  menu-open">
+            <a href="ranking.html" class="nav-link active">
+              <i class="nav-icon fas fa-trophy"></i>
+              <p>
+                Papan ranking
+                <span class="right badge badge-success"> 1</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-header"></li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-power-off"></i>
+              <p>
+                Keluar
+              </p>
+            </a>
+          </li>
+          </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box border-info elevation-2">
+              <div class="inner">
+                <p class="text-info">Forda</p>
+
+                <h3>Surabaya</h3>
+              </div>
+              <div class="icon">
+                <i class="ion ion-ios-people"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box border-success elevation-2">
+              <div class="inner">
+                <p class="text-success">Pembayaran</p>
+
+                <h3>Belum</h3>
+              </div>
+              <div class="icon">
+                <i class="ion ion-cash"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box border-warning elevation-2">
+              <div class="inner">
+                <p class="text-warning">Konfirmasi Email</p>
+
+                <h3>Sudah</h3>
+              </div>
+              <div class="icon">
+                <i class="ion ion-email"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box border-danger elevation-2">
+              <div class="inner">
+                <p class="text-danger">Pilihan Tryout</p>
+
+                <h3>Saintek</h3>
+              </div>
+              <div class="icon">
+                <i class="ion ion-ios-paper"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Main row -->
+        <div class="row">
+          <section class="col-12">
+            <div role="tabpanel">
+                <!-- List group -->
+                <div class="list-group list-group-horizontal mb-3 elevation-2" id="myList" role="tablist">
+                  <a class="list-group-item list-group-item-action active" data-toggle="list" href="#ranking_nasional" role="tab"><i class="fas fa-flag" aria-hidden="true"></i>  Nasional</a>
+                  <a class="list-group-item list-group-item-action" data-toggle="list" href="#ranking_forda" role="tab"><i class="fas fa-city    "></i> Forda</a>
+                </div>
+                <div class="tab-content">
+                <div class="tab-pane fade show active" id="ranking_nasional" role="tabpanel">
+                    <div class="card elevation-2">
+                        <div class="card-header">
+                          <h3 class="card-title">Papan Ranking Nasional</h3>
+                          <div class="card-tools  my-2">
+                            <div class="input-group input-group-sm" style="width: 270px;">
+                              <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                              <div class="input-group-append">
+                                <button type="submit" class="btn btn-default">
+                                  <i class="fas fa-search"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                          <table id="rankingNasional" class="table table-bordered table-hover">
+                            <thead>
+                            <tr class="bg-danger">
+                              <th>No.</th>
+                              <th>Nama</th>
+                              <th>Asal Sekolah</th>
+                              <th>Skor</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="bg-info">
+                              <td>1</td>
+                              <td>Anda</td>
+                              <td>SMA 5 Surabaya</td>
+                              <td>100</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>7</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>8</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>9</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>10</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>11</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>12</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>13</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>14</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>15</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>16</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama</th>
+                                <th>Asal Sekolah</th>
+                                <th>Skor</th>
+                            </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+                        <!-- /.card-body -->
+                      </div>
+                      <!-- /.card -->
+                </div>
+                <div class="tab-pane fade" id="ranking_forda" role="tabpanel">
+                    <div class="card elevation-2">
+                        <div class="card-header">
+                          <h3 class="card-title">Papan Ranking Forda</h3>
+                          <div class="card-tools my-2">
+                            <div class="input-group input-group-sm" style="width: 270px;">
+                              <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                              <div class="input-group-append">
+                                <button type="submit" class="btn btn-default">
+                                  <i class="fas fa-search"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                          <table id="rankingForda" class="table table-bordered table-hover">
+                            <thead>
+                            <tr class="bg-danger">
+                              <th>No.</th>
+                              <th>Nama</th>
+                              <th>Asal Sekolah</th>
+                              <th>Skor</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="bg-info">
+                              <td>1</td>
+                              <td>Anda</td>
+                              <td>SMA 5 Surabaya</td>
+                              <td>100</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>6</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>7</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>8</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>9</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <td>10</td>
+                              <td>Nama Peserta</td>
+                              <td>SMA Peserta</td>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Nama Peserta</td>
+                                <td>SMA Peserta</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>12</td>
+                                <td>Nama Peserta</td>
+                                <td>SMA Peserta</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>13</td>
+                                <td>Nama Peserta</td>
+                                <td>SMA Peserta</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>14</td>
+                                <td>Nama Peserta</td>
+                                <td>SMA Peserta</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>15</td>
+                                <td>Nama Peserta</td>
+                                <td>SMA Peserta</td>
+                                <td>0</td>
+                              </tr>
+                              <tr>
+                                <td>16</td>
+                                <td>Nama Peserta</td>
+                                <td>SMA Peserta</td>
+                                <td>0</td>
+                              </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama</th>
+                                <th>Asal Sekolah</th>
+                                <th>Skor</th>
+                            </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+                        <!-- /.card-body -->
+                      </div>
+                      <!-- /.card -->
+                </div>
+              </div>
+              </div>
+          </section>
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; <a href="https://inilho.its.ac.id/">Ini Lho ITS! 2022</a>.</strong>
+    All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="plugins/jszip/jszip.min.js"></script>
+<script src="plugins/pdfmake/pdfmake.min.js"></script>
+<script src="plugins/pdfmake/vfs_fonts.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $('#rankingNasional').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+    $('#rankingForda').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+</body>
+</html>
