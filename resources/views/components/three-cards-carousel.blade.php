@@ -1,8 +1,8 @@
-<div id="threeCardsCarousel" class="carousel slide carousel-multi-item position-relative" data-ride="carousel">
+<div id="threeCardsCarousel" class=" {{$carouselId}} carousel slide carousel-multi-item position-relative" data-ride="carousel">
     <div class="controls-top">
-        <a class="btn-floating btn-floating-prev position-absolute" href="#threeCardsCarousel" data-slide="prev"><i
+        <a class="btn-floating btn-floating-prev position-absolute" href=".{{$carouselId}}" data-slide="prev"><i
                 class="text-white fa fa-3x fa-arrow-circle-o-left" aria-hidden="true"></i></a>
-        <a class="btn-floating btn-floating-next position-absolute" href="#threeCardsCarousel" data-slide="next"><i
+        <a class="btn-floating btn-floating-next position-absolute" href=".{{$carouselId}}" data-slide="next"><i
                 class="text-white fa fa-3x fa-arrow-circle-o-right" aria-hidden="true"></i></a>
     </div>
     <div class="carousel-inner" role="listbox">

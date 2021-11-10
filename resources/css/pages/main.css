@@ -10,11 +10,6 @@
     right: 0;
 }
 
-section:not(:first-child, #ongoing-info) {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-}
-
 section#jumbotron {
     min-height: calc(100vh - 66.516px);
     background: linear-gradient(to bottom, #111028, #456395);
@@ -119,14 +114,10 @@ section#scholarship h2 {
     }
     a.button-link:not(section#faculty a.button-link, section#jumbotron
             a.button-link) {
-        margin: auto !important;
-        font-size: 0.875rem !important;
+        margin: auto;
     }
     section#jumbotron h1 {
         font-size: 3rem;
-    }
-    section#jumbotron a {
-        font-size: 0.875rem;
     }
     section#faculty a.btn-main {
         width: 100%;

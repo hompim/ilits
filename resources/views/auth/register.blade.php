@@ -1,112 +1,230 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-        <x-jet-validation-errors class="mb-3" />
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Form Registrasi</title>
 
-        <div class="card-body">
-            <form method="POST" action="{{ route('register') }}">
-                @csrf
+<!-- Icon -->
+<link rel="icon" href="{{asset('dashboard/dist/img/logo.png')}}" />
 
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('Name') }}" />
+<!-- AdminLTE App -->
+<script src="{{asset('assets/dist/js/adminlte.min.js')}}"></script>
 
-                    <x-jet-input class="{{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name"
-                                 :value="old('name')" required autofocus autocomplete="name" />
-                    <x-jet-input-error for="name"></x-jet-input-error>
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+<!-- Font Awesome -->
+<link rel="stylesheet" href="{{asset('assets/plugins/fontawesome-free/css/all.min.css')}}" />
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+<!-- Tempusdominus Bootstrap 4 -->
+<link rel="stylesheet" href="{{asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}" />
+<!-- iCheck -->
+<link rel="stylesheet" href="{{asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}" />
+<!-- JQVMap -->
+<link rel="stylesheet" href="{{asset('plugins/jqvmap/jqvmap.min.css')}}" />
+<!-- Theme style -->
+<link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.css')}}" />
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}" />
+<!-- Daterange picker -->
+<link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}" />
+<!-- summernote -->
+<link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}" />
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+<!-- My CSS -->
+<link rel="stylesheet" href="{{asset('css/auth-main.css')}}" />
+<style>
+body {
+padding-top: 20rem;
+}
+</style>
+</head>
+
+<body>
+<!-- Preloader -->
+<div class="
+            preloader
+            flex-column
+            justify-content-center
+            align-items-center
+        ">
+<img class="animation__shake" src="{{asset('dashboard/dist/img/logo.png')}}" alt="AdminLTELogo" height="60" width="60" />
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AdminLTE 3 | Registration Page</title>
+
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+<!-- Font Awesome -->
+<link rel="stylesheet" href="{{asset('assets/plugins/fontawesome-free/css/all.min.css')}}" />
+<!-- icheck bootstrap -->
+<link rel="stylesheet" href="{{asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}" />
+<!-- Theme style -->
+<link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}" />
+</head>
+
+<body class="hold-transition register-page">
+<div class="register-box">
+<div class="register-logo">
+<a href="index2.html"><b>Ini Lho ITS</b>2022</a>
+</div>
+
+<div class="card">
+<div class="card-body register-card-body">
+    <p class="login-box-msg">Daftar akun baru</p>
+
+    <form action="{{ route('register') }}" method="post">
+        @csrf
+        <div class="input-group mb-3">
+            <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email" :value="old('email')" required placeholder="Email" />
+            <x-jet-input-error for="email"></x-jet-input-error>
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
                 </div>
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('Asal Sekolah') }}" />
-
-                    <x-jet-input class="{{ $errors->has('asal_sekolah') ? 'is-invalid' : '' }}" type="text" name="asal_sekolah"
-                                 :value="old('asal_sekolah')" required />
-                    <x-jet-input-error for="asal_sekolah"></x-jet-input-error>
-                </div>
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('Asal Daerah') }}" />
-
-                    <x-jet-input class="{{ $errors->has('asal_daerah') ? 'is-invalid' : '' }}" type="text" name="asal_daerah"
-                                 :value="old('asal_daerah')" required />
-                    <x-jet-input-error for="asal_daerah"></x-jet-input-error>
-                </div>
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('No Whatsapp') }}" />
-
-                    <x-jet-input class="{{ $errors->has('nomor_whatsapp') ? 'is-invalid' : '' }}" type="text" name="nomor_whatsapp"
-                                 :value="old('nomor_whatsapp')" required />
-                    <x-jet-input-error for="nomor_whatsapp"></x-jet-input-error>
-                </div>
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('Email') }}" />
-
-                    <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
-                                 :value="old('email')" required />
-                    <x-jet-input-error for="email"></x-jet-input-error>
-                </div>
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('Password') }}" />
-
-                    <x-jet-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"
-                                 name="password" required autocomplete="new-password" />
-                    <x-jet-input-error for="password"></x-jet-input-error>
-                </div>
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('Confirm Password') }}" />
-
-                    <x-jet-input class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
-                </div>
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('Forda') }}" />
-                    <x-jet-input class="{{ $errors->has('forda') ? 'is-invalid' : '' }}" type="number" name="forda"
-                                 :value="old('forda')" required />
-                    <x-jet-input-error for="forda"></x-jet-input-error>
-
-                        {{-- <select id="forda" class="rounded-md p-2 shadow-sm block mt-1 w-full" name="forda" :value="old('forda')" required autofocus>
-                            @foreach($forda as $f)
-                                 @if(date('Y-m-d',strtotime('-3 days',strtotime($f->absen->date)))==date('Y-m-d')&&date('H:i:s')<=date('H:i:s',strtotime('17:00:00')))
-                                <option value="{{$f->id}}">{{$f->daerah}} - {{$f->user->name}}</option>
-                                @elseif(date('Y-m-d',strtotime('-3 days',strtotime($f->absen->date)))>date('Y-m-d'))
-                                <option value="{{$f->id}}">{{$f->daerah}} - {{$f->user->name}}</option>
-                                @endif
-                            @endforeach
-                        </select> --}}
-                </div>
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('Pilihan Tryout') }}" />
-                    <select id="tryout" class="p-2 rounded-md shadow-sm block mt-1 w-full" name="tryout" :value="old('tryout')" required autofocus>
-                            <option value="saintek">Saintek</option>
-                            <option value="soshum">Soshum</option>
-                        </select>
-                </div>
-
-                @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                    <div class="mb-3">
-                        <div class="custom-control custom-checkbox">
-                            <x-jet-checkbox id="terms" name="terms" />
-                            <label class="custom-control-label" for="terms">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                            'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'">'.__('Terms of Service').'</a>',
-                                            'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'">'.__('Privacy Policy').'</a>',
-                                    ]) !!}
-                            </label>
-                        </div>
-                    </div>
-                @endif
-
-                <div class="mb-0">
-                    <div class="d-flex justify-content-end align-items-baseline">
-                        <a class="text-muted mr-3 text-decoration-none" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
-                        </a>
-
-                        <x-jet-button>
-                            {{ __('Register') }}
-                        </x-jet-button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        <div class="input-group mb-3">
+            <x-jet-input class="{{ $errors->has('password') ? 'is-invalid' : '' }}" type="password"
+                name="password" required autocomplete="new-password" placeholder="Kata Sandi"/>
+            <x-jet-input-error for="password"></x-jet-input-error>
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <x-jet-input class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Ketik Ulang Kata Sandi"/>
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <x-jet-input class="{{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="Nama Lengkap"/>
+            <x-jet-input-error for="name"></x-jet-input-error>
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Dropdown Provinsi & Kabupaten -->
+        <select class="custom-select" style="margin-bottom: 15px" name="provinsi_domisili_id" required autofocus>
+            @foreach($provinsi as $p)
+                <option value="{{$p->id}}">{{$p->nama}}</option>
+            @endforeach
+        </select>
+        <br />
+        <select class="custom-select" style="margin-bottom: 15px" name=" kab_domisili_id">
+            @foreach($kabupaten as $k)
+                <option value="{{$k->id}}">{{$k->nama}}</option>
+            @endforeach
+        </select>
+        <br />
+        <!-- Akhir Dropdown Provinsi & Kabupaten -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Alamat" name="alamat" />
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-home"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Asal Sekolah" name="asal_sekolah" />
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-school"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Dropdown kota/kab asal sekolah -->
+        <select class="custom-select" style="margin-bottom: 15px" name="kab_sekolah_id">
+            @foreach($kabupaten as $k)
+                <option value="{{$k->id}}">{{$k->nama}}</option>
+            @endforeach
+        </select>
+        </select>
+        <!-- Akhir Dropdown kota/kab asal sekolah-->
+
+        <div class="input-group mb-3">
+            <x-jet-input class="{{ $errors->has('nomor_whatsapp') ? 'is-invalid' : '' }}" type="text" name="nomor_whatsapp" :value="old('nomor_whatsapp')" required autofocus autocomplete="nomor_whatsapp" placeholder="Nomor WhatsApp"/>
+            <div class="input-group-append">
+                <div class="input-group-text">
+                <span class="fab fa-whatsapp"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Radio  -->
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="1" name="is_pelajar_aktif" id="flexRadioDefault1" />
+            <label class="form-check-label"  for="flexRadioDefault1">
+            Pelajar Aktif
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="0" name="is_pelajar_aktif" id="flexRadioDefault2" checked />
+            <label label class="form-check-label"  for="flexRadioDefault2">
+            Bukan Pelajar Aktif
+            </label>
+        </div>
+        <br />
+        <!-- Akhir radio -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Kamu tau ILITS dari mana?" style="padding-bottom: 5rem" name="tau_ilits" />
+            <div class="input-group-append">
+                <div class="input-group-text">
+                <span class="fas fa-question-circle"></span>
+            </div>
+            </div>
+        </div>
+
+    <div class="row">
+    <div class="col-8">
+    <div class="icheck-primary">
+        <input type="checkbox" id="agreeTerms" name="terms" value="agree" />
+        <label for="agreeTerms">
+        Saya setuju dengan
+        <a href="#">S&K</a>
+        </label>
+    </div>
+    </div>
+    <!-- /.col -->
+    <div class="col-4">
+    <button type="submit" class="btn btn-primary btn-block">
+        Daftar
+    </button>
+    </div>
+    <!-- /.col -->
+    </div>
+    </form>
+
+    <a href="{{ route('login') }}" class="text-center">Saya sudah memiliki akun</a>
+</div>
+<!-- /.form-box -->
+</div>
+<!-- /.card -->
+</div>
+<!-- /.register-box -->
+
+<!-- jQuery -->
+<script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('assets/dist/js/adminlte.js')}}"></script>
+</body>
+
+</html>

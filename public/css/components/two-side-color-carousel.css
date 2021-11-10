@@ -1,1 +1,43 @@
-#twoSideColorCarousel.row{background:linear-gradient(-45deg,#ffffff64,#ffffff37);backdrop-filter:blur(20px);border-radius:1.125rem}#twoSideColorCarousel div{flex:1}#twoSideColorCarousel.row div.desc{background:linear-gradient(-45deg,#ffffff64,#ffffff37);backdrop-filter:blur(20px)}#twoSideColorCarousel h3{font-size:3rem;font-family:gothammedium}#twoSideColorCarousel p{font-size:1.375rem;font-family:gothammedium}#twoSideColorCarousel .carousel-indicators li{width:.8rem;height:.8rem}@media only screen and (max-width:768px){#twoSideColorCarousel.row.d-flex{flex-direction:column-reverse}#twoSideColorCarousel h2{font-size:2rem}#twoSideColorCarousel h3{font-size:2rem}#twoSideColorCarousel p{font-size:1rem}#twoSideColorCarousel a{margin:auto;font-size:.875rem}}
+#twoSideColorCarousel.row {
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+    border-radius: 1.125rem;
+}
+#twoSideColorCarousel div {
+    flex: 1;
+}
+#twoSideColorCarousel.row div.desc {
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+}
+#twoSideColorCarousel h3 {
+    font-size: 3rem;
+    font-family: "gothammedium";
+}
+#twoSideColorCarousel p {
+    font-size: 1.375rem;
+    font-family: "gothammedium";
+}
+#twoSideColorCarousel .carousel-indicators li {
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+@media only screen and (max-width: 768px) {
+    #twoSideColorCarousel.row.d-flex {
+        flex-direction: column-reverse;
+    }
+    #twoSideColorCarousel h2 {
+        font-size: 2rem;
+    }
+    #twoSideColorCarousel h3 {
+        font-size: 2rem;
+    }
+    #twoSideColorCarousel p {
+        font-size: 1rem;
+    }
+    #twoSideColorCarousel a {
+        margin: auto;
+        font-size: 0.875rem;
+    }
+}

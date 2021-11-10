@@ -1,0 +1,75 @@
+#singleGlassTwoSideCarousel .card-right{
+    width:300px;
+    height:100%;
+    right: 15%;
+    top:0;
+    background:linear-gradient(-45deg,#ffffff64,#ffffff37);
+    backdrop-filter:blur(20px);
+    border-radius:1.125rem
+}
+#singleGlassTwoSideCarousel .card-img img{
+    margin-right:23.5%;
+}
+#singleGlassTwoSideCarousel .div-dua h2{
+    border-bottom: 0.375rem solid black;
+    color: black;
+    font-size: 2rem;
+    font-family:gothammedium;
+    line-height: 1.875rem;
+    text-align: left;
+}
+#singleGlassTwoSideCarousel .div-dua p{
+    color: #616070;
+    font-size: 1.625rem;
+    font-family:gothammedium;
+    text-align: left;
+    line-height: 1.563rem;
+}
+#singleGlassTwoSideCarousel a.btn-floating-prev{
+    left:10%;top:50%;transform:translate(-3rem,-50%);
+    z-index:2
+}
+#singleGlassTwoSideCarousel a.btn-floating-next{
+    right:10%;top:50%;transform:translate(3rem,-50%);
+    z-index:2
+}
+@media only screen and (max-width:1200px){
+    #singleGlassTwoSideCarousel .div-dua{
+        height:40rem;
+    }
+    #singleGlassTwoSideCarousel img{
+        align-items:center;
+        width: 75%;
+    }
+    #singleGlassTwoSideCarousel .card-img img{
+        margin-right: 0;
+    }
+    #singleGlassTwoSideCarousel .card-right{
+        height: 72.5%;
+        width:100%;
+        right:0;
+        top: 90%;
+    }
+    #singleGlassTwoSideCarousel a.btn-floating-prev{
+        left:10%;top:25%;transform:translate(-3rem,-50%);
+        z-index:2
+    }
+    #singleGlassTwoSideCarousel a.btn-floating-next{
+        right:10%;top:25%;transform:translate(3rem,-50%);
+        z-index:2
+    }
+   #singleGlassTwoSideCarousel h2{
+        font-size:2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+   #singleGlassTwoSideCarousel h3{
+        font-size:2rem
+    }
+   #singleGlassTwoSideCarousel p{
+        font-size:1rem
+    }
+   #singleGlassTwoSideCarousel a{
+        margin:auto;font-size:.875rem
+    }
+}

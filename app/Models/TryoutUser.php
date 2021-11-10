@@ -16,10 +16,12 @@ class TryoutUser extends Model
         'password_tryout',
         'status_absen',
         'keterangan_absen',
-        'user_id'
+        'user_id',
+        'peserta_id'
     ];
+
     public function user()
     {
-        return $this->morphOne(User::class, 'user');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

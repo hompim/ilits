@@ -1,1 +1,14 @@
-a.button-link{width:fit-content;font-size:1.375rem;font-family:gothammedium;color:#fff;border-radius:1.125rem}
+a.button-link {
+    width: fit-content;
+    font-size: 1.375rem;
+    font-family: "gothammedium";
+    color: #fff;
+    border-radius: 1.125rem;
+    background: linear-gradient(75deg, #53ea90, #3b71c7);
+}
+
+@media only screen and (max-width: 768px) {
+    a.button-link {
+        font-size: 0.875rem;
+    }
+}

@@ -6,20 +6,19 @@ use Illuminate\View\Component;
 
 class BannerWithCornerHeader extends Component
 {
-
     public $title;
-    public $color;
     public $image;
+    public $href;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title, $color, $image)
+    public function __construct($title='', $image='', $href='')
     {
         $this->title = $title;
-        $this->color = $color;
         $this->image = $image;
+        $this->href = $href;
     }
 
     /**

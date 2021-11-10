@@ -1,0 +1,37 @@
+#fourCardsCarousel2 a.btn-floating-prev{
+    left:4%;top:50%;transform:translate(-3rem,-50%);
+    z-index:2
+}
+#fourCardsCarousel2 a.btn-floating-next{
+    right:4%;top:50%;transform:translate(3rem,-50%);
+    z-index:2
+}
+#fourCardsCarousel2 .card{
+    border-radius:1.125rem;
+    background:linear-gradient(-45deg,#ffffff64,#ffffff37) !important; 
+    backdrop-filter:blur(20px);
+}
+
+#fourCardsCarousel2 .card h4{
+    background:white;
+    font-size:1.625rem;
+    font-family:gothammedium;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color:black;
+}
+#fourCardsCarousel2 .card p{
+    background:white;
+    font-size:1.125rem;
+    font-family:gothamlight;
+    text-align: left;
+    color: grey;
+}
+
+#fourCardsCarousel2 .card-body{
+
+}
+#fourCardsCarousel2 div.rounded-circle{
+    width: 3.75rem;
+    height: 3.75rem;
+}

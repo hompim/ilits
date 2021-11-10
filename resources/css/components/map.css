@@ -1,61 +1,91 @@
-iframe {
-    width: 75%;
+.Map {
+    height: 40rem;
+}
+
+.Map iframe {
+    width: 80%;
     min-height: 440px;
     z-index: 2;
+    border-radius: .625rem;
 }
 
-.maps-base-trapezoid {
-    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
-    border-image-source: linear-gradient(-45deg, #ffffff64, #ffffff37);
-    backdrop-filter: blur(20px);
-    border-width: 4px;
-    border-style: solid;
-    position: absolute;
+.Map .map-stage {
+    transform: translateY(-13rem);
+}
+
+.Map .map-stage img {
+    width: 100%;
+}
+
+.Map .map-content {
+    bottom: 10%;
     left: 0;
     right: 0;
-    bottom: 0;
-    height: 13.3125rem;
-    width: 75%;
-    margin: auto;
-    transform: perspective(1rem) rotateX(1deg) translateY(3rem);
 }
 
-.maps-base-front {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 6.8125rem;
-    width: 90.2%;
-    margin: auto;
-    border-end-start-radius: 1.125rem;
-    border-end-end-radius: 1.125rem;
-    transform: translateY(11.75rem);
-}
-
-.maps-base-front span {
+.Map .map-content span {
     font-size: 2.25rem;
     font-family: "gothammedium";
 }
 
-@media only screen and (max-width: 768px) {
-    section#virtual-expo iframe {
+@media only screen and (max-width: 992px) {
+    .Map {
+        height: 25rem;
+    }
+    .Map iframe {
         width: 75%;
+        min-height: 300px;
+    }
+    .Map .map-stage {
+        transform: translateY(-7rem);
+    }
+    .Map .map-content {
+        width: 100%;
+        bottom: 5%;
+    }
+    .Map .map-content span, .Map .map-content a i {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Map {
+        height: 18rem;
+    }
+    .Map iframe {
+        width: 70%;
         min-height: 200px;
     }
-    .maps-base-trapezoid {
-        transform: perspective(1rem) rotateX(1deg) translateY(1.5rem);
-        height: 6rem;
-        width: 73%;
+    .Map .map-stage {
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 100%;
+        transform: translateY(-4.5rem);
     }
-    .maps-base-front {
-        transform: translateY(5.35rem);
-        height: 3.5rem;
-        width: 79.4%;
+    .Map .map-content {
+        width: 100%;
+        bottom: 5%;
     }
-    .maps-base-front span {
-        font-size: 1.5rem;
+    .Map .map-content span, .Map .map-content a i {
+        font-size: 1rem;
     }
-    .maps-base-front a i {
-        font-size: 2.3rem;
+}
+
+@media only screen and (max-width: 576px) {
+    .Map {
+        height: 14rem;
+    }
+    .Map iframe {
+        width: 90%;
+        min-height: 100px;
+    }
+    .Map .map-stage {
+        padding: 0 !important;
+        transform: translateY(-4rem);
+    }
+    .Map .map-content {
+        width: 100%;
+        bottom: 5%;
     }
 }
