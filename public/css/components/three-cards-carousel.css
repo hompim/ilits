@@ -1,9 +1,84 @@
+/*
+    code by Iatek LLC 2018 - CC 2.0 License - Attribution required
+    code customized by Azmind.com
+*/
+@media (min-width: 768px) {
+    #threeCardsCarousel .carousel-item {
+        margin-right: 0;
+    }
+
+     /* Show 4th slide on md if col-md-4*/
+     #threeCardsCarousel .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;  /*change this with javascript in the future*/
+        z-index:3;
+        display: block;
+        visibility: visible;
+    } 
+    /* show 3rd of 3 item slide */
+    #threeCardsCarousel .carousel-inner .active + .carousel-item ,
+    #threeCardsCarousel .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+    #threeCardsCarousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    #threeCardsCarousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    #threeCardsCarousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
+        transition: none;
+    }
+    #threeCardsCarousel .carousel-inner .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    #threeCardsCarousel .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    #threeCardsCarousel .carousel-item-next.carousel-item-left + .carousel-item,
+    #threeCardsCarousel .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* farthest right hidden item must be also positioned for animations */
+    #threeCardsCarousel .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        display: block;
+        visibility: visible;
+    }
+    /* right or prev direction */
+    #threeCardsCarousel .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    #threeCardsCarousel .carousel-item-prev.carousel-item-right + .carousel-item,
+    #threeCardsCarousel .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+    /* left or forward direction */
+
+    /* right or prev direction */
+    #threeCardsCarousel .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+/* LG */
+
 #threeCardsCarousel a.btn-floating-prev {
-    left: 0;
+    left:0 ;
     top: 50%;
     transform: translate(-3rem, -50%);
     z-index: 2;
 }
+
 #threeCardsCarousel a.btn-floating-next {
     right: 0;
     top: 50%;
@@ -15,11 +90,43 @@
     background: linear-gradient(-45deg, #ffffff64, #ffffff37);
     backdrop-filter: blur(20px);
 }
-#threeCardsCarousel .card h4 {
-    font-size: 2.25rem;
+#threeCardsCarousel .card img {
+    object-fit: cover;
+}
+
+#threeCardsCarousel .card h3 {
+    font-size: 1.875rem;
     font-family: "gothammedium";
 }
 #threeCardsCarousel .card p {
+    height: 7.625rem;
     font-size: 1.125rem;
     font-family: "gothamlight";
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;  
+}
+#threeCardsCarousel .card p::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+@media screen and (max-width: 768px) {
+
+    #threeCardsCarousel a.btn-floating .fa-3x{
+        font-size: 2em !important;
+    }
+    #threeCardsCarousel a.btn-floating-prev {
+        transform: translateX(-2.2rem);
+    }
+    #threeCardsCarousel a.btn-floating-next {
+        transform: translateX(2.2rem);
+    }
+    #threeCardsCarousel .card h3 {
+        font-size: 1.5rem;
+    }
+    #threeCardsCarousel .card p {
+        height: 5.125rem;
+    }
+
+    
 }
