@@ -5,7 +5,7 @@
         @for ($i = 0; $i < count($titles); $i++)
           <div class="carousel-item @if ($i === 0) active @endif">
             <div class="d-flex align-items-center">
-              <div class="pr-5">
+              <div class="pr-5 left-side">
                 <h3 class="mb-4 text-left">{{ $titles[$i] }}</h3>
                 <p class="text-left">{{ $texts[$i] }}</p>
                 <div class="text-left">
@@ -13,7 +13,7 @@
                   </x-button-link>
                 </div>
               </div>
-              <div>
+              <div class="right-side">
                 <img src="{{ asset($images[$i]) }}" class="img-fluid" alt="{{ $titles[$i] }}">
               </div>
             </div>

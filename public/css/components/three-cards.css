@@ -1,59 +1,44 @@
-.three-cards {
-  width: 85%;
-}
-
 .three-cards .item-three-cards {
-  width: 25%;
-  border-bottom: 3px solid grey;
-  background: linear-gradient(to right, #ffffff64, #ffffff37);
-  backdrop-filter: blur(20px);
-  border-radius: 18px;
+    border-bottom: 3px solid grey;
+    background: linear-gradient(to right, #ffffff64, #ffffff37);
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
 }
 
 .three-cards .item-three-cards img {
-  width: 100%;
-  border-radius: 18px 18px 0 0;
-  height: 13rem;
-  filter: grayscale(100%);
+    width: 100%;
+    height: auto;
+    border-radius: 18px 18px 0 0;
+    filter: grayscale(100%);
 }
 
 .item-three-cards li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .container-text {
-  padding: 18px;
-}
-
-@media screen and (max-width: 1200px) {
-  .three-cards {
-    width: 90%;
-  }
-
-  .three-cards .item-three-cards {
-    width: 30%;
-  }
+    padding: 18px;
 }
 
 @media screen and (max-width: 992px) {
-  .three-cards .item-three-cards img {
-    height: 10rem;
-  }
+    .three-cards .item-three-cards {
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+    .three-cards .item-three-cards .container-text {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .three-cards .item-three-cards h2 {
+        font-size: 2rem;
+    }
+    .three-cards .item-three-cards p {
+        font-size: 1.5rem;
+    }
 }
 
-@media screen and (max-width: 768px){
-  .three-cards {
-    display: block !important;
-  }
-
-  .three-cards .item-three-cards {
-    margin: 0 auto 30px auto;
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .three-cards .item-three-cards {
-    width: 80%;
-  }
+@media screen and (max-width: 768px) {
+    .three-cards .item-three-cards {
+        margin-bottom: 2rem;
+    }
 }

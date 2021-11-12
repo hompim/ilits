@@ -12,97 +12,160 @@
 
 section#jumbotron {
     min-height: calc(100vh - 66.516px);
-    background: linear-gradient(to bottom, #111028, #456395);
+    background: linear-gradient(to bottom, #111028, #264882);
 }
 section#jumbotron h1 {
     font-size: 5rem;
 }
-section#jumbotron h1 + p {
-    font-size: 1.375rem;
+section#jumbotron p {
+    font-size: 1.625rem;
     font-family: "gothammedium";
 }
 
-section#about {
-    background: linear-gradient(to bottom, #456395, #456598);
+section#tentang {
+    background: linear-gradient(to bottom, #264882, #3d5e94);
 }
-section#about h2 {
-    font-size: 2.5rem;
+section#tentang article {
+    border: 4px solid #ffffff50;
+    border-radius: 18px;
+    padding-top: 4rem !important;
 }
-section#about h2 + p {
+section#tentang p {
     font-size: 1.875rem;
     font-family: "gothammedium";
 }
-
-section#virtual-expo {
-    background: linear-gradient(to bottom, #456598, #486da3);
+section#tentang .SectionHeader {
+    margin-bottom: 0;
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translateY(-50%);
 }
-
-section#general-info {
-    background: linear-gradient(to bottom, #486da3, #2f5b9c);
+section#tentang .SectionHeader div::before {
+    display: none;
 }
-section#general-info h2 {
+section#tentang h2 {
     font-size: 2.5rem;
 }
 
-section#events {
-    background: linear-gradient(to bottom, #2f5b9c, #2a3e74);
+section#virtual-expo {
+    background: linear-gradient(to bottom, #3d5e94, #2d5898);
 }
 
-section#ongoing-info {
-    background: linear-gradient(to bottom, #c3d8f0, #5c98d6);
+section#informasi-umum {
+    background: linear-gradient(to bottom, #2d5898, #2f5999);
+}
+section#informasi-umum h2 {
+    font-size: 2.5rem;
+}
+
+section#acara {
+    background: linear-gradient(to bottom, #2f5999, #2b4077);
+}
+
+section#informasi-penting {
+    background-image: url("/img/main/informasi-penting-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     min-height: 40rem;
 }
-section#ongoing-info h2 {
+section#informasi-penting h2 {
+    font-size: 4.875rem;
+}
+section#informasi-penting a {
+    font-size: 2.25rem;
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+}
+
+section#fakultas {
+    background: linear-gradient(to bottom, #272b5a, #2c1c4f);
+}
+section#fakultas h2 {
+    font-size: 3rem;
+}
+section#fakultas button {
+    background: linear-gradient(45deg, #ffffff64, #ffffff37);
+    font-size: 1.625rem;
+    border: none;
+    border-radius: 22px;
+    font-family: "gothammedium";
+}
+
+section#detail-fakultas {
+    background: linear-gradient(to bottom, #2c1c4f, #3f1862);
+}
+
+section#prestasi {
+    background: linear-gradient(to bottom, #3f1862, #531373);
+}
+section#prestasi h2 {
     font-size: 3rem;
 }
 
-section#faculty {
-    background: linear-gradient(to bottom, #282c5c, #4e3d6d);
+section#fasilitas {
+    background: linear-gradient(to bottom, #531373, #7e3c9d);
 }
-section#faculty h2 {
-    font-size: 3rem;
-}
-
-section#faculty-detail {
-    background: linear-gradient(to bottom, #4e3d6d, #663983);
-}
-
-section#achievement {
-    background: linear-gradient(to bottom, #663983, #712e90);
-}
-section#achievement h2 {
-    font-size: 3rem;
-}
-
-section#facility {
-    background: linear-gradient(to bottom, #712e90, #aa6bc7);
-}
-section#facility article .container {
+section#fasilitas article .container {
     background: linear-gradient(-45deg, #ffffff64, #ffffff37);
     backdrop-filter: blur(20px);
     border-radius: 1.125rem;
 }
 
-section#alumnus {
-    background: linear-gradient(to bottom, #aa6bc7, #b681d3);
+section#tim-its {
+    background: linear-gradient(to bottom, #7e3c9d, #b687cc);
 }
-section#alumnus h2 {
+section#tim-its h2 {
     font-size: 3rem;
 }
-section#alumnus .row h4 {
+
+section#alumni {
+    background: linear-gradient(to bottom, #b687cc, #b681d3);
+}
+section#alumni div.row img {
+    margin-bottom: 1rem;
+}
+section#alumni h2 {
+    font-size: 3rem;
+}
+section#alumni h3 {
     font-size: 1.875rem;
     font-family: "gothammedium";
 }
-section#alumnus .row span {
+section#alumni h4 {
     font-size: 1.625;
     font-family: "gothamlight";
 }
 
-section#scholarship {
-    background: linear-gradient(to bottom, #b681d3, #3d3756);
+section#beasiswa {
+    background: linear-gradient(to bottom, #b681d3, #6d508e);
 }
-section#scholarship h2 {
+section#beasiswa h2 {
     font-size: 3rem;
+}
+section#beasiswa #BannerWithCornerHeader {
+    margin-bottom: 2rem;
+}
+
+section#sponsor {
+    background: linear-gradient(to bottom, #6d508e, #251f4a);
+}
+section#sponsor h2 {
+    font-size: 3rem;
+}
+section#sponsor .sponsor-box {
+    background: linear-gradient(45deg, #ffffff64, #ffffff37);
+    border-radius: 22px;
+}
+
+@media only screen and (max-width: 992px) {
+    section#alumni div.row div {
+        margin: auto;
+        width: 80%;
+        margin-bottom: 2rem;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -112,30 +175,61 @@ section#scholarship h2 {
     p {
         font-size: 1rem !important;
     }
-    a.button-link:not(section#faculty a.button-link, section#jumbotron
+    a.button-link:not(section#fakultas a.button-link, section#jumbotron
             a.button-link) {
         margin: auto;
     }
     section#jumbotron h1 {
         font-size: 3rem;
     }
-    section#faculty a.btn-main {
-        width: 100%;
+    section#informasi-penting a {
+        font-size: 1.25rem;
+        padding-left: 3rem !important;
+        padding-right: 3rem !important;
     }
-    section#faculty-detail .row h3 {
+    section#informasi-penting {
+        min-height: auto;
+    }
+    section#fakultas article div.row:nth-child(3) div {
+        padding: 0 !important;
+    }
+    section#fakultas article div.row:nth-child(3) div button {
+        width: 100%;
+        height: fit-content !important;
+    }
+    section#fakultas article div.row:nth-child(3) div:nth-child(2) button {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    section#fakultas article div.row:nth-child(4) {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    section#fakultas article div.row:nth-child(4) button {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    section#fakultas article div {
+        margin-bottom: 0 !important;
+    }
+    section#fakultas article div button {
+        margin-bottom: 2rem;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    section#detail-fakultas .row h3 {
         font-size: 1.5rem;
     }
-    section#achievement a.btn-floating-prev {
+    section#prestasi a.btn-floating-prev {
         transform: translateX(-0.5rem);
     }
-    section#achievement a.btn-floating-next {
+    section#prestasi a.btn-floating-next {
         transform: translateX(0.5rem);
     }
-    section#facility div.container .row:last-child div:first-child {
+    section#fasilitas div.container .row:last-child div:first-child {
         margin-bottom: 3rem;
     }
-    section#alumnus div div.row > div {
-        padding-left: 4rem;
-        padding-right: 4rem;
+    section#alumni div.row div {
+        margin-bottom: 2rem;
     }
 }
