@@ -20,7 +20,7 @@
   <!-- JQVMap -->
   <link rel="stylesheet" href="{{asset('dashboard/plugins/jqvmap/jqvmap.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('dist/css/adminlte.css')}}">
+  <link rel="stylesheet" href="{{asset('dashboard/dist/css/adminlte.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Daterange picker -->
@@ -154,7 +154,7 @@
               <div class="inner">
                 <p class="text-info">Forda</p>
 
-                <h3>{{Auth::user()->user->forda->nama}}</h3>
+                <h4>{{Auth::user()->user->forda->nama}}</h4>
               </div>
               <div class="icon">
                 <i class="ion ion-ios-people"></i>
@@ -167,8 +167,13 @@
             <div class="small-box border-success elevation-2">
               <div class="inner">
                 <p class="text-success">Pembayaran</p>
-
-                <h3>{{Auth::user()->user->status_bayar}}</h3>
+                    <h4>
+                        @if (Auth::user()->tryoutUser->status_bayar != null)
+                            Sudah
+                        @else
+                            Belum
+                        @endif
+                    <h3>
               </div>
               <div class="icon">
                 <i class="ion ion-cash"></i>
@@ -182,13 +187,14 @@
               <div class="inner">
                 <p class="text-warning">Konfirmasi Email</p>
 
-                <h3>
-                    @if ({{Auth::user()->email_verified_at == null}})
+                 <h4>
+                    @if (Auth::user()->email_verified_at == null)
                         Belum
-                        @else
+                    @else
                         Sudah
                     @endif
-                </h3>
+
+                </h4>
               </div>
               <div class="icon">
                 <i class="ion ion-email"></i>
@@ -201,8 +207,13 @@
             <div class="small-box border-danger elevation-2">
               <div class="inner">
                 <p class="text-danger">Pilihan Tryout</p>
-
-                <h3>{{Auth::user()->user->pilihan_tryout}}</h3>
+                <h4>
+                    @if (Auth::user()->tryoutUser->pilihan_tryout != null)
+                        {{Auth::user()->user->pilihan_tryout}}
+                    @else
+                        Belum Memilih
+                    @endif
+                <h4>
               </div>
               <div class="icon">
                 <i class="ion ion-ios-paper"></i>

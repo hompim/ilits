@@ -25,6 +25,6 @@ class Forda extends Model
     }
     public function tryoutForda()
     {
-        return $this->hasone(TryoutForda::class, 'forda_id');
+        return $this->hasone(TryoutForda::class);
     }
 }
