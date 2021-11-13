@@ -48,7 +48,7 @@
                         @foreach ($link_all as $i)
                             <tr>
                                 <td class="col-5"><a href="{{url('/').'/'.$i->slug }}">{{ url('/').'/'.$i->slug }}</a></td>
-                                <td class="col-5"><a href="{{ $i->link }}">{{ $i->link }}</a></td>
+                                <td class="col-5"><a href="{{ $i->link }}">Link ini</a></td>
                                 <td class="col-2 text-center">
                                     <form method="POST" class="d-inline" action="{{ route('link.delete', $i->id) }}">
                                         @csrf

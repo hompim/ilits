@@ -29,7 +29,13 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
-        $forda_daerah = FordaDaerah::first();
+        $forda = FordaDaerah::where('kota_kab_id', $input["kab_sekolah_id"])->first();
+        
+        if($forda){
+            $id = $forda->forda_id;
+        } else{
+            $id = 3578;
+        }
 
         $peserta = Peserta::create([
             'nama_lengkap' => $input['name'], // udah ada di kolom users
@@ -41,7 +47,7 @@ class CreateNewUser implements CreatesNewUsers
             'no_wa' => $input['nomor_whatsapp'],
             'is_pelajar_aktif' => $input['is_pelajar_aktif'],
             'tau_ilits' => $input['tau_ilits'],
-            'forda_id' => '1' // apply logic
+            'forda_id' => $id // apply logic
         ]);
 
         return User::create([
