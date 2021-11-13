@@ -280,7 +280,7 @@
                         :
                       </div>
                       <div class="col-8">
-                        <a href="https://wa.me/xxxxxxxx" target="_blank"><span><strong>{{Auth::user()->user->forda->tryoutForda->hp_pj}}</strong></span></a>
+                        <a href="https://wa.me/62{{Auth::user()->user->forda->tryoutForda->hp_pj}}" target="_blank"><span><strong>0{{Auth::user()->user->forda->tryoutForda->hp_pj}}</strong></span></a>
                       </div>
                     </div>
                   </div>
