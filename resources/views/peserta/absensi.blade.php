@@ -1,385 +1,192 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('adminlte::page')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ini Lho ITS! 2022 - Dashboard</title>
-    <!-- Icon -->
-    <link rel="icon" href="{{asset('dashboard/dist/img/logo.png')}}">
+@section('title', 'Absensi Peserta')
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('dashboard/plugins/fontawesome-free/css/all.min.css')}}">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="{{asset('dashboard/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="{{asset('dashboard/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="{{asset('dashboard/plugins/jqvmap/jqvmap.min.css')}}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('dashboard/dist/css/adminlte.css')}}">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="{{asset('dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{asset('dashboard/plugins/daterangepicker/daterangepicker.css')}}">
-  <!-- summernote -->
-  <link rel="stylesheet" href="{{asset('dashboard/plugins/summernote/summernote-bs4.min.css')}}">
-</head>
+@section('content_header')
+    <h1>Absensi Peserta</h1>    
+@stop
 
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{asset('dashboard/dist/img/logo.png')}}" alt="Logo ILITS 2022" height="60" width="60">
-        </div>
-
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-            </ul>
-
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <div class="user-panel mt-1 mb-2 d-flex">
-                        <div class="info">
-                            <a href="#" class="d-block">Nama Peserta</a>
-                        </div>
-                        <div class="image">
-                            <img src="{{asset('dist/img/avatar5.png')}}" class="img-circle elevation-1" alt="User Image">
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.navbar -->
-
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-light-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="#" class="brand-link logo-switch">
-                <img src="{{asset('dashboard/dist/img/logo-with-text.png')}}" alt="Logo ILITS 2022" class="brand-image-xl logo-xl">
-                <img src="{{asset('dashboard/dist/img/logo.png')}}" alt="Logo ILITS 2022" class="brand-image-xs logo-xs" style="left: 12px">
-            </a>
-
-            <!-- Sidebar -->
-            <div class="sidebar">
-
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                        <li class="nav-header"></li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
-                                <p>
-                                    Dashboard
-                                </p>
-                            </a>
-                        </li>
-                        <!-- Upload Bukti Bayar -->
-                        <li class="nav-header"></li>
-                        <li class="nav-item">
-                            <a href="upload-bayar.html" class="nav-link">
-                                <i class="nav-icon fas fa-money-bill-wave"></i>
-                                <p>
-                                    Upload Bukti Bayar
-                                </p>
-                            </a>
-                        </li>
-                        <!-- Presensi -->
-                        <li class="nav-item  menu-open">
-                            <a href="absen-peserta.html" class="nav-link  active">
-                                <i class="nav-icon fas fa-edit"></i>
-                                <p>
-                                    Presensi
-                                    <span class="right badge badge-danger"> 1</span>
-                                </p>
-                            </a>
-                        </li>
-                        <!-- Keluar -->
-                        <li class="nav-header"></li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-power-off"></i>
-                                <p>
-                                    Keluar
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
+@section('content')
+<div class="container-fluid">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box border-info elevation-2">
+            <div class="inner">
+              <p class="text-info">Forda</p>
+    
+              <h4>{{Auth::user()->user->forda->nama}}</h4>
             </div>
-            <!-- /.sidebar -->
-        </aside>
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-12">
-                            <h1 class="m-0">Dashboard</h1>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
+            <div class="icon">
+              <i class="ion ion-ios-people"></i>
             </div>
-            <!-- /.content-header -->
-
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box border-info elevation-2">
-                                <div class="inner">
-                                    <p class="text-info">Forda</p>
-
-                                    <h3>Surabaya</h3>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-ios-people"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box border-success elevation-2">
-                                <div class="inner">
-                                    <p class="text-success">Pembayaran</p>
-
-                                    <h3>Belum</h3>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-cash"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box border-warning elevation-2">
-                                <div class="inner">
-                                    <p class="text-warning">Konfirmasi Email</p>
-
-                                    <h3>Sudah</h3>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-email"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box border-danger elevation-2">
-                                <div class="inner">
-                                    <p class="text-danger">Pilihan Tryout</p>
-
-                                    <h3>Saintek</h3>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-ios-paper"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                    </div>
-                    <!-- /.row -->
-
-                    <!-- Warning row -->
-                    <div class="row">
-                        <section class="col-12">
-                            <div class="card bg-warning elevation-2">
-                                <div class="card-body">
-                                    <p class="m-0"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Anda
-                                        belum belum mengunggah bukti pembayaran. Silahkan lakukan upload bukti
-                                        Pembayaran</p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    <!-- /. warning row -->
-
-
-
-                    <!-- Main row -->
-                    <div class="row">
-                        <section class="col-12">
-                            <!-- Absen -->
-                            <div class="card elevation-2">
-                                <div class="card-header">
-                                    <h3>Forda: Forda dummy</h3>
-                                    <h5><u> TENTANG TRY OUT </u></h5>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-text"><strong>Tanggal : </strong>1 November 2021</p>
-                                    <p class="card-text"><strong>Waktu : </strong>23.59 - 00.00</p>
-                                    <button type="button" class="btn btn-success" data-toggle="modal"
-                                        data-target="#modal_hadir">
-                                        Hadir
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        data-target="#modal_tdk_hadir">
-                                        Tidak Hadir
-                                    </button>
-                                </div>
-                            </div>
-                            <!-- Akhir Absen -->
-                        </section>
-                    </div>
-                    <!-- /.row (main row) -->
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
+          </div>
         </div>
-        <!-- /.content-wrapper -->
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box border-success elevation-2">
+            <div class="inner">
+              <p class="text-success">Pembayaran</p>
+                  <h4>
+                      @if (Auth::user()->tryoutUser->status_bayar != null)
+                          Sudah
+                      @else
+                          Belum
+                      @endif
+                  <h3>
+            </div>
+            <div class="icon">
+              <i class="ion ion-cash"></i>
+            </div>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box border-warning elevation-2">
+            <div class="inner">
+              <p class="text-warning">Konfirmasi Email</p>
+    
+               <h4>
+                  @if (Auth::user()->email_verified_at == null)
+                      Belum
+                  @else
+                      Sudah
+                  @endif
+    
+              </h4>
+            </div>
+            <div class="icon">
+              <i class="ion ion-email"></i>
+            </div>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box border-danger elevation-2">
+            <div class="inner">
+              <p class="text-danger">Pilihan Tryout</p>
+              <h4>
+                  @if (Auth::user()->tryoutUser->pilihan_tryout != null)
+                      {{Auth::user()->user->pilihan_tryout}}
+                  @else
+                      Belum Memilih
+                  @endif
+              <h4>
+            </div>
+            <div class="icon">
+              <i class="ion ion-ios-paper"></i>
+            </div>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
 
-        <!-- Modal Hadir -->
-        <div class="modal fade" id="modal_hadir" data-backdrop="static" data-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-success">
-                        <h5 class="modal-title" id="staticBackdropLabel">Hadir</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i></span>
-                        </button>
-                    </div>
-                    <form action="{{ route('peserta.proses.absen')}}" method="post">
-                    <div class="modal-body">
-                            <div class="form-group">
-                                <label for="kode_presensi">Kode Presensi</label>
-                                <input type="text" class="form-control" name="kode_presensi" id="kode_presensi"
-                                    aria-describedby="helpId" placeholder="Isikan kode presensi disini!" pattern="[0-9]" required>
-                                <small id="helpId" class="form-text text-muted">Isi kode presensi sesuai dengan yang
-                                    diberikan!</small>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
+    <!-- Warning row -->
+    <div class="row">
+        <section class="col-12">
+            <div class="card bg-warning elevation-2">
+                <div class="card-body">
+                    <p class="m-0"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Anda
+                        belum belum mengunggah bukti pembayaran. Silahkan lakukan upload bukti
+                        Pembayaran</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Modal Tidak Hadir -->
-        <div class="modal fade" id="modal_tdk_hadir" data-backdrop="static" data-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-danger">
-                        <h5 class="modal-title" id="staticBackdropLabel">Tidak Hadir</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i></span>
-                        </button>
-                    </div>
-                    <form action="{{ route('peserta.proses.absen')}}" method="post">
-                    <div class="modal-body">
-                            <div class="form-group">
-                                <label for="alasan_tdk_hadir">Alasan tidak hadir</label>
-                                <textarea class="form-control" name="keterangan_absen" id="alasan_tdk_hadir" rows="3"
-                                    placeholder="Masukkan alasan ketidakhadiran anda!" required></textarea>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- Absen -->
-        <!-- <div class="card" style="width: 25rem;">
-            <div class="card-body">
-              <h5 class="card-title">Forda: Forda dummy</h5>
-              <br>
-              <br>
-              <h6 class="card-subtitle"><u>TENTANG TRY OUT</u> </h6>
-              <br>
-              <p class="card-text"><strong>Tanggal : </strong>1 November 2021</p>
-              <p class="card-text"><strong>Waktu   : </strong>23.59 - 00.00</p>
-              <a href="#" class="btn btn-success">Hadir</a>
-              <a href="#" class="btn btn-danger">Tidak Hadir</a>
-            </div>
-          </div> -->
-        <!-- Akhir Absen -->
-
-        <!-- Main row -->
-
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; <a href="https://inilho.its.ac.id/">Ini Lho ITS! 2022</a>.</strong>
-    All rights reserved.
-  </footer>
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+        </section>
     </div>
-    <!-- ./wrapper -->
+    <!-- /. warning row -->
 
 
-<!-- jQuery -->
-<script src="{{asset('dashboard/plugins/jquery/jquery.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{asset('dashboard/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="{{asset('dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- ChartJS -->
-<script src="{{asset('dashboard/plugins/chart.js/Chart.min.js')}}"></script>
-<!-- Sparkline -->
-<script src="{{asset('dashboard/plugins/sparklines/sparkline.js')}}"></script>
-<!-- JQVMap -->
-<script src="{{asset('dashboard/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{asset('dashboard/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{asset('dashboard/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
-<!-- daterangepicker -->
-<script src="{{asset('dashboard/plugins/moment/moment.min.js')}}"></script>
-<script src="{{asset('dashboard/plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="{{asset('dashboard/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-<!-- Summernote -->
-<script src="{{asset('dashboard/plugins/summernote/summernote-bs4.min.js')}}"></script>
-<!-- overlayScrollbars -->
-<script src="{{asset('dashboard/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('dashboard/dist/js/adminlte.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('dashboard/dist/js/demo.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('dashboard/dist/js/pages/dashboard.js')}}"></script>
-</body>
 
-</html>
+    <!-- Main row -->
+    <div class="row">
+        <section class="col-12">
+            <!-- Absen -->
+            <div class="card elevation-2">
+                <div class="card-header">
+                    <h2>{{Auth::user()->user->forda->nama}}</h2>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><strong>Tanggal : </strong>1 November 2021</p>
+                    <p class="card-text"><strong>Waktu : </strong>23.59 - 00.00</p>
+                    <button type="button" class="btn btn-success" data-toggle="modal"
+                        data-target="#modal_hadir">
+                        Hadir
+                    </button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                        data-target="#modal_tdk_hadir">
+                        Tidak Hadir
+                    </button>
+                </div>
+            </div>
+            <!-- Akhir Absen -->
+        </section>
+    </div>
+    <!-- /.row (main row) -->
+</div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<!-- Modal Hadir -->
+<div class="modal fade" id="modal_hadir" data-backdrop="static" data-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+    <div class="modal-header bg-success">
+        <h5 class="modal-title" id="staticBackdropLabel">Hadir</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i></span>
+        </button>
+    </div>
+    <form action="{{ route('peserta.proses.absen')}}" method="post">
+    <div class="modal-body">
+            <div class="form-group">
+                <label for="kode_presensi">Kode Presensi</label>
+                <input type="text" class="form-control" name="kode_presensi" id="kode_presensi"
+                    aria-describedby="helpId" placeholder="Isikan kode presensi disini!" pattern="[0-9]" required>
+                <small id="helpId" class="form-text text-muted">Isi kode presensi sesuai dengan yang
+                    diberikan!</small>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+
+<!-- Modal Tidak Hadir -->
+<div class="modal fade" id="modal_tdk_hadir" data-backdrop="static" data-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+    <div class="modal-header bg-danger">
+        <h5 class="modal-title" id="staticBackdropLabel">Tidak Hadir</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i></span>
+        </button>
+    </div>
+    <form action="{{ route('peserta.proses.absen')}}" method="post">
+    <div class="modal-body">
+            <div class="form-group">
+                <label for="alasan_tdk_hadir">Alasan tidak hadir</label>
+                <textarea class="form-control" name="keterangan_absen" id="alasan_tdk_hadir" rows="3"
+                    placeholder="Masukkan alasan ketidakhadiran anda!" required></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+@stop

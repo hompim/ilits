@@ -1,8 +1,9 @@
-@extends('layouts.admin')
+@extends('adminlte::page')
+
+@section('title', 'Link Shortener')
 
 @section('content')
-<div class="content-wrapper">
-    <!-- Main content -->
+<div>
     <div class="w-100 d-flex justify-content-center align-items-center">
         <h1 class="py-4">Link Shortener Ini Lho ITS!</h1>
     </div>
@@ -64,7 +65,5 @@
             </div>
         </div>
     </div>
-    <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
-@endsection
+@stop

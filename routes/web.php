@@ -27,6 +27,10 @@ Route::get('/', function () {
     return view('coming-soon');
 })->name('coming-soon');
 
+Route::get('/fasilitas', function(){
+    return view('fasilitas');
+});
+
 // // Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
 
 // Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
@@ -45,11 +49,13 @@ Route::middleware('isadmin')->prefix('admin')->group(function () {
 
 //Route untuk Peserta
 Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
-    Route::get('/', [PesertaController::class, 'index'])->name('peserta');
-    Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
-    Route::get('/absen', [PesertaController::class, 'absen'])->name('peserta.absen');
-    Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
-    Route::post('/welcome{id}', [PesertaController::class, 'welcome'])->name('peserta.welcome');
+    Route::prefix('welcome')->group(function(){
+        Route::get('/', [PesertaController::class, 'index'])->name('peserta');
+        Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
+        Route::get('/absensi', [PesertaController::class, 'absen'])->name('peserta.absen');
+        Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
+        Route::post('/welcome{id}', [PesertaController::class, 'welcome'])->name('peserta.welcome');
+    });
 });
 // Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
 

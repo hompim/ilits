@@ -45,5 +45,17 @@ class AuthServiceProvider extends ServiceProvider
                 ->action('Reset Password Saya', route('password.reset', ['token' => $tokenReset]))
                 ->line('Jika anda tidak merasa melakukan tidakan ini, maka abaikan pesan ini.');
         });
+
+        Gate::define('admin-dashboard', function(User $user){
+            return ($user->user_type === 'App\Models\Admin');
+        });
+
+        Gate::define('peserta-dashboard', function(User $user){
+            return ($user->user_type === 'App\Models\Peserta');
+        });
+
+        Gate::define('forda-dashboard', function(User $user){
+            return ($user->user_type === 'App\Models\Forda');
+        });
     }
 }

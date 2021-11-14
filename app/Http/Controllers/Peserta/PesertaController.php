@@ -34,7 +34,7 @@ class PesertaController extends Controller
         $keterangan_absen = $request->keterangan_absen;
 
         if ($kode_presensi_forda == $kode_presensi) {
-            //$id = TryoutUser::find(Auth::user()->tryoutUser->id);
+            $id = TryoutUser::find(Auth::user()->tryoutUser->id);
             $status_absen = TryoutUser::findOrFail($id);
             if ($status_absen) {
                 $status_absen->status_absen = True;
@@ -51,9 +51,10 @@ class PesertaController extends Controller
             }
         }
     }
-    public function welcome($id, Request $request)
+    public function welcome(Request $request)
     {
         //update data peserta
+        $id = Auth::user()->user_id;
         $update_peserta = Peserta::find($id);
         $update_peserta->nama_lengkap = 'nama_lengkap';
         $update_peserta->asal_sekolah = 'asal_sekolah';
