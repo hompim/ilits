@@ -6,6 +6,9 @@
 .carouselWithFloatingHeader .row p::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
 }
+.carouselWithFloatingHeader{
+    background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+}
 
 .carouselWithFloatingHeader div.floating-header {
     background: linear-gradient(90.75deg, #53EA90 1.37%, #3B71C7 98.71%);
@@ -63,7 +66,7 @@
     }
 
     .carouselWithFloatingHeader .row p {
-        height: 16rem;
+        height: 15.225rem;
     }
 
     .carouselWithFloatingHeader article {

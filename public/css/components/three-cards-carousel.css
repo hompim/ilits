@@ -73,14 +73,14 @@
 /* LG */
 
 #threeCardsCarousel a.btn-floating-prev {
-    left:0 ;
+    left:-0.625rem ;
     top: 50%;
     transform: translate(-3rem, -50%);
     z-index: 2;
 }
 
 #threeCardsCarousel a.btn-floating-next {
-    right: 0;
+    right: -0.625rem;
     top: 50%;
     transform: translate(3rem, -50%);
     z-index: 2;
@@ -109,9 +109,7 @@
 #threeCardsCarousel .card p::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
 }
-
-@media screen and (max-width: 768px) {
-
+@media screen and (max-width: 992px) {
     #threeCardsCarousel a.btn-floating .fa-3x{
         font-size: 2em !important;
     }
@@ -126,7 +124,16 @@
     }
     #threeCardsCarousel .card p {
         height: 5.125rem;
+        font-size: 1rem;
     }
+}
+@media screen and (max-width: 768px) {
+
+    #threeCardsCarousel a.btn-floating .fa-3x{
+        font-size: 2em !important;
+    }
+    
+    
 
     
 }

@@ -7,11 +7,11 @@
     </div>
     <div class="carousel-inner row w-100 mx-auto"  role="listbox">        
     @for($i = 0; $i < count($titles); $i++) 
-        <div class="carousel-item @if($i==0) active @endif col-sm-12 col-md-4">
+        <div class="carousel-item @if($i==0) active @endif col-md-4">
             <div class="overflow-hidden card">
-                <img src="{{ asset($images[$i]) }}" alt="Card image cap">
+                <img src="{{ asset($images[$i]) }}" class="px-5 py-4" alt="Card image cap">
                 <div class="text-center">                        
-                    <h4 class="card-title mx-5">{{ $titles[$i] }}</h4>
+                    <h3 class="card-title mb-1 mb-sm-3 mb-xl-4 mx-2 mx-lg-2">{{ $titles[$i] }}</h3>
                </div>
             </div>
               
