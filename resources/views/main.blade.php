@@ -5,7 +5,7 @@
 @endsection
 
 @section('style')
-  <link rel="stylesheet" href="{{ asset('css/pages/main.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/pages/main.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/components/map.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/two-side-color-carousel.css') }}">

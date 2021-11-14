@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -43,6 +44,18 @@ class AuthServiceProvider extends ServiceProvider
                 ->line('Untuk mereset password anda, tekan tombol di bawah ini.')
                 ->action('Reset Password Saya', route('password.reset', ['token' => $tokenReset]))
                 ->line('Jika anda tidak merasa melakukan tidakan ini, maka abaikan pesan ini.');
+        });
+
+        Gate::define('admin-dashboard', function(User $user){
+            return ($user->user_type === 'App\Models\Admin');
+        });
+
+        Gate::define('peserta-dashboard', function(User $user){
+            return ($user->user_type === 'App\Models\Peserta');
+        });
+
+        Gate::define('forda-dashboard', function(User $user){
+            return ($user->user_type === 'App\Models\Forda');
         });
     }
 }

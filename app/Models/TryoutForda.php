@@ -17,6 +17,7 @@ class TryoutForda extends Model
         'no_rek',
         'nama_pj',
         'hp_pj',
+        'kode_presensi',
         'id_line_pj',
     ];
     public function forda()

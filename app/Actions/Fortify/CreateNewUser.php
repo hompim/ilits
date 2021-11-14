@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\FordaDaerah;
 use App\Models\User;
 use App\Models\Peserta;
 use Illuminate\Support\Facades\Hash;
@@ -28,12 +29,25 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
+        $forda = FordaDaerah::where('kota_kab_id', $input["kab_sekolah_id"])->first();
+        
+        if($forda){
+            $id = $forda->forda_id;
+        } else{
+            $id = 3578;
+        }
+
         $peserta = Peserta::create([
+            'nama_lengkap' => $input['name'], // udah ada di kolom users
+            'provinsi_domisili_id' => $input['provinsi_domisili_id'],
+            'kab_domisili_id' => $input['kab_domisili_id'], // dependant dropdown?
+            'alamat' => $input['alamat'],
             'asal_sekolah' => $input['asal_sekolah'],
-            'asal_daerah' => $input['asal_daerah'],
+            'kab_sekolah_id' => $input['kab_sekolah_id'],
             'no_wa' => $input['nomor_whatsapp'],
-            'pilihan_tryout' => $input['tryout'],
-            'forda_id' => $input['forda']
+            'is_pelajar_aktif' => $input['is_pelajar_aktif'],
+            'tau_ilits' => $input['tau_ilits'],
+            'forda_id' => $id // apply logic
         ]);
 
         return User::create([
