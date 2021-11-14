@@ -2,6 +2,10 @@
 
 @section('title','Upload Bukti Bayar')
 
+@section('content_header')
+<h1>Upload Bukti Bayar</h1>
+@stop
+
 @section('content')
 <div>
     @if ($errors->any())
@@ -22,80 +26,138 @@
         <div class="alert alert-danger" role="alert">
             Kartu Pelajar ditolak, silahkan upload ulang
         </div>
-        @endif
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                  <h3 class="card-title" style="font-size: 2rem">Catatan Pengunggahan Berkas</h3><br>
-                  <hr/>
-                  <ol style="list-style: decimal" class="ml-4">
-                    <li>File yang diunggah memiliki ukuran <strong>max 1MB</strong>.</li>
-                    <li>File yang diunggah memiliki format <strong>JPG, PNG, atau JPEG</strong>.</li>
-                    <li>Jika file yang akan diunggah memiliki ukuran yang besar, maka ukuran file harus dikecilkan (dapat melalui <a href="https://compressjpeg.com">compressjpeg.com</a>).</li>
-                  </ol>
+    @endif
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box border-info elevation-2">
+                    <div class="inner">
+                        <p class="text-info">Forda</p>
+
+                        <h4>Surabaya</h4>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-ios-people"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row mt-3">
-    <form action="" method="POST" enctype="multipart/form-data" class="col-md-4">
-        @csrf
-        <div class="grid-rows-1 md:grid-cols-2">
-            <div class="">
-                <div class="form-group bg-white rounded-xl shadow-lg p-3 w-full" >
-                    <label for="bukti_pembayaran" class="font-bold text-lg ">Bukti Pembayaran</label>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div
+                    class="small-box border-success elevation-2"
+                >
+                    <div class="inner">
+                        <p class="text-success">Pembayaran</p>
 
-                    <p style="font-size:0.7rem">*Bukti pembayaran yang diupload berupa file gambar (jpg,png,jpeg)</p>
-
-                    <img src="{{Auth::user()->user->bukti_bayar?asset('/storage/images/bukti_pembayaran/'.Auth::user()->user->bukti_bayar):asset('/img/placeholder-image.png')}}" class="img-fluid" alt="Bukti Pembayaran" id="bukti_pembayaran_preview" style="max-height:50vh">
-                        @if(Auth::user()->user->status=='tolak_pembayaran'||!Auth::user()->user->bukti_bayar)
-                        @if(date('Y-m-d',strtotime('-2 days',strtotime(Auth::user()->user->forda->absen->date)))>=date('Y-m-d'))
-                        <label class="btn btn-outline-primary mt-2">
-                            <i class="fas fa-cloud-upload-alt"></i> Browse <input type="file" class="form-control-file" name="bukti_pembayaran" id="bukti_pembayaran" accept=".jpg,.jpeg,.png" hidden>
-                        </label>
-                        @endif
-                        @endif
+                        <h4>Belum</h4>
                     </div>
+                    <div class="icon">
+                        <i class="ion ion-cash"></i>
+                    </div>
+                </div>
             </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div
+                    class="small-box border-warning elevation-2"
+                >
+                    <div class="inner">
+                        <p class="text-warning">
+                            Konfirmasi Email
+                        </p>
+
+                        <h4>Sudah</h4>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-email"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div
+                    class="small-box border-danger elevation-2"
+                >
+                    <div class="inner">
+                        <p class="text-danger">
+                            Pilihan Tryout
+                        </p>
+
+                        <h4>Saintek</h4>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-ios-paper"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Warning row -->
+        <div class="row">
+            <section class="col-12">
+                <div class="card bg-warning elevation-2">
+                    <div class="card-body">
+                        <p class="m-0">
+                            <i
+                                class="
+                                    fa fa-exclamation-triangle
+                                "
+                                aria-hidden="true"
+                            ></i>
+                            Anda belum belum mengunggah bukti
+                            pembayaran. Silahkan lakukan upload
+                            bukti Pembayaran
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /. warning row -->
+
+        <!-- Upload File Bayar -->
+        <div class="card elevation-2">
+            <div class="card-header">
+                <h5 class="card-title">Unggah Bukti Bayar</h5>
+                <p class="card-text">
+                    Foto bukti bayar harus terlihat dengan
+                    jelas!
+                </p>
+            </div>
+            <form action="#">
+            <div class="card-body">
+                    <input type="file" class="form-control-file border" onchange="preview()" name="bukti_bayar" required style="cursor: pointer;">
+                    <img id="frame" src="" width="100%"/>
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+            </form>
         </div>
 
-        @if(Auth::user()->user->status=='tolak_pembayaran'||!Auth::user()->user->bukti_bayar)
-        @if(date('Y-m-d',strtotime('-2 days',strtotime(Auth::user()->user->forda->absen->date)))>=date('Y-m-d'))
-        <div class="row">
-            <div class="col">
-                <button type="submit" class="btn btn-outline-success my-3"><i class="fas fa-save"></i> Simpan</button>
-            </div>
-        </div>
-        @endif
-        @endif
+        <!-- Akhir File Bayar -->
+    </div>
     </form>
 </div>
 </div>
 @stop
 
 @section('js')
-<script>
-    function previewImage(input,imgTarget) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $(imgTarget).attr('src', e.target.result);
-
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
+<script type="text/javascript">
+    function preview() {
+        frame.src=URL.createObjectURL(event.target.files[0]);
     }
-
-    $('#bukti_pembayaran').on('change',function(){
-        previewImage(this,'#bukti_pembayaran_preview')
-    })
-
-    $('#kartu_pelajar').on('change',function(){
-        previewImage(this,'#kartu_pelajar_preview')
-    })
-
 </script>
+@stop
+
+@section('css')
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
 @stop
