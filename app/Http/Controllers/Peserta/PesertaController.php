@@ -7,6 +7,7 @@ use App\Models\Peserta;
 use App\Models\TryoutUser;
 use App\Models\TryoutForda;
 use App\Models\Forda;
+use App\Models\KotaKab;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -68,50 +69,27 @@ class PesertaController extends Controller
         $update_peserta->save();
 
         //insert pilihan tryout
-        $pilih_tryout = new TryoutUser;
-        $pilih_tryout->pilihan_tryout = $request->pilihan_tryout;
-        $pilih_tryout->save();
+        // $pilih_tryout = new TryoutUser;
+        // $pilih_tryout->pilihan_tryout = TryoutUser::get('pilihan_tryout');
+        // //$pilih_tryout->pilihan_tryout = $request->pilihan_tryout;
+        // $pilih_tryout->save();
 
-        return view('peserta.dashboard');
+        // DB::table('tryout_user')->insert([
+        //     'pilihan_tryout' => $request->pilihan_tryout
+        // ]);
+
+        TryoutUser::create([  // <= the error is Here!!!
+            'user_id' => Auth::user()->user->id,
+            'pilihan_tryout' => request('pilihan_tryout')
+        ]);
+
+        DB::table('peserta')->where('id', Auth::user()->user->id)->update([
+            'nama_lengkap' => $request->nama_lengkap,
+            'asal_sekolah' => $request->asal_sekolah,
+            'kab_sekolah_id' => $request->kab_sekolah_id,
+            'no_wa' => $request->no_wa
+        ]);
+
+        return redirect('/peserta');
     }
-
-    // public function UploadKartu(Request $request)
-    // {
-    //     $id = Peserta::find(Auth::user()->user->id);
-    //     $id->status = 'pending';
-    //     $id->save();
-    //     $this->validate($request, [
-    //         'kartu_pelajar' => 'required|image|mimes:jpeg,png,jpg|max:4096'
-    //         //'bukti_pembayaran'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-    //     ]);
-
-    //     $kartu_pelajar = $request->file('kartu_pelajar');
-
-    //     $kartu_pelajar_name = Carbon::now()->format('Ymd His') . '.jpg';
-
-    //     if (!Storage::disk('public')->exists('images/kartu_pelajar')) {
-    //         Storage::disk('public')->makeDirectory('images/kartu_pelajar');
-    //     }
-    //     $gambarPelajar = Image::make($kartu_pelajar);
-    //     if ($gambarPelajar->width() > 1280) {
-    //         $img_resize = $gambarPelajar->resize($gambarPelajar->width() * 50 / 100, $gambarPelajar->height() * 50 / 100, function ($constraint) {
-    //             $constraint->aspectRatio();
-    //             $constraint->upsize();
-    //         });
-    //     } else {
-    //         $img_resize = $gambarPelajar->resize($gambarPelajar->width() * 75 / 100, $gambarPelajar->height() * 75 / 100, function ($constraint) {
-    //             $constraint->aspectRatio();
-    //             $constraint->upsize();
-    //         });
-    //     }
-    //     Storage::disk('public')->put('images/kartu_pelajar/' . $kartu_pelajar_name, (string)$img_resize->encode('jpg'), 75);
-
-    //     // $kartu_pelajar->storeAs('images/kartu_pelajar',$kartu_pelajar_name,'public');
-
-
-    //     $peserta = Peserta::find(Auth::user()->user->id);
-    //     $peserta->kartu_pelajar = $kartu_pelajar_name;
-    //     $peserta->save();
-    //     return redirect(route('peserta.upload'))->with(['status' => 'success', 'message' => 'Kartu Pelajar berhasil diupload, mohon menunggu konfirmasi dari forda']);
-    // }
 }

@@ -21,7 +21,7 @@ class CreateTryoutUserTable extends Migration
             $table->string('username_tryout')->nullable();
             $table->string('password_tryout')->nullable();
             $table->enum('status_absen', ['hadir', 'tidak_hadir', 'belum_absen'])->default('belum_absen');
-            $table->text('keterangan_absen');
+            $table->text('keterangan_absen')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
