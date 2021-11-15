@@ -27,16 +27,6 @@ Route::get('/', function () {
     return view('coming-soon');
 })->name('coming-soon');
 
-Route::get('/fasilitas', function(){
-    return view('fasilitas');
-});
-
-// // Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
-
-// Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
-// Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport'])->name('oprecstaffimport');
-// Route::post('/oprecmacimport', [OprecStaffController::class, 'OprecMacImport'])->name('oprecmacimport');
-
 // Route untuk admin
 Route::middleware('isadmin')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
@@ -54,7 +44,8 @@ Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
         Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
         Route::get('/absensi', [PesertaController::class, 'absen'])->name('peserta.absen');
         Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
-        Route::post('/welcome{id}', [PesertaController::class, 'welcome'])->name('peserta.welcome');
+        Route::get('/daftar', [PesertaController::class, 'registerWelcome'])->name('peserta.welcome.register');
+        Route::post('/daftar', [PesertaController::class, 'welcome'])->name('peserta.welcome.store');
     });
 });
 // Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
@@ -62,5 +53,5 @@ Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
 // Route untuk forda
 Route::prefix('forda')->middleware(['isforda'])->group(function () {
     Route::get('/', [FordaController::class, 'index'])->name('forda');
-    Route::get('/absensi', [PesertaController::class, 'absensi'])->name('forda.absensi');
+    Route::get('/absensi', [FordaController::class, 'absensi'])->name('forda.absensi');
 });

@@ -17,10 +17,10 @@ class isAdmin
     public function handle(Request $request, Closure $next)
     {
         if(!auth()->guard('web')->check()){
-            return redirect(route('coming-soon'));
+            return redirect(route('login'));
         }
         $user = $request->user();
-        if(!$user->user_type=='App\Models\Admin'){
+        if(!($user->user_type=='App\Models\Admin')){
             return redirect(route('coming-soon'));
         }
         return $next($request);

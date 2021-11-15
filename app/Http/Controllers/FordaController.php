@@ -14,15 +14,33 @@ class FordaController extends Controller
 {
     public function index()
     {
-        $forda = Peserta::where('forda_id', Auth::user()->user->id)->get();
+        $forda = Auth::user()->user;
         $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
-        $peserta_terdaftar = DB::table('peserta')->count();
+        $peserta_terdaftar = $forda->peserta()->count();
         $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending')->count();
-        return view('forda.dashboard', ['forda' => $forda], $peserta_pending, $peserta_terdaftar, $peserta_konfirmasi);
+        $pesertas = $forda->peserta;
+        return view('forda.dashboard', [
+            'forda' => $forda,
+            'peserta_pending' => $peserta_pending,
+            'peserta_terdaftar' => $peserta_terdaftar,
+            'peserta_konfirmasi' => $peserta_konfirmasi,
+            'pesertas' => $pesertas
+        ]);
     }
     public function absensi()
     {
-        $forda = Peserta::where('forda_id', Auth::user()->user->id)->get();
-        return view('forda.absensi-forda', ['forda' => $forda]);
+        $forda = Auth::user()->user;
+        $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
+        $peserta_terdaftar = $forda->peserta()->count();
+        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending')->count();
+        $pesertas = $forda->peserta;
+
+        return view('forda.absensi-forda', [
+            'forda' => $forda,
+            'peserta_pending' => $peserta_pending,
+            'peserta_terdaftar' => $peserta_terdaftar,
+            'peserta_konfirmasi' => $peserta_konfirmasi,
+            'pesertas' => $pesertas
+        ]);
     }
 }

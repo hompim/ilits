@@ -7,6 +7,9 @@
 @stop
 
 @section('content')
+<div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="{{asset('img/logo.png')}}" alt="Logo ILITS 2022" height="60" width="60">
+</div>
 <div class="container-fluid">
     <!-- Small boxes (Stat box) -->
     <div class="row">

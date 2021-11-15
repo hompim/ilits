@@ -27,6 +27,11 @@ class PesertaController extends Controller
     {
         return view('peserta.absensi');
     }
+
+    public function registerWelcome(){
+        return view('peserta.welcome');
+    }
+
     public function prosesAbsensi(Request $request)
     {
         $kode_presensi_forda = TryoutForda::find(Auth::user()->forda->tryoutForda->id)->kode_presensi;
@@ -51,7 +56,7 @@ class PesertaController extends Controller
             }
         }
     }
-    public function welcome(Request $request)
+    public function storeWelcome(Request $request)
     {
         //update data peserta
         $id = Auth::user()->user_id;

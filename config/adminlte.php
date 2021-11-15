@@ -245,32 +245,44 @@ return [
         ],
         [
             'text'      => 'Welcome',
-            'icon'      => 'fas fa-wrench',
+            'icon'      => 'fas fa-pencil-ruler',
             'submenu'   => [
                 [
                     'text'  => 'Dashboard Welcome',
                     'icon'  => 'fas fa-tachometer-alt',
                     'url'   => 'peserta/welcome/',
-                    'can'   => ['peserta-dashboard']
+                    'can'   => ['peserta-tryout']
                 ],
                 [
                     'text'  => 'Absensi',
                     'icon'  => 'fas fa-pager',
                     'url'   => 'peserta/welcome/absensi/',
-                    'can'   => ['peserta-dashboard']
+                    'can'   => ['peserta-tryout']
                 ],
                 [
                     'text'  => 'Upload Bukti Bayar',
                     'icon'  => 'fas fa-money-check-alt',
                     'url'   => 'peserta/welcome/upload',
+                    'can'   => ['peserta-tryout']
+                ],
+                [
+                    'text'  => 'Daftar Welcome',
+                    'icon'  => 'fas fa-edit',
+                    'url'   => 'peserta/welcome/daftar',
                     'can'   => ['peserta-dashboard']
                 ],
                 [
                     'text'  => 'Dashboard Welcome',
                     'icon'  => 'fas fa-tachometer-alt',
-                    'url'   => 'forda/welcome/',
+                    'url'   => 'forda',
                     'can'   => ['forda-dashboard']
-                ]
+                ],
+                [
+                    'text'  => 'Absensi Peserta',
+                    'icon'  => 'fas fa-pager',
+                    'url'   => 'forda/absensi',
+                    'can'   => ['forda-dashboard']
+                ],
             ],
             'can'       => ['peserta-dashboard', 'forda-dashboard'],
         ]
@@ -312,22 +324,82 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/js/dataTables.bootstrap4.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/responsive/js/dataTables.responsive.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/responsive/js/responsive.bootstrap4.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/dataTables.buttons.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/buttons.bootstrap4.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/buttons.colVis.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/buttons.html5.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/buttons.print.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/jszip/jszip.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/pdfmake/pdfmake.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/pdfmake/vfs_fonts.js'
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                    'asset' => true,
+                    'location' => 'vendor/datatables/css/dataTables.bootstrap4.min.css',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/responsive/css/responsive.bootstrap4.min.css'
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/css/buttons.bootstrap4.min.css'
                 ],
             ],
         ],
