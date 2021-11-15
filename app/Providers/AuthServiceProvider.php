@@ -67,10 +67,13 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('bukan-peserta-tryout', function(User $user){
-            if (($user->user_type === 'App\Models\Peserta')&&(TryoutUser::where('user_id', $user->id)->count())){
-                return false;
+            if (($user->user_type === 'App\Models\Peserta')){
+                if((TryoutUser::where('user_id', $user->id)->count())){
+                    return false;
+                }
+                return true;
             }
-            return true;
+            return false;
         });
     }
 }
