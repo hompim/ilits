@@ -97,10 +97,12 @@
                       <td>{{$peserta->asal_sekolah}}</td>
                       <td>{{$peserta->no_wa}}</td>
                       <td style="text-transform:capitalize">{{$peserta->user->tryoutUser->pilihan_tryout}}</td>
-                      @if ($peserta->user->tryoutUser->status_absen==true)
-                      <td class="text-success">Hadir</td>    
-                      @else
-                      <td class="text-danger">Belum Hadir</td>
+                      @if ($peserta->user->tryoutUser->status_absen=="belum_absen")
+                      <td class="text-warning">Belum Absen</td>    
+                      @elseif($peserta->user->tryoutUser->status_absen=="hadir")
+                      <td class="text-success">Hadir</td>
+                      @else    
+                      <td class="text-danger">Tidak Hadir</td>
                       @endif
                     </tr>
                     @endforeach

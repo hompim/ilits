@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\TryoutUser;
 use App\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Auth\Notifications\VerifyEmail;
@@ -63,6 +64,13 @@ class AuthServiceProvider extends ServiceProvider
                 return $user->tryoutUser?true:false;
             }
             return false;
+        });
+
+        Gate::define('bukan-peserta-tryout', function(User $user){
+            if (($user->user_type === 'App\Models\Peserta')&&(TryoutUser::where('user_id', $user->id)->count())){
+                return false;
+            }
+            return true;
         });
     }
 }

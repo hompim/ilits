@@ -269,7 +269,7 @@ return [
                     'text'  => 'Daftar Welcome',
                     'icon'  => 'fas fa-edit',
                     'url'   => 'peserta/welcome/daftar',
-                    'can'   => ['peserta-dashboard']
+                    'can'   => ['bukan-peserta-tryout']
                 ],
                 [
                     'text'  => 'Dashboard Welcome',

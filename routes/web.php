@@ -45,7 +45,7 @@ Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
         Route::get('/absensi', [PesertaController::class, 'absen'])->name('peserta.absen');
         Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
         Route::get('/daftar', [PesertaController::class, 'registerWelcome'])->name('peserta.welcome.register');
-        Route::post('/daftar', [PesertaController::class, 'welcome'])->name('peserta.welcome.store');
+        Route::post('/daftar', [PesertaController::class, 'storeWelcome'])->name('peserta.welcome.store');
     });
 });
 // Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');

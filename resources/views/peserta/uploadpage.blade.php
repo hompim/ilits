@@ -34,73 +34,80 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box border-info elevation-2">
-                    <div class="inner">
-                        <p class="text-info">Forda</p>
-
-                        <h4>Surabaya</h4>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-ios-people"></i>
-                    </div>
+              <!-- small box -->
+              <div class="small-box border-info elevation-2">
+                <div class="inner">
+                  <p class="text-info">Forda</p>
+        
+                  <h4>{{Auth::user()->user->forda->nama}}</h4>
                 </div>
+                <div class="icon">
+                  <i class="ion ion-ios-people"></i>
+                </div>
+              </div>
             </div>
             <!-- ./col -->
             <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div
-                    class="small-box border-success elevation-2"
-                >
-                    <div class="inner">
-                        <p class="text-success">Pembayaran</p>
-
-                        <h4>Belum</h4>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-cash"></i>
-                    </div>
+              <!-- small box -->
+              <div class="small-box border-success elevation-2">
+                <div class="inner">
+                  <p class="text-success">Pembayaran</p>
+                      <h4>
+                          @if (Auth::user()->tryoutUser->status_bayar != null)
+                              Sudah
+                          @else
+                              Belum
+                          @endif
+                      <h3>
                 </div>
+                <div class="icon">
+                  <i class="ion ion-cash"></i>
+                </div>
+              </div>
             </div>
             <!-- ./col -->
             <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div
-                    class="small-box border-warning elevation-2"
-                >
-                    <div class="inner">
-                        <p class="text-warning">
-                            Konfirmasi Email
-                        </p>
-
-                        <h4>Sudah</h4>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-email"></i>
-                    </div>
+              <!-- small box -->
+              <div class="small-box border-warning elevation-2">
+                <div class="inner">
+                  <p class="text-warning">Konfirmasi Email</p>
+        
+                   <h4>
+                      @if (Auth::user()->email_verified_at == null)
+                          Belum
+                      @else
+                          Sudah
+                      @endif
+        
+                  </h4>
                 </div>
+                <div class="icon">
+                  <i class="ion ion-email"></i>
+                </div>
+              </div>
             </div>
             <!-- ./col -->
             <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div
-                    class="small-box border-danger elevation-2"
-                >
-                    <div class="inner">
-                        <p class="text-danger">
-                            Pilihan Tryout
-                        </p>
-
-                        <h4>Saintek</h4>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-ios-paper"></i>
-                    </div>
+              <!-- small box -->
+              <div class="small-box border-danger elevation-2">
+                <div class="inner">
+                  <p class="text-danger">Pilihan Tryout</p>
+                  <h4>
+                      @if (Auth::user()->tryoutUser->pilihan_tryout != null)
+                          {{Auth::user()->tryoutUser->pilihan_tryout}}
+                      @else
+                          Belum Memilih
+                      @endif
+                  <h4>
                 </div>
+                <div class="icon">
+                  <i class="ion ion-ios-paper"></i>
+                </div>
+              </div>
             </div>
             <!-- ./col -->
-        </div>
-        <!-- /.row -->
+          </div>
+          <!-- /.row -->
 
         <!-- Warning row -->
         <div class="row">

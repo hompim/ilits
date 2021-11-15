@@ -74,7 +74,7 @@
           <p class="text-danger">Pilihan Tryout</p>
           <h4>
               @if (Auth::user()->tryoutUser->pilihan_tryout != null)
-                  {{Auth::user()->user->pilihan_tryout}}
+                  {{Auth::user()->tryoutUser->pilihan_tryout}}
               @else
                   Belum Memilih
               @endif
