@@ -44,7 +44,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.html" class="nav-link">Home</a>
+        <a href="{{route('peserta')}}" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -68,8 +68,8 @@
   <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link logo-switch">
-      <img src="{{asset('dashboard/dist/img/logo-with-text.png" alt="Logo ILITS 2022" class="brand-image-xl logo-xl')}}">
-      <img src="{{asset('dashboard/dist/img/logo.png" alt="Logo ILITS 2022" class="brand-image-xs logo-xs" style="left: 12px')}}">
+      <img src="{{asset('dashboard/dist/img/logo-with-text.png')}}" alt="Logo ILITS 2022" class="brand-image-xl logo-xl">
+      <img src="{{asset('dashboard/dist/img/logo.png')}}" alt="Logo ILITS 2022" class="brand-image-xs logo-xs" style="left: 12px">
     </a>
 
     <!-- Sidebar -->
@@ -82,7 +82,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-header"></li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="{{route('peserta')}}" class="nav-link active">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Dashboard
@@ -99,7 +99,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('peserta.absen')}}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Presensi

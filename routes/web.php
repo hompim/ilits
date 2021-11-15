@@ -61,11 +61,15 @@ Route::get('DatabaseEskalatorCita2022/', function () {
 
 //Route untuk Peserta
 Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
-    Route::get('/', [PesertaController::class, 'index'])->name('peserta');
+    if (Auth::user()->user->tryoutUser->pilihan_tryout != null) {
+        Route::get('/', [PesertaController::class, 'index'])->name('peserta');
+    } else {
+        Route::get('/', [PesertaController::class, 'welcome'])->name('peserta');
+    }
     Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
     Route::get('/absen', [PesertaController::class, 'absen'])->name('peserta.absen');
     Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
-    Route::post('/welcome{id}', [PesertaController::class, 'welcome'])->name('peserta.welcome');
+    Route::post('/welcome', [PesertaController::class, 'pesertaWelcome'])->name('welcome');
 });
 // Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
 

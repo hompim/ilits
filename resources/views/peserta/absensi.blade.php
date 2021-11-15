@@ -52,10 +52,10 @@
                 <li class="nav-item">
                     <div class="user-panel mt-1 mb-2 d-flex">
                         <div class="info">
-                            <a href="#" class="d-block">Nama Peserta</a>
+                            <a href="#" class="d-block">{{Auth::user()->user->nama_lengkap}}</a>
                         </div>
                         <div class="image">
-                            <img src="{{asset('dist/img/avatar5.png')}}" class="img-circle elevation-1" alt="User Image">
+                            <img src="{{asset('dashboard/dist/img/avatar5.png')}}" class="img-circle elevation-1" alt="User Image">
                         </div>
                     </div>
                 </li>
@@ -82,7 +82,7 @@
                with font-awesome or any other icon font library -->
                         <li class="nav-header"></li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('peserta')}}" class="nav-link">
                                 <i class="nav-icon fas fa-columns"></i>
                                 <p>
                                     Dashboard
@@ -92,7 +92,7 @@
                         <!-- Upload Bukti Bayar -->
                         <li class="nav-header"></li>
                         <li class="nav-item">
-                            <a href="upload-bayar.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-money-bill-wave"></i>
                                 <p>
                                     Upload Bukti Bayar
@@ -101,7 +101,7 @@
                         </li>
                         <!-- Presensi -->
                         <li class="nav-item  menu-open">
-                            <a href="absen-peserta.html" class="nav-link  active">
+                            <a href="{{route('peserta.absen')}}" class="nav-link  active">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Presensi

@@ -144,7 +144,7 @@
               <div class="inner">
                 <p class="text-info">Forda</p>
 
-                <h3>{{Auth::user()->name}}</h3>
+                <h4>{{Auth::user()->name}}</h4>
               </div>
               <div class="icon">
                 <i class="ion ion-ios-people"></i>
@@ -158,7 +158,7 @@
               <div class="inner">
                 <p class="text-primary">Jumlah peserta terdaftar</p>
 
-                <h3>{{$peserta_terdaftar}}</h3>
+                <h4>{{$peserta_terdaftar}}</h4>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -172,7 +172,7 @@
               <div class="inner">
                 <p class="text-success">Jumlah peserta terkonfirmasi</p>
 
-                <h3>{{$peserta_terkonfirmasi}}</h3>
+                <h4>{{$peserta_konfirmasi}}</h4>
               </div>
               <div class="icon">
                 <i class="ion ion-ios-checkmark"></i>
@@ -186,7 +186,7 @@
               <div class="inner">
                 <p class="text-warning">Jumlah peserta pending</p>
 
-                <h3>{{$peserta_terkonfirmasi}}</h3>
+                <h4>{{$peserta_pending}}</h4>
               </div>
               <div class="icon">
                 <i class="ion ion-android-warning"></i>
@@ -221,34 +221,39 @@
                   </thead>
                   <tbody>
                             <?php foreach($forda as $f) {?>
-                            @if($f->user)
-                            @if($f->user->email_verified_at)
+                            {{-- @if($f->user)
+                            @if($f->user->email_verified_at) --}}
                             <tr>
                                 <td><?= $f->nama_lengkap;?></td>
                                 <td><?= $f->user->email;?></td>
                                 <td><?= $f->asal_sekolah;?></td>
                                 <td><?= $f->no_wa;?></td>
-                                <td style="text-transform:capitalize"><?= $f->pilihan_tryout;?></td>
                                 <td style="text-transform:capitalize">
-                                    @if($f->tryoutUser->status_bayar=='pending')
+                                    @if ($f->user->tryoutUser->pilihan_tryout!= null)
+                                        <?= $f->user->tryoutUser->pilihan_tryout;?>
+                                    @endif
+                                        Belum Memilih
+                                </td>
+                                <td style="text-transform:capitalize">
+                                    @if($f->user->tryoutUser->status_bayar=='pending')
                                         Belum Melakukan Pembayaran
-                                    @elseif($f->tryoutUser->status_bayar=='pending_pembayaran')
-                                        @if($f->tryoutUser->bukti_bayar)
+                                    @elseif($f->user->tryoutUser->status_bayar=='pending_pembayaran')
+                                        @if($f->user->tryoutUser->bukti_bayar)
                                         Pending Bukti Bayar
                                         @else
                                         Belum Mengunggah Bukti Bayar
                                         @endif
-                                    @elseif($f->tryoutUser->status_bayar=='ditolak')
+                                    @elseif($f->user->tryoutUser->status_bayar=='ditolak')
                                         Kartu Pelajar Ditolak
-                                    @elseif($f->tryoutUser->status_bayar=='tolak_pembayaran')
+                                    @elseif($f->user->tryoutUser->status_bayar=='tolak_pembayaran')
                                         Bukti Bayar Ditolak
                                     @else
-                                        {{$f->tryoutUser->status_bayar}}
+                                        {{$f->user->tryoutUser->status_bayar}}
                                     @endif
                                 </td>
                             </tr>
-                            @endif
-                            @endif
+                            {{-- @endif
+                            @endif --}}
                             <?php }?>
                   </tbody>
                   <tfoot>

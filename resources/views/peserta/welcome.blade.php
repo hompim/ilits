@@ -40,7 +40,7 @@
                     justify-content-center
                     align-items-center
                 ">
-            <img class="animation__shake" src="dist/img/logo.png" alt="Logo ILITS 2022" height="60" width="60" />
+            <img class="animation__shake" src="{{asset('dashboard/dist/img/logo.png')}}" alt="Logo ILITS 2022" height="60" width="60" />
         </div>
 
         <!-- Navbar -->
@@ -60,10 +60,10 @@
                 <li class="nav-item">
                     <div class="user-panel mt-1 mb-2 d-flex">
                         <div class="info">
-                            <a href="#" class="d-block">Nama Peserta</a>
+                            <a href="#" class="d-block">{{Auth::user()->user->nama_lengkap}}</a>
                         </div>
                         <div class="image">
-                            <img src="dist/img/avatar5.png" class="img-circle elevation-1" alt="User Image" />
+                            <img src="{{asset('dashboard/dist/img/avatar5.png')}}" class="img-circle elevation-1" alt="User Image" />
                         </div>
                     </div>
                 </li>
@@ -75,8 +75,8 @@
         <aside class="main-sidebar sidebar-light-primary elevation-4">
             <!-- Brand Logo -->
             <a href="#" class="brand-link logo-switch">
-                <img src="dist/img/logo-with-text.png" alt="Logo ILITS 2022" class="brand-image-xl logo-xl" />
-                <img src="dist/img/logo.png" alt="Logo ILITS 2022" class="brand-image-xs logo-xs" style="left: 12px" />
+                <img src="{{asset('dashboard/dist/img/logo-with-text.png')}}" alt="Logo ILITS 2022" class="brand-image-xl logo-xl" />
+                <img src="{{asset('dashboard/dist/img/logo.png')}}" alt="Logo ILITS 2022" class="brand-image-xs logo-xs" style="left: 12px" />
             </a>
 
             <!-- Sidebar -->
@@ -135,33 +135,37 @@
 
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="POST" action="{{ route('peserta.welcome')}}">
+
+                                <form method="POST" action="/peserta/welcome">
                                     @csrf
+                                    @method('POST')
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="nama_lengkap">Nama Lengkap</label>
                                             <input type="text" class="form-control" id="nama_lengkap"
-                                                value="{{ $update_peserta->nama_lengkap }}" name="nama_lengkap" required />
+                                                value="{{Auth::user()->user->nama_lengkap}}" name="nama_lengkap" required />
                                         </div>
                                         <div class="form-group">
                                             <label for="asal_sekolah">Asal Sekolah</label>
                                             <input type="text" class="form-control" id="asal_sekolah"
-                                                value="{{ $update_peserta->asal_sekolah }}" name="asal_sekolah" required />
+                                                value="{{Auth::user()->user->asal_sekolah}}" name="asal_sekolah" required />
                                         </div>
                                         <div class="form-group">
-                                            <label for="kota_kab_asal_sekolah">Kota/Kabupaten Asal Sekolah</label>
-                                            <input type="text" class="form-control" id="kota_kab_asal_sekolah"
-                                                value="{{ $update_peserta->kota_kab_asal_sekolah }}" name="kota_kab_asal_sekolah"
-                                                required />
+                                            <label for="kab_sekolah_id">Kota/Kabupaten Asal Sekolah</label>
+                                                <select class="form-control" style="margin-bottom: 15px" name="kab_sekolah_id" id="kab_sekolah_id" required autofocus>
+                                                    @foreach($kabupaten as $kab)
+                                                        <option value="{{$kab->id}}">{{$kab->nama}}</option>
+                                                    @endforeach
+                                                </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="no_wa">No. Whatsapp</label>
                                             <input type="text" class="form-control" id="no_wa"
-                                                value="{{ $update_peserta->no_wa }}" name="no_wa" required />
+                                                value="{{Auth::user()->user->no_wa }}" name="no_wa" required />
                                         </div>
                                         <div class="form-group">
                                             <label for="is_pelajar_aktif">Pelajar Aktif</label>
-                                            <input type="text" class="form-control" id="is_pelajar_aktif" value="{{ $update_peserta->is_pelajar_aktif }}"
+                                            <input type="text" class="form-control" id="is_pelajar_aktif" value="{{Auth::user()->user->is_pelajar_aktif }}"
                                                 name="is_pelajar_aktif" readonly/>
                                         </div>
                                         <div class="form-group bg-primary rounded pt-3 pb-2">
@@ -216,7 +220,7 @@
     <script type="text/javascript">
         $(function () {
             $('#validasi_data').on('click', function () {
-                $('#nama_lengkap, #asal_sekolah, #kota_kab_asal_sekolah, #no_wa, #pilihan_tryout').attr('disabled', $(this).is(':checked'));
+                $('#nama_lengkap, #asal_sekolah, #kab_sekolah_id, #no_wa, #pilihan_tryout').attr('disabled', $(this).is(':checked'));
             });
         });
     </script>

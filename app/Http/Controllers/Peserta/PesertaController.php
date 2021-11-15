@@ -7,6 +7,7 @@ use App\Models\Peserta;
 use App\Models\TryoutUser;
 use App\Models\TryoutForda;
 use App\Models\Forda;
+use App\Models\KotaKab;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -51,22 +52,47 @@ class PesertaController extends Controller
             }
         }
     }
-    public function welcome($id, Request $request)
+    public function welcome()
+    {
+        $kabupaten = DB::table('kota_kab')
+            ->get();
+        return view('peserta.welcome', ['kabupaten' => $kabupaten]);
+    }
+
+    public function pesertaWelcome(Request $request)
     {
         //update data peserta
-        $update_peserta = Peserta::find($id);
-        $update_peserta->nama_lengkap = 'nama_lengkap';
-        $update_peserta->asal_sekolah = 'asal_sekolah';
-        $update_peserta->kota_kab_asal_sekolah = 'kota_kab_asal_sekolah';
-        $update_peserta->no_wa = 'no_wa';
-        $update_peserta->save();
+        // $update_peserta = Peserta::find(Auth::user()->user->id);
+
+        // $update_peserta->nama_lengkap;
+        // $update_peserta->asal_sekolah;
+        // $update_peserta->kab_sekolah_id;
+        // $update_peserta->no_wa;
+        // $update_peserta->save();
 
         //insert pilihan tryout
-        $pilih_tryout = new TryoutUser;
-        $pilih_tryout->pilihan_tryout = $request->pilihan_tryout;
-        $pilih_tryout->save();
+        // $pilih_tryout = new TryoutUser;
+        // $pilih_tryout->pilihan_tryout = TryoutUser::get('pilihan_tryout');
+        // //$pilih_tryout->pilihan_tryout = $request->pilihan_tryout;
+        // $pilih_tryout->save();
 
-        return view('peserta.dashboard');
+        // DB::table('tryout_user')->insert([
+        //     'pilihan_tryout' => $request->pilihan_tryout
+        // ]);
+
+        TryoutUser::create([  // <= the error is Here!!!
+            'user_id' => Auth::user()->user->id,
+            'pilihan_tryout' => request('pilihan_tryout')
+        ]);
+
+        DB::table('peserta')->where('id', Auth::user()->user->id)->update([
+            'nama_lengkap' => $request->nama_lengkap,
+            'asal_sekolah' => $request->asal_sekolah,
+            'kab_sekolah_id' => $request->kab_sekolah_id,
+            'no_wa' => $request->no_wa
+        ]);
+
+        return redirect('/peserta');
     }
 
     // public function UploadKartu(Request $request)
