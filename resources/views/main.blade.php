@@ -47,15 +47,20 @@
 
   <section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
     <article class="container text-center position-relative">
-      <x-map text="Virtual Tour ITS" href="/"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634595959033!2d112.79273125123773!3d-7.28235067356743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1633755459057!5m2!1sen!2sid" />
+      <x-map text="Virtual Tour ITS" href="/" withLayer="true"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634595959033!2d112.79273125123773!3d-7.28235067356743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1633755459057!5m2!1sen!2sid">
+        <span>Virtual Expo</span>
+        {{-- <a href="" class="d-flex jusitfy-content-center align-items-center text-decoration-none">
+          <i class="text-white fa fa-3x fa-arrow-right" aria-hidden="true"></i>
+        </a> --}}
+      </x-map>
     </article>
   </section>
 
   <section class="d-flex justify-content-center flex-column" id="informasi-umum">
     <article class="container text-white">
       <div class="container">
-        @include('partials.section-header', ["title" => "Yuk, Kepoin Kita Lebih Lanjut!"])
+        {{-- @include('partials.section-header', ["title" => "Yuk, Kepoin Kita Lebih Lanjut!"]) --}}
         <x-two-side-carousel titles="Web Series ILITS,Web Series ILITS,Web Series ILITS"
           texts="Seperti apa sih ITS itu? Yuk kenali ITS lebih dalam dengan cara yang asyik dalam web series ILITS!|Seperti apa sih ITS itu? Yuk kenali ITS lebih dalam dengan cara yang asyik dalam web series ILITS!|Seperti apa sih ITS itu? Yuk kenali ITS lebih dalam dengan cara yang asyik dalam web series ILITS!"
           images="img/main/web-series.png,img/main/web-series.png,img/main/web-series.png"
@@ -83,7 +88,7 @@
 
   <section class="d-flex justify-content-center align-items-center flex-column" id="fakultas">
     <article class="container text-center text-white mb-5">
-      @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"])
+      {{-- @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"]) --}}
       <div class="row">
         <div class="col-lg-4 col-md-6 col-12 mb-5">
           <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button>
@@ -137,7 +142,7 @@
 
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="tim-its">
     <article class="container">
-      @include('partials.section-header', ["title" => "Kenalan dengan Tim di ITS!"])
+      {{-- @include('partials.section-header', ["title" => "Kenalan dengan Tim di ITS!"]) --}}
       <x-three-cards title1="Bayucaraka" title2="Ichiro" title3="Sapu Angin" img1="img/main/prestasi-1.png"
         img2="img/main/prestasi-2.png" img3="img/main/prestasi-3.png" :list1="array('Juara 1 Mobil terbang','
           Juara 2 Mobil terbang cepat','
@@ -172,7 +177,7 @@
 
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="beasiswa">
     <article class="container">
-      @include('partials.section-header', ["title" => "Pilihan Beasiswa Untukmu!"])
+      {{-- @include('partials.section-header', ["title" => "Pilihan Beasiswa Untukmu!"]) --}}
       <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
       <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
       <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
@@ -189,6 +194,7 @@
   </section>
 @endsection
 
-@section('js')
+@push('scripts')
   <script src="{{ asset('js/components/three-cards-carousel.js') }}" defer></script>
-@endsection
+  <script src="{{ asset('js/components/map.js') }}" defer></script>
+@endpush
