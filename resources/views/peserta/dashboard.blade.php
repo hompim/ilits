@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
 @section('title', 'Dashboard Welcome Peserta')
-    
+
 @section('content_header')
-<h1>Dashboard Peserta</h1>   
+<h1>Dashboard Peserta</h1>
 @stop
 
 @section('content')
@@ -152,5 +152,28 @@
     </section>
   </div>
   <!-- /.row (main row) -->
+  <!-- Upload File Bayar -->
+                        <div class="card elevation-2">
+                            <div class="card-header">
+                                <h5 class="card-title">Unggah Bukti Bayar</h5>
+                                <p class="card-text">
+                                    Foto bukti bayar harus terlihat dengan
+                                    jelas!
+                                </p>
+                            </div>
+                            <form action="#">
+                            <div class="card-body">
+                                    <input type="file" class="form-control-file border" onchange="preview()" name="bukti_bayar" required style="cursor: pointer;">
+                                    <img id="frame" src="" width="100%"/>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button class="btn btn-primary">
+                                    Submit
+                                </button>
+                            </div>
+                            </form>
+                        </div>
+
+                        <!-- Akhir File Bayar -->
 </div>
 @stop
