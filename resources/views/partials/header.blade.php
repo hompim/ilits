@@ -44,7 +44,7 @@
           <a class="mx-4 nav-link" href="#">Beasiswa</a>
         </div>
       </div>
-      <div class="ml-auto border-top">
+      <div class="ml-auto">
         <a class="nav-link" href="#">Masuk</a>
       </div>
     </div>
