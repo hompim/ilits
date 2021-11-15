@@ -82,7 +82,7 @@
   </section>
 
   <section class="d-flex justify-content-center align-items-center flex-column" id="fakultas">
-    <article class="container text-center text-white">
+    <article class="container text-center text-white mb-5">
       @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"])
       <div class="row mb-4 w-100 mt-4">
         <button type="button" class="text-white mx-3 py-3 px-2 col-md">Teknologi Industri dan Rekayasa Sistem</button>
@@ -104,10 +104,7 @@
         <button type="button" class="text-white py-4 px-2 col-12 col-md-3 mx-auto">Vokasi</button>
       </div>
     </article>
-  </section>
-
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="detail-fakultas">
-    <article class="container d-flex flex-column align-items-center">
+    <article class="container text-white d-flex flex-column align-items-center mt-5">
       <x-two-side-card title="Sains dan Analitika Data"
         text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eius eligendi, tempore vel ipsa! Provident, possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur officia est hic."
         buttonText="Lihat Departemen" />

@@ -81,7 +81,7 @@ section#informasi-penting a {
 }
 
 section#fakultas {
-    background: linear-gradient(to bottom, #272b5a, #2c1c4f);
+    background: linear-gradient(to bottom, #272b5a, #3f1862);
 }
 section#fakultas h2 {
     font-size: 3rem;
@@ -92,10 +92,6 @@ section#fakultas button {
     border: none;
     border-radius: 22px;
     font-family: "gothammedium";
-}
-
-section#detail-fakultas {
-    background: linear-gradient(to bottom, #2c1c4f, #3f1862);
 }
 
 section#prestasi {
@@ -217,7 +213,7 @@ section#sponsor .sponsor-box {
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-    section#detail-fakultas .row h3 {
+    section#fakultas .twoSideCard h3 {
         font-size: 1.5rem;
     }
     section#prestasi a.btn-floating-prev {
