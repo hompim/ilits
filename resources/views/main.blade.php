@@ -84,24 +84,28 @@
   <section class="d-flex justify-content-center align-items-center flex-column" id="fakultas">
     <article class="container text-center text-white mb-5">
       @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"])
-      <div class="row mb-4 w-100 mt-4">
-        <button type="button" class="text-white mx-3 py-3 px-2 col-md">Teknologi Industri dan Rekayasa Sistem</button>
-        <button type="button" class="text-white mx-3 py-3 px-2 col-md">Sains dan Analitika Data</button>
-        <button type="button" class="text-white mx-3 py-3 px-2 col-md">Teknik Sipil, Perencanaan, dan Kebumian</button>
-      </div>
-      <div class="row mb-4 w-100">
-        <div class="col-md px-5">
-          <button type="button" class="text-white py-3">Teknologi Elektro dan Informatika Cerdas</button>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button>
         </div>
-        <div class="col-md">
-          <button type="button" class="text-white w-100 h-100">Teknologi Kelautan</button>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Sains dan Analitika Data</button>
         </div>
-        <div class="col-md px-5">
-          <button type="button" class="text-white py-3 ">Desain Kreatif dan Bisnis Digital</button>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknik Sipil, Perencanaan, dan Kebumian</button>
         </div>
-      </div>
-      <div class="row w-100">
-        <button type="button" class="text-white py-4 px-2 col-12 col-md-3 mx-auto">Vokasi</button>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Elektro dan Informatika Cerdas</button>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Kelautan</button>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Desain Kreatif dan Bisnis Digital</button>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mx-auto">
+          <button type="button" class="text-white border-0 w-100 h-100 px-3">Vokasi</button>
+        </div>
       </div>
     </article>
     <article class="container text-white d-flex flex-column align-items-center mt-5">
