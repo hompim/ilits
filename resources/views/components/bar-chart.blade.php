@@ -1,4 +1,4 @@
-<div class="text-center" id="BarChart">
+<div class="text-center  " id="BarChart">
     <div class="bars d-flex flex-column mb-4">
       <div class="percent mt-auto" style="height:{{$percent}}%"></div>
     </div>

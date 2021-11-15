@@ -5,13 +5,13 @@
         <a class="btn-floating btn-floating-next position-absolute" href=".{{$carouselId}}" data-slide="next"><i
                 class="text-white fa fa-3x fa-arrow-right" aria-hidden="true"></i></a>
     </div>
-    <div class="carousel-inner row w-100 mx-auto"  role="listbox">        
+    <div class="mx-auto carousel-inner row w-100"  role="listbox">        
     @for($i = 0; $i < count($titles); $i++) 
-        <div class="carousel-item @if($i==0) active @endif col-sm-12 col-md-4">
+        <div class="carousel-item @if($i==0) active @endif col-md-4">
             <div class="overflow-hidden card">
-                <img src="{{ asset($images[$i]) }}" alt="Card image cap">
+                <img src="{{ asset($images[$i]) }}" class="px-5 py-4" alt="{{ $titles[$i] }}">
                 <div class="text-center">                        
-                    <h4 class="card-title mx-5">{{ $titles[$i] }}</h4>
+                    <h3 class="mx-2 mb-1 card-title mb-sm-3 mb-xl-4 mx-lg-2">{{ $titles[$i] }}</h3>
                </div>
             </div>
               

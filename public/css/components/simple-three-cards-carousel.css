@@ -66,18 +66,20 @@
         visibility: visible;
     }
 }
-/* LG */
+#simpleThreeCardsCarousel h3{
+
+}
 
 #simpleThreeCardsCarousel a.btn-floating-prev {
-    left: 0;
-    top: 50%;
-    transform: translate(-3rem, -50%);
+    left: -0.625rem;
+    top: 43%;
+    transform: translate(-3rem, 50%);
     z-index: 2;
 }
 #simpleThreeCardsCarousel a.btn-floating-next {
-    right: 0;
-    top: 50%;
-    transform: translate(3rem, -50%);
+    right: -0.625rem;
+    top: 43%;
+    transform: translate(3rem, 50%);
     z-index: 2;
 }
 #simpleThreeCardsCarousel .card {
@@ -87,18 +89,35 @@
     backdrop-filter: blur(20px);
 }
 
-#simpleThreeCardsCarousel .card img {
-    padding: 3rem 5rem 3rem 5rem ;
-}
-#simpleThreeCardsCarousel .card h4 {
+#simpleThreeCardsCarousel .card h3 {
     display: block;
-    font-size: 1.625rem;
+    font-size: 1.75rem;
     font-family: "gothammedium";
     min-height: 4rem;
-    margin-bottom: 2rem;
 }
-@media screen and (max-width: 768px) {
-
+@media screen and (max-width: 1200px) {
+    #simpleThreeCardsCarousel .card h3{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 992px) {
+    #simpleThreeCardsCarousel .card h3{
+        font-size: 1rem;
+    }
+    #simpleThreeCardsCarousel a.btn-floating .fa-3x{
+        font-size: 2em !important;
+    }
+    #simpleThreeCardsCarousel a.btn-floating-prev {
+        transform: translateX(-2.2rem);
+    }
+    #simpleThreeCardsCarousel a.btn-floating-next {
+        transform: translateX(2.2rem);
+    }
+}
+@media screen and (max-width: 767px) {
+    #simpleThreeCardsCarousel .card h3{
+        font-size: 1.5rem;
+    }
     #simpleThreeCardsCarousel a.btn-floating .fa-3x{
         font-size: 2em !important;
     }

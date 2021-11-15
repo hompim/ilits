@@ -3,3 +3,4 @@
     <h3 class="my-1">{{$title}}</h3>
     <h4>{{$text}}</h4>
 </div>
+{{-- ukuran text menyesuaikan ukuran h3/h4 dari page (bisa diatur sesuai kebutuhan di "namaPage".css) --}}
