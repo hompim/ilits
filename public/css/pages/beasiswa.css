@@ -1,0 +1,25 @@
+/* JUMBOTRON */
+#jumbotron {
+  height: 720px;
+  background: linear-gradient(to right, #642881, #bf7dde);
+}
+
+#jumbotron .container {
+  height: 30%;
+}
+
+#jumbotron h1 {
+  font-size: 60px;
+}
+
+/* INFO-UNIK */
+#info-unik {
+  min-height: 720px;
+}
+
+/* BEASISWA ITS */
+#beasiswa-its {
+  min-height: 720px;
+}
+
+/* BEASISWA MITRA ITS */
