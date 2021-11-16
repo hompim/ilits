@@ -7,7 +7,7 @@
     </div>
     <div class="mx-auto carousel-inner row w-100"  role="listbox">        
     @for($i = 0; $i < count($titles); $i++) 
-        <div class="carousel-item @if($i==0) active @endif col-md-4">
+        <div class="carousel-item @if($i==0) active @endif col-lg-4">
             <div class="overflow-hidden card">
                 <img src="{{ asset($images[$i]) }}" class="px-5 py-4" alt="{{ $titles[$i] }}">
                 <div class="text-center">                        
