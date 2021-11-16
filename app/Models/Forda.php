@@ -27,4 +27,7 @@ class Forda extends Model
     {
         return $this->hasone(TryoutForda::class);
     }
+    public function peserta(){
+        return $this->hasMany(Peserta::class);
+    }
 }

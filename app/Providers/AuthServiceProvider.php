@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\TryoutUser;
 use App\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Auth\Notifications\VerifyEmail;
@@ -46,6 +47,18 @@ class AuthServiceProvider extends ServiceProvider
                 ->line('Jika anda tidak merasa melakukan tidakan ini, maka abaikan pesan ini.');
         });
 
+        Gate::define('isAdmin', function (User $user) {
+            return ($user->user_type === 'App\Models\Admin');
+        });
+
+        Gate::define('isPeserta', function (User $user) {
+            return ($user->user_type === 'App\Models\Peserta');
+        });
+
+        Gate::define('isForda', function (User $user) {
+            return ($user->user_type === 'App\Models\Forda');
+        });
+
         Gate::define('admin-dashboard', function(User $user){
             return ($user->user_type === 'App\Models\Admin');
         });
@@ -56,6 +69,23 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('forda-dashboard', function(User $user){
             return ($user->user_type === 'App\Models\Forda');
+        });
+
+        Gate::define('peserta-tryout', function(User $user){
+            if ($user->user_type === 'App\Models\Peserta'){
+                return $user->tryoutUser?true:false;
+            }
+            return false;
+        });
+
+        Gate::define('bukan-peserta-tryout', function(User $user){
+            if (($user->user_type === 'App\Models\Peserta')){
+                if((TryoutUser::where('user_id', $user->id)->count())){
+                    return false;
+                }
+                return true;
+            }
+            return false;
         });
     }
 }

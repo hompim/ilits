@@ -7,15 +7,22 @@ use App\Models\Peserta;
 use App\Models\TryoutUser;
 use App\Models\TryoutForda;
 use App\Models\Forda;
+use App\Models\KotaKab;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class PesertaController extends Controller
 {
 
     public function index()
     {
+        if(!Auth::user()->tryoutUser){
+            return redirect(route('peserta.welcome.register'));
+        }
         return view('peserta.dashboard');
     }
     public function UploadPage()
@@ -27,58 +34,53 @@ class PesertaController extends Controller
     {
         return view('peserta.absensi');
     }
+
+    public function registerWelcome(){
+        $peserta = Auth::user()->user;
+        $kab = KotaKab::all();
+
+        return view('peserta.welcome', [
+            'peserta' => $peserta,
+            'kota_kab' => $kab
+        ]);
+    }
+
     public function prosesAbsensi(Request $request)
     {
-        $kode_presensi_forda = TryoutForda::find(Auth::user()->forda->tryoutForda->id)->kode_presensi;
+        $kode_presensi_forda = TryoutForda::where('forda_id', Auth::user()->user->forda_id)->kode_presensi;
         $kode_presensi = $request->kode_presensi;
         $keterangan_absen = $request->keterangan_absen;
 
-        if ($kode_presensi_forda == $kode_presensi) {
-            $id = TryoutUser::find(Auth::user()->tryoutUser->id);
-            $status_absen = TryoutUser::findOrFail($id);
-            if ($status_absen) {
-                $status_absen->status_absen = True;
-                $status_absen->keterangan_absen = null;
-                $status_absen->save();
-            }
+        if ($kode_presensi!=null&&$kode_presensi_forda == $kode_presensi) {
+            $tryout_user = Auth::user()->tryoutUser;
+            $tryout_user->status_absen = "hadir";
+            $tryout_user->save();
+        } else{
+            return redirect()->back()->with('error', 'Kode presensi tidak sama');
         }
         if ($keterangan_absen != null) {
-            $status_absen = TryoutUser::findOrFail($id);
-            if ($status_absen) {
-                $status_absen->status_absen = False;
-                $status_absen->keterangan_absen = $keterangan_absen;
-                $status_absen->save();
-            }
+            $tryout_user->status_absen = "tidak_hadir";
+            $tryout_user->keterangan_absen = $keterangan_absen;
+            $tryout_user->save();
         }
     }
-    public function welcome(Request $request)
+    public function storeWelcome(Request $request)
     {
-        //update data peserta
-        $id = Auth::user()->user_id;
-        $update_peserta = Peserta::find($id);
-        $update_peserta->nama_lengkap = 'nama_lengkap';
-        $update_peserta->asal_sekolah = 'asal_sekolah';
-        $update_peserta->kota_kab_asal_sekolah = 'kota_kab_asal_sekolah';
-        $update_peserta->no_wa = 'no_wa';
-        $update_peserta->save();
+        $peserta = Auth::user()->user;
 
-        //insert pilihan tryout
-        $pilih_tryout = new TryoutUser;
-        $pilih_tryout->pilihan_tryout = $request->pilihan_tryout;
-        $pilih_tryout->save();
+        //Update data user;
+        $peserta->nama_lengkap = $request->nama_lengkap;
+        $peserta->asal_sekolah = $request->asal_sekolah;
+        $peserta->kab_sekolah_id = $request->kab_sekolah_id;
+        $peserta->no_wa = $request->no_wa;
+        $peserta->save();
 
-        return view('peserta.dashboard');
+        TryoutUser::create([  // <= the error is Here!!!
+            'user_id' => Auth::user()->id,
+            'pilihan_tryout' => $request->pilihan_tryout,
+            'keterangan_absen' => '-'
+        ]);
     }
-
-    // public function UploadKartu(Request $request)
-    // {
-    //     $id = Peserta::find(Auth::user()->user->id);
-    //     $id->status = 'pending';
-    //     $id->save();
-    //     $this->validate($request, [
-    //         'kartu_pelajar' => 'required|image|mimes:jpeg,png,jpg|max:4096'
-    //         //'bukti_pembayaran'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-    //     ]);
 
     //     $kartu_pelajar = $request->file('kartu_pelajar');
 
@@ -109,4 +111,40 @@ class PesertaController extends Controller
     //     $peserta->save();
     //     return redirect(route('peserta.upload'))->with(['status' => 'success', 'message' => 'Kartu Pelajar berhasil diupload, mohon menunggu konfirmasi dari forda']);
     // }
+
+    public function UploadBukti(Request $request)
+    {
+
+        $id = Auth::user()->tryoutUser;
+        $id->status_bayar = 'pending_pembayaran';
+        $id->save();
+
+        $this->validate($request, [
+            'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg|max:4096'
+        ]);
+        $bukti_pembayaran = $request->file('bukti_bayar');
+        $bukti_pembayaran_name = Carbon::now()->format('YmdHis') . '.jpg';
+        if (!Storage::disk('public')->exists('images/bukti_pembayaran')) {
+            Storage::disk('public')->makeDirectory('images/bukti_pembayaran');
+        }
+        $gambarBukti = Image::make($bukti_pembayaran);
+        if ($gambarBukti->width() > 1280) {
+            $img_resize = $gambarBukti->resize($gambarBukti->width() * 50 / 100, $gambarBukti->height() * 50 / 100, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+        } else {
+            $img_resize = $gambarBukti->resize($gambarBukti->width() * 75 / 100, $gambarBukti->height() * 75 / 100, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+        }
+        Storage::disk('public')->put('images/bukti_pembayaran/' . $bukti_pembayaran_name, (string)$img_resize->encode('jpg'), 75);
+        $bukti_pembayaran->storeAs('images/bukti_pembayaran', $bukti_pembayaran_name, 'public');
+
+        $peserta = Auth::user()->tryoutUser;
+        $peserta->bukti_bayar = $bukti_pembayaran_name;
+        $peserta->save();
+        return redirect(route('peserta.upload'))->with(['status' => 'success', 'message' => 'Bukti Pembayaran berhasil diupload, mohon menunggu konfirmasi dari forda']);
+    }
 }
