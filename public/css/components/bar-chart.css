@@ -1,10 +1,19 @@
-section#kekekatan #BarChart .bars{
+#BarChart .bars{
     background: rgba(255, 255, 255, 0.5);
     border-radius: 2px;
-    height:21.25rem;
-    width: 64%;
+    height:21.50rem;
+    width: 7.25rem;
     margin: auto;
 }
-section#kekekatan #BarChart .bars .percent{
+#BarChart h2{
+    font-size: 1.875rem;
+}
+#BarChart .bars .percent{
     background: linear-gradient(10.6deg, #53EA90 0%, #3B71C7 101.64%);
+}
+
+@media only screen and (max-width: 1200px) {
+    .carouselWithFloatingHeader {
+        padding:3rem 4rem;
+    }
 }

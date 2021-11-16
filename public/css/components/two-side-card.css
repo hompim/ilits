@@ -11,6 +11,15 @@
     font-family: "gothamlight";
 }
 
+@media only screen and (max-width: 992px) {
+    .twoSideCard div.row div.left {
+        margin-bottom: 0rem !important;
+    }
+    .twoSideCard .row a {
+        margin: auto;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .twoSideCard .row h3 {
         font-size: 1.5rem;

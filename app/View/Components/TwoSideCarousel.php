@@ -16,7 +16,7 @@ class TwoSideCarousel extends Component
      *
      * @return voids
      */
-    public function __construct($titles, $texts, $images, $buttonTexts)
+    public function __construct($titles, $texts, $images, $buttonTexts = "")
     {
         $titles = explode(',', $titles);
         $this->titles = $titles;
@@ -24,8 +24,10 @@ class TwoSideCarousel extends Component
         $this->texts = $texts;
         $images = explode(',', $images);
         $this->images = $images;
-        $buttonTexts = explode(',', $buttonTexts);
-        $this->buttonTexts = $buttonTexts;
+        if($buttonTexts) {
+            $buttonTexts = explode(',', $buttonTexts);
+            $this->buttonTexts = $buttonTexts;
+        }
     }
 
     /**

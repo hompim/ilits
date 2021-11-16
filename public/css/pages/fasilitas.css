@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+section#jumbotron {
+    min-height: calc(100vh - 66.516px);
+    background: linear-gradient(to left, #fff9ee 0%, #5beb95 50%, #487dbc 100%);
+}
+section#jumbotron h1 {
+    font-size: 5rem;
+    background: linear-gradient(-30deg, #ffffff, #53ea90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+section#jumbotron h2 {
+    font-size: 1.875rem;
+}
+
+section#info-unik {
+    background: linear-gradient(to bottom, #264882, #2a518e);
+}
+
+section#fasilitas {
+    background: linear-gradient(to bottom, #2a518e, #272b5b);
+}
+section#fasilitas h2 {
+    font-size: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 2rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+
+    section#fasilitas div.row {
+        margin-bottom: 0.75rem;
+    }
+    section#fasilitas div.row div {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 0.75rem;
+    }
+}
