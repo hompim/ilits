@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
 @section('title', 'Dashboard Welcome Peserta')
-    
+
 @section('content_header')
-<h1>Dashboard Peserta</h1>   
+<h1>Dashboard Peserta</h1>
 @stop
 
 @section('content')

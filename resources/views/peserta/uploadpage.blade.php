@@ -106,7 +106,7 @@
               </div>
             </div>
             <!-- ./col -->
-          </div>
+        </div>
           <!-- /.row -->
 
         <!-- Warning row -->
@@ -130,32 +130,38 @@
             </section>
         </div>
         <!-- /. warning row -->
-
-        <!-- Upload File Bayar -->
-        <div class="card elevation-2">
-            <div class="card-header">
-                <h5 class="card-title">Unggah Bukti Bayar</h5>
-                <p class="card-text">
-                    Foto bukti bayar harus terlihat dengan
-                    jelas!
-                </p>
-            </div>
-            <form action="#">
-            <div class="card-body">
-                    <input type="file" class="form-control-file border" onchange="preview()" name="bukti_bayar" required style="cursor: pointer;">
-                    <img id="frame" src="" width="100%"/>
-            </div>
-            <div class="card-footer text-center">
-                <button class="btn btn-primary">
-                    Submit
-                </button>
-            </div>
-            </form>
-        </div>
-
-        <!-- Akhir File Bayar -->
     </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+      <!-- Upload File Bayar -->
+@if(Auth::user()->tryoutUser->status_bayar=='pending_pembayaran'||Auth::user()->tryoutUser->status_bayar=='aktif'||Auth::user()->tryoutUser->status_bayar=='tolak_pembayaran'||Auth::user()->tryoutUser->status_bayar == null)
+<div class="card elevation-2">
+    <div class="card-header">
+        <h5 class="card-title">Unggah Bukti Bayar</h5>
+        <p class="card-text">
+            Foto bukti bayar harus terlihat dengan
+            jelas!
+        </p>
+    </div>
+    <form action="{{route('peserta.postupload.bukti')}}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="card-body">
+            <input type="file" class="form-control-file border" onchange="previewImage()" name="bukti_bayar" required style="cursor: pointer;">
+            <img id="frame" src="{{Auth::user()->tryoutUser->bukti_bayar?asset('storage/images/bukti_pembayaran/'.Auth::user()->tryoutUser->bukti_bayar):asset('/img/placeholder-image.png')}}" width="100%"/>
+    </div>
+    @if(Auth::user()->tryoutUser->status_bayar=='tolak_pembayaran'||!Auth::user()->tryoutUser->bukti_bayar)
+    <div class="card-footer text-center">
+        <button class="btn btn-primary">
+            Submit
+        </button>
+    </div>
+    @endif
     </form>
+</div>
+@endif
+
+<!-- Akhir File Bayar -->
 </div>
 </div>
 @stop
