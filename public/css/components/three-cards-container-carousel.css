@@ -44,3 +44,71 @@
     width: 3.75rem;
     height: 3.75rem;
 }
+@media (min-width: 992px) {
+    #threeCardsContainerCarousel .carousel-item {
+        margin-right: 0;
+    }
+
+     /* Show 4th slide on lg if col-lg-4*/
+     #threeCardsContainerCarousel .carousel-inner .active.col-lg-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;  /*change this with javascript in the future*/
+        z-index:3;
+        display: block;
+        visibility: visible;
+    } 
+    /* show 3rd of 3 item slide */
+    #threeCardsContainerCarousel .carousel-inner .active + .carousel-item ,
+    #threeCardsContainerCarousel .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+    #threeCardsContainerCarousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    #threeCardsContainerCarousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    #threeCardsContainerCarousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
+        transition: none;
+    }
+    #threeCardsContainerCarousel .carousel-inner .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    #threeCardsContainerCarousel .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    #threeCardsContainerCarousel .carousel-item-next.carousel-item-left + .carousel-item,
+    #threeCardsContainerCarousel .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* farthest right hidden item must be also positioned for animations */
+    #threeCardsContainerCarousel .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        display: block;
+        visibility: visible;
+    }
+    /* right or prev direction */
+    #threeCardsContainerCarousel .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    #threeCardsContainerCarousel .carousel-item-prev.carousel-item-right + .carousel-item,
+    #threeCardsContainerCarousel .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+    /* left or forward direction */
+
+    /* right or prev direction */
+    #threeCardsContainerCarousel .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
