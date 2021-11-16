@@ -50,7 +50,6 @@
     
 
 @stack('modals')
-@stack('dependency')
 @stack('scripts')
 
 </body>
