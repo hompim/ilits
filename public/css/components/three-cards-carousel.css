@@ -2,13 +2,13 @@
     code by Iatek LLC 2018 - CC 2.0 License - Attribution required
     code customized by Azmind.com
 */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     #threeCardsCarousel .carousel-item {
         margin-right: 0;
     }
 
-     /* Show 4th slide on md if col-md-4*/
-     #threeCardsCarousel .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+     /* Show 4th slide on md if col-lg-4*/
+     #threeCardsCarousel .carousel-inner .active.col-lg-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
         position: absolute;
         top: 0;
         right: -33.3333%;  /*change this with javascript in the future*/
