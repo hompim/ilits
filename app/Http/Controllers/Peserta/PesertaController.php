@@ -20,6 +20,9 @@ class PesertaController extends Controller
 
     public function index()
     {
+        if(!Auth::user()->tryoutUser){
+            return redirect(route('peserta.welcome.register'));
+        }
         return view('peserta.dashboard');
     }
     public function UploadPage()
@@ -112,17 +115,15 @@ class PesertaController extends Controller
     public function UploadBukti(Request $request)
     {
 
-        $id = TryoutUser::find(Auth::user()->tryoutUser->id);
+        $id = Auth::user()->tryoutUser;
         $id->status_bayar = 'pending_pembayaran';
         $id->save();
+
         $this->validate($request, [
             'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg|max:4096'
         ]);
-
         $bukti_pembayaran = $request->file('bukti_bayar');
-
         $bukti_pembayaran_name = Carbon::now()->format('YmdHis') . '.jpg';
-
         if (!Storage::disk('public')->exists('images/bukti_pembayaran')) {
             Storage::disk('public')->makeDirectory('images/bukti_pembayaran');
         }
@@ -141,7 +142,7 @@ class PesertaController extends Controller
         Storage::disk('public')->put('images/bukti_pembayaran/' . $bukti_pembayaran_name, (string)$img_resize->encode('jpg'), 75);
         $bukti_pembayaran->storeAs('images/bukti_pembayaran', $bukti_pembayaran_name, 'public');
 
-        $peserta = TryoutUser::find(Auth::user()->tryoutUser->id);
+        $peserta = Auth::user()->tryoutUser;
         $peserta->bukti_bayar = $bukti_pembayaran_name;
         $peserta->save();
         return redirect(route('peserta.upload'))->with(['status' => 'success', 'message' => 'Bukti Pembayaran berhasil diupload, mohon menunggu konfirmasi dari forda']);

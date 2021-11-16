@@ -16,7 +16,7 @@ class CreateTryoutUserTable extends Migration
         Schema::create('tryout_user', function (Blueprint $table) {
             $table->id();
             $table->string('bukti_bayar')->default(null)->nullable();
-            $table->enum('status_bayar', ['pending', 'pending_pembayaran', 'aktif', 'ditolak', 'tolak_pembayaran', 'salah_forda'])->default('pending');
+            $table->enum('status_bayar', ['pending', 'pending_pembayaran', 'aktif', 'tolak_pembayaran'])->default('pending');
             $table->enum('pilihan_tryout', ['saintek', 'soshum']);
             $table->string('username_tryout')->nullable();
             $table->string('password_tryout')->nullable();

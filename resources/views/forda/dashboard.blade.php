@@ -104,17 +104,13 @@
                 <td style="text-transform:capitalize">{{$peserta->user->tryoutUser->pilihan_tryout}}</td>
                 <td style="text-transform:capitalize">
                     @if($peserta->user->tryoutUser->status_bayar=='pending')
-                        Belum Melakukan Pembayaran
-                    @elseif($peserta->tryoutUser->status_bayar=='pending_pembayaran')
-                        @if($peserta->user->tryoutUser->bukti_bayar)
-                        Pending Bukti Bayar
-                        @else
-                        Belum Mengunggah Bukti Bayar
-                        @endif
+                      Belum Melakukan Pembayaran
+                    @elseif($peserta->user->tryoutUser->status_bayar=='pending_pembayaran')
+                      Menunggu Verifikasi
                     @elseif($peserta->user->tryoutUser->status_bayar=='tolak_pembayaran')
-                        Bukti Bayar Ditolak
-                    @else
-                        {{$peserta->user->tryoutUser->status_bayar}}
+                      Bukti Bayar Ditolak
+                    @elseif($peserta->user->tryoutUser->status_bayar=='aktif')
+                      Terverifikasi
                     @endif
                 </td>
             </tr>

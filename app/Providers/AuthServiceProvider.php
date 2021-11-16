@@ -59,6 +59,18 @@ class AuthServiceProvider extends ServiceProvider
             return ($user->user_type === 'App\Models\Forda');
         });
 
+        Gate::define('admin-dashboard', function(User $user){
+            return ($user->user_type === 'App\Models\Admin');
+        });
+
+        Gate::define('peserta-dashboard', function(User $user){
+            return ($user->user_type === 'App\Models\Peserta');
+        });
+
+        Gate::define('forda-dashboard', function(User $user){
+            return ($user->user_type === 'App\Models\Forda');
+        });
+
         Gate::define('peserta-tryout', function(User $user){
             if ($user->user_type === 'App\Models\Peserta'){
                 return $user->tryoutUser?true:false;

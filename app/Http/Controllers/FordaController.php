@@ -17,7 +17,7 @@ class FordaController extends Controller
         $forda = Auth::user()->user;
         $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
         $peserta_terdaftar = $forda->peserta()->count();
-        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending')->count();
+        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
         $pesertas = $forda->peserta;
         return view('forda.dashboard', [
             'forda' => $forda,
@@ -32,7 +32,7 @@ class FordaController extends Controller
         $forda = Auth::user()->user;
         $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
         $peserta_terdaftar = $forda->peserta()->count();
-        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending')->count();
+        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
         $pesertas = $forda->peserta;
 
         return view('forda.absensi-forda', [

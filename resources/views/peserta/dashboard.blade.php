@@ -33,11 +33,15 @@
         <div class="inner">
           <p class="text-success">Pembayaran</p>
               <h4>
-                  @if (Auth::user()->tryoutUser->status_bayar != null)
-                      Sudah
-                  @else
-                      Belum
-                  @endif
+                @if (Auth::user()->tryoutUser->status_bayar == 'pending')
+                Belum Upload
+                @elseif(Auth::user()->tryoutUser->status_bayar == 'pending_pembayaran')
+                Pending
+                @elseif(Auth::user()->tryoutUser->status_bayar == 'ditolak_pembayaran')
+                Bukti Ditolak
+                @elseif(Auth::user()->tryoutUser->status_bayar == 'aktif')
+                Sudah Bayar
+                @endif
               <h3>
         </div>
         <div class="icon">
@@ -53,12 +57,11 @@
           <p class="text-warning">Konfirmasi Email</p>
 
            <h4>
-              @if (Auth::user()->email_verified_at == null)
-                  Belum
-              @else
-                  Sudah
-              @endif
-
+            @if (Auth::user()->email_verified_at == null)
+            Belum
+            @else
+              Sudah
+            @endif
           </h4>
         </div>
         <div class="icon">
@@ -74,9 +77,9 @@
           <p class="text-danger">Pilihan Tryout</p>
           <h4>
               @if (Auth::user()->tryoutUser->pilihan_tryout != null)
-                  {{Auth::user()->tryoutUser->pilihan_tryout}}
+                {{ucfirst(Auth::user()->tryoutUser->pilihan_tryout)}}
               @else
-                  Belum Memilih
+                Belum Memilih
               @endif
           <h4>
         </div>
@@ -90,15 +93,62 @@
   <!-- /.row -->
 
   <!-- Warning row -->
+  @if (Auth::user()->tryoutUser->status_bayar == 'pending')
   <div class="row">
     <section class="col-12">
       <div class="card bg-warning elevation-2">
         <div class="card-body">
-          <p class="m-0"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  Anda belum belum mengunggah bukti pembayaran. Silahkan lakukan upload bukti Pembayaran</p>
+          <p class="m-0">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+              Anda belum belum mengunggah bukti
+              pembayaran. Silahkan lakukan upload
+              bukti Pembayaran
+          </p>
         </div>
       </div>
     </section>
   </div>
+  @elseif(Auth::user()->tryoutUser->status_bayar == 'pending_pembayaran')
+  <div class="row">
+    <section class="col-12">
+      <div class="card bg-info elevation-2">
+        <div class="card-body">
+          <p class="m-0">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Bukti pembayaran anda sudah terupload. 
+              Mohon tunggu forda untuk memverifikasi bukti pembayaran anda.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  @elseif(Auth::user()->tryoutUser->status_bayar == 'ditolak_pembayaran')
+  <div class="row">
+    <section class="col-12">
+      <div class="card bg-warning elevation-2">
+        <div class="card-body">
+          <p class="m-0">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+              Bukti pembayaran anda ditolak. Silahkan upload kembali bukti pembayaran.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  @elseif(Auth::user()->tryoutUser->status_bayar == 'aktif')
+  <div class="row">
+    <section class="col-12">
+      <div class="card bg-success elevation-2">
+        <div class="card-body">
+          <p class="m-0">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Bukti pembayaran anda telah terverifikasi
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  @endif
   <!-- /. warning row -->
 
   <!-- Main row -->
