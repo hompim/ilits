@@ -195,7 +195,66 @@
                   :
                 </div>
                 <div class="col-8">
-                  <a href="https://wa.me/62{{Auth::user()->user->forda->tryoutForda->hp_pj}}" target="_blank"><span><strong>0{{Auth::user()->user->forda->tryoutForda->hp_pj}}</strong></span></a>
+                  <a href="https://wa.me/{{Auth::user()->user->forda->tryoutForda->hp_pj}}" target="_blank"><span><strong>0{{Auth::user()->user->forda->tryoutForda->hp_pj}}</strong></span></a>
+                </div>
+              </div>
+            </div>
+          </p>
+        </div>
+      </div>
+      <div class="card elevation-2">
+        <div class="card-header">
+          <h1 class="card-title">
+            Informasi Pembayaran Tryout
+          </h1>
+        </div>
+        <div class="card-body">
+          <p>
+            Untuk melakukan pembayaran tryout, dapat melalui informasi yang disebutkan di bawah ini:
+          </p>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Nama Rekening
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <span><strong> {{Auth::user()->user->forda->tryoutForda->nama_rek}}</strong></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Nomor Rekening
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <span><strong>{{Auth::user()->user->forda->tryoutForda->no_rek}}</strong></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Nama Bank
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <span><strong>{{Auth::user()->user->forda->tryoutForda->nama_bank}}</strong></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Nominal Biaya
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <span><strong>Rp {{Auth::user()->user->forda->tryoutForda->biaya}}</strong></span>
                 </div>
               </div>
             </div>
