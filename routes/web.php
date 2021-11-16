@@ -24,13 +24,15 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 */
 
 Route::get('/', function () {
-    return view('department-page');
+    return view('coming-soon');
 })->name('coming-soon');
 
 Route::get('/fasilitas', function(){
     return view('fasilitas');
 });
-
+Route::get('/departemen', function(){
+    return view('departemen');
+});
 // // Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
 
 // Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');

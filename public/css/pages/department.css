@@ -73,16 +73,11 @@ section#figure{
     background: linear-gradient(to bottom, #3D1960, #521373 );
 }
 section#figure .wrapper{
-    /* Then we define the flow direction 
-       and if we allow the items to wrap 
-     * Remember this is the same as:
-     * flex-direction: row;
-     * flex-wrap: wrap;
-     */
     flex-flow: row wrap;
-  
-    /* Then we define how is distributed the remaining space */
     justify-content: space-around;
+}
+section#figure h3{
+    background: linear-gradient(to bottom, #3D1960, #521373 );
 }
 section#figure .wrapper .flex-item{
     width: 13.125rem;
@@ -120,10 +115,16 @@ footer{
     background-color: #1B1438;
 }
 
-/* media query belum fix */
+
 @media only screen and (max-width: 768px) {
     h2 {
         font-size: 2rem !important;
+    }
+    h3 {
+        font-size: 1.5rem!important;
+    }
+    h4 {
+        font-size: 1.25rem!important;
     }
     p {
         font-size: 1rem !important;
