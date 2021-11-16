@@ -50,10 +50,11 @@ Route::prefix('peserta')->middleware('can:isPeserta')->group(function () {
         Route::post('/upload/bukti', [PesertaController::class, 'UploadBukti'])->name('peserta.postupload.bukti');
     });
 });
-// Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
 
 // Route untuk forda
 Route::prefix('forda')->middleware('can:isForda')->group(function () {
     Route::get('/', [FordaController::class, 'index'])->name('forda');
     Route::get('/absensi', [FordaController::class, 'absensi'])->name('forda.absensi');
 });
+
+Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');

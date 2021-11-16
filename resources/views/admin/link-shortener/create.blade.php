@@ -3,6 +3,9 @@
 @section('title', 'Link Shortener')
 
 @section('content')
+<div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="{{asset('img/logo.png')}}" alt="Logo ILITS 2022" height="60" width="60">
+</div>
 <div>
     <div class="w-100 d-flex justify-content-center align-items-center">
         <h1 class="py-4">Link Shortener Ini Lho ITS!</h1>
