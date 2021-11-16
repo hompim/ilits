@@ -6,7 +6,7 @@
     width: 80%;
     min-height: 440px;
     z-index: 2;
-    border-radius: .625rem;
+    border-radius: 0.625rem;
 }
 
 .Map .map-stage {
@@ -28,6 +28,12 @@
     font-family: "gothammedium";
 }
 
+@media only screen and (max-width: 1200px) {
+    .Map .map-stage {
+        transform: translateY(-10rem);
+    }
+}
+
 @media only screen and (max-width: 992px) {
     .Map {
         height: 25rem;
@@ -43,7 +49,8 @@
         width: 100%;
         bottom: 5%;
     }
-    .Map .map-content span, .Map .map-content a i {
+    .Map .map-content span,
+    .Map .map-content a i {
         font-size: 2rem;
     }
 }
@@ -67,7 +74,8 @@
         width: 100%;
         bottom: 5%;
     }
-    .Map .map-content span, .Map .map-content a i {
+    .Map .map-content span,
+    .Map .map-content a i {
         font-size: 1rem;
     }
 }

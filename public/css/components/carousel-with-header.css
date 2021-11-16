@@ -15,6 +15,7 @@
 .CarouselWithHeader .card-body p {
     font-size: 1.375rem;
     font-family: "gothammedium";
+    width: 75%;
 }
 
 .CarouselWithHeader a.prev,
@@ -40,6 +41,7 @@
     }
     .CarouselWithHeader .card-body p {
         font-size: 1rem;
+        width: 100%;
     }
     .CarouselWithHeader i {
         font-size: 2rem;
