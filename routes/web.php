@@ -22,10 +22,11 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('coming-soon');
-})->name('coming-soon');
+//Route web informasi
+Route::get('/', function () { return view('coming-soon'); })->name('coming-soon');
+Route::get('main', function() {return view('main');});
+Route::get('fasilitas', function() {return view('fasilitas');});
+Route::get('fakultas', function() {return view('fakultas');});
 
 // Route untuk admin
 Route::middleware('can:isAdmin')->prefix('admin')->group(function () {
