@@ -1,7 +1,6 @@
 .CarouselWithFloatingHeaderAndButton {
     padding-bottom: 5rem;
 }
-
 .CarouselWithFloatingHeaderAndButton div.floating-header {
     background: linear-gradient(75deg, #53ea90, #3b71c7);
     border-radius: 1.125rem;
@@ -22,10 +21,35 @@
 .CarouselWithFloatingHeaderAndButton .carousel-indicators {
     bottom: 0;
 }
-
 .CarouselWithFloatingHeaderAndButton .carousel-indicators li {
     width: 0.8rem;
     height: 0.8rem;
+}
+.CarouselWithFloatingHeaderAndButton a.carousel-control[data-slide="prev"] {
+    left: 0;
+    transform: translateX(-1rem);
+}
+.CarouselWithFloatingHeaderAndButton a.carousel-control[data-slide="next"] {
+    right: 0;
+    transform: translateX(1rem);
+}
+
+@media only screen and (max-width: 992px) {
+    .CarouselWithFloatingHeaderAndButton div.floating-header {
+        left: 1rem;
+        right: 1rem;
+    }
+    .CarouselWithFloatingHeaderAndButton .carousel-inner div.row:last-child p {
+        text-align: center !important;
+    }
+    .CarouselWithFloatingHeaderAndButton
+        .carousel-inner
+        div.row:last-child
+        p
+        + div
+        a {
+        margin: auto;
+    }
 }
 
 @media only screen and (max-width: 768px) {

@@ -21,3 +21,7 @@ section:not(nav section, footer section, section#jumbotron) {
     padding-top: 5.625rem;
     padding-bottom: 5.625rem;
 }
+
+section:not(nav section, footer section, section#jumbotron, section#informasi-penting) {
+    min-height: 100vh;    
+}

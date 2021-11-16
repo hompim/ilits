@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/globals.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/components/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/partials/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}">
     @yield('style')
 
@@ -32,7 +32,7 @@
 
     <!-- Header -->
     <header>
-        @include('components.header')
+        @include('partials.header')
     </header>
 
     <!-- Content -->
@@ -48,8 +48,8 @@
 
     
     
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> --}}
 @stack('modals')
 @stack('scripts')
 
