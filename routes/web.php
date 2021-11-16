@@ -55,6 +55,7 @@ Route::prefix('peserta')->middleware('can:isPeserta')->group(function () {
         Route::get('/absensi', [PesertaController::class, 'absen'])->name('peserta.absen');
         Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
         Route::post('/welcome{id}', [PesertaController::class, 'welcome'])->name('peserta.welcome');
+        Route::post('/upload/bukti', [PesertaController::class, 'UploadBukti'])->name('peserta.postupload.bukti');
     });
 });
 // Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');

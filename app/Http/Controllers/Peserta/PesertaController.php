@@ -7,9 +7,12 @@ use App\Models\Peserta;
 use App\Models\TryoutUser;
 use App\Models\TryoutForda;
 use App\Models\Forda;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class PesertaController extends Controller
 {
@@ -109,4 +112,42 @@ class PesertaController extends Controller
     //     $peserta->save();
     //     return redirect(route('peserta.upload'))->with(['status' => 'success', 'message' => 'Kartu Pelajar berhasil diupload, mohon menunggu konfirmasi dari forda']);
     // }
+
+    public function UploadBukti(Request $request)
+    {
+
+        $id = TryoutUser::find(Auth::user()->tryoutUser->id);
+        $id->status_bayar = 'pending_pembayaran';
+        $id->save();
+        $this->validate($request, [
+            'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg|max:4096'
+        ]);
+
+        $bukti_pembayaran = $request->file('bukti_bayar');
+
+        $bukti_pembayaran_name = Carbon::now()->format('YmdHis') . '.jpg';
+
+        if (!Storage::disk('public')->exists('images/bukti_pembayaran')) {
+            Storage::disk('public')->makeDirectory('images/bukti_pembayaran');
+        }
+        $gambarBukti = Image::make($bukti_pembayaran);
+        if ($gambarBukti->width() > 1280) {
+            $img_resize = $gambarBukti->resize($gambarBukti->width() * 50 / 100, $gambarBukti->height() * 50 / 100, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+        } else {
+            $img_resize = $gambarBukti->resize($gambarBukti->width() * 75 / 100, $gambarBukti->height() * 75 / 100, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+        }
+        Storage::disk('public')->put('images/bukti_pembayaran/' . $bukti_pembayaran_name, (string)$img_resize->encode('jpg'), 75);
+        $bukti_pembayaran->storeAs('images/bukti_pembayaran', $bukti_pembayaran_name, 'public');
+
+        $peserta = TryoutUser::find(Auth::user()->tryoutUser->id);
+        $peserta->bukti_bayar = $bukti_pembayaran_name;
+        $peserta->save();
+        return redirect(route('peserta.upload'))->with(['status' => 'success', 'message' => 'Bukti Pembayaran berhasil diupload, mohon menunggu konfirmasi dari forda']);
+    }
 }

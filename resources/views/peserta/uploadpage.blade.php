@@ -39,37 +39,34 @@
         </div>
     </div>
     <div class="row mt-3">
-    <form action="" method="POST" enctype="multipart/form-data" class="col-md-4">
-        @csrf
-        <div class="grid-rows-1 md:grid-cols-2">
-            <div class="">
-                <div class="form-group bg-white rounded-xl shadow-lg p-3 w-full" >
-                    <label for="bukti_pembayaran" class="font-bold text-lg ">Bukti Pembayaran</label>
-
-                    <p style="font-size:0.7rem">*Bukti pembayaran yang diupload berupa file gambar (jpg,png,jpeg)</p>
-
-                    <img src="{{Auth::user()->user->bukti_bayar?asset('/storage/images/bukti_pembayaran/'.Auth::user()->user->bukti_bayar):asset('/img/placeholder-image.png')}}" class="img-fluid" alt="Bukti Pembayaran" id="bukti_pembayaran_preview" style="max-height:50vh">
-                        @if(Auth::user()->user->status=='tolak_pembayaran'||!Auth::user()->user->bukti_bayar)
-                        @if(date('Y-m-d',strtotime('-2 days',strtotime(Auth::user()->user->forda->absen->date)))>=date('Y-m-d'))
-                        <label class="btn btn-outline-primary mt-2">
-                            <i class="fas fa-cloud-upload-alt"></i> Browse <input type="file" class="form-control-file" name="bukti_pembayaran" id="bukti_pembayaran" accept=".jpg,.jpeg,.png" hidden>
-                        </label>
-                        @endif
-                        @endif
-                    </div>
-            </div>
-        </div>
-
-        @if(Auth::user()->user->status=='tolak_pembayaran'||!Auth::user()->user->bukti_bayar)
-        @if(date('Y-m-d',strtotime('-2 days',strtotime(Auth::user()->user->forda->absen->date)))>=date('Y-m-d'))
-        <div class="row">
-            <div class="col">
-                <button type="submit" class="btn btn-outline-success my-3"><i class="fas fa-save"></i> Simpan</button>
-            </div>
-        </div>
-        @endif
-        @endif
+      <!-- Upload File Bayar -->
+@if(Auth::user()->tryoutUser->status_bayar=='pending_pembayaran'||Auth::user()->tryoutUser->status_bayar=='aktif'||Auth::user()->tryoutUser->status_bayar=='tolak_pembayaran'||Auth::user()->tryoutUser->status_bayar == null)
+<div class="card elevation-2">
+    <div class="card-header">
+        <h5 class="card-title">Unggah Bukti Bayar</h5>
+        <p class="card-text">
+            Foto bukti bayar harus terlihat dengan
+            jelas!
+        </p>
+    </div>
+    <form action="{{route('peserta.postupload.bukti')}}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="card-body">
+            <input type="file" class="form-control-file border" onchange="previewImage()" name="bukti_bayar" required style="cursor: pointer;">
+            <img id="frame" src="{{Auth::user()->tryoutUser->bukti_bayar?asset('storage/images/bukti_pembayaran/'.Auth::user()->tryoutUser->bukti_bayar):asset('/img/placeholder-image.png')}}" width="100%"/>
+    </div>
+    @if(Auth::user()->tryoutUser->status_bayar=='tolak_pembayaran'||!Auth::user()->tryoutUser->bukti_bayar)
+    <div class="card-footer text-center">
+        <button class="btn btn-primary">
+            Submit
+        </button>
+    </div>
+    @endif
     </form>
+</div>
+@endif
+
+<!-- Akhir File Bayar -->
 </div>
 </div>
 @stop
