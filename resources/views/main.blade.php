@@ -194,6 +194,11 @@
   </section>
 @endsection
 
+@push('modals')
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+@endpush
+
 @push('scripts')
   <script src="{{ asset('js/components/three-cards-carousel.js') }}" defer></script>
   <script src="{{ asset('js/components/map.js') }}" defer></script>
