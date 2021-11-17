@@ -27,6 +27,7 @@ Route::get('/', function () { return view('coming-soon'); })->name('coming-soon'
 Route::get('main', function() {return view('main');});
 Route::get('fasilitas', function() {return view('fasilitas');});
 Route::get('fakultas', function() {return view('fakultas');});
+Route::get('departemen', function(){return view('departemen');});
 
 // Route untuk admin
 Route::middleware('can:isAdmin')->prefix('admin')->group(function () {
@@ -47,7 +48,6 @@ Route::prefix('peserta')->middleware('can:isPeserta')->group(function () {
         Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
         Route::get('/daftar', [PesertaController::class, 'registerWelcome'])->name('peserta.welcome.register');
         Route::post('/daftar', [PesertaController::class, 'storeWelcome'])->name('peserta.welcome.store');
-        Route::post('/welcome{id}', [PesertaController::class, 'welcome'])->name('peserta.welcome');
         Route::post('/upload/bukti', [PesertaController::class, 'UploadBukti'])->name('peserta.postupload.bukti');
     });
 });
