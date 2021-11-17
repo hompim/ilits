@@ -24,10 +24,13 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 */
 //Route web informasi
 Route::get('/', function () { return view('coming-soon'); })->name('coming-soon');
-Route::get('main', function() {return view('main');});
-Route::get('fasilitas', function() {return view('fasilitas');});
-Route::get('fakultas', function() {return view('fakultas');});
-Route::get('departemen', function(){return view('departemen');});
+// Route::get('main', function() {return view('main');});
+// Route::get('fasilitas', function() {return view('fasilitas');});
+// Route::get('fakultas', function() {return view('fakultas');});
+// Route::get('departemen', function(){return view('departemen');});
+// Route::get('merchandise', function(){return view('merchandise');});
+// Route::get('team', function(){return view('team');});
+// Route::get('beasiswa', function(){return view('beasiswa');});
 
 // Route untuk admin
 Route::middleware('can:isAdmin')->prefix('admin')->group(function () {
