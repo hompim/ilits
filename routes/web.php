@@ -59,6 +59,8 @@ Route::prefix('peserta')->middleware('can:isPeserta')->group(function () {
 Route::prefix('forda')->middleware('can:isForda')->group(function () {
     Route::get('/', [FordaController::class, 'index'])->name('forda');
     Route::get('/absensi', [FordaController::class, 'absensi'])->name('forda.absensi');
+    Route::get('/edit-biaya', [FordaController::class, 'editBiaya'])->name('forda.edit-biaya');
+    Route::post('/edit-biaya', [FordaController::class, 'storeBiaya'])->name('forda.edit-biaya.store');
 });
 
 Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
