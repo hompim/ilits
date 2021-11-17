@@ -61,12 +61,22 @@ class FordaController extends Controller
     }
     public function storeBiaya(Request $request)
     {
-        $forda = Auth::user()->user->tryoutForda;
-        $forda->nama_rek = $request->nama_rek;
-        $forda->nama_bank = $request->nama_bank;
-        $forda->no_rek = $request->no_rek;
-        $forda->biaya = $request->biaya;
-        $forda->save();
-        return redirect(route('forda.edit-biaya'));
+        try {
+            $forda = Auth::user()->user->tryoutForda;
+            $forda->nama_rek = $request->nama_rek;
+            $forda->nama_bank = $request->nama_bank;
+            $forda->no_rek = $request->no_rek;
+            $forda->biaya = $request->biaya;
+            $forda->save();
+            return redirect()->back()->with([
+                'message' => "Data Biaya berhasil diubah",
+                'status' => "success"
+            ]);
+        } catch (Exception $e) {
+            return redirect()->back()->with([
+                'message' => "Data Biaya gagal diubah",
+                'status' => "danger"
+            ]);
+        }
     }
 }

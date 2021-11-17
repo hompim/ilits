@@ -11,6 +11,11 @@
   <img class="animation__shake" src="{{asset('img/logo.png')}}" alt="Logo ILITS 2022" height="60" width="60">
 </div>
 <div class="container-fluid">
+    @if(Session::has('message'))
+  <div class="alert alert-{{Session::get('status')}}" role="alert">
+    {{Session::get('message')}}
+  </div>
+  @endif
     <div class="row">
         <div class="col-lg-3 col-6">
           <!-- small box -->
