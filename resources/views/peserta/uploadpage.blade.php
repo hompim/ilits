@@ -179,7 +179,7 @@
                 <input type="file" class="form-control-file border" onchange="preview()" name="bukti_bayar" required style="cursor: pointer;">
                 <img id="frame" src="{{Auth::user()->tryoutUser->bukti_bayar?asset('storage/images/bukti_pembayaran/'.Auth::user()->tryoutUser->bukti_bayar):asset('/img/placeholder-image.png')}}" width="100%"/>
             </div>
-            @if(Auth::user()->tryoutUser->status_bayar=='tolak_pembayaran')
+            @if(Auth::user()->tryoutUser->status_bayar=='tolak_pembayaran'||Auth::user()->tryoutUser->status_bayar=='pending')
             <div class="card-footer text-center">
               <button class="btn btn-primary">
                 Submit

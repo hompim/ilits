@@ -52,19 +52,21 @@ class PesertaController extends Controller
         $kode_presensi = $request->kode_presensi;
         $keterangan_absen = $request->keterangan_absen;
 
-        if ($kode_presensi!=null&&$kode_presensi_forda == $kode_presensi) {
-            $tryout_user->status_absen = "hadir";
-            $tryout_user->save();
-            return redirect()->back()->with([
-                'message' => "Status kehadiran berhasil diubah menjadi hadir",
-                'status' => "success"
-            ]);
-        } else{
-            return redirect()->back()->with([
-                'message' => 'Kode presensi tidak sama',
-                'status' => 'danger'
-            ]);
-        }
+        if ($kode_presensi!=null) {
+            if($kode_presensi_forda == $kode_presensi){
+                $tryout_user->status_absen = "hadir";
+                $tryout_user->save();
+                return redirect()->back()->with([
+                    'message' => "Status kehadiran berhasil diubah menjadi hadir",
+                    'status' => "success"
+                ]);
+            } else{
+                return redirect()->back()->with([
+                    'message' => 'Kode presensi tidak sama',
+                    'status' => 'danger'
+                ]);
+            }
+        } 
         if ($keterangan_absen != null) {
             $tryout_user->status_absen = "tidak_hadir";
             $tryout_user->keterangan_absen = $keterangan_absen;

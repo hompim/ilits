@@ -188,7 +188,7 @@
                         <span><strong>23.59 - 00.00</strong></span>
                       </div>
                     </div>
-                    @if (Auth::user()->tryoutUser->status_absen!="belum_absen")
+                    @if (Auth::user()->tryoutUser->status_absen=='tidak_hadir'||Auth::user()->tryoutUser->status_absen=='hadir')
                     <div class="row">
                       <div class="col-md-2 col-sm-3 col-6">
                         Status Kehadiran
@@ -200,6 +200,7 @@
                         <span><strong> {{(Auth::user()->tryoutUser->status_absen=='hadir')?"Hadir":"Tidak Hadir"}}</strong></span>
                       </div>
                     </div>
+                    @endif
                     @if (Auth::user()->tryoutUser->status_absen=='tidak_hadir')
                     <div class="row">
                       <div class="col-md-2 col-sm-3 col-6">
@@ -209,11 +210,11 @@
                         :
                       </div>
                       <div class="col-8">
-                        <span><strong> {{Auth::user()->tryoutUser->keterangan}}</strong></span>
+                        <span><strong> {{Auth::user()->tryoutUser->keterangan_absen}}</strong></span>
                       </div>
                     </div>
-                      @endif
-                    @else
+                    @endif
+                    @if (Auth::user()->tryoutUser->status_absen=='belum_absen')
                     <button type="button" class="btn btn-success" data-toggle="modal"
                     data-target="#modal_hadir">
                     Hadir
