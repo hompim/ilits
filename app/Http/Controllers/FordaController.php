@@ -43,4 +43,30 @@ class FordaController extends Controller
             'pesertas' => $pesertas
         ]);
     }
+    public function editBiaya()
+    {
+        $forda = Auth::user()->user->tryoutForda;
+        $forda_peserta = Auth::user()->user;
+        $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
+        $peserta_terdaftar = $forda_peserta->peserta()->count();
+        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
+        return view('forda.edit-biaya', [
+            'forda' => $forda,
+            'forda_peserta' => $forda_peserta,
+            'peserta_pending' => $peserta_pending,
+            'peserta_terdaftar' => $peserta_terdaftar,
+            'peserta_konfirmasi' => $peserta_konfirmasi,
+
+        ]);
+    }
+    public function storeBiaya(Request $request)
+    {
+        $forda = Auth::user()->user->tryoutForda;
+        $forda->nama_rek = $request->nama_rek;
+        $forda->nama_bank = $request->nama_bank;
+        $forda->no_rek = $request->no_rek;
+        $forda->biaya = $request->biaya;
+        $forda->save();
+        return redirect(route('forda.edit-biaya'));
+    }
 }
