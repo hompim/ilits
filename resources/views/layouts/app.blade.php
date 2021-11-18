@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/globals.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/components/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/partials/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}">
     @yield('style')
 
@@ -32,12 +32,13 @@
 
     <!-- Header -->
     <header>
-        @include('components.header')
+        @include('partials.header')
     </header>
 
     <!-- Content -->
     <main>
         @yield('content')
+        
     </main>
 
     <!-- Footer -->
@@ -45,9 +46,12 @@
         @include('components.footer')
     </footer>
 
-    @stack('modals')
+    
+    
 
-    @stack('scripts')
+@stack('modals')
+@stack('scripts')
+
 </body>
 
 </html>

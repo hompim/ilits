@@ -1,6 +1,7 @@
 <?php
 
 use App\Exports\OprecStaffExport;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OprecStaffController;
 use App\Http\Controllers\LinkShortenerController;
 use App\Http\Controllers\Peserta\PesertaController;
@@ -21,29 +22,19 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('coming-soon');
-})->name('coming-soon');
-
-// // Route::get('/oprec-staff', [OprecStaffController::class, 'index'])->name('oprec_staff');
-
-// Route::get('/oprecstaffexport', [OprecStaffController::class, 'oprecStaffExport'])->name('oprecstaffexport');
-// Route::post('/oprecstaffimport', [OprecStaffController::class, 'OprecStaffImport'])->name('oprecstaffimport');
-// Route::post('/oprecmacimport', [OprecStaffController::class, 'OprecMacImport'])->name('oprecmacimport');
+//Route web informasi
+Route::get('/', function () { return view('coming-soon'); })->name('coming-soon');
+// Route::get('main', function() {return view('main');});
+// Route::get('fasilitas', function() {return view('fasilitas');});
+// Route::get('fakultas', function() {return view('fakultas');});
+// Route::get('departemen', function(){return view('departemen');});
+// Route::get('merchandise', function(){return view('merchandise');});
+// Route::get('team', function(){return view('team');});
+// Route::get('beasiswa', function(){return view('beasiswa');});
 
 // Route untuk admin
-Route::middleware('isadmin')->prefix('admin')->group(function () {
-    Route::get('/', function () {
-        if (request()->user()->user_type == 'App\Models\Peserta') {
-            return redirect(route('peserta.dashboard'));
-        } else if (request()->user()->user_type == 'App\Models\Forda') {
-            return redirect(route('forda'));
-        } else {
-            return redirect(route('admin.dashboard'));
-        }
-        //return view('admin.dashboard');
-    })->name('admin');
+Route::middleware('can:isAdmin')->prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin');
     Route::get('shortener/', [LinkShortenerController::class, 'create'])->name('link.create');
     Route::post('shortener/', [LinkShortenerController::class, 'store'])->name('link.store');
     Route::get('shortener/update/{id}', [LinkShortenerController::class, 'update'])->name('link.update');
@@ -51,26 +42,25 @@ Route::middleware('isadmin')->prefix('admin')->group(function () {
     Route::post('shortener/delete/{id}', [LinkShortenerController::class, 'delete'])->name('link.delete');
 });
 
-Route::get('SiapJadiEskalatorCita/', function () {
-    return redirect('https://docs.google.com/spreadsheets/d/1lWDY3TdcxkDY0SCrfjCOZpuROXeYcmYOipe6vn7eFYY/edit#gid=1510192419');
-});
-
-Route::get('DatabaseEskalatorCita2022/', function () {
-    return redirect('https://docs.google.com/forms/d/e/1FAIpQLSfRumAAzPVoac8rHh0o6R66CMnj9iH851jYhRLwOnaoLMvSMQ/viewform');
-});
-
 //Route untuk Peserta
-Route::prefix('peserta')->middleware(['ispeserta'])->group(function () {
-    Route::get('/', [PesertaController::class, 'index'])->name('peserta');
-    Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
-    Route::get('/absen', [PesertaController::class, 'absen'])->name('peserta.absen');
-    Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
-    Route::post('/welcome{id}', [PesertaController::class, 'welcome'])->name('peserta.welcome');
+Route::prefix('peserta')->middleware('can:isPeserta')->group(function () {
+    Route::prefix('welcome')->group(function () {
+        Route::get('/', [PesertaController::class, 'index'])->name('peserta');
+        Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
+        Route::get('/absensi', [PesertaController::class, 'absen'])->name('peserta.absen');
+        Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
+        Route::get('/daftar', [PesertaController::class, 'registerWelcome'])->name('peserta.welcome.register');
+        Route::post('/daftar', [PesertaController::class, 'storeWelcome'])->name('peserta.welcome.store');
+        Route::post('/upload/bukti', [PesertaController::class, 'UploadBukti'])->name('peserta.postupload.bukti');
+    });
 });
-// Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
 
 // Route untuk forda
-Route::prefix('forda')->middleware(['isforda'])->group(function () {
+Route::prefix('forda')->middleware('can:isForda')->group(function () {
     Route::get('/', [FordaController::class, 'index'])->name('forda');
-    Route::get('/absensi', [PesertaController::class, 'absensi'])->name('forda.absensi');
+    Route::get('/absensi', [FordaController::class, 'absensi'])->name('forda.absensi');
+    Route::get('/edit-biaya', [FordaController::class, 'editBiaya'])->name('forda.edit-biaya');
+    Route::post('/edit-biaya', [FordaController::class, 'storeBiaya'])->name('forda.edit-biaya.store');
 });
+
+Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');

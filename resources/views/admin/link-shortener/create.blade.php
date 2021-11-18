@@ -1,8 +1,12 @@
-@extends('layouts.admin')
+@extends('adminlte::page')
+
+@section('title', 'Link Shortener')
 
 @section('content')
-<div class="content-wrapper">
-    <!-- Main content -->
+<div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="{{asset('img/logo.png')}}" alt="Logo ILITS 2022" height="60" width="60">
+</div>
+<div>
     <div class="w-100 d-flex justify-content-center align-items-center">
         <h1 class="py-4">Link Shortener Ini Lho ITS!</h1>
     </div>
@@ -48,7 +52,7 @@
                         @foreach ($link_all as $i)
                             <tr>
                                 <td class="col-5"><a href="{{url('/').'/'.$i->slug }}">{{ url('/').'/'.$i->slug }}</a></td>
-                                <td class="col-5"><a href="{{ $i->link }}">{{ $i->link }}</a></td>
+                                <td class="col-5"><a href="{{ $i->link }}">Link ini</a></td>
                                 <td class="col-2 text-center">
                                     <form method="POST" class="d-inline" action="{{ route('link.delete', $i->id) }}">
                                         @csrf
@@ -64,7 +68,5 @@
             </div>
         </div>
     </div>
-    <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
-@endsection
+@stop

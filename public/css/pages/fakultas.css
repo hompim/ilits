@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+body-main{
+    color: #ffffff;
+}
+
+section#jumbotron {
+    min-height: calc(100vh - 66.516px);
+    background: linear-gradient(270deg, #F5F5F1 0.9%, #C5BEF0 100%);
+}
+section#jumbotron h1 {
+    font-size: 5rem;
+    background: linear-gradient(to left, #A562E9 0%, #3B71C7 50%, #A3B4CC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+section#jumbotron h2 {
+    color: #3B71C7;
+    font-size: 1.875rem;
+}
+section#jumbotron a.btn{
+    background: linear-gradient(90.75deg, rgba(229, 227, 241, 0.7) 1.29%, rgba(59, 113, 199, 0.7) 98.71%);
+    backdrop-filter: blur(20px);
+    filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.25));
+
+}
+section#info-unik {
+    background: linear-gradient(to bottom, #264882, #2A518e);
+}
+section#waktu {
+    background: linear-gradient(to bottom, #2A518E, #2E5998);
+}
+section#akreditasi {
+    background: linear-gradient(to bottom, #2E5998, #2F5999);
+}
+section#virtual-expo {
+    background: linear-gradient(to bottom, #2F5999, #2C437B);
+}
+section#jurusanmu{
+    background: linear-gradient(to bottom, #2C437B, #282F60);
+}
+section#perbandingan {
+    background: linear-gradient(to bottom, #282F60, #2B1D50);
+}
+section#kerja-sama {
+    background: linear-gradient(to bottom, #2B1D50, #401862);
+}
+
+
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 2rem !important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+
+    section#fasilitas div.row {
+        margin-bottom: 0.75rem;
+    }
+    section#fasilitas div.row div {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 0.75rem;
+    }
+}

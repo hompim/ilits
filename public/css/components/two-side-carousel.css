@@ -15,6 +15,12 @@
     width: 0.8rem;
     height: 0.8rem;
 }
+.TwoSideCarousel .left-side {
+    flex: 5;
+}
+.TwoSideCarousel .right-side {
+    flex: 4;
+}
 .TwoSideCarousel a.carousel-control-prev {
     left: 2rem;
 }
@@ -22,23 +28,27 @@
     right: 2rem;
 }
 
-@media only screen and (max-width: 768px) {
-    .TwoSideCarousel {
-        padding-left: 3rem;
-        padding-right: 3rem;
-    }
+@media only screen and (max-width: 992px) {
     .TwoSideCarousel div div div div div {
         flex-direction: column;
     }
     .TwoSideCarousel div div div div div div {
         margin-bottom: 1rem;
+        margin: 1rem;
         padding-right: 0 !important;
-    }
-    .TwoSideCarousel h3 {
-        font-size: 2rem;
     }
     .TwoSideCarousel a {
         margin: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .TwoSideCarousel {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .TwoSideCarousel h3 {
+        font-size: 2rem;
     }
     .TwoSideCarousel a i {
         font-size: 2rem;

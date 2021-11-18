@@ -1,30 +1,34 @@
-@extends('layouts.app')
+@extends("layouts.app")
 
 @section('title')
   <title>Ini Lho ITS! 2022</title>
 @endsection
 
 @section('style')
-<link rel="stylesheet" href="{{ asset('css/pages/main.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/pages/main.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/components/map.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/two-side-color-carousel.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/carousel-with-header.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/components/carousel-with-floating-header.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/components/carousel-with-floating-header-and-button.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/two-side-card.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/five-items-grid.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/three-cards-carousel.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/components/three-cards.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/components/two-side-carousel.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/components/banner-with-corner-header.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}">
 @endsection
 
 @section('content')
-  <section class="d-flex justify-content-center flex-column" id='jumbotron'>
+  <section class="d-flex justify-content-center flex-column" id="jumbotron">
     <article class="container text-white">
       <div class="col-12 col-md-8 col-lg-6">
-        <h1 class='mb-3'>INI LHO <br> ITS! 2022</h1>
+        <h1 class="mb-3">INI LHO <br> ITS! 2022</h1>
         <p class="mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, ipsum? Inventore
           eius
           dignissimos</p>
-        <x-button-link href='#' angle='20deg' colorFrom="#3b71c7" colorTo='#59d3da'>Kenali
+        <x-button-link href="#" angle="20deg" colorFrom="#3b71c7" colorTo="#59d3da">Kenali
           Lebih
           Lanjut
         </x-button-link>
@@ -32,163 +36,165 @@
     </article>
   </section>
 
-  <section class="d-flex justify-content-center flex-column" id="about">
-    <article class="container text-center text-white">
-      <h2 class="mb-4">About</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ducimus dicta earum! Inventore explicabo ipsa
-        aliquam excepturi id autem obcaecati sequi! Nemo doloremque voluptatibus veniam temporibus rerum accusamus
-        repellat vero.</p>
+  <section class="d-flex justify-content-center flex-column" id="tentang">
+    <article class="container py-5 text-center text-white d-flex flex-column align-items-center position-relative">
+      @include("partials.section-header", ["title" => "Apa itu ILITS?"])
+      <p>"Kenali Dirimu, Kenali Masa Depanmu, Di Ini Lho ITS! 2022"
+        Ini Lho ITS! 2022 membantu calon mahasiswa baru ITS dalam menemukan jurusan yang sesuai minat & bakat yang
+        dimilikinya. Ini Lho ITS! 2022 memiliki serangkaian event yang terdiri dari Open Campus, Visit, dan Welcome</p>
     </article>
   </section>
 
   <section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
     <article class="container text-center position-relative">
-      <x-map text='Virtual Tour ITS' href='/'
-        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634595959033!2d112.79273125123773!3d-7.28235067356743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1633755459057!5m2!1sen!2sid' />
+      <x-map text="Virtual Tour ITS" href="/" withLayer="true"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634595959033!2d112.79273125123773!3d-7.28235067356743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1633755459057!5m2!1sen!2sid">
+        <span>Virtual Expo</span>
+        {{-- <a href="" class="d-flex jusitfy-content-center align-items-center text-decoration-none">
+          <i class="text-white fa fa-3x fa-arrow-right" aria-hidden="true"></i>
+        </a> --}}
+      </x-map>
     </article>
   </section>
 
-  <section class="d-flex justify-content-center flex-column" id='general-info'>
-    <article class="container text-center text-white">
+  <section class="d-flex justify-content-center flex-column" id="informasi-umum">
+    <article class="container text-white">
       <div class="container">
-        <h2 class="mb-4">Yuk, Kepoin Kita Lebih Lanjut!</h2>
-        <x-two-side-color-carousel title='Web Series ILITS' text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eius
-                eligendi, tempore vel
-                ipsa! Provident, possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur
-                officia
-                est hic. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores cumque a officia in, quidem error
-                voluptatem quo neque'
-          images='img/main/web-series.png, img/main/web-series.png, img/main/web-series.png' />
+        {{-- @include('partials.section-header', ["title" => "Yuk, Kepoin Kita Lebih Lanjut!"]) --}}
+        <x-two-side-carousel titles="Web Series ILITS,Web Series ILITS,Web Series ILITS"
+          texts="Seperti apa sih ITS itu? Yuk kenali ITS lebih dalam dengan cara yang asyik dalam web series ILITS!|Seperti apa sih ITS itu? Yuk kenali ITS lebih dalam dengan cara yang asyik dalam web series ILITS!|Seperti apa sih ITS itu? Yuk kenali ITS lebih dalam dengan cara yang asyik dalam web series ILITS!"
+          images="img/main/web-series.png,img/main/web-series.png,img/main/web-series.png"
+          buttonTexts="Tonton Sekarang!,Tonton Sekarang!,Tonton Sekarang!" />
       </div>
     </article>
   </section>
 
-  <section class="text-white d-flex justify-content-center flex-column" id='events'>
-    <article class="container">
-      <x-carousel-with-header buttonText='Kenali Lebih Lanjut' headerTitle='Ada acara apa aja di ILITS! 2022?'
-        titles='Open Campus, Open Campus' texts='lorem ipsumsda|lorem ipsum dolor sit amet'
-        images='img/main/open-campus.png,img/main/open-campus.png' />
+  <section class="text-white d-flex justify-content-center flex-column" id="acara">
+    <article class="container d-flex flex-column align-items-center">
+      <x-carousel-with-header buttonText="Kenali Lebih Lanjut" headerTitle="Ada acara apa aja di ILITS! 2022?"
+        titles="Open Campus,Open Campus,Open Campus"
+        texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit diam tellus aliquam consequat amet tincidunt sed etiam volutpat. Lacinia tellus velit, elementum justo nec donec cum morbi ac.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit diam tellus aliquam consequat amet tincidunt sed etiam volutpat. Lacinia tellus velit, elementum justo nec donec cum morbi ac.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit diam tellus aliquam consequat amet tincidunt sed etiam volutpat. Lacinia tellus velit, elementum justo nec donec cum morbi ac."
+        images="img/main/open-campus.png,img/main/open-campus.png,img/main/open-campus.png" />
     </article>
   </section>
 
-  <section class="d-flex justify-content-center align-items-center" id='ongoing-info'>
+  <section class="d-flex justify-content-center align-items-center" id="informasi-penting">
     <article class="text-white d-flex justify-content-center align-items-center flex-column">
-      <h2 class='mb-4 text-center'>Pendaftaran Try Out ILITS! <br> Sudah Dibuka </h2>
-      <x-button-link href='#' angle='45deg' colorFrom="#8060C9" colorTo='#59D3DA'>Daftar
+      <h2 class="mb-4 text-center">Pendaftaran Try Out ILITS! <br> Sudah Dibuka </h2>
+      <x-button-link href="#" angle="45deg" colorFrom="#8060C9" colorTo="#59D3DA">Daftar
       </x-button-link>
     </article>
   </section>
 
-  <section class="d-flex justify-content-center align-items-center flex-column" id='faculty'>
-    <article class="container text-center text-white">
-      <h2 class="mb-5">Fakultas</h2>
-      <div class="flex-wrap p-0 mb-5 d-flex justify-content-center align-items-between">
-        <x-button-link href='#' angle='-45deg' colorFrom="#ffffff64" colorTo='#ffffff37' isBlur='20px'
-          class='px-4 mx-3 my-3'>
-          Sains dan
-          Analitika Data
-        </x-button-link>
-        <x-button-link href='#' angle='-45deg' colorFrom="#ffffff64" colorTo='#ffffff37' isBlur='20px'
-          class='px-4 mx-3 my-3'>
-          Teknologi Industri dan Rekayasa Sistem
-        </x-button-link>
-        <x-button-link href='#' angle='-45deg' colorFrom="#ffffff64" colorTo='#ffffff37' isBlur='20px'
-          class='px-4 mx-3 my-3'>
-          Teknik Sipil, Perencanaan, dan Kebumian
-        </x-button-link>
-        <x-button-link href='#' angle='-45deg' colorFrom="#ffffff64" colorTo='#ffffff37' isBlur='20px'
-          class='px-4 mx-3 my-3'>
-          Teknologi Kelautan
-        </x-button-link>
-        <x-button-link href='#' angle='-45deg' colorFrom="#ffffff64" colorTo='#ffffff37' isBlur='20px'
-          class='px-4 mx-3 my-3'>
-          Teknologi Elektro dan Informatika Cerdas
-        </x-button-link>
-        <x-button-link href='#' angle='-45deg' colorFrom="#ffffff64" colorTo='#ffffff37' isBlur='20px'
-          class='px-4 mx-3 my-3'>
-          Desain Kreatif dan Bisnis Digital
-        </x-button-link>
-        <x-button-link href='#' angle='-45deg' colorFrom="#ffffff64" colorTo='#ffffff37' isBlur='20px'
-          class='px-4 mx-3 my-3'>
-          Vokasi
-        </x-button-link>
-      </div>
-    </article>
-  </section>
-
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id='faculty-detail'>
-    <article class="container">
-      <x-two-side-card title='SAINS DAN ANALITIKA DATA' text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eius
-              eligendi, tempore vel
-              ipsa! Provident, possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur
-              officia
-              est hic.' buttonText='Lihat Departemen' />
-    </article>
-  </section>
-
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id='achievement'>
-    <div class="container text-center">
-      <h2 class='mb-5'>Prestasi</h2>
-      <x-three-cards-carousel titles="Juara 1, Juara 1, Juara 1, Juara 1, Juara 1, Juara 1"
-        images="img/main/web-series.png,img/main/web-series.png,img/main/web-series.png,img/main/web-series.png,img/main/web-series.png,img/main/web-series.png"
-        texts="Some quick example text to build on the card title and make up the bulk
-                of the
-                card's content.|Some quick example text to build on the card title and make up the bulk
-                of the
-                card's content.|Some quick example text to build on the card title and make up the bulk
-                of the
-                card's content.|Some quick example text to build on the card title and make up the bulk
-                of the
-                card's content.|Some quick example text to build on the card title and make up the bulk
-                of the
-                card's content.|Some quick example text to build on the card title and make up the bulk
-                of the
-                card's content." />
-    </div>
-  </section>
-
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id='facility'>
-    <article class="container">
-      <x-carousel-with-floating-header headerTitle='Fasilitas Apa Saja Yang Ada di ITS' titles='Graha ITS, Graha ITS'
-        texts='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eius eligendi, tempore vel ipsa! Provident,|possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur officia e'
-        buttonText='Kenali Lebih Lanjut' images='img/main/web-series.png,img/main/web-series.png' />
-      </div>
-    </article>
-  </section>
-
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id='alumnus'>
-    <div class="container">
-      <h2 class="mb-5 text-center">Siapa Aja sih Alumninya?</h2>
+  <section class="d-flex justify-content-center align-items-center flex-column" id="fakultas">
+    <article class="container text-center text-white mb-5">
+      {{-- @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"]) --}}
       <div class="row">
-        <div class="my-2 col-md-4">
-          <div class="relative mb-3">
-            <img src="{{ asset('img/main/alumni-1.png') }}" alt="Tri Rismaharini" class='w-100'>
-          </div>
-          <h4>Tri Rismaharini</h4>
-          <span>Menteri Sosial</span>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button>
         </div>
-        <div class="my-2 col-md-4">
-          <img src="{{ asset('img/main/alumni-2.png') }}" alt="Mohammad Nuh" class='w-100'>
-          <h4>Mohammad Nuh</h4>
-          <span>Mantan Menteri Pendidikan</span>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Sains dan Analitika Data</button>
         </div>
-        <div class="my-2 col-md-4">
-          <img src="{{ asset('img/main/alumni-3.png') }}" alt="Cak Lontong" class='w-100'>
-          <h4>Cak Lontong</h4>
-          <span>Pelawak</span>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknik Sipil, Perencanaan, dan Kebumian</button>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Elektro dan Informatika Cerdas</button>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Kelautan</button>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Desain Kreatif dan Bisnis Digital</button>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 mx-auto">
+          <button type="button" class="text-white border-0 w-100 h-100 px-3">Vokasi</button>
         </div>
       </div>
-    </div>
+    </article>
+    <article class="container text-white d-flex flex-column align-items-center mt-5">
+      <x-two-side-card title="Sains dan Analitika Data"
+        text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eius eligendi, tempore vel ipsa! Provident, possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur officia est hic."
+        buttonText="Lihat Departemen" />
+    </article>
   </section>
 
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id='scholarship'>
-    <div class="container">
-      <h2 class='mb-4 text-center'>Yuk, Cari Tau Beasiswa di ITS!</h2>
-      <x-five-items-grid title='Beasiswa BI, Beasiswa BI, Beasiswa BI, Beasiswa BI, Beasiswa BI' />
-    </div>
+  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="prestasi">
+    <article class="container">
+      @include("partials.section-header", ["title" => "Segudang Prestasi!"])
+      <x-three-cards-carousel titles="Juara 1, Juara 1, Juara 1, Juara 1, Juara 1, Juara 1"
+        texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque."
+        images="img/main/web-series.png,img/main/web-series.png,img/main/web-series.png,img/main/web-series.png,img/main/web-series.png,img/main/web-series.png"
+        carouselId="MainPrestasiCarousel" />
+    </article>
+  </section>
+
+  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="fasilitas">
+    <article class="container d-flex flex-column align-items-center">
+      <x-carousel-with-floating-header-and-button headerTitle="Fasilitas Apa Saja Yang Ada di ITS"
+        titles="Graha ITS,Graha ITS"
+        texts="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eius eligendi, tempore vel ipsa! Provident,|possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur officia e"
+        buttonText="Kenali Lebih Lanjut" images="img/main/web-series.png,img/main/web-series.png" />
+      </div>
+    </article>
+  </section>
+
+  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="tim-its">
+    <article class="container">
+      {{-- @include('partials.section-header', ["title" => "Kenalan dengan Tim di ITS!"]) --}}
+      <x-three-cards title1="Bayucaraka" title2="Ichiro" title3="Sapu Angin" img1="img/main/prestasi-1.png"
+        img2="img/main/prestasi-2.png" img3="img/main/prestasi-3.png" :list1="array('Juara 1 Mobil terbang','
+          Juara 2 Mobil terbang cepat','
+          Juara 3 Mobil terbang stabil','
+          Juara 4 Mobil terbang nasional')" :list2="array('Juara 1 Mobil terbang','
+          Juara 2 Mobil terbang cepat','
+          Juara 3 Mobil terbang stabil','
+          Juara 4 Mobil terbang nasional')" :list3="array('Juara 1 Mobil terbang','
+          Juara 2 Mobil terbang cepat','
+          Juara 3 Mobil terbang stabil','
+          Juara 4 Mobil terbang nasional')" />
+      <x-button-link href="" class="mx-auto mt-4">Intip Tim Lainnya!</x-button-link>
+    </article>
+  </section>
+
+  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="alumni">
+    <article class="container">
+      @include('partials.section-header', ["title" => "Jadilah Penerus Mereka!"])
+      <div class="container row">
+        <div class="col-lg">
+          <x-figure-image img="img/main/alumni-1.png" title="Tri Rismaharini" text="Menteri Sosial" />
+        </div>
+        <div class="col-lg">
+          <x-figure-image img="img/main/alumni-2.png" title="Mohammad Nuh" text="Mantan Menteri Pendidikan" />
+        </div>
+        <div class="col-lg">
+          <x-figure-image img="img/main/alumni-3.png" title="Cak Lontong" text="Pelawak" />
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="beasiswa">
+    <article class="container">
+      {{-- @include('partials.section-header', ["title" => "Pilihan Beasiswa Untukmu!"]) --}}
+      <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
+      <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
+      <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
+    </article>
+  </section>
+
+  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="sponsor">
+    <article class="container">
+      @include('partials.section-header', ["title" => "Sponsor & Media Partner"])
+      <div class="p-5 sponsor-box w-100">
+
+      </div>
+    </article>
   </section>
 @endsection
 
-@section('js')
+@push('scripts')
   <script src="{{ asset('js/components/three-cards-carousel.js') }}" defer></script>
-@endsection
+  <script src="{{ asset('js/components/map.js') }}" defer></script>
+@endpush

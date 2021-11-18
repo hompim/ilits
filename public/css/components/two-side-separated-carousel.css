@@ -4,7 +4,7 @@
     border-radius:1.125rem
 }
 #twoSideSeparatedCarousel .card-img img{
-
+    
 }
 #twoSideSeparatedCarousel .div-dua .card-right{
     padding: 2.375rem;
@@ -68,7 +68,7 @@
    #twoSideSeparatedCarousel p{
         font-size:1rem
     }
-   #twoSideSeparatedCarousel a{
+   /* #twoSideSeparatedCarousel a{
         margin:auto;font-size:.875rem
-    }
+    } */
 }

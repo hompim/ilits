@@ -17,15 +17,10 @@ class isPeserta
     public function handle(Request $request, Closure $next)
     {
         if (!auth()->guard('web')->check()) {
-            return redirect(route('coming-soon'));
+            return redirect(route('login'));
         }
-        if ($request->user()->user_type == 'App\Models\Peserta') {
-            return $next($request);
-        }
-        return redirect(route('login'));
-
         $user = $request->user();
-        if (!$user->user_type == 'App\Models\Peserta') {
+        if (!($user->user_type == 'App\Models\Peserta')) {
             return redirect(route('coming-soon'));
         }
         return $next($request);

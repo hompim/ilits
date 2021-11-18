@@ -1,0 +1,162 @@
+header{
+    background-color: #1B1438;
+}
+body main{
+    color: white !important;
+}
+body main section{
+    min-height: calc(100vh - 66.516px);
+}
+body main h2{
+    font-size: 2.375rem;
+}
+body main h3{
+    font-size:1.875rem;
+}
+body main h4{
+    font-size: 1.625rem;
+}
+section#jumbotron{
+    background: linear-gradient(270deg, #F5F5F1 0.9%, #A9E4E3 100%);
+}
+
+section#jumbotron h1, section#jumbotron h2 {
+    background: linear-gradient(267.99deg, #A562E9 0%, #3B71C7 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+section#jumbotron a.btn{
+    background: linear-gradient(90.75deg, rgba(151, 44, 205, 0.7) 1.29%, rgba(107, 211, 205, 0.7) 37.32%, rgba(243, 245, 241, 0.7) 98.71%) !important;
+}
+
+
+section#about{
+    background: linear-gradient(to bottom, #264882, #2A518E);
+}
+section#about p{
+    line-height: 1.875rem;
+}
+section#about img{
+    object-fit: cover;
+    widows: 100%;
+    height: 100%;
+}
+
+
+section#video-profile{
+    background: linear-gradient(to bottom, #2A518E,#2E5999);
+}
+section#video-profile iframe{
+    border-radius: 1rem;
+}
+
+section#akreditasi{
+    background: linear-gradient(to bottom,#2E5999, #2F5999);
+}
+section#akreditasi .item-three-cards{
+    border-bottom-width: 0;
+}
+section#kekekatan{
+    background: linear-gradient(to bottom, #2F5999,#2B447C);
+}
+section#fokus-keilmuan{
+    background: linear-gradient(to bottom, #2B447C,#282F60 );
+}
+section#prestasi{
+    background: linear-gradient(to bottom,#282F60,#291E4E );
+}
+section#prospek{
+    background: linear-gradient(to bottom,#291E4E, #3D1960 );
+}
+section#figure{
+    background: linear-gradient(to bottom, #3D1960, #521373 );
+}
+section#figure .wrapper{
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+section#figure h3{
+    background: linear-gradient(to bottom, #3D1960, #521373 );
+}
+section#figure .wrapper .flex-item{
+    width: 13.125rem;
+    margin-bottom: 1.5rem;;
+}
+section#kegiatan{
+    background: linear-gradient(to bottom, #521373,#7A3799 );
+}
+section#fasilitas{
+    background: linear-gradient(to bottom, #7A3799, #AF70CC );
+}
+
+
+/* card sementara */
+.carouselWithFloatingHeader {
+    background: linear-gradient(95.81deg, rgba(255, 255, 255, 0.448) 0%, rgba(255, 255, 255, 0.259) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 1.125rem;
+}
+.carousel-control {
+    top: 50%;
+}
+.carousel-control:first-child {
+    right: 0;
+}
+.carousel-control:last-child {
+    right: 0;
+}
+section:not(:first-child, #ongoing-info) {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+footer{
+    background-color: #1B1438;
+}
+
+
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 2rem !important;
+    }
+    h3 {
+        font-size: 1.5rem!important;
+    }
+    h4 {
+        font-size: 1.25rem!important;
+    }
+    p {
+        font-size: 1rem !important;
+    }
+    a.button-link:not(section#faculty a.button-link, section#jumbotron
+            a.button-link) {
+        margin: auto !important;
+        font-size: 0.875rem !important;
+    }
+    section#jumbotron h1 {
+        font-size: 3rem;
+    }
+    section#jumbotron a {
+        font-size: 0.875rem;
+    }
+    section#faculty a.btn-main {
+        width: 100%;
+    }
+    section#faculty-detail .row h3 {
+        font-size: 1.5rem;
+    }
+    section#achievement a.btn-floating-prev {
+        transform: translateX(-0.5rem);
+    }
+    section#achievement a.btn-floating-next {
+        transform: translateX(0.5rem);
+    }
+    section#facility div.container .row:last-child div:first-child {
+        margin-bottom: 3rem;
+    }
+    section#alumnus div div.row > div {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
