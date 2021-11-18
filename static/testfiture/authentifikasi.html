@@ -29,14 +29,9 @@
         <link rel="stylesheet" href="dist/css/adminlte.min.css" />
         <!-- My CSS -->
         <link rel="stylesheet" href="css/auth-main.css" />
-        <style>
-            body {
-                padding-top: 3rem;
-            }
-        </style>
     </head>
 
-    <body class="hold-transition register-page">
+    <body>
         <!-- Preloader -->
         <div
             class="
@@ -58,7 +53,6 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Ini Lho ITS! 2022</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -105,251 +99,216 @@
         </nav>
         <!-- /.navbar -->
 
-        <div class="register-box">
-            <div class="register-logo">
-                <a href="#"><b>Ini Lho ITS! 2022</b></a>
-            </div>
+        <!-- Section Daftar -->
+        <section id="section-registrasi">
+            <div class="container" style="padding-top: 100px">
+                <div class="register-box">
+                    <div>
+                        <div class="card-body register-card-body">
+                            <h2 class="login-box-msg">Daftarkan Dirimu!</h2>
 
-            <div class="card">
-                <div class="card-body register-card-body">
-                    <p class="login-box-msg">Daftar akun baru</p>
-
-                    <form action="index.html" method="post">
-                        <div class="input-group mb-3">
-                            <input
-                                type="email"
-                                class="form-control"
-                                placeholder="Email"
-                                name="email"
-                            />
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-envelope"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input
-                                type="password"
-                                class="form-control"
-                                placeholder="Kata Sandi"
-                                name="password"
-                            />
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-lock"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input
-                                type="password"
-                                class="form-control"
-                                placeholder="Ketik Ulang Kata Sandi"
-                                name="password_confirm"
-                            />
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-lock"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Nama Lengkap"
-                                name="nama_lengkap"
-                            />
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-user"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Dropdown Provinsi & Kabupaten -->
-                        <select
-                            class="custom-select"
-                            style="margin-bottom: 15px"
-                            name="provinsi_domisili"
-                        >
-                            <option selected>Provinsi Domisili</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <br />
-                        <select
-                            class="custom-select"
-                            style="margin-bottom: 15px"
-                            name=" kab_domisili"
-                        >
-                            <option selected>Kabupaten/Kota Domisili</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <br />
-                        <!-- Akhir Dropdown Provinsi & Kabupaten -->
-                        <div class="input-group mb-3">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Alamat"
-                                name="alamat"
-                            />
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-home"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Asal Sekolah"
-                                name="asal_sekolah"
-                            />
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-school"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Dropdown kota/kab asal sekolah -->
-                        <select
-                            class="custom-select"
-                            style="margin-bottom: 15px"
-                            name="kota_kab_asal_sekolah"
-                        >
-                            <option selected>
-                                Kota/Kabupaten Asal Sekolah
-                            </option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <!-- Akhir Dropdown kota/kab asal sekolah-->
-
-                        <div class="input-group mb-3">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Nomor WhatsApp"
-                                name="no_wa"
-                            />
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fab fa-whatsapp"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Radio  -->
-                        <div class="form-check">
-                            <input
-                                class="form-check-input"
-                                type="radio"
-                                name="is_pelajar_aktif"
-                                id="flexRadioDefault1"
-                            />
-                            <label
-                                class="form-check-label"
-                                for="flexRadioDefault1"
-                            >
-                                Pelajar Aktif
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input
-                                class="form-check-input"
-                                type="radio"
-                                name="is_pelajar_aktif"
-                                id="flexRadioDefault2"
-                                checked
-                            />
-                            <label
-                                class="form-check-label"
-                                for="flexRadioDefault2"
-                            >
-                                Bukan Pelajar Aktif
-                            </label>
-                        </div>
-                        <br />
-
-                        <!-- Akhir radio -->
-
-                        <!-- Awal Tau ILITS  -->
-                        <div class="form-check">
-                            <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckDefault"
-                                name="instagram"
-                            />
-                            <label
-                                class="form-check-label"
-                                for="flexCheckDefault"
-                            >
-                                Instagram
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="flexCheckChecked"
-                                name="tiktok"
-                                checked
-                            />
-                            <label
-                                class="form-check-label"
-                                for="flexCheckChecked"
-                            >
-                                Tiktok
-                            </label>
-                        </div>
-                        <br />
-                        <!-- Akhir Tau ILITS -->
-
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="icheck-primary">
+                            <form action="index.html" method="post">
+                                <div class="input-group mb-3">
                                     <input
-                                        type="checkbox"
-                                        id="agreeTerms"
-                                        name="terms"
-                                        value="agree"
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="Email"
+                                        name="email"
                                     />
-                                    <label for="agreeTerms">
-                                        Saya setuju dengan
-                                        <a href="#">S&K</a>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span
+                                                class="fas fa-envelope"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        placeholder="Kata Sandi"
+                                        name="password"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Alamat"
+                                        name="alamat"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-home"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Dropdown Provinsi & Kabupaten -->
+                                <select
+                                    class="custom-select"
+                                    style="margin-bottom: 15px"
+                                    name="provinsi_domisili"
+                                >
+                                    <option selected>Provinsi Domisili</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <br />
+                                <select
+                                    class="custom-select"
+                                    style="margin-bottom: 15px"
+                                    name=" kab_domisili"
+                                >
+                                    <option selected>
+                                        Kabupaten/Kota Domisili
+                                    </option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <br />
+                                <!-- Akhir Dropdown Provinsi & Kabupaten -->
+
+                                <!-- Dropdown kota/kab asal sekolah -->
+                                <select
+                                    class="custom-select"
+                                    style="margin-bottom: 15px"
+                                    name="kota_kab_asal_sekolah"
+                                >
+                                    <option selected>
+                                        Kota/Kabupaten Asal Sekolah
+                                    </option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <!-- Akhir Dropdown kota/kab asal sekolah-->
+
+                                <!-- Radio  -->
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="is_pelajar_aktif"
+                                        id="flexRadioDefault1"
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="flexRadioDefault1"
+                                    >
+                                        Pelajar Aktif
                                     </label>
                                 </div>
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-4">
-                                <button
-                                    type="submit"
-                                    class="btn btn-primary btn-block"
-                                >
-                                    Daftar
-                                </button>
-                            </div>
-                            <!-- /.col -->
-                        </div>
-                    </form>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="is_pelajar_aktif"
+                                        id="flexRadioDefault2"
+                                        checked
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="flexRadioDefault2"
+                                    >
+                                        Bukan Pelajar Aktif
+                                    </label>
+                                </div>
+                                <br />
 
-                    <a href="login.html" class="text-center"
-                        >Saya sudah memiliki akun</a
-                    >
+                                <!-- Akhir radio -->
+
+                                <!-- Awal Tau ILITS  -->
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="flexCheckDefault"
+                                        name="instagram"
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="flexCheckDefault"
+                                    >
+                                        Instagram
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="flexCheckChecked"
+                                        name="tiktok"
+                                        checked
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="flexCheckChecked"
+                                    >
+                                        Tiktok
+                                    </label>
+                                </div>
+                                <br />
+                                <!-- Akhir Tau ILITS -->
+
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div class="icheck-primary">
+                                            <input
+                                                type="checkbox"
+                                                id="agreeTerms"
+                                                name="terms"
+                                                value="agree"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="agreeTerms"
+                                            >
+                                                Saya yakin, data yang saya
+                                                isikan sudah benar
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div
+                                        class="col-9"
+                                        style="padding-left: 5rem"
+                                    >
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary btn-block"
+                                        >
+                                            Daftar
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.form-box -->
             </div>
-            <!-- /.card -->
-        </div>
+        </section>
+
+        <footer class="main-footer">
+            <strong
+                >Copyright &copy;
+                <a href="https://inilho.its.ac.id/">Ini Lho ITS! 2022</a
+                >.</strong
+            >
+            All rights reserved.
+        </footer>
+
+        <!-- Akhir Section -->
+
         <!-- /.register-box -->
 
         <!-- jQuery -->
