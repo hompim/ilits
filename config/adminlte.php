@@ -284,11 +284,18 @@ return [
                     'can'   => ['forda-dashboard']
                 ],
                 [
+                    'text'  => 'Contact Person',
+                    'icon'  => 'fas fa-user',
+                    'url'   => 'forda/edit-pj',
+                    'can'   => ['forda-dashboard']
+                ],
+                [
                     'text'  => 'Edit Biaya',
                     'icon'  => 'fas fa-edit',
                     'url'   => 'forda/edit-biaya',
                     'can'   => ['forda-dashboard']
                 ],
+
             ],
             'can'       => ['peserta-dashboard', 'forda-dashboard'],
         ]

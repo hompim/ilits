@@ -23,7 +23,9 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 |
 */
 //Route web informasi
-Route::get('/', function () { return view('coming-soon'); })->name('coming-soon');
+Route::get('/', function () {
+    return view('coming-soon');
+})->name('coming-soon');
 // Route::get('main', function() {return view('main');});
 // Route::get('fasilitas', function() {return view('fasilitas');});
 // Route::get('fakultas', function() {return view('fakultas');});
@@ -61,6 +63,8 @@ Route::prefix('forda')->middleware('can:isForda')->group(function () {
     Route::get('/absensi', [FordaController::class, 'absensi'])->name('forda.absensi');
     Route::get('/edit-biaya', [FordaController::class, 'editBiaya'])->name('forda.edit-biaya');
     Route::post('/edit-biaya', [FordaController::class, 'storeBiaya'])->name('forda.edit-biaya.store');
+    Route::get('/edit-pj', [FordaController::class, 'editPJ'])->name('forda.edit-pj');
+    Route::post('/edit-pj', [FordaController::class, 'storePJ'])->name('forda.edit-pj.store');
 });
 
 Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
