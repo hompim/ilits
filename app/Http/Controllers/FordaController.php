@@ -79,4 +79,39 @@ class FordaController extends Controller
             ]);
         }
     }
+    public function editPJ()
+    {
+        $forda = Auth::user()->user->tryoutForda;
+        $forda_peserta = Auth::user()->user;
+        $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
+        $peserta_terdaftar = $forda_peserta->peserta()->count();
+        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
+        return view('forda.edit-pj', [
+            'forda' => $forda,
+            'forda_peserta' => $forda_peserta,
+            'peserta_pending' => $peserta_pending,
+            'peserta_terdaftar' => $peserta_terdaftar,
+            'peserta_konfirmasi' => $peserta_konfirmasi,
+
+        ]);
+    }
+    public function storePJ(Request $request)
+    {
+        try {
+            $forda = Auth::user()->user->tryoutForda;
+            $forda->nama_pj = $request->nama_pj;
+            $forda->hp_pj = $request->hp_pj;
+            $forda->id_line_pj = $request->id_line_pj;
+            $forda->save();
+            return redirect()->back()->with([
+                'message' => "Data Penanggung Jawab berhasil diubah",
+                'status' => "success"
+            ]);
+        } catch (Exception $e) {
+            return redirect()->back()->with([
+                'message' => "Data Penanggung Jawab gagal diubah",
+                'status' => "danger"
+            ]);
+        }
+    }
 }
