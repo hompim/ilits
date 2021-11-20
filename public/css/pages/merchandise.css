@@ -1,0 +1,52 @@
+/* Jumbotron */
+#jumbotron {
+  height: 720px;
+  background: linear-gradient(to bottom, #FFF9EE, #E9A386);
+}
+
+#jumbotron .container {
+  height: 30%;
+}
+
+#jumbotron h1 {
+  font-size: 60px;
+  background: linear-gradient(to bottom, #E67245, #A562E9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+#jumbotron h3 {
+  color: #A562E9;
+}
+
+/* Catalog */
+#catalog .text-col-product-merchandise {
+  padding-left: 32px;
+}
+
+@media screen and (max-width: 1200px) {
+  #catalog .text-col-product-merchandise {
+    padding-left: 28px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #catalog .text-col-product-merchandise {
+    padding-left: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #catalog .text-col-product-merchandise {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #catalog .text-col-product-merchandise {
+    padding-left: 45px;
+  }
+}
