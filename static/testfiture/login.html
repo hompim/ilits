@@ -35,6 +35,8 @@
         <link rel="stylesheet" href="dist/css/adminlte.min.css" />
 
         <link rel="stylesheet" href="css/auth-main.css" />
+
+        
     </head>
     <body>
         <!-- Preloader -->
@@ -58,7 +60,6 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Ini Lho ITS! 2022</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -105,87 +106,89 @@
         </nav>
         <!-- /.navbar -->
 
-        <div class="login-box">
-            <div class="login-logo">
-                <a href="index2.html"><b>Ini Lho ITS 2022</b></a>
-            </div>
-            <!-- /.login-logo -->
-            <div class="card">
-                <div class="card-body login-card-body">
-                    <p class="login-box-msg">Masuk untuk membuka akun anda</p>
-
-                    <form action="index3.html" method="post">
-                        <div class="input-group mb-3">
-                            <input
-                                type="email"
-                                class="form-control"
-                                placeholder="Email"
-                                name="email"
-                            />
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-envelope"></span>
+        <!-- Section Login -->
+        <section id="section-masuk" style="padding-bottom: 263px;">
+            <div class="container" style="padding-top: 100px;">
+                <div class="login-box">
+                    <div>
+                        <div class="card-body login-card-body">
+                            <h2 class="login-box-msg">Sudah punya akun? Ayo Kerjakan Tryout</h2>
+                            
+                            <form action="index3.html" method="post">
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="Email"
+                                        name="email"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-envelope"></span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input
-                                type="password"
-                                class="form-control"
-                                placeholder="Kata Sandi"
-                                name="password"
-                            />
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fas fa-lock"></span>
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        placeholder="Kata Sandi"
+                                        name="password"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="icheck-primary">
-                                    <input type="checkbox" id="remember" />
-                                    <label for="remember"> Ingat Saya </label>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <div class="icheck-primary">
+                                            <input type="checkbox" id="remember" />
+                                            <label for="remember"> Ingat Saya </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="mb-1">
+                                        <a href="forgot-password.html">Lupa password</a>
+                                        <br>
+                                   
+                                   
+                                        <!-- /.col -->
+                                    <div class="col-10">
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary btn-block"
+                                        >
+                                            Masuk
+                                        </button>
+                                    </div>
+                                    <!-- /.col -->
                                 </div>
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-4">
-                                <button
-                                    type="submit"
-                                    class="btn btn-primary btn-block"
+                            </form>
+        
+                            <!-- /.social-auth-links -->
+                            </p>
+                            <p class="mb-0">Kamu belum punya akun?
+                                <a href="authentifikasi.html" class="text-center"
+                                    >Daftar di Sini</a
                                 >
-                                    Masuk
-                                </button>
-                            </div>
-                            <!-- /.col -->
+                            </p>
                         </div>
-                    </form>
-
-                    <div class="social-auth-links text-center mb-3">
-                        <p>- ATAU -</p>
-                        <a href="#" class="btn btn-block btn-primary">
-                            <i class="fab fa-facebook mr-2"></i> Masuk dengan
-                            Facebook
-                        </a>
-                        <a href="#" class="btn btn-block btn-danger">
-                            <i class="fab fa-google-plus mr-2"></i>
-                            Masuk dengan Google+
-                        </a>
+                        <!-- /.login-card-body -->
                     </div>
-                    <!-- /.social-auth-links -->
-
-                    <p class="mb-1">
-                        <a href="forgot-password.html">Lupa kata sandi</a>
-                    </p>
-                    <p class="mb-0">
-                        <a href="authentifikasi.html" class="text-center"
-                            >Daftar akun baru</a
-                        >
-                    </p>
                 </div>
-                <!-- /.login-card-body -->
             </div>
-        </div>
+          </section>
+
+          <footer class="main-footer">
+            <strong>Copyright &copy;
+                <a href="https://inilho.its.ac.id/">Ini Lho ITS! 2022</a>.</strong>
+            All rights reserved.
+        </footer>
+
+        <!-- Akhir Section -->
+
         <!-- /.login-box -->
 
         <!-- jQuery -->
