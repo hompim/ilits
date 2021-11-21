@@ -65,6 +65,7 @@ Route::prefix('forda')->middleware('can:isForda')->group(function () {
     Route::post('/edit-biaya', [FordaController::class, 'storeBiaya'])->name('forda.edit-biaya.store');
     Route::get('/edit-pj', [FordaController::class, 'editPJ'])->name('forda.edit-pj');
     Route::post('/edit-pj', [FordaController::class, 'storePJ'])->name('forda.edit-pj.store');
+    Route::get('/verif-bayar', [FordaController::class, 'verifBayar'])->name('forda.verif-bayar');
 });
 
 Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');

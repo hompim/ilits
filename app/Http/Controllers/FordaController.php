@@ -114,4 +114,19 @@ class FordaController extends Controller
             ]);
         }
     }
+    public function verifBayar()
+    {
+        $forda = Auth::user()->user;
+        $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
+        $peserta_terdaftar = $forda->peserta()->count();
+        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
+        $peserta = DB::table('users')->join('peserta', 'users.user_id', '=', 'peserta.id')->join('tryout_user', 'users.id', '=', 'tryout_user.user_id')->get();
+        return view('forda.verif-bayar', [
+            'forda' => $forda,
+            'peserta_pending' => $peserta_pending,
+            'peserta_terdaftar' => $peserta_terdaftar,
+            'peserta_konfirmasi' => $peserta_konfirmasi,
+            'peserta' => $peserta,
+        ]);
+    }
 }
