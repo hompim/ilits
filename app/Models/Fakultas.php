@@ -13,6 +13,11 @@ class Fakultas extends Model
 
     public function sesi_fnd()
     {
-        return $this->belongsTo(SesiFnd::class, 'sesi_id');
+        return $this->belongsTo(SesiFnd::class);
+    }
+    
+    public function departemen()
+    {
+        return $this->hasMany(Fakultas::class);
     }
 }

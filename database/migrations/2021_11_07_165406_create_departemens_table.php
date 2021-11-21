@@ -17,8 +17,10 @@ class CreateDepartemensTable extends Migration
             $table->id();
             $table->unsignedBigInteger('sesi_id');
             $table->unsignedBigInteger('kelas_id');
+            $table->unsignedBigInteger('fakultas_id');
             $table->foreign('sesi_id')->references('id')->on('sesi_fnds');
             $table->foreign('kelas_id')->references('id')->on('kelas');
+            $table->foreign('fakultas_id')->references('id')->on('fakultas');
             $table->string('nama');
             $table->string('link_zoom');
             $table->integer('kuota');

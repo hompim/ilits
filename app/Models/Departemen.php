@@ -25,4 +25,34 @@ class Departemen extends Model
     {
         return $this->belongsToMany(PesertaEvent::class, 'peserta_fnd', 'departemen_id', 'peserta_id');
     }
+
+    public function fasilitas()
+    {
+        return $this->hasMany(Fasilitas::class);
+    }
+
+    public function aktivitas_mahasiswa()
+    {
+        return $this->hasMany(AktivitasMahasiswa::class);
+    }
+
+    public function prospek_kerja()
+    {
+        return $this->hasMany(ProspekKerja::class);
+    }
+
+    public function alumni()
+    {
+        return $this->hasMany(Alumni::class);
+    }
+
+    public function akreditasi()
+    {
+        return $this->belongsTo(Akreditasi::class);
+    }
+    
+    public function fakultas()
+    {
+        return $this->belongsTo(Fakultas::class, 'fakultas_id');
+    }
 }
