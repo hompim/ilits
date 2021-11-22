@@ -115,7 +115,7 @@
         <div class="card-body">
           <p class="m-0">
             <i class="fas fa-check-circle" aria-hidden="true"></i>
-              Bukti pembayaran anda sudah terupload. 
+              Bukti pembayaran anda sudah terupload.
               Mohon tunggu forda untuk memverifikasi bukti pembayaran anda.
           </p>
         </div>
@@ -261,6 +261,23 @@
           </p>
         </div>
       </div>
+      <div class="card elevation-2">
+        <div class="card-header">
+          <h1 class="card-title">
+            Link Zoom Meeting
+          </h1>
+        </div>
+            <br>
+                <form>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for=" input link_meet"><h2> <a href="#">Link Zoom Meeting</a> </h2></label>
+                            <input type="text" class="form-control" id="link_meet"
+                                value= "{{Auth::user()->user->forda->tryoutForda->link_meet}}" name="link_meet"/>
+                        </div>
+                     </div>
+                </form>
+        </div>
     </section>
   </div>
   <!-- /.row (main row) -->

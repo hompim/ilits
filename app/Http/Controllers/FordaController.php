@@ -130,17 +130,19 @@ class FordaController extends Controller
 
     public function UpdateLinkMeet(Request $request)
     {
-        $this->validate($request, [
-            'link_meet' => 'required|url|string|max:255'
-        ], [
-            'link_meet' => [
-                'url' => 'Input harus berupa link yang valid'
-            ]
-        ]);
-        $forda = Auth::user()->user->tryoutUser;
-        $forda->link_meet = $request->link_meet;
-        $forda->save();
-
-        return redirect(route('forda.link-meet-page'))->with(['type' => 'success', 'message' => 'Link meet berhasil disimpan']);
+        try {
+            $forda = Auth::user()->user->tryoutForda;
+            $forda->link_meet = $request->link_meet;
+            $forda->save();
+            return redirect()->back()->with([
+                'message' => "Data Link Meet berhasil diubah",
+                'status' => "success"
+            ]);
+        } catch (Exception $e) {
+            return redirect()->back()->with([
+                'message' => "Data  Link Meet gagal diubah",
+                'status' => "danger"
+            ]);
+        }
     }
 }
