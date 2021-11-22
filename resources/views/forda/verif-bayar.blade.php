@@ -162,7 +162,7 @@
                 </div>
                 <div class="row">
                     <h6>Bukti Pembayaran:</h6>
-                    <img src="{{$p->bukti_bayar?asset('storage/images/bukti_pembayaran/'.Auth::user()->tryoutUser->bukti_bayar):asset('/img/placeholder-image.png')}}" alt="bukti_pembayaran" class="img-fluid">
+                    <img src="{{$p->bukti_bayar?asset('storage/images/bukti_pembayaran/'.$p->bukti_bayar):asset('/img/placeholder-image.png')}}" alt="bukti_pembayaran" class="img-fluid">
                 </div>
             </div>
             </div>
