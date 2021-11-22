@@ -114,4 +114,33 @@ class FordaController extends Controller
             ]);
         }
     }
+    public function LinkMeetPage()
+    {
+        $forda = Auth::user()->user;
+        $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
+        $peserta_terdaftar = $forda->peserta()->count();
+        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
+        return view('forda.edit-link-meet', [
+            'forda' => $forda,
+            'peserta_pending' => $peserta_pending,
+            'peserta_terdaftar' => $peserta_terdaftar,
+            'peserta_konfirmasi' => $peserta_konfirmasi,
+        ]);
+    }
+
+    public function UpdateLinkMeet(Request $request)
+    {
+        $this->validate($request, [
+            'link_meet' => 'required|url|string|max:255'
+        ], [
+            'link_meet' => [
+                'url' => 'Input harus berupa link yang valid'
+            ]
+        ]);
+        $forda = Auth::user()->user->tryoutUser;
+        $forda->link_meet = $request->link_meet;
+        $forda->save();
+
+        return redirect(route('forda.link-meet-page'))->with(['type' => 'success', 'message' => 'Link meet berhasil disimpan']);
+    }
 }
