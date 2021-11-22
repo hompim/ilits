@@ -80,7 +80,7 @@
 
       <div class="col-lg-8 col-xl-6 offset-lg-2 offset-xl-3 m-auto px-0 row">
         <div class="barchart text-center col-4">
-          <x-bar-chart title="SNMPTN" percent="30"/>
+          <x-bar-chart title="SNMPTN" percent="80"/>
         </div>
         
         <div class="barchart text-center col-4">
