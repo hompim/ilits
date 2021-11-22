@@ -22,6 +22,8 @@ class CreateDepartemensTable extends Migration
             $table->foreign('kelas_id')->references('id')->on('kelas');
             $table->foreign('fakultas_id')->references('id')->on('fakultas');
             $table->string('nama');
+            $table->string('foto');
+            $table->text('deskripsi');
             $table->string('link_zoom');
             $table->integer('kuota');
             $table->date('updated_at')->nullable();

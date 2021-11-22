@@ -18,6 +18,8 @@ class CreateFakultasTable extends Migration
             $table->unsignedBigInteger('sesi_id');
             $table->foreign('sesi_id')->references('id')->on('sesi_fnds')->default(1);
             $table->string('nama');
+            $table->string('foto');
+            $table->text('deskripsi');
             $table->string('link_zoom');
             $table->date('updated_at')->nullable();
             $table->date('created_at')->nullable();
