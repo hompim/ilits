@@ -2,18 +2,29 @@
     box-sizing: border-box;
 }
 
-body-main{
+body main {
     color: #ffffff;
 }
 
+body main h2{
+    font-size: 2.125rem;
+}
+body main h3{
+    font-size:  1.875rem;
+}
+body main p {
+    font-size: 1.125rem !important;
+}
+
 section#jumbotron {
-    min-height: calc(100vh - 66.516px);
+    min-height: calc(100vh - 0px);
     background: linear-gradient(270deg, #F5F5F1 0.9%, #C5BEF0 100%);
 }
 section#jumbotron h1 {
     font-size: 5rem;
     background: linear-gradient(to left, #A562E9 0%, #3B71C7 50%, #A3B4CC 100%);
     -webkit-background-clip: text;
+            background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 section#jumbotron h2 {
@@ -48,15 +59,26 @@ section#kerja-sama {
     background: linear-gradient(to bottom, #2B1D50, #401862);
 }
 
+@media only screen and (max-width: 992px) {
+    section#jumbotron h1{
+        font-size: 4rem;
+    }
+}
 
 @media only screen and (max-width: 768px) {
-    h2 {
-        font-size: 2rem !important;
+    body main h2{
+        font-size: 2rem;
     }
-    p {
+    body main h3{
+        font-size:  1.5rem;
+    }
+    body main p {
         font-size: 1rem !important;
     }
 
+    section#jumbotron h1{
+        font-size: 3.125rem;
+    }
     section#fasilitas div.row {
         margin-bottom: 0.75rem;
     }
@@ -64,5 +86,38 @@ section#kerja-sama {
         margin-left: 0 !important;
         margin-right: 0 !important;
         margin-bottom: 0.75rem;
+    }
+    a.button-link:not(section#faculty a.button-link, section#jumbotron
+            a.button-link) {
+        margin: auto !important;
+        font-size: 0.875rem !important;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+    body main h2{
+        font-size: 1.125rem !important;
+    }
+    body main .SectionHeader h2{
+        font-size: 1.125rem !important;
+    }
+    
+    body main h3{
+        font-size:  1.125rem !important;
+    }
+    body main p {
+        font-size: 0.875rem !important;
+    }
+
+    section#jumbotron{
+        text-align: center;
+    }
+    section#jumbotron h2{
+        font-size: 1.25rem !important;
+    }
+    section#jumbotron a.button-link{
+        margin: auto;
     }
 }

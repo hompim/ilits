@@ -26,10 +26,10 @@
 
 @section('content')
 <section class="d-flex justify-content-center flex-column" id='jumbotron'>
-  <article class="container text-black">
+  <article class="container">
     <div class="left">
-      <h1 style="font-size: 5rem;">Departemen<br>Teknik Informatika</h1>
-      <h2 class="my-4" style="font-size:1.875rem; font-weight:500 ;font-family:gothamMedium">FTEIC/ELECTICS</h2>
+      <h1 >Departemen<br>Teknik Informatika</h1>
+      <h2 class="my-4">FTEIC/ELECTICS</h2>
       <x-button-link href='#' isBlur="100px">
         Kenali Lebih Lanjut
       </x-button-link>
@@ -51,8 +51,8 @@
 {{-- fix --}}
 <section class="d-flex justify-content-center flex-column" id="video-profile">
   <article class="container text-center">
-      <div class="container row">
-        <div class="col-lg-10 offset-lg-1 px-5" >
+      <div class=" mx-auto row">
+        <div class="col-lg-10 offset-lg-1 px-lg-5" >
           <x-video-embed src="https://www.youtube.com/embed/8iuLXODzL04"/>
         </div>
     </div>
@@ -74,7 +74,7 @@
 </section>
 
 {{-- fix --}}
-<section class="d-flex justify-content-center text-center" id="kekekatan">
+{{-- <section class="d-flex justify-content-center text-center" id="kekekatan">
     <div class="container">
       @include('partials.section-header', ['title'=>'Kekekatan Departemen Terakhir!'])
 
@@ -93,12 +93,12 @@
      </div>  
 
   </div>
-</section>
+</section> --}}
 
 <section class=" d-flex justify-content-center text-center flex-column" id="fokus-keilmuan">
     <div class="container">
       @include('partials.section-header', ['title'=>'Fokus Keilmuan'])
-      <div class="col-11 mx-auto">
+      <div class="col-11 px-1 px-md-3 col-lg-11 mx-auto">
           <x-simple-three-cards-carousel 
         titles="Keamanan Cyber, Anilisi Data, Rekayasa Perangkat Lunak, Keamanan Cyber, Anilisi Data, Rekayasa Perangkat Lunak"
         images="img/departmen/fokusKeilmuan-1.png,img/departmen/fokusKeilmuan-2.png,img/departmen/fokusKeilmuan-3.png,img/departmen/fokusKeilmuan-1.png,img/departmen/fokusKeilmuan-3.png,img/departmen/fokusKeilmuan-2.png"
@@ -111,12 +111,12 @@
 <section class="d-flex justify-content-center align-items-center flex-column" id='prestasi'>
     <div class="container text-center">
       @include('partials.section-header', ['title'=>'Segudang Prestasi'])
-      <div class="col-11 mx-auto">
+      <div class="col-10 col-lg-11 mx-auto">
         <x-three-cards-carousel carouselId="idcar" titles="Juara 1, Juara 2, Juara 3, Juara 4, Juara 5, Juara 6"
         images="img/main/prestasi-1.png,img/main/prestasi-2.png,img/main/prestasi-3.png,img/main/prestasi-1.png,img/main/prestasi-3.png,img/main/prestasi-2.png"
         texts="Some quick example text to build on the card title and make up the bulk
         of the
-        card's content.|Some quick example text to build on the card title and make up the bulk
+        card's content.|Some quick example text to build on ktgkm romtghhokm tokmbk mrtokbmok rmtokbm ok4mtbokrmt okmbkrm kotmhokbmrtokb mrtkbmrok tmbokmrtokmb okrmtbokrmtokhm roktmbokrm tokmb  the card title and make up the bulk
         of the
         card's content.|Some quick example text to build on the card title and make up the bulk
         of the
@@ -134,9 +134,9 @@
 <section class="d-flex justify-content-center align-items-center flex-column" id='prospek'>
     <div class="container text-center">
      
-      @include('partials.section-header', ['title'=>'Sesuaikan Dengan Prospek Kerja'])
+      @include('partials.section-header', ['title'=>'Sesuaikan Prospek'])
       
-      <div class="col-11 mx-auto">
+      <div class="col-10 col-lg-11 mx-auto">
         <x-three-cards-carousel carouselId="carouselId1" titles="Juara 1, Juara 1, Juara 1, Juara 1, Juara 1, Juara 1"
         images="img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png"
         texts="Some quick example text to build on the card title and make up the bulk

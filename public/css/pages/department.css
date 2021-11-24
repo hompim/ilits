@@ -7,27 +7,36 @@ body main{
 body main section{
     min-height: calc(100vh - 66.516px);
 }
+
+/* font */
 body main h2{
-    font-size: 2.375rem;
+    font-size: 2.125rem;
 }
 body main h3{
-    font-size:1.875rem;
+    font-size:  1.875rem;
 }
-body main h4{
-    font-size: 1.625rem;
-}
-section#jumbotron{
-    background: linear-gradient(270deg, #F5F5F1 0.9%, #A9E4E3 100%);
+body main p {
+    font-size: 1.125rem !important;
 }
 
-section#jumbotron h1, section#jumbotron h2 {
+/* section */
+section#jumbotron{
+    background: linear-gradient(270deg, #F5F5F1 0.9%, #A9E4E3 100%);
+    min-height: calc(100vh - 0px);
+}
+section#jumbotron h1 {
+    font-size: 5rem;
     background: linear-gradient(267.99deg, #A562E9 0%, #3B71C7 100%);
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+section#jumbotron h2{
+    color: #3B71C7;
+    font-size: 1.875rem;
+}
 section#jumbotron a.btn{
-    background: linear-gradient(90.75deg, rgba(151, 44, 205, 0.7) 1.29%, rgba(107, 211, 205, 0.7) 37.32%, rgba(243, 245, 241, 0.7) 98.71%) !important;
+    background: linear-gradient(90.75deg, rgba(151, 44, 205, 0.7) 1.29%, rgba(107, 211, 205, 0.7) 37.32%, rgba(243, 245, 241, 0.7) 98.71%);
 }
 
 
@@ -48,7 +57,7 @@ section#video-profile{
     background: linear-gradient(to bottom, #2A518E,#2E5999);
 }
 section#video-profile iframe{
-    border-radius: 1rem;
+    border-radius: 0.625rem;
 }
 
 section#akreditasi{
@@ -57,11 +66,15 @@ section#akreditasi{
 section#akreditasi .item-three-cards{
     border-bottom-width: 0;
 }
-section#kekekatan{
-    background: linear-gradient(to bottom, #2F5999,#2B447C);
+section#akreditasi .item-three-cards h2{
+    font-size: 1.875rem;
 }
+
+/* section#kekekatan{
+    background: linear-gradient(to bottom, #2F5999,#2B447C);
+} */
 section#fokus-keilmuan{
-    background: linear-gradient(to bottom, #2B447C,#282F60 );
+    background: linear-gradient(to bottom, #2F5999,#282F60 );
 }
 section#prestasi{
     background: linear-gradient(to bottom,#282F60,#291E4E );
@@ -91,7 +104,7 @@ section#fasilitas{
 }
 
 
-/* card sementara */
+
 .carouselWithFloatingHeader {
     background: linear-gradient(95.81deg, rgba(255, 255, 255, 0.448) 0%, rgba(255, 255, 255, 0.259) 100%);
     backdrop-filter: blur(20px);
@@ -114,31 +127,35 @@ section:not(:first-child, #ongoing-info) {
 footer{
     background-color: #1B1438;
 }
-
+@media only screen and (max-width: 992px) {
+    section#jumbotron h1{
+        font-size: 4rem;
+    }
+}
 
 @media only screen and (max-width: 768px) {
-    h2 {
-        font-size: 2rem !important;
+    body main h2{
+        font-size: 2rem;
     }
-    h3 {
-        font-size: 1.5rem!important;
+
+    body main h3{
+        font-size:  1.5rem;
     }
-    h4 {
-        font-size: 1.25rem!important;
-    }
-    p {
+    body main p {
         font-size: 1rem !important;
     }
+    
     a.button-link:not(section#faculty a.button-link, section#jumbotron
             a.button-link) {
         margin: auto !important;
         font-size: 0.875rem !important;
     }
-    section#jumbotron h1 {
-        font-size: 3rem;
+    section#jumbotron h1{
+        font-size: 3.125rem;
     }
-    section#jumbotron a {
-        font-size: 0.875rem;
+
+    section#video-profile .col-lg-10{
+        padding: 0;
     }
     section#faculty a.btn-main {
         width: 100%;
@@ -159,4 +176,41 @@ footer{
         padding-left: 4rem;
         padding-right: 4rem;
     }
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+    body main h2{
+        font-size: 1.125rem !important;
+    }
+    body main .SectionHeader h2{
+        font-size: 1.125rem !important;
+    }
+    
+    body main h3{
+        font-size:  1.125rem !important;
+    }
+    body main p {
+        font-size: 0.875rem !important;
+    }
+
+    section#jumbotron{
+        text-align: center;
+    }
+    section#jumbotron h2{
+        font-size: 1.25rem !important;
+    }
+    section#jumbotron a.button-link{
+        margin: auto;
+    }
+
+    section#figure .wrapper{
+        flex-direction: column;
+    }
+    section#figure .flex-item{
+        width: 234px !important;
+    }
+      
 }

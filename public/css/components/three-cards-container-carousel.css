@@ -37,9 +37,7 @@
     height:3.125rem;
     background: linear-gradient(91.6deg, #53ea90 2.71%, #3b71c7 97.29%);
 }
-#threeCardsContainerCarousel .card-body{
 
-}
 #threeCardsContainerCarousel div.rounded-circle{
     width: 3.75rem;
     height: 3.75rem;
@@ -111,4 +109,9 @@
         display: block;
         visibility: visible;
     }
+}
+@media screen and (max-width: 768px) {
+    #threeCardsContainerCarousel a.btn-floating .fa-3x{
+        font-size: 2em !important;
+    }  
 }
