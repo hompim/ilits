@@ -41,6 +41,16 @@
     </article>
   </section>
 
+  <section class="d-flex justify-content-center flex-column" id="video-profile">
+    <article class="container text-center">
+        <div class=" mx-auto row">
+          <div class="col-lg-10 offset-lg-1 px-lg-5" >
+            <x-video-embed src="https://www.youtube.com/embed/sdQKeXe3rzQ"/>
+          </div>
+      </div>
+     </article>
+  </section>
+
     <section class="d-flex justify-content-center align-items-center flex-column" id='waktu'>
         <div class="container text-center text-white ">
         @include('partials.section-header', ['title'=>'Waktu Demi Waktu'])

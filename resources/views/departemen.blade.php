@@ -6,19 +6,13 @@
 
 @section('style')
 <link rel="stylesheet" href="{{ asset('css/pages/department.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/components/map.css') }}">
+<link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}">
+
 <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
-<link rel="stylesheet" href="{{ asset('css/components/two-side-color-carousel.css') }}">
-<link rel="stylesheet" href="{{ asset('css/components/carousel-with-header.css') }}">
-<link rel="stylesheet" href="{{ asset('css/components/carousel-with-floating-header-and-button.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/carousel-with-floating-header.css') }}">
-<link rel="stylesheet" href="{{ asset('css/components/two-side-card.css') }}">
-<link rel="stylesheet" href="{{ asset('css/components/five-items-grid.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/three-cards-carousel.css') }}">
-<link rel="stylesheet" href="{{ asset('css/components/card-with-header.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/card-with-floating-header.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/bar-chart.css') }}">
-<link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/simple-three-cards-carousel.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/three-cards.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/two-side-carousel.css') }}">
@@ -49,15 +43,7 @@
 </section>
 
 {{-- fix --}}
-<section class="d-flex justify-content-center flex-column" id="video-profile">
-  <article class="container text-center">
-      <div class=" mx-auto row">
-        <div class="col-lg-10 offset-lg-1 px-lg-5" >
-          <x-video-embed src="https://www.youtube.com/embed/8iuLXODzL04"/>
-        </div>
-    </div>
-   </article>
-</section>
+
 
 <section class="" id='akreditasi'>
   <div class="container">
@@ -99,7 +85,7 @@
     <div class="container">
       @include('partials.section-header', ['title'=>'Fokus Keilmuan'])
       <div class="col-11 px-1 px-md-3 col-lg-11 mx-auto">
-          <x-simple-three-cards-carousel 
+        <x-simple-three-cards-carousel 
         titles="Keamanan Cyber, Anilisi Data, Rekayasa Perangkat Lunak, Keamanan Cyber, Anilisi Data, Rekayasa Perangkat Lunak"
         images="img/departmen/fokusKeilmuan-1.png,img/departmen/fokusKeilmuan-2.png,img/departmen/fokusKeilmuan-3.png,img/departmen/fokusKeilmuan-1.png,img/departmen/fokusKeilmuan-3.png,img/departmen/fokusKeilmuan-2.png"
         />

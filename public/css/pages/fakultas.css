@@ -40,23 +40,29 @@ section#jumbotron a.btn{
 section#info-unik {
     background: linear-gradient(to bottom, #264882, #2A518e);
 }
-section#waktu {
+section#video-profile{
     background: linear-gradient(to bottom, #2A518E, #2E5998);
 }
-section#akreditasi {
+section#video-profile iframe{
+    border-radius: 0.625rem;
+}
+section#waktu {
     background: linear-gradient(to bottom, #2E5998, #2F5999);
 }
-section#virtual-expo {
+section#akreditasi {
     background: linear-gradient(to bottom, #2F5999, #2C437B);
 }
-section#jurusanmu{
+section#virtual-expo {
     background: linear-gradient(to bottom, #2C437B, #282F60);
 }
-section#perbandingan {
+section#jurusanmu{
     background: linear-gradient(to bottom, #282F60, #2B1D50);
 }
-section#kerja-sama {
+section#perbandingan {
     background: linear-gradient(to bottom, #2B1D50, #401862);
+}
+section#kerja-sama {
+    background: linear-gradient(to bottom, #401862, #521373);
 }
 
 @media only screen and (max-width: 992px) {
@@ -78,6 +84,9 @@ section#kerja-sama {
 
     section#jumbotron h1{
         font-size: 3.125rem;
+    }
+    section#video-profile .col-lg-10{
+        padding: 0;
     }
     section#fasilitas div.row {
         margin-bottom: 0.75rem;

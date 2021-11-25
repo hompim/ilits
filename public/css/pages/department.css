@@ -53,15 +53,15 @@ section#about img{
 }
 
 
-section#video-profile{
+/* section#video-profile{
     background: linear-gradient(to bottom, #2A518E,#2E5999);
 }
 section#video-profile iframe{
     border-radius: 0.625rem;
-}
+} */
 
 section#akreditasi{
-    background: linear-gradient(to bottom,#2E5999, #2F5999);
+    background: linear-gradient(to bottom, #2A518E,#2E5999);
 }
 section#akreditasi .item-three-cards{
     border-bottom-width: 0;
@@ -74,16 +74,16 @@ section#akreditasi .item-three-cards h2{
     background: linear-gradient(to bottom, #2F5999,#2B447C);
 } */
 section#fokus-keilmuan{
-    background: linear-gradient(to bottom, #2F5999,#282F60 );
+    background: linear-gradient(to bottom,#2E5999, #2F5999);
 }
 section#prestasi{
-    background: linear-gradient(to bottom,#282F60,#291E4E );
+    background: linear-gradient(to bottom, #2F5999,#282F60);
 }
 section#prospek{
-    background: linear-gradient(to bottom,#291E4E, #3D1960 );
+    background: linear-gradient(to bottom,#282F60,#291E4E );
 }
 section#figure{
-    background: linear-gradient(to bottom, #3D1960, #521373 );
+    background: linear-gradient(to bottom,#291E4E, #3D1960);
 }
 section#figure .wrapper{
     flex-flow: row wrap;
@@ -97,10 +97,10 @@ section#figure .wrapper .flex-item{
     margin-bottom: 1.5rem;;
 }
 section#kegiatan{
-    background: linear-gradient(to bottom, #521373,#7A3799 );
+    background: linear-gradient(to bottom, #3D1960, #521373 );
 }
 section#fasilitas{
-    background: linear-gradient(to bottom, #7A3799, #AF70CC );
+    background: linear-gradient(to bottom, #521373,#7A3799 );
 }
 
 
