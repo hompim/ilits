@@ -9,15 +9,17 @@
                 <h3 class="mb-4 text-left">{{ $titles[$i] }}</h3>
                 <p class="text-left">{{ $texts[$i] }}</p>
                 @if ($buttonTexts)
-                <div class="text-left">
-                  <x-button-link href='#' angle='20deg' colorFrom="#3b71c7" colorTo='#59d3da'>{{ $buttonTexts[$i] }}
+                  <x-button-link href='#' angle='20deg' colorFrom="#3b71c7" colorTo='#59d3da' class='btn-desktop-show'>{{ $buttonTexts[$i] }}
                   </x-button-link>
-                </div>
                 @endif
               </div>
               <div class="right-side">
                 <img src="{{ asset($images[$i]) }}" class="img-fluid" alt="{{ $titles[$i] }}">
               </div>
+              @if ($buttonTexts)
+                  <x-button-link href='#' angle='20deg' colorFrom="#3b71c7" colorTo='#59d3da' class='mb-3 btn-mobile-show'>{{ $buttonTexts[$i] }}
+                  </x-button-link>
+              @endif
             </div>
           </div>
         @endfor
