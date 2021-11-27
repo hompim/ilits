@@ -34,6 +34,9 @@ Route::get('merchandise', function(){return view('merchandise');});
 Route::get('team', function(){return view('team');});
 Route::get('beasiswa', function(){return view('beasiswa');});
 Route::get('eventual', function(){return view('eventual');});
+Route::get('/open-campus/register-fnd',function(){return view('open-campus.register-fnd',["title" => "register-fnd"]);});
+Route::get('/open-campus/event-regist',function(){return view('open-campus.event-regist',["title" => "event-regist"]);});
+Route::get('/open-campus/dashboard-fnd',function(){return view('open-campus.dashboard-fnd',["title" => "dashboard-fnd"]);});
 
 // Route untuk admin
 Route::middleware('can:isAdmin')->prefix('admin')->group(function () {
