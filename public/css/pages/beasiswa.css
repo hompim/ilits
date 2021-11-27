@@ -27,10 +27,16 @@
 
     #jumbotron h1 {
         font-size: 54px;
+        text-align: center;
     }
 
     #jumbotron h3 {
         font-size: 20px;
+        text-align: center;
+    }
+
+    #jumbotron a.button-link {
+        margin: auto;
     }
 }
 
