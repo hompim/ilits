@@ -41,10 +41,20 @@
     </article>
   </section>
 
+  <section class="d-flex justify-content-center flex-column" id="video-profile">
+    <article class="container text-center">
+        <div class=" mx-auto row">
+          <div class="col-lg-10 offset-lg-1 px-lg-5" >
+            <x-video-embed src="https://www.youtube.com/embed/sdQKeXe3rzQ"/>
+          </div>
+      </div>
+     </article>
+  </section>
+
     <section class="d-flex justify-content-center align-items-center flex-column" id='waktu'>
         <div class="container text-center text-white ">
         @include('partials.section-header', ['title'=>'Waktu Demi Waktu'])
-        <div class="col-11 mx-auto">
+        <div class="col-10 col-lg-11 mx-auto">
             <x-three-cards-carousel carouselId="idcar" titles="1960, 1976, 1987, 1960, 1976, 1987"
             images="img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png,img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png"
             texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
@@ -86,7 +96,7 @@
     <section class="d-flex justify-content-center align-items-center flex-column" id='jurusanmu'>
     <div class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Kenali Jurusanmu!'])
-      <div class="col-11 mx-auto">
+      <div class="col-10 col-lg-11 mx-auto">
         <x-three-cards-container-carousel carouselId="idcar2" titles="Departemen Teknik Informatika, 
         Departemen Sistem Informasi,Departemen Teknik Komputer,Departemen Teknik Informatika,Departemen Sistem Informasi,Departemen Teknik Komputer"
         images="img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png"
@@ -98,7 +108,7 @@
     <section class="d-flex justify-content-center align-items-center flex-column" id='perbandingan'>
     <div class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Perbandingan Dosen & Mahasiswa'])
-      <div class="col-11 mx-auto">
+      <div class="col-10 col-lg-11 mx-auto">
         
       </div>
     </div>  
@@ -107,7 +117,7 @@
     <section class="d-flex justify-content-center align-items-center flex-column" id='kerja-sama'>
     <div class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Kerja Sama Kami!'])
-      <div class="col-11 mx-auto">
+      <div class="col-10 col-lg-11 mx-auto">
         <x-two-side-separated-carousel images="img/fakultas/kerja-sama.png,img/fakultas/kerja-sama.png,img/fakultas/kerja-sama.png"
         titles="Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet"
         texts="Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.

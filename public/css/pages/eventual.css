@@ -10,12 +10,19 @@
     right: 0;
 }
 
+/* font */
 body main h2{
-    font-size: 2.375rem;
+    font-size: 2.125rem;
+}
+body main h3{
+    font-size:  1.875rem;
+}
+body main p {
+    font-size: 1.125rem !important;
 }
 
 section#jumbotron {
-    min-height: calc(100vh - 66.516px);
+    min-height: 100vh;
     background: linear-gradient(180deg, #F6ECFB 0%, #C17FE0 116.03%);
 }
 section#jumbotron h1 {
@@ -40,10 +47,10 @@ section#event {
 }
 
 section#event article:first-child button {
-    background: linear-gradient(-45deg, #FFFFFF64, #FFFFFF37);
+    background: linear-gradient(45deg, #FFFFFF64, #FFFFFF37);
     backdrop-filter: blur(20px);
     font-size: 1.625rem;
-    border-radius: 22px;
+    border-radius: 1.25rem;
     font-family: "gothammedium";
 }
 section#event article:first-child div:last-child button {
@@ -97,15 +104,14 @@ section#informasi-penting {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 40rem;
+    min-height: 100vh;
 }
 section#informasi-penting h2 {
     font-size: 3.875rem;
 }
 section#informasi-penting a {
-    font-size: 2.25rem;
-    padding-left: 5rem !important;
-    padding-right: 5rem !important;
+    font-size: 2.125rem;
+    padding: 1rem 5rem 1rem 5rem !important;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -114,13 +120,26 @@ section#informasi-penting a {
         padding-bottom: 2.5rem;
     }
 }
+@media only screen and (max-width: 992px) {
+    section#jumbotron h1{
+        font-size: 4rem;
+    }
+}
 
 @media only screen and (max-width: 768px) {
-    h2 {
-        font-size: 2rem !important;
+    body main h2{
+        font-size: 2rem;
     }
-    p {
+    body main h3{
+        font-size:  1.5rem;
+    }
+    body main p {
         font-size: 1rem !important;
+    }
+
+    section#event article:first-child button{
+        font-size: 1.125rem;
+        border-radius:  0.625rem;
     }
     a.button-link:not(section#event a.button-link, section#jumbotron
             a.button-link) {
@@ -129,9 +148,44 @@ section#informasi-penting a {
     section#jumbotron h1 {
         font-size: 3rem;
     }
-
     section#event article:first-child a:last-child button {
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+
+    section#informasi-penting h2 {
+        font-size: 2.375rem !important;
+    }
+    section#informasi-penting a {
+        font-size: 1.125rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+    body main h2{
+        font-size: 1.125rem !important;
+    }
+    body main .SectionHeader h2{
+        font-size: 1.125rem !important;
+    }
+    body main p {
+        font-size: 0.875rem !important;
+    }
+    section#jumbotron{
+        text-align: center;
+    }
+    section#jumbotron h2{
+        font-size: 1.25rem !important;
+    }
+    section#jumbotron a.button-link{
+        margin: auto;
+    }
+    section#event article:first-child button{
+        font-size: 0.875rem;
+        min-height: 50px;
+    }
+    
 }
