@@ -25,8 +25,12 @@
 
 @media only screen and (max-width: 768px) {
     .SectionHeader h2 {
-        font-size: 1.25rem !important;
+        font-size: 1.15rem !important;
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
+    }
+
+    .SectionHeader div::before{
+        display: none;
     }
 }
