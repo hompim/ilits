@@ -34,6 +34,7 @@ Route::get('merchandise', function(){return view('merchandise');});
 Route::get('team', function(){return view('team');});
 Route::get('beasiswa', function(){return view('beasiswa');});
 Route::get('eventual', function(){return view('eventual');});
+Route::get('alumni', function(){return view('alumni');}); /* Nanti dihapus yak wkwk */
 
 // Route untuk admin
 Route::middleware('can:isAdmin')->prefix('admin')->group(function () {

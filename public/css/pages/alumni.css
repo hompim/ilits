@@ -1,7 +1,7 @@
 /* Jumbotron */
 #jumbotron {
-    height: 720px;
-    background: linear-gradient(to bottom, #fff9ee, #e9a386);
+    height: 730px;
+    background: linear-gradient(to bottom, #f7ddd2, #a2566a);
 }
 
 #jumbotron .container {
@@ -10,7 +10,7 @@
 
 #jumbotron h1 {
     font-size: 80px;
-    background: linear-gradient(to bottom, #e67245, #a562e9);
+    background: linear-gradient(to bottom, #fdf3f0 60%, #ecae94);
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -19,12 +19,12 @@
 }
 
 #jumbotron h3 {
-    color: #a562e9;
+    color: #fff;
     font-size: 30px;
 }
 
 #jumbotron a.btn {
-    background: linear-gradient(90.75deg, #ae65d3, #e67346) !important;
+    background: linear-gradient(90.75deg, #d9c7cf, #78295a) !important;
 }
 
 @media screen and (max-width: 576px) {
@@ -41,39 +41,54 @@
     }
 }
 
-/* Catalog */
-#catalog .text-col-product-merchandise {
-    padding-left: 32px;
+/* INFO-UNIK */
+#info-unik {
+    min-height: 720px;
+}
+
+#info-unik h2 {
+    font-size: 34px;
+}
+
+#info-unik p {
+    font-size: 25px;
 }
 
 @media screen and (max-width: 1200px) {
-    #catalog .text-col-product-merchandise {
-        padding-left: 28px;
+    #info-unik p {
+        font-size: 20px;
     }
 }
 
 @media screen and (max-width: 992px) {
-    #catalog .text-col-product-merchandise {
-        padding-left: 24px;
+    #info-unik img {
+        margin-bottom: 20px !important;
     }
 }
 
 @media screen and (max-width: 768px) {
-    #catalog .text-col-product-merchandise {
-        padding-left: 20px;
+    #info-unik h2 {
+        font-size: 24px !important;
+    }
+
+    #info-unik img {
+        margin-bottom: 0 !important;
+    }
+
+    #info-unik p {
+        font-size: 16px !important;
     }
 }
 
-@media screen and (max-width: 576px) {
-    #catalog .text-col-product-merchandise {
-        padding-left: 45px;
-    }
+/* List Alumni */
+#alumni .text-list-alumni {
+    padding-left: 0px;
 }
 
-section#merchandise-carousel {
+section#info-unik {
     background-color: #305ea0;
 }
 
-section#catalog {
+section#alumni {
     background: linear-gradient(to bottom, #305ea0, #251f4a);
 }

@@ -1,15 +1,15 @@
 /* JUMBOTRON */
 #jumbotron {
-  height: 720px;
-  background: linear-gradient(to right, #642881, #bf7dde);
+    height: 720px;
+    background: linear-gradient(to right, #642881, #bf7dde);
 }
 
 #jumbotron .container {
-  height: 40%;
+    height: 40%;
 }
 
 #jumbotron h1 {
-  font-size: 80px;
+    font-size: 80px;
 }
 
 #jumbotron h3 {
@@ -17,7 +17,7 @@
 }
 
 #jumbotron a.btn {
-    background: linear-gradient(90.75deg, #E2C0E8, #8649D7) !important;
+    background: linear-gradient(90.75deg, #e2c0e8, #8649d7) !important;
 }
 
 @media screen and (max-width: 576px) {
@@ -37,50 +37,59 @@
 /* INFO-UNIK */
 #info-unik {
     min-height: 720px;
-  }
-  
-  #info-unik h2 {
-      font-size: 34px;
-  }
-  
-  #info-unik p {
-      font-size: 25px;
-  }
-  
-  @media screen and (max-width: 1200px) {
-      #info-unik p {
-          font-size: 20px;
-      }
-  }
-  
-  @media screen and (max-width: 992px) {
-      #info-unik img {
-          margin-bottom: 20px !important;
-      }
-  }
-  
-  @media screen and (max-width: 768px) {
-      #info-unik h2 {
-          font-size: 24px !important;
-      }
-  
-      #info-unik img {
-          margin-bottom: 0 !important;
-      }
-      
-      #info-unik p {
-          font-size: 16px !important;
-      }
-  }
+}
+
+#info-unik h2 {
+    font-size: 34px;
+}
+
+#info-unik p {
+    font-size: 25px;
+}
+
+@media screen and (max-width: 1200px) {
+    #info-unik p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #info-unik img {
+        margin-bottom: 20px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #info-unik h2 {
+        font-size: 24px !important;
+    }
+
+    #info-unik img {
+        margin-bottom: 0 !important;
+    }
+
+    #info-unik p {
+        font-size: 16px !important;
+    }
+}
 
 /* BEASISWA ITS */
 #beasiswa-its {
-  min-height: 720px;
+    min-height: 720px;
 }
 
 /* BEASISWA MITRA ITS */
 @media screen and (max-width: 576px) {
     #beasiswa-mitra-its #BannerWithCornerHeader h2 {
         font-size: 20px !important;
-    }    
+    }
+}
+
+section#info-unik,
+section#beasiswa-its {
+    background-color: #305ea0;
+}
+
+section#beasiswa-mitra-its {
+    background: linear-gradient(to bottom, #305ea0, #251f4a);
 }
