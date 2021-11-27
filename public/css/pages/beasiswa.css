@@ -5,17 +5,73 @@
 }
 
 #jumbotron .container {
-  height: 30%;
+  height: 40%;
 }
 
 #jumbotron h1 {
-  font-size: 60px;
+  font-size: 80px;
+}
+
+#jumbotron h3 {
+    font-size: 30px;
+}
+
+#jumbotron a.btn {
+    background: linear-gradient(90.75deg, #E2C0E8, #8649D7) !important;
+}
+
+@media screen and (max-width: 576px) {
+    #jumbotron .container {
+        height: 30%;
+    }
+
+    #jumbotron h1 {
+        font-size: 54px;
+    }
+
+    #jumbotron h3 {
+        font-size: 20px;
+    }
 }
 
 /* INFO-UNIK */
 #info-unik {
-  min-height: 720px;
-}
+    min-height: 720px;
+  }
+  
+  #info-unik h2 {
+      font-size: 34px;
+  }
+  
+  #info-unik p {
+      font-size: 25px;
+  }
+  
+  @media screen and (max-width: 1200px) {
+      #info-unik p {
+          font-size: 20px;
+      }
+  }
+  
+  @media screen and (max-width: 992px) {
+      #info-unik img {
+          margin-bottom: 20px !important;
+      }
+  }
+  
+  @media screen and (max-width: 768px) {
+      #info-unik h2 {
+          font-size: 24px !important;
+      }
+  
+      #info-unik img {
+          margin-bottom: 0 !important;
+      }
+      
+      #info-unik p {
+          font-size: 16px !important;
+      }
+  }
 
 /* BEASISWA ITS */
 #beasiswa-its {
@@ -23,3 +79,8 @@
 }
 
 /* BEASISWA MITRA ITS */
+@media screen and (max-width: 576px) {
+    #beasiswa-mitra-its #BannerWithCornerHeader h2 {
+        font-size: 20px !important;
+    }    
+}

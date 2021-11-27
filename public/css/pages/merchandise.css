@@ -5,11 +5,11 @@
 }
 
 #jumbotron .container {
-  height: 30%;
+  height: 40%;
 }
 
 #jumbotron h1 {
-  font-size: 60px;
+  font-size: 80px;
   background: linear-gradient(to bottom, #E67245, #A562E9);
   background-clip: text;
   -webkit-background-clip: text;
@@ -20,6 +20,25 @@
 
 #jumbotron h3 {
   color: #A562E9;
+  font-size: 30px;
+}
+
+#jumbotron a.btn {
+    background: linear-gradient(90.75deg, #AE65D3, #E67346) !important;
+}
+
+@media screen and (max-width: 576px) {
+    #jumbotron .container {
+        height: 30%;
+    }
+
+    #jumbotron h1 {
+        font-size: 54px;
+    }
+
+    #jumbotron h3 {
+        font-size: 20px;
+    }
 }
 
 /* Catalog */
@@ -40,9 +59,9 @@
 }
 
 @media screen and (max-width: 768px) {
-  #catalog .text-col-product-merchandise {
-    padding-left: 20px;
-  }
+    #catalog .text-col-product-merchandise {
+        padding-left: 20px;
+    }
 }
 
 @media screen and (max-width: 576px) {
