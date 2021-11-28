@@ -28,3 +28,10 @@
         padding-right: 1.25rem !important;
     }
 }
+
+@media only screen and (max-width: 576px) {
+    .SectionHeader h2 {
+        width: 100%;
+        white-space: normal;
+    }
+}

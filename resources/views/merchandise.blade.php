@@ -29,7 +29,6 @@
   <section id="catalog">
     <div class="container text-white">
       @include("partials.section-header", ["title" => "Katalog Kami!"])
-      <br>
 
       {{-- Row 1 --}}
       <div class="row">
@@ -108,8 +107,3 @@
     </div>
   </section>
 @endsection
-
-{{-- Img error carousel --}}
-{{-- Button link bg color dinamis --}}
-{{-- Floating element --}}
-{{-- BG main dan footer beda --}}

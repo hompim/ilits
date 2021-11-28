@@ -25,14 +25,14 @@
   <section class="d-flex justify-content-center align-items-center flex-column" id="event">
     <article class="container text-center text-white mb-5">
       @include('partials.section-header', ["title" => "Ikuti Eventual ILITS! 2022!"])
-      <div class="row col-10 m-auto -5">
-        <div class="col-lg-4 col-md-6 col-12 mt-4 mx-auto">
-          <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Open Campus Nirwana Asa</button>
+      <div class="row col-lg-11 m-auto -5">
+        <div class="col-lg-4 col-6 mt-4 mx-auto">
+          <button type="button" class="text-white border-0 p-2 p-md-3 w-100 h-100">Open Campus Nirwana Asa</button>
         </div>
-        <div class="col-lg-4 col-md-6 col-12 mt-4 mx-auto">
+        <div class="col-lg-4 col-6 mt-4 mx-auto">
           <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Welcome</button>
         </div>
-        <div class="col-lg-4 col-md-6 col-12 mt-4 mx-auto">
+        <div class="col-lg-4 col-6 mt-4 mx-auto">
           <button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Visit</button>
         </div>
         
@@ -53,8 +53,8 @@
   <section class="d-flex justify-content-center flex-column" id="dokumentasi">
     <article class="container py-5 text-center text-white d-flex flex-column align-items-center position-relative">
       <div class="row">
-        <img class="col-lg-6 mb-5 pl-0" src="img/eventual/dokum-1.png" alt="dokum-1">
-        <img class="col-lg-6 mb-5 pr-0" src="img/eventual/dokum-2.png" alt="dokum-2">
+        <img class="col-lg-6 mb-5 pl-lg-0" src="img/eventual/dokum-1.png" alt="dokum-1">
+        <img class="col-lg-6 mb-5 pr-lg-0" src="img/eventual/dokum-2.png" alt="dokum-2">
       </div>
       </article>
   </section>

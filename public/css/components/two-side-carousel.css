@@ -27,25 +27,38 @@
 .TwoSideCarousel a.carousel-control-next {
     right: 2rem;
 }
+.TwoSideCarousel .carousel-item a.btn-mobile-show {
+    display: none !important;
+}
 
 @media only screen and (max-width: 992px) {
+    .TwoSideCarousel {
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+    }
     .TwoSideCarousel div div div div div {
         flex-direction: column;
     }
     .TwoSideCarousel div div div div div div {
-        margin-bottom: 1rem;
         margin: 1rem;
+        margin-bottom: 1rem;
         padding-right: 0 !important;
     }
     .TwoSideCarousel a {
         margin: auto;
     }
+    .TwoSideCarousel .carousel-item a.btn-mobile-show {
+        display: flex !important;
+    }
+    .TwoSideCarousel .carousel-item a.btn-desktop-show {
+        display: none !important;
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .TwoSideCarousel {
-        padding-left: 3rem;
-        padding-right: 3rem;
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
     }
     .TwoSideCarousel h3 {
         font-size: 2rem;
