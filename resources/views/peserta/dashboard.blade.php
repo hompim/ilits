@@ -37,7 +37,7 @@
                 Belum Upload
                 @elseif(Auth::user()->tryoutUser->status_bayar == 'pending_pembayaran')
                 Pending
-                @elseif(Auth::user()->tryoutUser->status_bayar == 'ditolak_pembayaran')
+                @elseif(Auth::user()->tryoutUser->status_bayar == 'tolak_pembayaran')
                 Bukti Ditolak
                 @elseif(Auth::user()->tryoutUser->status_bayar == 'aktif')
                 Sudah Bayar
@@ -122,7 +122,7 @@
       </div>
     </section>
   </div>
-  @elseif(Auth::user()->tryoutUser->status_bayar == 'ditolak_pembayaran')
+  @elseif(Auth::user()->tryoutUser->status_bayar == 'tolak_pembayaran')
   <div class="row">
     <section class="col-12">
       <div class="card bg-warning elevation-2">

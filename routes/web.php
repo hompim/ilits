@@ -69,7 +69,10 @@ Route::prefix('forda')->middleware('can:isForda')->group(function () {
     Route::post('/edit-pj', [FordaController::class, 'storePJ'])->name('forda.edit-pj.store');
     Route::get('/link-meet', [FordaController::class, 'LinkMeetPage'])->name('forda.link-meet-page');
     Route::post('/link-meet', [FordaController::class, 'UpdateLinkMeet'])->name('forda.link-meet-post');
-    Route::get('/verif-bayar', [FordaController::class, 'verifBayar'])->name('forda.verif-bayar');
+    Route::get('/verif-bayar', [FordaController::class, 'indexVerifBayar'])->name('forda.verif-bayar');
+    Route::post('/verif-bayar/terima', [FordaController::class, 'verifBayar'])->name('forda.terima-bayar');
+    Route::post('/verif-bayar/tolak', [FordaController::class, 'tolakBayar'])->name('forda.tolak-bayar');
+    Route::get('/detailBayar/{id}', [FordaController::class, 'detailBayar'])->name('forda.detail-bayar');
 });
 
 Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');

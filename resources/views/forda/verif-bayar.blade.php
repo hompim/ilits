@@ -105,12 +105,12 @@
                           <tbody>
                             @foreach ($peserta as $p)
                           <tr>
-                            <td>{{$p->nama_lengkap}}</td>
+                            <td>{{$p->user->nama_lengkap}}</td>
                             <td>{{$p->email}}</td>
-                            <td>{{$p->asal_sekolah}}</td>
-                            <td>{{$p->no_wa}}</td>
-                            <td>{{$p->pilihan_tryout}}</td>
-                            <td>
+                            <td>{{$p->user->asal_sekolah}}</td>
+                            <td>{{$p->user->no_wa}}</td>
+                            <td class="text-capitalize">{{$p->tryoutUser->pilihan_tryout}}</td>
+                            <td class="text-center">
                                 <!-- Button trigger modal -->
                                 @if ($p->status_bayar=="aktif")
                                 <button type="button" class="btn btn-success">
@@ -121,7 +121,7 @@
                                     <i class="fas fa-times-circle"></i> Ditolak
                                 </button>
                                 @else
-                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#verifikasi_modal">
+                                <button onclick="showDetailBayar({{$p->id}})" type="button" class="btn btn-info" data-toggle="modal" data-target="#verifikasi_modal">
                                     <i class="fas fa-pencil-alt"></i> Verifikasi
                                 </button>
                                 @endif
@@ -155,14 +155,24 @@
             <div class="modal-body">
             <div class="container">
                 <div class="row">
-                    <p>Nama: <span>{{$p->nama_lengkap}}</span></p>
+                    <table class="table table-borderless">
+                      <tbody class="text-left">
+                        <tr>
+                          <td>Nama</td>
+                          <td id="nama-peserta"></td> 
+                        </tr>
+                        <tr>
+                          <td>Pilihan Tryout</td>
+                          <td class="text-capitalize" id="pilihan-tryout"></td>
+                        </tr>
+                        <tr>
+                          <td>Bukti Pembayaran</td>
+                        </tr>
+                      </tbody>
+                    </table>
                 </div>
                 <div class="row">
-                    <p>Jurusan Tryout: <span>{{$p->pilihan_tryout}}</span></p>
-                </div>
-                <div class="row">
-                    <h6>Bukti Pembayaran:</h6>
-                    <img src="{{$p->bukti_bayar?asset('storage/images/bukti_pembayaran/'.$p->bukti_bayar):asset('/img/placeholder-image.png')}}" alt="bukti_pembayaran" class="img-fluid">
+                    <img id="bukti-pembayaran" src="" alt="bukti_pembayaran" class="img-fluid">
                 </div>
             </div>
             </div>
@@ -170,10 +180,18 @@
                 <div class="container-fluid">
                     <div class="row d-flex">
                         <div class="col-md-6 col-12 d-flex justify-content-md-start justify-content-center">
-                            <button type="button" class="btn btn-danger">Tolak</button>
+                          <form action="{{ route('forda.tolak-bayar') }}" method="post">
+                            @csrf
+                            <input type="hidden" id="tolak-id" name="tolak_id">
+                            <button type="submit" class="btn btn-danger">Tolak</button>
+                          </form>  
                         </div>
                         <div class="col-md-6 col-12 d-flex justify-content-md-end justify-content-center pt-md-0 pt-3">
-                            <button type="button" class="btn btn-success">Verifikasi</button>
+                          <form action="{{ route('forda.terima-bayar') }}" method="post">
+                            @csrf
+                            <input type="hidden" id="terima-id" name="verif_id">
+                            <button type="submit" class="btn btn-success">Verifikasi</button>
+                          </form>  
                         </div>
                     </div>
                 </div>
@@ -188,6 +206,29 @@
 @stop
 
 @section('js')
+<script>
+  function showDetailBayar(id){
+    $.ajax({
+      url: '/forda/detailBayar/'+id,
+      type: 'GET',
+      data: {
+        id: id
+      },
+      dataType: "JSON",
+      success: function(res) {
+        $('#nama-peserta').text(": " + res.user.nama_lengkap);
+        $('#pilihan-tryout').text(": " + res.tryout_user.pilihan_tryout);
+        res.tryout_user.bukti_bayar?($('#bukti-pembayaran').attr('src', '/storage/images/bukti_pembayaran/' + res.tryout_user.bukti_bayar)):($('#bukti-pembayaran').attr('src', '/img/placeholder-image.png'))
+        $('#tolak-id').val(res.tryout_user.id);
+        $('#terima-id').val(res.tryout_user.id);
+      },
+      error: function(xhr, ajaxOptions, thrownError) {
+        console.log(xhr.responseText);
+      },
+    });
+  }
+</script>
+
 <script>
   $(function () {
     $('#verif_tabel').DataTable({
