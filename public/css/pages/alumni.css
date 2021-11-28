@@ -1,7 +1,7 @@
-/* JUMBOTRON */
+/* Jumbotron */
 #jumbotron {
-    height: 720px;
-    background: linear-gradient(to right, #642881, #bf7dde);
+    height: 730px;
+    background: linear-gradient(to bottom, #f7ddd2, #a2566a);
 }
 
 #jumbotron .container {
@@ -10,14 +10,21 @@
 
 #jumbotron h1 {
     font-size: 80px;
+    background: linear-gradient(to bottom, #fdf3f0 60%, #ecae94);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 #jumbotron h3 {
+    color: #fff;
     font-size: 30px;
 }
 
 #jumbotron a.btn {
-    background: linear-gradient(90.75deg, #e2c0e8, #8649d7) !important;
+    background: linear-gradient(90.75deg, #d9c7cf, #78295a) !important;
 }
 
 @media screen and (max-width: 576px) {
@@ -79,23 +86,15 @@
     }
 }
 
-/* BEASISWA ITS */
-#beasiswa-its {
-    min-height: 720px;
+/* List Alumni */
+#alumni .text-list-alumni {
+    padding-left: 0px;
 }
 
-/* BEASISWA MITRA ITS */
-@media screen and (max-width: 576px) {
-    #beasiswa-mitra-its #BannerWithCornerHeader h2 {
-        font-size: 20px !important;
-    }
-}
-
-section#info-unik,
-section#beasiswa-its {
+section#info-unik {
     background-color: #305ea0;
 }
 
-section#beasiswa-mitra-its {
+section#alumni {
     background: linear-gradient(to bottom, #305ea0, #251f4a);
 }

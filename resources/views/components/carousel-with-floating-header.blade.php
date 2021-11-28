@@ -1,6 +1,6 @@
 <div class="container position-relative carouselWithFloatingHeader py-3 px-5">
-    <div class="top-0 px-5 py-3 floating-header position-absolute">
-        <h2>{{ $headerTitle }}</h2>
+    <div class="top-0 px-3 py-2 px-sm-4 py-sm-3 floating-header position-absolute">
+        <h2 class="m-0">{{ $headerTitle }}</h2>
     </div>
     <ol class="carousel-indicators position-absolute">
         @for($i = 0; $i < count($titles); $i++) <li data-target="#facilityCarousel-b" data-slide-to="{{ $i }}"

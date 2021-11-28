@@ -1,3 +1,4 @@
+{{-- note: minimal conten harus 4 --}}
 <div id="threeCardsCarousel" class=" {{ $carouselId }} carousel slide multi-item-carousel" data-ride="carousel">
   <div class="controls-top">
     <a class="btn-floating btn-floating-prev position-absolute" href=".{{ $carouselId }}" data-slide="prev"><i
@@ -30,7 +31,7 @@
       var $e = $(e.relatedTarget);
       var idx = $e.index();
       // warning: 5 sduah kombnasi yang tepat
-      var itemsPerSlide = 5;
+      var itemsPerSlide = 3;
       var totalItems = $('.{{ $carouselId }} .carousel-item').length;
 
       if (idx >= totalItems - (itemsPerSlide - 1)) {

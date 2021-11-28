@@ -31,7 +31,7 @@
   <section id="beasiswa-its" class="text-white">
     <div class="container">
       @include("partials.section-header", ["title" => "Beasiswa ITS"])
-      <br><br>
+      <br>
       <x-three-cards-container-carousel titles="Yayasan Beasiswa Alumni ITS,Jaring Bibit Prestasi Unggul ITS,Ikatan Komite Mahasiswa ITS,Yayasan Beasiswa Alumni ITS 2,Jaring Bibit Prestasi Unggul ITS 2,Ikatan Komite Mahasiswa ITS 2" images="img/main/prestasi-2.png,img/main/prestasi-2.png,img/main/prestasi-2.png,img/main/prestasi-2.png,img/main/prestasi-2.png,img/main/prestasi-2.png"></x-three-cards-container-carousel>
     </div>
   </section>
@@ -41,7 +41,7 @@
       <div class="row">
         <div class="col-12 col-lg-10 offset-lg-1">
           @include("partials.section-header", ["title" => "Beasiswa Mitra ITS"])
-          <br><br>
+          <br>
           <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
           <x-banner-with-corner-header title="Djarum Beasiswa Plus" image="img/main/banner.png" href="" />
           <x-banner-with-corner-header title="Beasiswa Baznas" image="img/main/banner.png" href="" />
@@ -58,8 +58,3 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 @endpush
-
-{{-- Fix carousel error and responsive --}}
-{{-- Button link bg color dinamis --}}
-{{-- Floating element --}}
-{{-- BG main dan footer beda --}}

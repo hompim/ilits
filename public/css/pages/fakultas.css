@@ -2,18 +2,29 @@
     box-sizing: border-box;
 }
 
-body-main{
+body main {
     color: #ffffff;
 }
 
+body main h2{
+    font-size: 2.125rem;
+}
+body main h3{
+    font-size:  1.875rem;
+}
+body main p {
+    font-size: 1.125rem !important;
+}
+
 section#jumbotron {
-    min-height: calc(100vh - 66.516px);
+    min-height: calc(100vh - 0px);
     background: linear-gradient(270deg, #F5F5F1 0.9%, #C5BEF0 100%);
 }
 section#jumbotron h1 {
     font-size: 5rem;
     background: linear-gradient(to left, #A562E9 0%, #3B71C7 50%, #A3B4CC 100%);
     -webkit-background-clip: text;
+            background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 section#jumbotron h2 {
@@ -29,34 +40,54 @@ section#jumbotron a.btn{
 section#info-unik {
     background: linear-gradient(to bottom, #264882, #2A518e);
 }
-section#waktu {
+section#video-profile{
     background: linear-gradient(to bottom, #2A518E, #2E5998);
 }
-section#akreditasi {
+section#video-profile iframe{
+    border-radius: 0.625rem;
+}
+section#waktu {
     background: linear-gradient(to bottom, #2E5998, #2F5999);
 }
-section#virtual-expo {
+section#akreditasi {
     background: linear-gradient(to bottom, #2F5999, #2C437B);
 }
-section#jurusanmu{
+section#virtual-expo {
     background: linear-gradient(to bottom, #2C437B, #282F60);
 }
-section#perbandingan {
+section#jurusanmu{
     background: linear-gradient(to bottom, #282F60, #2B1D50);
 }
-section#kerja-sama {
+section#perbandingan {
     background: linear-gradient(to bottom, #2B1D50, #401862);
 }
+section#kerja-sama {
+    background: linear-gradient(to bottom, #401862, #521373);
+}
 
+@media only screen and (max-width: 992px) {
+    section#jumbotron h1{
+        font-size: 4rem;
+    }
+}
 
 @media only screen and (max-width: 768px) {
-    h2 {
-        font-size: 2rem !important;
+    body main h2{
+        font-size: 2rem;
     }
-    p {
+    body main h3{
+        font-size:  1.5rem;
+    }
+    body main p {
         font-size: 1rem !important;
     }
 
+    section#jumbotron h1{
+        font-size: 3.125rem;
+    }
+    section#video-profile .col-lg-10{
+        padding: 0;
+    }
     section#fasilitas div.row {
         margin-bottom: 0.75rem;
     }
@@ -64,5 +95,38 @@ section#kerja-sama {
         margin-left: 0 !important;
         margin-right: 0 !important;
         margin-bottom: 0.75rem;
+    }
+    a.button-link:not(section#faculty a.button-link, section#jumbotron
+            a.button-link) {
+        margin: auto !important;
+        font-size: 0.875rem !important;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+    body main h2{
+        font-size: 1.125rem !important;
+    }
+    body main .SectionHeader h2{
+        font-size: 1.125rem !important;
+    }
+    
+    body main h3{
+        font-size:  1.125rem !important;
+    }
+    body main p {
+        font-size: 0.875rem !important;
+    }
+
+    section#jumbotron{
+        text-align: center;
+    }
+    section#jumbotron h2{
+        font-size: 1.25rem !important;
+    }
+    section#jumbotron a.button-link{
+        margin: auto;
     }
 }
