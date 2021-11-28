@@ -1,27 +1,143 @@
+@import url("navbar.css");
+
 body {
     background: linear-gradient(
         180deg,
         #111028 0%,
-        #264882 6.57%,
-        #305ea0 23.73%,
-        #251f4a 42.19%,
-        #571277 56.91%,
-        #cd91ea 73.96%,
-        #251f4a 94.94%
+        #264882 11.98%,
+        #305ea0 93.23%
     );
 }
-nav {
-    background: rgba(17, 16, 40, 0.5);
-    position: absolute;
-    width: 1440px;
-    height: 78px;
-    left: 0px;
-    top: 0px;
-}
 section {
-    position: absolute;
-    width: 608px;
-    height: 527px;
-    left: 89px;
-    top: 281px;
+    z-index: 999;
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+.login-box {
+    color: #ffffff;
+}
+.besar {
+    background: url("../lambang/soft-star-besar.png");
+    background-position: bottom 80px left 300px;
+    background-size: 5%;
+    background-repeat: no-repeat;
+}
+.kecil {
+    background: url("../lambang/soft-star-kecil.png");
+    background-position: bottom 60px left 250px;
+    background-size: 2%;
+    background-repeat: no-repeat;
+}
+.naga {
+    background: url("../lambang/right-side.png");
+    background-position: top 150px right;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+input[type="password"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="text"]:focus,
+input[type="text"]:focus-within {
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color: transparent !important;
+    border-bottom: 2px solid white !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+select {
+    background: transparent !important;
+    border-color: transparent !important;
+    border-bottom: 2px solid #ffffff !important;
+    outline: transparent !important;
+    margin-bottom: 15px;
+    color: white !important;
+    cursor: pointer;
+}
+option {
+    color: black;
+}
+.form-check-input {
+    outline: 1px solid#ffffff !important;
+    width: 18px;
+    height: 18px;
+    border-radius: 0% !important;
+    display: block !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    background: transparent;
+}
+.printilan:hover {
+    color: none;
+    text-shadow: 0 5px 15px lightseagreen;
+    background-color: none;
+    transition: transform 0.3s ease;
+    cursor: pointer !important;
+}
+.form-check:hover {
+    color: none;
+    text-shadow: 0 5px 15px lightseagreen;
+    background-color: none;
+    transition: transform 0.3s ease;
+    cursor: pointer !important;
+}
+.masuk {
+    transition: transform 0.3s ease;
+    background: linear-gradient(
+        90.75deg,
+        rgba(83, 234, 144, 0.7) 1.29%,
+        rgba(59, 113, 199, 0.7) 98.71%
+    );
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+.masuk:hover {
+    color: white;
+    box-shadow: 0 5px 15px lightseagreen;
+    transform: scale(1.125);
+}
+.daftar {
+    transition: transform 0.3s ease;
+    background: linear-gradient(
+        90.75deg,
+        rgba(83, 234, 144, 0.7) 1.29%,
+        rgba(59, 113, 199, 0.7) 98.71%
+    );
+    backdrop-filter: blur(20px);
+    border-radius: 18px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+.daftar:hover {
+    color: white;
+    box-shadow: 0 5px 15px lightseagreen;
+    transform: scale(1.125);
+}
+footer {
+    color: white;
+    text-align: center;
+}
+.input-group-text {
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid #ffffff !important;
+    border-radius: 0px !important;
+}
+.mata {
+    background: url(../lambang/mata.png);
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    padding-top: 35px;
+}
+.mata-ketutup {
+    background: url(../lambang/mata-ketutup.png);
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    padding-top: 35px;
 }
