@@ -30,7 +30,7 @@
   <section class="text-white" id="list-team">
     <div class="container">
       @include("partials.section-header", ["title" => "Intip Tim Kebanggan ITS!"])
-      <br><br>
+      <br>
         <div class="row">
           <div class="team-card col-12 col-md-6">
             <x-card-with-header title="Ichiro" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia delectus est distinctio officia maiores qui quae architecto, exercitationem sint amet." image="img/main/prestasi-2.png" color1="#53EA90" color2="#39B0B0" color3="#2076CF"></x-card-with-header>
@@ -66,7 +66,3 @@
     </div>
   </section>
 @endsection
-
-{{-- Button-link bg color dinamis --}}
-{{-- Floating Element --}}
-{{-- BG Main dan footer beda --}}

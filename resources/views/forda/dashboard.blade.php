@@ -97,19 +97,19 @@
             <tbody>
               @foreach ($pesertas as $peserta)
               <tr>
-                <td>{{$peserta->nama_lengkap}}</td>
-                <td>{{$peserta->user->email}}</td>
-                <td>{{$peserta->asal_sekolah}}</td>
-                <td>{{$peserta->no_wa}}</td>
-                <td style="text-transform:capitalize">{{$peserta->user->tryoutUser->pilihan_tryout}}</td>
+                <td>{{$peserta->user->nama_lengkap}}</td>
+                <td>{{$peserta->email}}</td>
+                <td>{{$peserta->user->asal_sekolah}}</td>
+                <td>{{$peserta->user->no_wa}}</td>
+                <td style="text-transform:capitalize">{{$peserta->tryoutUser->pilihan_tryout}}</td>
                 <td style="text-transform:capitalize">
-                    @if($peserta->user->tryoutUser->status_bayar=='pending')
+                    @if($peserta->tryoutUser->status_bayar=='pending')
                       Belum Melakukan Pembayaran
-                    @elseif($peserta->user->tryoutUser->status_bayar=='pending_pembayaran')
+                    @elseif($peserta->tryoutUser->status_bayar=='pending_pembayaran')
                       Menunggu Verifikasi
-                    @elseif($peserta->user->tryoutUser->status_bayar=='tolak_pembayaran')
+                    @elseif($peserta->tryoutUser->status_bayar=='tolak_pembayaran')
                       Bukti Bayar Ditolak
-                    @elseif($peserta->user->tryoutUser->status_bayar=='aktif')
+                    @elseif($peserta->tryoutUser->status_bayar=='aktif')
                       Terverifikasi
                     @endif
                 </td>

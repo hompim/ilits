@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Forda;
 use App\Models\Peserta;
+use App\Models\TryoutUser;
+use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -15,10 +18,26 @@ class FordaController extends Controller
     public function index()
     {
         $forda = Auth::user()->user;
-        $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
-        $peserta_terdaftar = $forda->peserta()->count();
-        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
-        $pesertas = $forda->peserta;
+        $peserta_konfirmasi = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'aktif');
+            })->count();
+        $peserta_terdaftar = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->has('tryoutUser')->count();
+        $peserta_pending = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'pending_pembayaran');
+            })->count();
+        $pesertas = User::with(["tryoutUser", "user"])
+            ->whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })->get();
         return view('forda.dashboard', [
             'forda' => $forda,
             'peserta_pending' => $peserta_pending,
@@ -30,10 +49,26 @@ class FordaController extends Controller
     public function absensi()
     {
         $forda = Auth::user()->user;
-        $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
-        $peserta_terdaftar = $forda->peserta()->count();
-        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
-        $pesertas = $forda->peserta;
+        $peserta_konfirmasi = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'aktif');
+            })->count();
+        $peserta_terdaftar = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->has('tryoutUser')->count();
+        $peserta_pending = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'pending_pembayaran');
+            })->count();
+        $pesertas = User::with(["tryoutUser", "user"])
+            ->whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })->get();
 
         return view('forda.absensi-forda', [
             'forda' => $forda,
@@ -45,11 +80,25 @@ class FordaController extends Controller
     }
     public function editBiaya()
     {
+        $forda = Auth::user()->user;
+        $peserta_konfirmasi = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'aktif');
+            })->count();
+        $peserta_terdaftar = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->has('tryoutUser')->count();
+        $peserta_pending = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'pending_pembayaran');
+            })->count();
         $forda = Auth::user()->user->tryoutForda;
         $forda_peserta = Auth::user()->user;
-        $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
-        $peserta_terdaftar = $forda_peserta->peserta()->count();
-        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
         return view('forda.edit-biaya', [
             'forda' => $forda,
             'forda_peserta' => $forda_peserta,
@@ -81,11 +130,25 @@ class FordaController extends Controller
     }
     public function editPJ()
     {
+        $forda = Auth::user()->user;
+        $peserta_konfirmasi = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'aktif');
+            })->count();
+        $peserta_terdaftar = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->has('tryoutUser')->count();
+        $peserta_pending = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'pending_pembayaran');
+            })->count();
         $forda = Auth::user()->user->tryoutForda;
         $forda_peserta = Auth::user()->user;
-        $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
-        $peserta_terdaftar = $forda_peserta->peserta()->count();
-        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
         return view('forda.edit-pj', [
             'forda' => $forda,
             'forda_peserta' => $forda_peserta,
@@ -114,12 +177,24 @@ class FordaController extends Controller
             ]);
         }
     }
-    public function LinkMeetPage()
-    {
+    public function LinkMeetPage(){
         $forda = Auth::user()->user;
-        $peserta_konfirmasi = DB::table('tryout_user')->where('status_bayar', 'aktif')->count();
-        $peserta_terdaftar = $forda->peserta()->count();
-        $peserta_pending = DB::table('tryout_user')->where('status_bayar', 'pending_pembayaran')->count();
+        $peserta_konfirmasi = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'aktif');
+            })->count();
+        $peserta_terdaftar = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->has('tryoutUser')->count();
+        $peserta_pending = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'pending_pembayaran');
+            })->count();
         return view('forda.edit-link-meet', [
             'forda' => $forda,
             'peserta_pending' => $peserta_pending,
@@ -144,5 +219,60 @@ class FordaController extends Controller
                 'status' => "danger"
             ]);
         }
+    }
+
+    public function indexVerifBayar()
+    {
+        $forda = Auth::user()->user;
+        $peserta_konfirmasi = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'aktif');
+            })->count();
+        $peserta_terdaftar = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->has('tryoutUser')->count();
+        $peserta_pending = User::whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'pending_pembayaran');
+            })->count();
+        $peserta = User::with(["tryoutUser", "user"])
+            ->whereHas('peserta', function($q) use($forda){
+                $q->where('forda_id', $forda->id);
+            })->get();
+        return view('forda.verif-bayar', [
+            'forda' => $forda,
+            'peserta_pending' => $peserta_pending,
+            'peserta_terdaftar' => $peserta_terdaftar,
+            'peserta_konfirmasi' => $peserta_konfirmasi,
+            'peserta' => $peserta,
+        ]);
+    }
+
+    public function verifBayar(Request $request){
+        $user = TryoutUser::find($request->verif_id);
+        $user->status_bayar = 'aktif';
+        $user->save();
+        return redirect(route('forda'));
+    }
+
+    public function tolakBayar(Request $request){
+        $user = TryoutUser::find($request->tolak_id);
+        $user->status_bayar = 'tolak_pembayaran';
+        $user->save();
+        return redirect(route('forda'));
+    }
+
+    //API Function
+    public function detailBayar($id){
+        $forda = Auth::user()->user;
+        $tryoutUser = User::with(["tryoutUser", "user" => function($q) use($forda){
+            $q->where('forda_id', $forda->id);
+        }])->where('id', $id)->first();
+        return json_encode($tryoutUser);
     }
 }

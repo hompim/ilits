@@ -295,9 +295,14 @@ return [
                     'url'   => 'forda/edit-biaya',
                     'can'   => ['forda-dashboard']
                 ],
-
+                [
+                    'text'  => 'Verifikasi Biaya',
+                    'icon'  => 'fas fa-money-check-alt',
+                    'url'   => 'forda/verif-bayar',
+                    'can'   => ['forda-dashboard']
+                ],
             ],
-            'can'       => ['peserta-dashboard', 'forda-dashboard'],
+            'can' => ['peserta-dashboard', 'forda-dashboard'],
         ]
     ],
 

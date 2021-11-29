@@ -2,30 +2,104 @@
 
 /* JUMBOTRON */
 #jumbotron {
-  height: 720px;
-  background: linear-gradient(#C3D8F0, #5AC6CD);
+    height: 720px;
+    background: linear-gradient(#c3d8f0, #5ac6cd);
 }
 
 #jumbotron .container {
-  height: 30%;
+    height: 40%;
 }
 
 #jumbotron h1 {
-  font-size: 60px;
-  background: linear-gradient(#446fc9, #646ad3);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
+    font-size: 80px;
+    background: linear-gradient(#446fc9, #646ad3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+#jumbotron a.btn {
+    background: linear-gradient(90.75deg, #47dbdc, #7254d0) !important;
+}
+
+#jumbotron h3 {
+    font-size: 30px;
+}
+
+@media screen and (max-width: 576px) {
+    #jumbotron .container {
+        height: 30%;
+    }
+
+    #jumbotron h1 {
+        font-size: 54px;
+        text-align: center;
+    }
+
+    #jumbotron h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #jumbotron a.button-link {
+        margin: auto;
+    }
 }
 
 /* INFO-UNIK */
 #info-unik {
-  min-height: 720px;
+    min-height: 730;
+}
+
+#info-unik h2 {
+    font-size: 34px;
+}
+
+#info-unik p {
+    font-size: 25px;
+}
+
+@media screen and (max-width: 1200px) {
+    #info-unik p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #info-unik img {
+        margin-bottom: 20px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #info-unik {
+        margin-bottom: -60px;
+    }
+
+    #info-unik h2 {
+        font-size: 24px !important;
+    }
+
+    #info-unik img {
+        margin-bottom: 0 !important;
+    }
+
+    #info-unik p {
+        font-size: 16px !important;
+    }
 }
 
 /* LIST TEAM */
 #list-team .team-card {
-  margin-bottom: 35px;
+    margin-bottom: 35px;
+}
+
+section#info-unik {
+    background-color: #305ea0;
+}
+
+section#list-team {
+    background: linear-gradient(to bottom, #305ea0, #251f4a);
 }

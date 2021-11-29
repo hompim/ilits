@@ -92,14 +92,14 @@
                   <tbody>
                     @foreach ($pesertas as $peserta)
                     <tr>
-                      <td>{{$peserta->nama_lengkap}}</td>
-                      <td>{{$peserta->user->email}}</td>
-                      <td>{{$peserta->asal_sekolah}}</td>
-                      <td>{{$peserta->no_wa}}</td>
-                      <td style="text-transform:capitalize">{{$peserta->user->tryoutUser->pilihan_tryout}}</td>
-                      @if ($peserta->user->tryoutUser->status_absen=="belum_absen")
+                      <td>{{$peserta->user->nama_lengkap}}</td>
+                      <td>{{$peserta->email}}</td>
+                      <td>{{$peserta->user->asal_sekolah}}</td>
+                      <td>{{$peserta->user->no_wa}}</td>
+                      <td style="text-transform:capitalize">{{$peserta->tryoutUser->pilihan_tryout}}</td>
+                      @if ($peserta->tryoutUser->status_absen=="belum_absen")
                       <td class="text-warning">Belum Absen</td>    
-                      @elseif($peserta->user->tryoutUser->status_absen=="hadir")
+                      @elseif($peserta->tryoutUser->status_absen=="hadir")
                       <td class="text-success">Hadir</td>
                       @else    
                       <td class="text-danger">Tidak Hadir</td>

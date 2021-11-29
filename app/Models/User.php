@@ -66,6 +66,17 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->morphTo();
     }
+
+    public function peserta(){
+        return $this->belongsTo(Peserta::class, 'user_id')
+            ->whereUserType(Peserta::class);
+    }
+    
+    public function forda(){
+        return $this->belongsTo(Forda::class, 'user_id')
+            ->whereUserType(Forda::class);
+    }
+
     public function tryoutUser()
     {
         return $this->hasOne(TryoutUser::class, 'user_id');

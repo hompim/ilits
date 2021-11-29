@@ -50,7 +50,7 @@
             Belum Upload
           @elseif(Auth::user()->tryoutUser->status_bayar == 'pending_pembayaran')
             Pending
-          @elseif(Auth::user()->tryoutUser->status_bayar == 'ditolak_pembayaran')
+          @elseif(Auth::user()->tryoutUser->status_bayar == 'tolak_pembayaran')
             Bukti Ditolak
           @elseif(Auth::user()->tryoutUser->status_bayar == 'aktif')
             Sudah Bayar
@@ -133,7 +133,7 @@
       </div>
     </section>
   </div>
-  @elseif(Auth::user()->tryoutUser->status_bayar == 'ditolak_pembayaran')
+  @elseif(Auth::user()->tryoutUser->status_bayar == 'tolak_pembayaran')
   <div class="row">
     <section class="col-12">
       <div class="card bg-warning elevation-2">
@@ -176,7 +176,9 @@
           <form action="{{route('peserta.postupload.bukti')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
-                <input type="file" class="form-control-file border" onchange="preview()" name="bukti_bayar" required style="cursor: pointer;">
+                @if (Auth::user()->tryoutUser->status_bayar=='tolak_pembayaran'||Auth::user()->tryoutUser->status_bayar=='pending')
+                  <input type="file" class="form-control-file border" onchange="preview()" name="bukti_bayar" required style="cursor: pointer;">                  
+                @endif
                 <img id="frame" src="{{Auth::user()->tryoutUser->bukti_bayar?asset('storage/images/bukti_pembayaran/'.Auth::user()->tryoutUser->bukti_bayar):asset('/img/placeholder-image.png')}}" width="100%"/>
             </div>
             @if(Auth::user()->tryoutUser->status_bayar=='tolak_pembayaran'||Auth::user()->tryoutUser->status_bayar=='pending')
