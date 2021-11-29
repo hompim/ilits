@@ -1,0 +1,59 @@
+@import url(../fonts.css);
+@import url(section-header.css);
+
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom, #111028, #305EA0);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: gothammedium;
+}
+
+.text-thank-you {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+@media screen and (max-width: 768px) {
+  .section-header {
+    margin-bottom: -20px;
+  }
+
+  .text-thank-you {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section-header {
+    margin-bottom: -40px;
+  }
+
+  .text-thank-you {
+    font-size: 25px;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+}

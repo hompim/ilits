@@ -1,0 +1,101 @@
+@import url(../fonts.css);
+@import url(section-header.css);
+
+body{
+    background: linear-gradient(180deg, #111028 6.24%, #264882 47.39%, #305EA0 100%);
+    font-family: gothammedium;
+    color: white;
+}
+
+.main-content{
+    background-image: url('../../img/open-campus/bg-main.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100vw;
+}
+
+.header-content{
+    margin-top: 10vh;
+}
+
+.SectionHeader, .SectionHeader::before{
+    padding: 1rem 0;
+}
+
+.header-text{
+    font-size: 22px;
+}
+
+@media (max-width:768px) {
+    .header-text{
+        font-size: 18px;
+    }
+}
+
+.link-fakultas{
+    display: flex !important;
+}
+
+.link-fakultas:hover{
+    text-decoration: none;
+}
+
+.card{
+    background: linear-gradient(95.81deg, rgba(255, 255, 255, 0.448) 0%, rgba(255, 255, 255, 0.259) 100%) !important;
+    border-radius: 18px !important;
+    color: white;
+    transition: transform .2s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.259);
+}
+
+.card:hover{
+    transform: scale(1.025) !important;
+}
+
+.card-title{
+    padding-top: 24px ;
+}
+
+.card img{
+    border-radius: 10px !important;
+}
+
+.daftar-departemen{
+    padding-bottom: 20vh;
+    font-size: 22px;
+}
+
+.btn-ya, .btn-tidak, .btn-pilih-ulang, .btn-saya-yakin{
+    color: white;
+    font-size: 22px;
+    padding: .8rem 0;
+    border: none;
+    border-radius: 18px;
+    transition: transform .2s ease;
+    width: 200px;
+}
+
+.btn-ya:hover, .btn-tidak:hover, .btn-pilih-ulang:hover, .btn-saya-yakin:hover{
+    transform: scale(1.025);
+}
+
+.btn-ya,.btn-pilih-ulang{
+    background: linear-gradient(90.75deg, rgba(83, 234, 144, 0.7) 1.29%, rgba(59, 113, 199, 0.7) 98.71%);
+}
+
+.btn-ya:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn-tidak, .btn-saya-yakin{
+    background: linear-gradient(90.75deg, rgba(59, 113, 199, 0.7) 1.29%, rgba(166, 127, 216, 0.7) 55.07%, rgba(244, 230, 250, 0.7) 98.71%);
+}
+
+.modal-content{
+    background: linear-gradient(95.81deg, rgb(126, 126, 126) 0%, rgba(133, 133, 133, 0.61) 100%);
+}
+
+.modal-text{
+    font-size: 22px;
+}
