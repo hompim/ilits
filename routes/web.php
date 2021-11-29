@@ -4,6 +4,7 @@ use App\Exports\OprecStaffExport;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OprecStaffController;
 use App\Http\Controllers\LinkShortenerController;
+use App\Http\Controllers\OpenCampusController;
 use App\Http\Controllers\Peserta\PesertaController;
 use App\Http\Controllers\FordaController;
 use App\Http\Controllers\Peserta\dashboard\Home;
@@ -39,6 +40,8 @@ Route::get('/open-campus/register-fnd',function(){return view('open-campus.regis
 Route::get('/open-campus/event-regist',function(){return view('open-campus.event-regist',["title" => "event-regist"]);});
 Route::get('/open-campus/dashboard-fnd',function(){return view('open-campus.dashboard-fnd',["title" => "dashboard-fnd"]);});
 Route::get('/open-campus/thank-you',function(){return view('open-campus.thank-you',["title" => "Thank You!"]);});
+Route::get('/open-campus/sesi-fnd', [OpenCampusController::class, 'opsi'])->name('open-campus.opsi');
+Route::get('/open-campus/choose-fnd', [OpenCampusController::class, 'chooseFnD'])->name('open-campus.choose-fnd');
 
 // Route untuk admin
 Route::middleware('can:isAdmin')->prefix('admin')->group(function () {
