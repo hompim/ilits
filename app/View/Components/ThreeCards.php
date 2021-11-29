@@ -18,6 +18,7 @@ class ThreeCards extends Component
     public $list1;
     public $list2;
     public $list3;
+    public $carouselId;
     // Depends on your three cards structure, using text or list.
 
     /**
@@ -25,7 +26,7 @@ class ThreeCards extends Component
      *
      * @return void
      */
-    public function __construct($title1 = '', $title2 = '', $title3 = '', $img1 = '', $img2 = '', $img3 = '', $text1 = '', $text2 = '', $text3 = '', $list1 = '', $list2 = '', $list3 = '')
+    public function __construct($title1 = '', $title2 = '', $title3 = '', $img1 = '', $img2 = '', $img3 = '', $text1 = '', $text2 = '', $text3 = '', $list1 = '', $list2 = '', $list3 = '', $carouselId='threeCardsMobile')
     {
       $this->title1 = $title1;
       $this->title2 = $title2;
@@ -39,6 +40,7 @@ class ThreeCards extends Component
       $this->list1 = json_encode($list1);
       $this->list2 = json_encode($list2);
       $this->list3 = json_encode($list3);
+      $this->carouselId = $carouselId;
     }
 
     /**

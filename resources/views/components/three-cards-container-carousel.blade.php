@@ -15,13 +15,13 @@
     </div>
         <div class="carousel-inner row w-100 mx-auto" role="listbox">
         @for($i = 0; $i < count($titles); $i++) 
-            <div class="carousel-item @if($i == 0) active @endif col-sm-12 col-lg-4">
+            <div class="carousel-item @if($i == 0) active @endif col-6 col-lg-4">
                 <div class="">
                     <div class="p-3 overflow-hidden card card-container-1 py-2">
-                        <img src="{{ asset($images[$i]) }}" class="card-img-top pt-4 px-2" alt="Card image cap">
-                        <div class="text-center card-body mx-5">
-                            <h4 class="card-title ">{{ $titles[$i] }}</h4>
-                            <x-button-link href='#' class='grad w-100' >Lihat</x-button-link>
+                        <img src="{{ asset($images[$i]) }}" class="card-img-top mt-lg-4 px-lg-2" alt="Card image cap">
+                        <div class="text-center card-body px-0 px-sm-3 px-md-4 d-flex align-items-start flex-column" >
+                            <h4 class="card-title mb-auto">{{ $titles[$i] }}</h4>
+                            <x-button-link href='#' class='grad w-100 align-self-end m-0' >Lihat</x-button-link>
                         </div>
                     </div>
                 </div>
@@ -37,8 +37,8 @@
       */
       var $e = $(e.relatedTarget);
       var idx = $e.index();
-      // warning: 5 sduah kombnasi yang tepat
-      var itemsPerSlide = 5;
+    
+      var itemsPerSlide = 3;
       var totalItems = $('.{{ $carouselId }} .carousel-item').length;
 
       if (idx >= totalItems - (itemsPerSlide - 1)) {

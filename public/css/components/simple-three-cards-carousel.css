@@ -129,6 +129,12 @@
     transform: translate(-3rem, 50%);
     z-index: 2;
 }
+#simpleThreeCardsCarousel a.btn-floating .fa-3x{
+    opacity: 0.5;
+}
+#simpleThreeCardsCarousel a.btn-floating .fa-3x:hover{
+    opacity: 1;
+}
 #simpleThreeCardsCarousel a.btn-floating-next {
     right: -0.625rem;
     top: 43%;

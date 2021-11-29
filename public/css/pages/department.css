@@ -63,9 +63,7 @@ section#video-profile iframe{
 section#akreditasi{
     background: linear-gradient(to bottom, #2A518E,#2E5999);
 }
-section#akreditasi .item-three-cards{
-    border-bottom-width: 0;
-}
+
 section#akreditasi .item-three-cards h2{
     font-size: 1.875rem;
 }
@@ -88,9 +86,6 @@ section#figure{
 section#figure .wrapper{
     flex-flow: row wrap;
     justify-content: space-around;
-}
-section#figure h3{
-    background: linear-gradient(to bottom, #3D1960, #521373 );
 }
 section#figure .wrapper .flex-item{
     width: 13.125rem;
@@ -133,7 +128,7 @@ footer{
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     body main h2{
         font-size: 2rem;
     }
