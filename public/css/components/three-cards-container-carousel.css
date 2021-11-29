@@ -1,11 +1,17 @@
 #threeCardsContainerCarousel a.btn-floating-prev{
-    left:-5%;
+    left: -0.625rem;
     top:50%;
     transform:translate(-3rem,-50%);
     z-index:2
 }
+#threeCardsContainerCarousel a.btn-floating .fa-3x{
+    opacity: 0.5;
+}
+#threeCardsContainerCarousel a.btn-floating .fa-3x:hover{
+    opacity: 1;
+}
 #threeCardsContainerCarousel a.btn-floating-next{
-    right:-5%;
+    right: -0.625rem;
     top:50%;
     transform:translate(3rem,-50%);
     z-index:2
@@ -13,28 +19,22 @@
 
 #threeCardsContainerCarousel .card{
     border-radius:1.125rem;
-    background:linear-gradient(-45deg,#ffffff64,#ffffff37);
+    background:linear-gradient(95deg,#ffffff64,#ffffff37);
     backdrop-filter:blur(20px);
 }
-
-#threeCardsContainerCarousel .card.card-body{
-    padding: 28px 60px 40px 60px; 
+#threeCardsContainerCarousel .card .card-body{
+    min-height:200px;
 }
 
 #threeCardsContainerCarousel .card h4{
-    margin-bottom: 28px;
     font-size:1.625rem;
     font-family:gothammedium;
-    color:white;
 }
-#threeCardsContainerCarousel .card p{
-    font-size:1.125rem;
-    font-family:gothamlight
-}
+
 #threeCardsContainerCarousel .grad{
-    font-size:26px;
-    width:13.75rem;
-    height:3.125rem;
+    font-size:1.375rem;
+    padding: 0.5rem 0 !important;
+    border-radius: 14px;
     background: linear-gradient(91.6deg, #53ea90 2.71%, #3b71c7 97.29%);
 }
 
@@ -42,6 +42,48 @@
     width: 3.75rem;
     height: 3.75rem;
 }
+@media screen and (max-width: 992px) {
+    #threeCardsContainerCarousel .card {
+        border-radius: 0.625rem;     
+    }
+
+    #threeCardsContainerCarousel a.btn-floating-prev {
+        left: 0.5rem;
+    }
+    #threeCardsContainerCarousel a.btn-floating-next {
+        right: 0.5rem;
+    }
+
+    #threeCardsContainerCarousel a.btn-floating .fa-3x{
+        font-size: 2em !important;
+    }
+    #threeCardsContainerCarousel a.btn-floating-prev {
+        transform: translateX(-2.2rem);
+    }
+    #threeCardsContainerCarousel a.btn-floating-next {
+        transform: translateX(2.2rem);
+    }
+    #threeCardsContainerCarousel .grad a.button-link{
+        font-size:1.375rem !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    #threeCardsContainerCarousel .card .card-body{
+        min-height:128px;
+        padding-bottom: 0;
+    }
+    #threeCardsContainerCarousel .card h4{
+        font-size: 14px !important;
+    }
+    #threeCardsContainerCarousel .grad{
+        border-radius: 5px;
+    }
+}
+
+
+
+
+/* carousel */
 @media (min-width: 992px) {
     #threeCardsContainerCarousel .carousel-item {
         margin-right: 0;
@@ -110,8 +152,59 @@
         visibility: visible;
     }
 }
-@media screen and (max-width: 768px) {
-    #threeCardsContainerCarousel a.btn-floating .fa-3x{
-        font-size: 2em !important;
-    }  
+@media (max-width: 992px) {
+    #threeCardsContainerCarousel .carousel-item {
+        margin-right: 0;
+    }
+
+     /* Show 4th slide on md if col-lg-4*/
+     #threeCardsContainerCarousel .carousel-inner .active.col-6.carousel-item + .carousel-item +  .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -50%;  /*change this with javascript in the future*/
+        z-index:3;
+        display: block;
+        visibility: visible;
+    } 
+    /* show 3rd of 3 item slide */
+    #threeCardsContainerCarousel .carousel-inner .active + .carousel-item {
+        display: block;
+    }
+    
+    #threeCardsContainerCarousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    #threeCardsContainerCarousel .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
+        transition: none;
+    }
+    #threeCardsContainerCarousel .carousel-inner .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    #threeCardsContainerCarousel .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    #threeCardsContainerCarousel .carousel-item-next.carousel-item-left + .carousel-item,
+    #threeCardsContainerCarousel .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* farthest right hidden item must be also positioned for animations */
+    #threeCardsContainerCarousel .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        display: block;
+        visibility: visible;
+    }
+    /* right or prev direction */
+    #threeCardsContainerCarousel .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    #threeCardsContainerCarousel .carousel-item-prev.carousel-item-right + .carousel-item,
+    #threeCardsContainerCarousel .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
 }
+/* honorable mention:) https://azmind.com/bootstrap-carousel-multiple-items/ */

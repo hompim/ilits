@@ -20,7 +20,7 @@
                             <img src="{{ asset($images[$i]) }}" class="d-block w-100 h-100" alt="{{ $titles[$i] }}">
                         </div>
                         <div class=" text-left py-2 col-lg-6 left">
-                            <p class="text-justify m-0  overflow-auto">{{ $texts[$i] }}</p>
+                            <p class="pr-2 text-justify m-0  overflow-auto">{{ $texts[$i] }}</p>
                         </div>
                     </div>
                 </div>

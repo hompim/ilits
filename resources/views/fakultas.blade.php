@@ -5,19 +5,17 @@
 @endsection
 
 @section('style')
-  <link rel="stylesheet" href="{{ asset('css/pages/main.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/pages/fakultas.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/map.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/two-side-separated-carousel.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/three-cards-carousel.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/three-cards-container-carousel.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/three-cards.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/pages/fakultas.css') }}" />
-  <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/components/card-with-floating-header.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/components/card-with-header.css') }}" />
-  <link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}" />
+
 @endsection
 
 @section('content')
@@ -57,12 +55,13 @@
         <div class="col-10 col-lg-11 mx-auto">
             <x-three-cards-carousel carouselId="idcar" titles="1960, 1976, 1987, 1960, 1976, 1987"
             images="img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png,img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png"
-            texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
-            card's content.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Some quick example text to build on the card title and make up the bulk
-            of the
-            card's content.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
-            card's content.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
-            card's content." />
+            texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
+            |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque. card's content. consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
+            |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
+            |Some quick example text to build on the card title and make up the bulk of the card's content.
+            |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque. card's content.
+            |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.card's content." 
+            />
         </div>
         </div>  
     </section>
@@ -96,7 +95,7 @@
     <section class="d-flex justify-content-center align-items-center flex-column" id='jurusanmu'>
     <div class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Kenali Jurusanmu!'])
-      <div class="col-10 col-lg-11 mx-auto">
+      <div class="col-lg-11 mx-auto">
         <x-three-cards-container-carousel carouselId="idcar2" titles="Departemen Teknik Informatika, 
         Departemen Sistem Informasi,Departemen Teknik Komputer,Departemen Teknik Informatika,Departemen Sistem Informasi,Departemen Teknik Komputer"
         images="img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png"
@@ -107,8 +106,8 @@
 
     <section class="d-flex justify-content-center align-items-center flex-column" id='perbandingan'>
     <div class="container text-center text-white ">
-      @include('partials.section-header', ['title'=>'Perbandingan Dosen & Mahasiswa'])
-      <div class="col-10 col-lg-11 mx-auto">
+      @include('partials.section-header', ['title'=>'Perbandingan Dosen-Mahasiswa'])
+      <div class=" col-lg-11 mx-auto">
         
       </div>
     </div>  
@@ -120,10 +119,9 @@
       <div class="col-10 col-lg-11 mx-auto">
         <x-two-side-separated-carousel images="img/fakultas/kerja-sama.png,img/fakultas/kerja-sama.png,img/fakultas/kerja-sama.png"
         titles="Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet"
-        texts="Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
-            card's content | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
-            card's content | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
-            card's content."
+        texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ipsum eget et et nisl adipiscing orci. Eu ipsum eget et et nisl adipiscing orci.
+         | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ipsum eget et et nisl adipiscing orci. Eu ipsum eget et et nisl adipiscing orci.
+        |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ipsum eget et et nisl adipiscing orci. Eu ipsum eget et et nisl adipiscing orci."
         carouselId="idcar3"/>
       </div>
     </div>  

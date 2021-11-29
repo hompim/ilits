@@ -71,9 +71,9 @@ section#kerja-sama {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     body main h2{
-        font-size: 2rem;
+        font-size: 2rem !important;
     }
     body main h3{
         font-size:  1.5rem;
