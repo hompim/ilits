@@ -1,0 +1,119 @@
+nav {
+    height: 66.53px;
+    background-color: #11102850;
+}
+
+nav .logo-small {
+    max-width: 8rem;
+    height: auto;
+}
+
+nav.navbar .navbar-collapse div:nth-child(2) div img {
+    width: 1.5rem;
+}
+
+nav.navbar .navbar-collapse .nav-link {
+    font-size: 1.25rem;
+    color: white;
+    position: relative;
+    font-family: "gothambold";
+}
+
+nav.navbar .navbar-collapse div.ml-auto .nav-link {
+    background: linear-gradient(45deg, #3b71c7, #53ea90);
+}
+
+nav.navbar .navbar-nav .nav-link:hover {
+    color: #53ea90;
+}
+
+nav.navbar .navbar-nav .nav-link:after {
+    content: "";
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    display: block;
+    height: 4px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+nav.navbar .navbar-nav .nav-link:hover:after {
+    width: 100%;
+    left: 0;
+    background-color: #53ea90;
+}
+
+nav.navbar .navbar-collapse div.mr-auto img {
+    display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    nav.navbar .navbar-collapse .nav-link {
+        font-size: 1.25rem;
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    nav .navbar-collapse {
+        background-color: #111028;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding-top: 1rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        height: 100vh;
+    }
+    nav .navbar-collapse.collapsing {
+        height: 100%;
+        left: -75%;
+        transition: height 0s ease;
+    }
+    nav .navbar-collapse.show .close-mobile {
+        display: flex !important;
+    }
+    nav .navbar-collapse.show {
+        height: 100%;
+        left: 0;
+        transition: left 400ms ease-in-out;
+    }
+    nav .navbar-toggler.collapsed ~ .navbar-collapse {
+        transition: left 400ms ease-in;
+    }
+    nav.navbar .navbar-collapse div.mr-auto {
+        padding-bottom: 1rem;
+    }
+    nav.navbar .navbar-collapse div.mr-auto img {
+        display: block;
+    }
+    nav.navbar .navbar-collapse div.ml-auto {
+        padding-top: 1rem;
+        border-top: 1px solid #ffffff;
+    }
+    nav.navbar .navbar-collapse div.ml-auto .nav-link {
+        border-radius: 5px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    nav.navbar .navbar-nav .nav-link {
+        font-size: 1.125rem;
+    }
+    nav .logo-small {
+        max-width: 5rem;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    nav.navbar .navbar-nav .nav-link {
+        margin: 0 !important;
+    }
+}
