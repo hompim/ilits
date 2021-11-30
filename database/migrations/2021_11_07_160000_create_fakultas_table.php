@@ -21,6 +21,7 @@ class CreateFakultasTable extends Migration
             $table->string('foto');
             $table->text('deskripsi');
             $table->string('link_zoom');
+            $table->string('link_video')->nullable();
             $table->date('updated_at')->nullable();
             $table->date('created_at')->nullable();
         });

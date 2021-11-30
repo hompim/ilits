@@ -11,6 +11,8 @@ class Fakultas extends Model
 
     protected $table = 'fakultas';
 
+    protected $fillable = ['id','nama','foto','deskripsi','link_zoom','updated_at','created_at'];
+
     public function sesi_fnd()
     {
         return $this->belongsTo(SesiFnd::class);
