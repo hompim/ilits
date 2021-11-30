@@ -18,9 +18,9 @@ class CreateAkreditasisTable extends Migration
             $table->unsignedBigInteger('departemen_id');
             $table->foreign('departemen_id')->references('id')->on('departemens');
             $table->string('judul');
-            $table->text('deskripsi');
+            $table->text('deskripsi')->nullable();
             $table->string('foto');
-            $table->timestamps();
+            
         });
     }
 

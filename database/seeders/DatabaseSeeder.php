@@ -22,6 +22,10 @@ class DatabaseSeeder extends Seeder
             FakultasSeeder::class,
             KelasSeeder::class,
             DepartemenSeeder::class,
+            AkreditasiSeeder::class,
+            AktivitasMahasiswaSeeder::class,
+            ProspekKerjaSeeder::class,
+            AlumniSeeder::class,
         ]);
     }
 }
