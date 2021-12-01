@@ -22,7 +22,19 @@
 
   <section id="merchandise-carousel">
     <div class="container text-white">
-      <x-two-side-carousel titles="Jangan Sampai Kehabisan! 1,Jangan Sampai Kehabisan! 2,Jangan Sampai Kehabisan! 3" texts="Cek marketplace ILITS 2022 buat dapetin merchandise yang kece! 1|Cek marketplace ILITS 2022 buat dapetin merchandise yang kece! 2|Cek marketplace ILITS 2022 buat dapetin merchandise yang kece! 3" images="img/main/web-series.png,img/main/web-series.png,img/main/web-series.png" buttonTexts="Beli Sekarang! 1,Beli Sekarang! 2,Beli Sekarang! 3" ></x-two-side-carousel>
+      <?php
+        $nama = array();
+        $gambar = array();
+        $link = array();
+        for($i=1;$i<=3;$i++){
+            $nama[]= $merch[$i] -> nama;
+            $gambar[] = "../img/merchandise/".$merch[$i] -> gambar;
+            $link[] = $merch[$i] -> link;
+        }
+        $n = join(',',$nama);
+        $g = join(',',$gambar);
+      ?>
+      <x-two-side-carousel titles="{{$n}}" texts="Cek marketplace ILITS 2022 buat dapetin merchandise yang kece! |Cek marketplace ILITS 2022 buat dapetin merchandise yang kece! |Cek marketplace ILITS 2022 buat dapetin merchandise yang kece!" images="{{ $g }}" ></x-two-side-carousel>
     </div>
   </section>
 
@@ -30,80 +42,18 @@
     <div class="container text-white">
       @include("partials.section-header", ["title" => "Katalog Kami!"])
 
-      {{-- Row 1 --}}
       <div class="row">
+      @foreach($merch as $m)
         <div class="col-sm-4">
-          <img src="img/merchandise/baju1.png" alt="Merchandise" class="img-fluid">
-          <div class="text-col-product-merchandise mb-3">
-            <h4>Be Brave T-Shirt</h4>
-            <h5>Rp. 115.000</h5>
-          </div>
+            <a href="{{$m->link}}"><img src="../img/merchandise/{{$m->gambar}}" alt="Merchandise" class="img-fluid"></a>
+            <div class="text-col-product-merchandise mb-3">
+              <a href="{{$m->link}}" style="text-decoration:none; color:white"><h4>{{$m->nama}}</h4>
+              <h5>{{ $m->harga }}</h5></a>
+            </div>
         </div>
-        <div class="col-sm-4">
-          <img src="img/merchandise/baju1.png" alt="Merchandise" class="img-fluid">
-          <div class="text-col-product-merchandise mb-3">
-            <h4>Be Brave T-Shirt</h4>
-            <h5>Rp. 115.000</h5>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <img src="img/merchandise/baju1.png" alt="Merchandise" class="img-fluid">
-          <div class="text-col-product-merchandise mb-3">
-            <h4>Be Brave T-Shirt</h4>
-            <h5>Rp. 115.000</h5>
-          </div>
-        </div>
+      @endforeach
       </div>
 
-      {{-- Row 2 --}}
-      <div class="row">
-        <div class="col-sm-4">
-          <img src="img/merchandise/baju1.png" alt="Merchandise" class="img-fluid">
-          <div class="text-col-product-merchandise mb-3">
-            <h4>Be Brave T-Shirt</h4>
-            <h5>Rp. 115.000</h5>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <img src="img/merchandise/baju1.png" alt="Merchandise" class="img-fluid">
-          <div class="text-col-product-merchandise mb-3">
-            <h4>Be Brave T-Shirt</h4>
-            <h5>Rp. 115.000</h5>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <img src="img/merchandise/baju1.png" alt="Merchandise" class="img-fluid">
-          <div class="text-col-product-merchandise mb-3">
-            <h4>Be Brave T-Shirt</h4>
-            <h5>Rp. 115.000</h5>
-          </div>
-        </div>
-      </div>
-
-      {{-- Row 3 --}}
-      <div class="row">
-        <div class="col-sm-4">
-          <img src="img/merchandise/baju1.png" alt="Merchandise" class="img-fluid">
-          <div class="text-col-product-merchandise mb-3">
-            <h4>Be Brave T-Shirt</h4>
-            <h5>Rp. 115.000</h5>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <img src="img/merchandise/baju1.png" alt="Merchandise" class="img-fluid">
-          <div class="text-col-product-merchandise mb-3">
-            <h4>Be Brave T-Shirt</h4>
-            <h5>Rp. 115.000</h5>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <img src="img/merchandise/baju1.png" alt="Merchandise" class="img-fluid">
-          <div class="text-col-product-merchandise mb-3">
-            <h4>Be Brave T-Shirt</h4>
-            <h5>Rp. 115.000</h5>
-          </div>
-        </div>
-      </div>
-    </div>
+      
   </section>
 @endsection

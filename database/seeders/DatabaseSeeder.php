@@ -27,6 +27,9 @@ class DatabaseSeeder extends Seeder
             ProspekKerjaSeeder::class,
             AlumniSeeder::class,
             FasilitasSeeder::class,
+            FakultasKerjasamaSeeder::class,
+            FakultasSejarahSeeder::class,
+            MerchSeeder::class,
         ]);
     }
 }

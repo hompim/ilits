@@ -20,6 +20,13 @@ class Fakultas extends Model
     
     public function departemen()
     {
-        return $this->hasMany(Fakultas::class);
+        return $this->hasMany(Departemen::class);
+    }
+    public function fakultas_sejarah()
+    {
+        return $this->hasMany(FakultasSejarah::class);
+    }
+    public function fakultas_kerjasama(){
+        return $this->hasMany(FakultasKerjasama::class);
     }
 }
