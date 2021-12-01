@@ -10,6 +10,7 @@ class ProspekKerja extends Model
     use HasFactory;
 
     protected $guarded = ['departemen_id'];
+    public $timestamps = FALSE;
     
     public function departemen()
     {

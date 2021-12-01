@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAlumnisTable extends Migration
+class CreateMerchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateAlumnisTable extends Migration
      */
     public function up()
     {
-        Schema::create('alumnis', function (Blueprint $table) {
+        Schema::create('merches', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('departemen_id');
-            $table->foreign('departemen_id')->references('id')->on('departemens');
             $table->string('nama');
-            $table->text('deskripsi')->nullable();
-            $table->string('foto')->nullable();
+            $table->integer('harga');
+            $table->string('gambar');
+            $table->string('link');
         });
     }
 
@@ -30,6 +29,6 @@ class CreateAlumnisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumnis');
+        Schema::dropIfExists('merches');
     }
 }

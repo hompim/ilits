@@ -19,8 +19,7 @@ class CreateAktivitasMahasiswasTable extends Migration
             $table->foreign('departemen_id')->references('id')->on('departemens');
             $table->string('judul');
             $table->text('deskripsi');
-            $table->string('foto');
-            $table->timestamps();
+            $table->string('foto')->nullable();
         });
     }
 

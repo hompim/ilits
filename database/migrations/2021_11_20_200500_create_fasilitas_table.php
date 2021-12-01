@@ -18,9 +18,8 @@ class CreateFasilitasTable extends Migration
             $table->unsignedBigInteger('departemen_id');
             $table->foreign('departemen_id')->references('id')->on('departemens');
             $table->string('foto');
-            $table->text('deskripsi');
+            $table->text('deskripsi')->nullable();
             $table->string('judul');
-            $table->timestamps();
         });
     }
 
