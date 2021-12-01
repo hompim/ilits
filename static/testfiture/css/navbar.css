@@ -1,3 +1,5 @@
+@import url(../../../public/css/fonts.css);
+
 nav {
     height: 66.53px;
     background-color: #11102850;
@@ -19,7 +21,7 @@ nav.navbar .navbar-collapse .nav-link {
     font-family: "gothambold";
 }
 
-nav.navbar .navbar-collapse div.ml-auto .nav-link {
+nav.navbar .navbar-collapse div.ms-auto .nav-link {
     background: linear-gradient(45deg, #3b71c7, #53ea90);
 }
 
@@ -58,7 +60,7 @@ nav.navbar .navbar-collapse div.mr-auto img {
     }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
     nav .navbar-collapse {
         background-color: #111028;
         position: fixed;
@@ -94,7 +96,7 @@ nav.navbar .navbar-collapse div.mr-auto img {
     }
     nav.navbar .navbar-collapse div.ml-auto {
         padding-top: 1rem;
-        border-top: 1px solid #ffffff;
+        border-top: 1px solid #FFFFFF;
     }
     nav.navbar .navbar-collapse div.ml-auto .nav-link {
         border-radius: 5px;

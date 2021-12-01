@@ -8,11 +8,11 @@ body {
         #305ea0 93.23%
     );
 }
-section {
-    z-index: 999;
-    padding-top: 250px;
-    padding-bottom: 250px;
+
+#daftar-container{
+    margin-top: 150px !important;
 }
+
 .login-box {
     color: #ffffff;
 }
@@ -142,9 +142,12 @@ footer {
     padding-top: 35px;
 }
 @media screen and (max-width: 576px) {
+    #daftar-container{
+        padding-top: 125px;
+    }
     .naga {
         background: url("../lambang/Group-7197.png");
-        background-position: top 100px center;
+        background-position: top center;
         background-repeat: no-repeat;
         background-size: 100px;
     }
