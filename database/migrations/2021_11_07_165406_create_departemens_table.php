@@ -15,9 +15,9 @@ class CreateDepartemensTable extends Migration
     {
         Schema::create('departemens', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('sesi_id');
-            $table->unsignedBigInteger('kelas_id');
-            $table->unsignedBigInteger('fakultas_id');
+            $table->unsignedBigInteger('sesi_id')->nullable();
+            $table->unsignedBigInteger('kelas_id')->nullable();
+            $table->unsignedBigInteger('fakultas_id')->nullable();
             $table->foreign('sesi_id')->references('id')->on('sesi_fnds');
             $table->foreign('kelas_id')->references('id')->on('kelas');
             $table->foreign('fakultas_id')->references('id')->on('fakultas');
@@ -25,7 +25,7 @@ class CreateDepartemensTable extends Migration
             $table->string('foto');
             $table->text('deskripsi');
             $table->string('link_zoom');
-            $table->integer('kuota');
+            $table->integer('kuota')->nullable();
             $table->date('updated_at')->nullable();
             $table->date('created_at')->nullable();
         });

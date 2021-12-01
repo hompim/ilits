@@ -10,6 +10,7 @@ class AktivitasMahasiswa extends Model
     use HasFactory;
 
     protected $guarded = ['departemen_id'];
+    public $timestamps = false;
     
     public function departemen()
     {
