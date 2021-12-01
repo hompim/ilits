@@ -12,6 +12,7 @@ class Fasilitas extends Model
     // guarded: tidak boleh diisi
     // fillable: boleh diisi
     protected $guarded = ['departemen_id'];
+    public $timestamps = FALSE;
     
     public function departemen()
     {
