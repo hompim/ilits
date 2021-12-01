@@ -66,7 +66,7 @@ option {
     border-radius: 0% !important;
     display: block !important;
     transition: all 0.3s ease !important;
-    cursor: pointer !important;
+    cursor: pointer;
     background: transparent;
 }
 .printilan:hover {
@@ -74,14 +74,14 @@ option {
     text-shadow: 0 5px 15px lightseagreen;
     background-color: none;
     transition: transform 0.3s ease;
-    cursor: pointer !important;
+    cursor: pointer;
 }
 .form-check:hover {
     color: none;
     text-shadow: 0 5px 15px lightseagreen;
     background-color: none;
     transition: transform 0.3s ease;
-    cursor: pointer !important;
+    cursor: pointer;
 }
 .masuk {
     transition: transform 0.3s ease;
@@ -140,4 +140,15 @@ footer {
     height: 35px;
     background-repeat: no-repeat;
     padding-top: 35px;
+}
+@media screen and (max-width: 576px) {
+    .naga {
+        background: url("../lambang/Group-7197.png");
+        background-position: top 100px center;
+        background-repeat: no-repeat;
+        background-size: 100px;
+    }
+    .login-box {
+        align-items: center;
+    }
 }
