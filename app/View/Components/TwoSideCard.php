@@ -8,6 +8,8 @@ class TwoSideCard extends Component
 {
     public $title;
     public $text;
+    public $image;
+    public $link;
     public $buttonText;
 
     /**
@@ -15,11 +17,13 @@ class TwoSideCard extends Component
      *
      * @return void
      */
-    public function __construct($title, $text, $buttonText)
+    public function __construct($title, $text, $buttonText, $link, $image )
     {
         $this->title = $title;
         $this->text = $text;
         $this->buttonText = $buttonText;
+        $this->link = $link;
+        $this->image = $image;
     }
 
     /**

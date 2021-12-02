@@ -68,12 +68,21 @@
       </div>
     </article>
   </section>
-
+  <?php
+    $nama = array();
+    $deskripsi = array();
+    foreach($eventual as $e){
+      $nama[] = $e->nama;
+      $deskripsi[] = $e->deskripsi;
+    }
+    $n = join(',',$nama);
+    $d = join('|',$deskripsi);
+  ?>
   <section class="text-white d-flex justify-content-center flex-column" id="acara">
     <article class="container d-flex flex-column align-items-center">
       <x-carousel-with-header buttonText="Kenali Lebih Lanjut" headerTitle="Ada acara apa aja di ILITS! 2022?"
-        titles="Open Campus,Open Campus,Open Campus"
-        texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit diam tellus aliquam consequat amet tincidunt sed etiam volutpat. Lacinia tellus velit, elementum justo nec donec cum morbi ac.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit diam tellus aliquam consequat amet tincidunt sed etiam volutpat. Lacinia tellus velit, elementum justo nec donec cum morbi ac.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit diam tellus aliquam consequat amet tincidunt sed etiam volutpat. Lacinia tellus velit, elementum justo nec donec cum morbi ac."
+        titles="{{$n}}"
+        texts="{{$d}}"
         images="img/main/open-campus.png,img/main/open-campus.png,img/main/open-campus.png" />
     </article>
   </section>
@@ -113,9 +122,14 @@
         </div>
       </div>
     </article>
+    <?php
+      $index = rand(0,6);
+    ?>
     <article class="container text-white d-flex flex-column align-items-center mt-5">
-      <x-two-side-card title="Sains dan Analitika Data"
-        text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eius eligendi, tempore vel ipsa! Provident, possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur officia est hic."
+      <x-two-side-card title="{{$fakultas[$index]->nama}}"
+        text="{{$fakultas[$index]->deskripsi}}"
+        image="{{$fakultas[$index]->foto}}"
+        link="../fakultas/{{$fakultas[$index]->id}}"
         buttonText="Lihat Departemen" />
     </article>
   </section>
@@ -132,10 +146,23 @@
 
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="fasilitas">
     <article class="container d-flex flex-column align-items-center">
+    <?php
+    $nama = array();
+    $deskripsi = array();
+    $foto = array();
+    foreach($fasilitas as $f){
+      $nama[] = $f->judul;
+      $deskripsi[] = $f->deskripsi;
+      $foto[] = "../img/fasilitas/".$f->foto;
+    }
+    $n = join(',',$nama);
+    $d = join('|',$deskripsi);
+    $f = join(',',$foto);
+  ?>
       <x-carousel-with-floating-header-and-button headerTitle="Fasilitas Apa Saja Yang Ada di ITS"
-        titles="Graha ITS,Graha ITS"
-        texts="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eius eligendi, tempore vel ipsa! Provident,|possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur officia e"
-        buttonText="Kenali Lebih Lanjut" images="img/main/web-series.png,img/main/web-series.png" />
+        titles="{{$n}}"
+        texts="{{$d}}"
+        buttonText="Kenali Lebih Lanjut" images="{{$f}}" />
       </div>
     </article>
   </section>
@@ -162,15 +189,11 @@
     <article class="container">
       @include('partials.section-header', ["title" => "Jadilah Penerus Mereka!"])
       <div class="container row">
+        @foreach($alumni as $a)
         <div class="col-lg">
-          <x-figure-image img="img/main/alumni-1.png" title="Tri Rismaharini" text="Menteri Sosial" />
+          <x-figure-image img="img/main/alumni-1.png" title="{{$a->nama}}" text="{{$a->deskripsi}}" />
         </div>
-        <div class="col-lg">
-          <x-figure-image img="img/main/alumni-2.png" title="Mohammad Nuh" text="Mantan Menteri Pendidikan" />
-        </div>
-        <div class="col-lg">
-          <x-figure-image img="img/main/alumni-3.png" title="Cak Lontong" text="Pelawak" />
-        </div>
+        @endforeach
       </div>
     </article>
   </section>
@@ -178,9 +201,9 @@
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="beasiswa">
     <article class="container">
       {{-- @include('partials.section-header', ["title" => "Pilihan Beasiswa Untukmu!"]) --}}
-      <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
-      <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
-      <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
+      @foreach($beasiswa as $b)
+      <x-banner-with-corner-header title="{{$b->nama}}" image="img/main/banner.png" href="https://docs.google.com/spreadsheets/d/1Fn-sQoZr0_qxe2ZjRBD9Altse_ewDp--UVAughZo5Zk/edit#gid=0" />
+      @endforeach
     </article>
   </section>
 

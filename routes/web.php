@@ -12,6 +12,7 @@ use App\Http\Controllers\MerchController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\BeasiswaController;
 use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\Peserta\dashboard\Home;
 use App\Models\OprecStaff;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,7 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 Route::get('/', function () {
     return view('coming-soon');
 })->name('coming-soon');
-Route::get('main', function() {return view('main');});
+Route::get('main', [MainController::class, 'index'])->name('main');
 Route::get('fasilitas', [FasilitasController::class,'index'])->name('fasilitas');
 Route::get('fakultas/{id}', [FakultasController::class, 'index'])->name('fakultas');
 Route::get('departemen', function(){return view('departemen');});
