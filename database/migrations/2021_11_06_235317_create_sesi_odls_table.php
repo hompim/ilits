@@ -29,6 +29,6 @@ class CreateSesiODLSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sesi_o_d_l_s');
+        Schema::dropIfExists('sesi_odls');
     }
 }

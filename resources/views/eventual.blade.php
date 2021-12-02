@@ -43,14 +43,35 @@
   <section class="d-flex justify-content-center flex-column px-4 px-sm-0" id="tentang">
     <article class="container py-5 text-center text-white d-flex flex-column align-items-center position-relative">
       @include("partials.section-header", ["title" => "Apa itu Open Campus"])
-      <p>Open CAMPUS INI LHO ITS! 2021 merupakan sebuah acara pengenalan kehidupan perkuliahan 
-        beserta keilmuan, prospek kerja, dan prestasi-prestasi membanggakan yang dimiliki oleh setiap departemen di ITS. Dengan bertemakan "Ruang  Mimpi" diharapkan para peserta dapat memiliki gambaran yang lebih jelas 
-        mengenai keilmuan yang akan ditekuni serta semakin termotivasi untuk melangkah ke jenjang perguruan 
-        tinggi</p>
+      <p>
+        Open Campus terdiri dari 3 sub-event, yaitu: ITS Fair, Faculty and Departemen Day, dan One Day Lecture. ITS Fair adalah Suatu kegiatan pengenalan ITS secara umum meliputi jalur masuk ITS (SNMPTN,
+        SBMPTN, SKMP), UKT ITS, beasiswa di ITS, prestasi, hingga talkshow dengan pembicara
+        hebat dengan topik yang disesuaikan dengan kebutuhan peserta. Faculty and Department Day adalah Kegiatan yang dilakukan dalam satu hari untuk mengenalkan fakultas dan
+        departemen yang ada di ITS kepada siswa/siswi SMA/SMK sederajat. Terakhir, One Day Lecture adalah Kegiatan yang dilakukan selama dua hari untuk memberikan pengalaman secara nyata
+        mengenai pembelajaran saat kuliah kepada siswa/siswi SMA/SMK sederajat.
+      </p>
     </article>
   </section>
 
-  <section class="d-flex justify-content-center flex-column" id="dokumentasi">
+  <section class="d-flex justify-content-center flex-column px-4 px-sm-0" id="tentang">
+    <article class="container py-5 text-center text-white d-flex flex-column align-items-center position-relative">
+      @include("partials.section-header", ["title" => "Apa itu Welcome"])
+      <p>
+        Kegiatan eventual Ini Lho ITS! yang diselenggarakan oleh panitia Ini Lho ITS! diberbagai daerah di Indonesia yang berkerja sama dengan Forum Daerah (Forda) dengan kegiatan utama yakni tryout.
+      </p>
+    </article>
+  </section>
+  
+  <section class="d-flex justify-content-center flex-column px-4 px-sm-0" id="tentang">
+    <article class="container py-5 text-center text-white d-flex flex-column align-items-center position-relative">
+      @include("partials.section-header", ["title" => "Apa itu Visit"])
+      <p>
+        Kegiatan yang diselenggarakan oleh panitia Ini Lho ITS! berbentuk roadshow dan berisi pengenalan kampus, departemen, dan lingkungan ITS secara general dan menyebarkan semangat perguruan tinggi kepada siswa/siswi SMA/SMK sederajat di berbagai daerah yang bekerja sama dengan forum daerah (Forda).
+      </p>
+    </article>
+  </section>
+
+  {{-- <section class="d-flex justify-content-center flex-column" id="dokumentasi">
     <article class="container py-5 text-center text-white d-flex flex-column align-items-center position-relative">
       <div class="row">
         <img class="col-lg-6 mb-5 pl-lg-0" src="img/eventual/dokum-1.png" alt="dokum-1">
@@ -65,6 +86,6 @@
       <x-button-link href="#" angle="45deg" colorFrom="#8060C9" colorTo="#59D3DA">Daftar
       </x-button-link>
     </article>
-  </section>
+  </section> --}}
 
 @endsection

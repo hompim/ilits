@@ -73,9 +73,9 @@
 
     <section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
     <article class="container text-center position-relative">
-      <x-map text="Virtual Tour ITS" href="/" withLayer="true"
+      <x-map text="Mampir Yuk" href="/"
         src="{{ $fakultas->link_map }}">
-        <span>Virtual Expo</span>
+        <span>Mampir Yuk!!</span>
         {{-- <a href="" class="d-flex jusitfy-content-center align-items-center text-decoration-none">
           <i class="text-white fa fa-3x fa-arrow-right" aria-hidden="true"></i>
         </a> --}}
