@@ -9,7 +9,7 @@ class FasilitasController extends Controller
 {
     public function index()
     {
-            $fasilitas = Fasilitas::whereNotNull("foto")->get();
+            $fasilitas = Fasilitas::whereNotNull("deskripsi")->get()->random(15);
             //$fasil = $fasilitas->where('foto',"!=",NULL)->get();
             return view('fasilitas',[
                 'fasilitas' => $fasilitas

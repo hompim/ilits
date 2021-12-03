@@ -11,6 +11,7 @@ use App\Http\Controllers\FakultasController;
 use App\Http\Controllers\MerchController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\BeasiswaController;
+use App\Http\Controllers\DepartemenController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Peserta\dashboard\Home;
@@ -36,7 +37,7 @@ Route::get('/', function () {
 Route::get('main', [MainController::class, 'index'])->name('main');
 Route::get('fasilitas', [FasilitasController::class,'index'])->name('fasilitas');
 Route::get('fakultas/{id}', [FakultasController::class, 'index'])->name('fakultas');
-Route::get('departemen', function(){return view('departemen');});
+Route::get('departemen/{id}', [DepartemenController::class, 'index'])->name('departemen');
 Route::get('merchandise', [MerchController::class,'index'])->name('merch');
 Route::get('team', function(){return view('team');});
 Route::get('beasiswa', [BeasiswaController::class,'index'])->name('beasiswa');

@@ -14,7 +14,9 @@
           <img src="{{ asset($images[$i]) }}" class="w-100 h-100" alt="Card image cap">
           <div class="pb-3 text-left card-body">
             <h3 class="card-title">{{ $titles[$i] }}</h3>
+            @if($texts[$i] != "NULL")
             <p class="card-text">{{ $texts[$i] }}</p>
+            @endif
           </div>
         </div>
 
