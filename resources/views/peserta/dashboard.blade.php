@@ -54,7 +54,7 @@
       <!-- small box -->
       <div class="small-box border-warning elevation-2">
         <div class="inner">
-          <p class="text-warning">Konfirmasi Email</p>
+          <p style="color: #ffa600">Konfirmasi Email</p>
 
            <h4>
             @if (Auth::user()->email_verified_at == null)
