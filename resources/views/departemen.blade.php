@@ -22,33 +22,31 @@
 <section class="d-flex justify-content-center flex-column" id='jumbotron'>
   <article class="container">
     <div class="left">
-      <h1 >Departemen<br>Teknik Informatika</h1>
-      <h2 class="my-4">FTEIC/ELECTICS</h2>
+      <h1>Departemen<br>{{ $departemen->nama }}</h1>
+      <h2 class="my-4">{{ $departemen->fakultas->singkatan }}</h2>
       <x-button-link href='#' isBlur="100px">
         Kenali Lebih Lanjut
       </x-button-link>
-      
+
     </div>
   </article>
-</section> 
+</section>
 
 {{-- fix --}}
 <section class="text-white d-flex justify-content-center align-items-center flex-column" id='about'>
     <article class="container" class="row">
         <x-card-with-floating-header title='Kenali Lebih Lanjut!'
-        text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies massa nisl aliquam purus tortor leo, consectetur pharetra semper. Tristique euismod curabitur tortor dolor. Ultricies massa nisl aliquam purus tortor leo, consectetur pharetra semper. Ultricies massa nisl aliquam purus tortor leo, consectetur pharetra semper. Tristique euismod curabitur tortor dolor.'
-        image='img/main/testing.png'
+        text='{{ $departemen->deskripsi }}'
+        image='img/departmen/{{$departemen->foto}}'
       />
     </article>
 </section>
 
 {{-- fix --}}
-
-
 <section class="" id='akreditasi'>
   <div class="container">
     @include('partials.section-header', ['title'=>'Akreditasi Bersaing'])
-    <x-three-cards title1="BAN-PT 2020" title2="WUR" title3="THE" 
+    <x-three-cards title1="BAN-PT 2020" title2="WUR" title3="THE"
       img1="img/main/prestasi-1.png" img2="img/main/prestasi-2.png" img3="img/main/prestasi-3.png"
       text1="Some quick example text to build on the card title and make up the bulk
       of the card's content."
@@ -68,7 +66,7 @@
         <div class="barchart text-center col-4">
           <x-bar-chart title="SNMPTN" percent="80"/>
         </div>
-        
+
         <div class="barchart text-center col-4">
           <x-bar-chart title="SBMPTN" percent="50"/>
         </div>
@@ -76,23 +74,23 @@
         <div class="barchart text-center col-4">
           <x-bar-chart title="Mandiri" percent="20"/>
         </div>
-     </div>  
+     </div>
 
   </div>
 </section> --}}
 
-<section class=" d-flex justify-content-center text-center flex-column" id="fokus-keilmuan">
+{{-- <section class=" d-flex justify-content-center text-center flex-column" id="fokus-keilmuan">
     <div class="container">
       @include('partials.section-header', ['title'=>'Fokus Keilmuan'])
       <div class="col-11 px-1 px-md-3 col-lg-11 mx-auto">
-        <x-simple-three-cards-carousel 
+        <x-simple-three-cards-carousel
         titles="Keamanan Cyber, Anilisi Data, Rekayasa Perangkat Lunak, Keamanan Cyber, Anilisi Data, Rekayasa Perangkat Lunak"
         images="img/departmen/fokusKeilmuan-1.png,img/departmen/fokusKeilmuan-2.png,img/departmen/fokusKeilmuan-3.png,img/departmen/fokusKeilmuan-1.png,img/departmen/fokusKeilmuan-3.png,img/departmen/fokusKeilmuan-2.png"
         />
       </div>
-      
+
     </div>
-</section>
+</section> --}}
 
 <section class="d-flex justify-content-center align-items-center flex-column" id='prestasi'>
     <div class="container text-center">
@@ -114,16 +112,28 @@
         of the
         card's content." />
       </div>
-    </div>  
+    </div>
 </section>
 
 <section class="d-flex justify-content-center align-items-center flex-column" id='prospek'>
     <div class="container text-center">
-     
       @include('partials.section-header', ['title'=>'Sesuaikan Prospek'])
-      
+      <?php
+        $nama = array();
+        $foto = array();
+        $deskripsi = array();
+        $prospeks = $departemen->prospek_kerja;
+        foreach($prospeks as $prospek){
+          $nama[] = $prospek->nama;
+          $foto[] = "img/prospek/".$prospek->foto;
+          $id[] = $prospek->id;
+        }
+        $n = join(",",$nama);
+        $f = join(',',$foto);
+        $i = join(',',$id);
+      ?>
       <div class="col-10 col-lg-11 mx-auto">
-        <x-three-cards-carousel carouselId="carouselId1" titles="Juara 1, Juara 1, Juara 1, Juara 1, Juara 1, Juara 1"
+        <x-three-cards-carousel carouselId="idcar" titles="{{ $n }}"
         images="img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png"
         texts="Some quick example text to build on the card title and make up the bulk
         of the
@@ -168,11 +178,30 @@
 <section class="text-center d-flex justify-content-center align-items-center flex-column" id='kegiatan'>
     <article class="container">
       @include('partials.section-header', ['title'=>'Kegiatan Mahasiswa'])
-      <x-two-side-carousel titles='Quadratlon, Menguli, Meng-kader' 
+      <?php
+        $judul = array();
+        $foto = array();
+        $deskripsi = array();
+        $activities = $departemen->aktivitas_mahasiswa;
+        foreach($activities as $activity){
+          $judul[] = $activity->judul;
+          $foto[] = "img/aktivitas-mahasiswa/".$activity->foto;
+          $deskripsi[] = $activity->deskripsi;
+          $id[] = $activity->id;
+        }
+        $j = join(", ",$judul);
+        $f = join(',',$foto);
+        $d = join('|',$deskripsi);
+        $i = join(',',$id);
+      ?>
+      <x-two-side-carousel titles='{{ $j }}'
+      texts='{{ $d }}'
+      images="img/departmen/Kegiatan-1.png,img/departmen/Kegiatan-1.png,img/departmen/Kegiatan-1.png" />
+      {{-- <x-two-side-carousel titles='Quadratlon, Menguli, Meng-kader'
       texts='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus velit eiu eligendi, tempore vel ipsa! Provident, possimus. Hic possimus repellendus velit ipsa! Ducimus reiciendis soluta consequatur officia est hic.
       |Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, non! Praesentium sequi madfgjik kjkjnwdflkwmf ,ermwjnf wefkm kmrfgf lm,rgm   wfg rgfnt, repellendus inventore?
       |Lorem ipsum dolor sit amet c, provident voluptatum facilis inventore corporis earum animi dolor obcaecati doloribus quibusdam necessitatibus. Dignissimos, cupiditate optio exp, porro mrum earum laboriosam nisi!'
-      images="img/departmen/Kegiatan-1.png,img/departmen/Kegiatan-1.png,img/departmen/Kegiatan-1.png" />
+      images="img/departmen/Kegiatan-1.png,img/departmen/Kegiatan-1.png,img/departmen/Kegiatan-1.png" /> --}}
     </article>
 
   </section>

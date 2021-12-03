@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             FakultasKerjasamaSeeder::class,
             FakultasSejarahSeeder::class,
             MerchSeeder::class,
+            BeasiswaSeeder::class,
         ]);
     }
 }
