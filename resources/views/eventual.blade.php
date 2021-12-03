@@ -41,7 +41,7 @@
   </section>
 
   <section class="d-flex justify-content-center flex-column px-4 px-sm-0" id="tentang">
-    <article class="container py-5 text-center text-white d-flex flex-column align-items-center position-relative">
+    <article class="container py-5 my-5 text-center text-white d-flex flex-column align-items-center position-relative">
       @include("partials.section-header", ["title" => "Apa itu Open Campus"])
       <p>
         Open Campus terdiri dari 3 sub-event, yaitu: ITS Fair, Faculty and Departemen Day, dan One Day Lecture. ITS Fair adalah Suatu kegiatan pengenalan ITS secara umum meliputi jalur masuk ITS (SNMPTN,
@@ -51,19 +51,13 @@
         mengenai pembelajaran saat kuliah kepada siswa/siswi SMA/SMK sederajat.
       </p>
     </article>
-  </section>
-
-  <section class="d-flex justify-content-center flex-column px-4 px-sm-0" id="tentang">
-    <article class="container py-5 text-center text-white d-flex flex-column align-items-center position-relative">
-      @include("partials.section-header", ["title" => "Apa itu Welcome"])
+    <article class="container py-5 my-5 text-center text-white d-flex flex-column align-items-center position-relative">
+    @include("partials.section-header", ["title" => "Apa itu Welcome"])
       <p>
         Kegiatan eventual Ini Lho ITS! yang diselenggarakan oleh panitia Ini Lho ITS! diberbagai daerah di Indonesia yang berkerja sama dengan Forum Daerah (Forda) dengan kegiatan utama yakni tryout.
       </p>
     </article>
-  </section>
-  
-  <section class="d-flex justify-content-center flex-column px-4 px-sm-0" id="tentang">
-    <article class="container py-5 text-center text-white d-flex flex-column align-items-center position-relative">
+    <article class="container py-5 my-5 text-center text-white d-flex flex-column align-items-center position-relative">
       @include("partials.section-header", ["title" => "Apa itu Visit"])
       <p>
         Kegiatan yang diselenggarakan oleh panitia Ini Lho ITS! berbentuk roadshow dan berisi pengenalan kampus, departemen, dan lingkungan ITS secara general dan menyebarkan semangat perguruan tinggi kepada siswa/siswi SMA/SMK sederajat di berbagai daerah yang bekerja sama dengan forum daerah (Forda).

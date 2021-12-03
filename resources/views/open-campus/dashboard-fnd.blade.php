@@ -201,7 +201,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-12 d-flex justify-content-md-end justify-content-center py-2">
-                        <a href="#" class="btn-ya d-inline-block text-center">Ya</a>
+                        <a href="{{ route('open-campus.opsi') }}" class="btn-ya d-inline-block text-center">Ya</a>
                     </div>
                     <div class="col-md-6 col-12 d-flex justify-content-md-start justify-content-center py-2">
                         <button type="button" class="btn-tidak" data-toggle="modal" data-target="#konfirmasi-departemen">
@@ -234,9 +234,9 @@
                             <button type="button" class="btn-pilih-ulang" data-dismiss="modal">Pilih Ulang</button>
                         </div>
                         <div class="col">
-                            <form action="#">
-                                <button type="submit" class="btn-saya-yakin">Saya Yakin</button>
-                            </form>
+                            <a href="{{ route('open-campus.thank-you') }}">
+                                <button class="btn-saya-yakin">Saya Yakin</button>
+                            </a>
                         </div>
                     </div>
                 </div>

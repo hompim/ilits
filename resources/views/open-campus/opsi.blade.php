@@ -14,7 +14,8 @@
         Departemen dilakukan setelah
         sesi Fakultas selesai. Pilih satu departemen untuk setiap sesi yang tersedia berikut.</h2>
 
-      <form action="/" method="POST">
+      <form action="{{ route('open-campus.store-dep') }}" method="POST" id="opsi-dep">
+        @csrf
         <div class="my-5 row">
           <div class="p-3 col-12 col-md-6 col-lg-3">
             <div class="p-4 card">
@@ -22,51 +23,14 @@
               <p class="text-center">(10.00 - 11.05 WIB)</p>
               <div class="form-group">
                 <label for="sesi2">Pilih salah satu</label>
-                <select class="form-control" id="sesi2">
-                  <option>Arsitektur</option>
-                  <option>Teknik Lingkungan</option>
-                  <option>PWK</option>
-                  <option>Sipil</option>
-                  <option>Infrastruktur Sipil</option>
-                  <option>Desain Interior</option>
-                  <option>Geomatika</option>
-                  <option>Geofisika</option>
-                  <option>MaMet</option>
-                  <option>Kimia Industri</option>
-                  <option>Elektro</option>
-                  <option>Elektro Otomasi</option>
-                  <option>Teknik Kimia</option>
-                  <option>Kimia</option>
-                  <option>Mesin</option>
-                  <option>Mesin Industri</option>
-                  <option>Teknik Fisika</option>
-                  <option>Fisika</option>
-                  <option>Statistika</option>
-                  <option>Statistika Bisnis</option>
-                  <option>Aktuaria</option>
-                  <option>Matematika</option>
-                  <option>Biologi</option>
-                  <option>Biomedik</option>
-                  <option>Sistem dan Industri</option>
-                  <option>Instrumentasi</option>
-                  <option>DKV</option>
-                  <option>Desain Produk</option>
-                  <option>Informatika</option>
-                  <option>Teknik Komputer</option>
-                  <option>Sistem Informasi</option>
-                  <option>Teknologi Informasi</option>
-                  <option>Teknik Perkapalan</option>
-                  <option>Sistem Perkapalan</option>
-                  <option>Transportasi Laut</option>
-                  <option>Kelautan</option>
-                  <option>Studi Pembangunan</option>
-                  <option>Manajemen Bisnis</option>
+                <select class="form-control" onchange="updateKuota(this.value, 'kuota2')" name="sesi2" id="sesi2">
+                  <option selected value="0">Tidak Memilih</option>
+                  @foreach ($sesi_2 as $i)
+                      <option value="{{$i->id}}">{{$i->nama}}</option>
+                  @endforeach
                 </select>
               </div>
-              <div class="custom-control custom-checkbox mr-sm-2">
-                <input type="checkbox" class="custom-control-input" id="sesi-2-no">
-                <label class="custom-control-label" for="sesi-2-no">Tidak memilih sesi ini</label>
-              </div>
+              <p id="kuota2">Kuota: -</p>
             </div>
           </div>
 
@@ -76,51 +40,14 @@
               <p class="text-center">(11.35 - 12.40 WIB)</p>
               <div class="form-group">
                 <label for="sesi3">Pilih salah satu</label>
-                <select class="form-control" id="sesi3">
-                  <option>Arsitektur</option>
-                  <option>Teknik Lingkungan</option>
-                  <option>PWK</option>
-                  <option>Sipil</option>
-                  <option>Infrastruktur Sipil</option>
-                  <option>Desain Interior</option>
-                  <option>Geomatika</option>
-                  <option>Geofisika</option>
-                  <option>MaMet</option>
-                  <option>Kimia Industri</option>
-                  <option>Elektro</option>
-                  <option>Elektro Otomasi</option>
-                  <option>Teknik Kimia</option>
-                  <option>Kimia</option>
-                  <option>Mesin</option>
-                  <option>Mesin Industri</option>
-                  <option>Teknik Fisika</option>
-                  <option>Fisika</option>
-                  <option>Statistika</option>
-                  <option>Statistika Bisnis</option>
-                  <option>Aktuaria</option>
-                  <option>Matematika</option>
-                  <option>Biologi</option>
-                  <option>Biomedik</option>
-                  <option>Sistem dan Industri</option>
-                  <option>Instrumentasi</option>
-                  <option>DKV</option>
-                  <option>Desain Produk</option>
-                  <option>Informatika</option>
-                  <option>Teknik Komputer</option>
-                  <option>Sistem Informasi</option>
-                  <option>Teknologi Informasi</option>
-                  <option>Teknik Perkapalan</option>
-                  <option>Sistem Perkapalan</option>
-                  <option>Transportasi Laut</option>
-                  <option>Kelautan</option>
-                  <option>Studi Pembangunan</option>
-                  <option>Manajemen Bisnis</option>
+                <select class="form-control" onchange="updateKuota(this.value, 'kuota3')" name="sesi3" id="sesi3">
+                  <option selected value="0">Tidak Memilih</option>
+                  @foreach ($sesi_3 as $i)
+                      <option value="{{$i->id}}">{{$i->nama}}</option>
+                  @endforeach
                 </select>
               </div>
-              <div class="custom-control custom-checkbox mr-sm-2">
-                <input type="checkbox" class="custom-control-input" id="sesi-3-no">
-                <label class="custom-control-label" for="sesi-3-no">Tidak memilih sesi ini</label>
-              </div>
+              <p id="kuota3">Kuota: -</p>
             </div>
           </div>
 
@@ -130,51 +57,14 @@
               <p class="text-center">(13.00 - 14.15 WIB)</p>
               <div class="form-group">
                 <label for="sesi4">Pilih salah satu</label>
-                <select class="form-control" id="sesi4">
-                  <option>Arsitektur</option>
-                  <option>Teknik Lingkungan</option>
-                  <option>PWK</option>
-                  <option>Sipil</option>
-                  <option>Infrastruktur Sipil</option>
-                  <option>Desain Interior</option>
-                  <option>Geomatika</option>
-                  <option>Geofisika</option>
-                  <option>MaMet</option>
-                  <option>Kimia Industri</option>
-                  <option>Elektro</option>
-                  <option>Elektro Otomasi</option>
-                  <option>Teknik Kimia</option>
-                  <option>Kimia</option>
-                  <option>Mesin</option>
-                  <option>Mesin Industri</option>
-                  <option>Teknik Fisika</option>
-                  <option>Fisika</option>
-                  <option>Statistika</option>
-                  <option>Statistika Bisnis</option>
-                  <option>Aktuaria</option>
-                  <option>Matematika</option>
-                  <option>Biologi</option>
-                  <option>Biomedik</option>
-                  <option>Sistem dan Industri</option>
-                  <option>Instrumentasi</option>
-                  <option>DKV</option>
-                  <option>Desain Produk</option>
-                  <option>Informatika</option>
-                  <option>Teknik Komputer</option>
-                  <option>Sistem Informasi</option>
-                  <option>Teknologi Informasi</option>
-                  <option>Teknik Perkapalan</option>
-                  <option>Sistem Perkapalan</option>
-                  <option>Transportasi Laut</option>
-                  <option>Kelautan</option>
-                  <option>Studi Pembangunan</option>
-                  <option>Manajemen Bisnis</option>
+                <select class="form-control" onchange="updateKuota(this.value, 'kuota4')" name="sesi4" id="sesi4">
+                  <option selected value="0">Tidak Memilih</option>
+                  @foreach ($sesi_4 as $i)
+                      <option value="{{$i->id}}">{{$i->nama}}</option>
+                  @endforeach
                 </select>
               </div>
-              <div class="custom-control custom-checkbox mr-sm-2">
-                <input type="checkbox" class="custom-control-input" id="sesi-4-no">
-                <label class="custom-control-label" for="sesi-4-no">Tidak memilih sesi ini</label>
-              </div>
+              <p id="kuota4">Kuota: -</p>
             </div>
           </div>
 
@@ -184,51 +74,14 @@
               <p class="text-center">(14.45 - 16.00 WIB)</p>
               <div class="form-group">
                 <label for="sesi5">Pilih salah satu</label>
-                <select class="form-control" id="sesi5">
-                  <option>Arsitektur</option>
-                  <option>Teknik Lingkungan</option>
-                  <option>PWK</option>
-                  <option>Sipil</option>
-                  <option>Infrastruktur Sipil</option>
-                  <option>Desain Interior</option>
-                  <option>Geomatika</option>
-                  <option>Geofisika</option>
-                  <option>MaMet</option>
-                  <option>Kimia Industri</option>
-                  <option>Elektro</option>
-                  <option>Elektro Otomasi</option>
-                  <option>Teknik Kimia</option>
-                  <option>Kimia</option>
-                  <option>Mesin</option>
-                  <option>Mesin Industri</option>
-                  <option>Teknik Fisika</option>
-                  <option>Fisika</option>
-                  <option>Statistika</option>
-                  <option>Statistika Bisnis</option>
-                  <option>Aktuaria</option>
-                  <option>Matematika</option>
-                  <option>Biologi</option>
-                  <option>Biomedik</option>
-                  <option>Sistem dan Industri</option>
-                  <option>Instrumentasi</option>
-                  <option>DKV</option>
-                  <option>Desain Produk</option>
-                  <option>Informatika</option>
-                  <option>Teknik Komputer</option>
-                  <option>Sistem Informasi</option>
-                  <option>Teknologi Informasi</option>
-                  <option>Teknik Perkapalan</option>
-                  <option>Sistem Perkapalan</option>
-                  <option>Transportasi Laut</option>
-                  <option>Kelautan</option>
-                  <option>Studi Pembangunan</option>
-                  <option>Manajemen Bisnis</option>
+                <select class="form-control" onchange="updateKuota(this.value, 'kuota5')" name="sesi5" id="sesi5">
+                  <option selected value="0">Tidak Memilih</option>
+                  @foreach ($sesi_5 as $i)
+                      <option value="{{$i->id}}">{{$i->nama}}</option>
+                  @endforeach
                 </select>
               </div>
-              <div class="custom-control custom-checkbox mr-sm-2">
-                <input type="checkbox" class="custom-control-input" id="sesi-5-no">
-                <label class="custom-control-label" for="sesi-5-no">Tidak memilih sesi ini</label>
-              </div>
+              <p id="kuota5">Kuota: -</p>
             </div>
           </div>
         </div>
@@ -237,7 +90,6 @@
           class="px-5 py-3 m-auto border-0 btn-modal btn d-flex justify-content-center align-items-center"
           data-toggle="modal" data-target="#confirmation-FnD">Konfirmasi</button>
       </form>
-
     </article>
   </section>
 
@@ -253,13 +105,13 @@
             <h4>Kamu telah mendaftar:</h4>
             <p class="m-0">Sesi 1: Pengenalan Fakultas</p>
             <p>(09.00 - 10.05 WIB)</p>
-            <p class="m-0">Sesi 2: </p>
-            <p>(.00 - 10.05 WIB)</p>
-            <p class="m-0">Sesi 3: </p>
+            <p id="pilihan-sesi-2" class="m-0"></p>
+            <p>(10.05 - 11.35 WIB)</p>
+            <p id="pilihan-sesi-3" class="m-0"></p>
             <p>(11.35 - 12.40 WIB)</p>
-            <p class="m-0">Sesi 4: </p>
+            <p id="pilihan-sesi-4" class="m-0"></p>
             <p>(13.00 - 14.15 WIB)</p>
-            <p class="m-0">Sesi 5: </p>
+            <p id="pilihan-sesi-5" class="m-0"></p>
             <p>(14.45 - 16.00 WIB)</p>
           </div>
 
@@ -268,11 +120,11 @@
 
           <div class="row btn-confirmation">
             <div class="offset-md-1 col-md-4 col-12">
-              <button type="button" onClick="chooseFnD()"
+              <button type="button" id="submit-data"
                 class="py-2 my-2 border-0 w-100 btn-submit btn-submit-1 btn d-flex justify-content-center align-items-center">Ya</button>
             </div>
             <div class="offset-md-2 col-md-4 col-12">
-              <button type="button" onClick="chooseFnD()"
+              <button type="button"
                 class="py-2 my-2 border-0 w-100 btn-submit btn-submit-0 btn d-flex justify-content-center align-items-center"
                 data-toggle="modal" data-target="#confirmation-FnD">Tidak</button>
             </div>
@@ -284,14 +136,44 @@
 @endsection
 
 @section('script')
+  <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
   <script>
     function chooseFnD() {
+      let sesi2 = $('select[name=sesi2] option').filter(':selected').val();
+      let sesi3 = $('select[name=sesi3] option').filter(':selected').val();
+      let sesi4 = $('select[name=sesi4] option').filter(':selected').val();
+      let sesi5 = $('select[name=sesi5] option').filter(':selected').val();
       $.ajax({
-        url: '/open-campus/choose-fnd',
+        url: '/open-campus/departemen/'+ sesi2 + "/" + sesi3 + "/" + sesi4 + "/" + sesi5,
         type: 'GET',
         data: {},
         dataType: "JSON",
-        success: function(res) {},
+        success: function(res) {
+          $('#pilihan-sesi-2').text("Sesi 2: "+res.sesi2);
+          $('#pilihan-sesi-3').text("Sesi 3: "+res.sesi3);
+          $('#pilihan-sesi-4').text("Sesi 4: "+res.sesi4);
+          $('#pilihan-sesi-5').text("Sesi 5: "+res.sesi5);
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          console.log(xhr.responseText);
+        }
+      });
+    }
+
+    $('#submit-data').click(function(){
+      $('#opsi-dep').submit();
+    })
+
+    function updateKuota(id, elementID){
+      $.ajax({
+        url: '/open-campus/kuota/'+id,
+        type: 'GET',
+        data: {},
+        dataType: "JSON",
+        success: function(res) {
+          console.log(res);
+          $('#'+elementID).text("Kuota : "+res);
+        },
         error: function(xhr, ajaxOptions, thrownError) {
           console.log(xhr.responseText);
         }

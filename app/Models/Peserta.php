@@ -40,4 +40,8 @@ class Peserta extends Model
     {
         return $this->morphOne(User::class, 'user');
     }
+
+    public function peserta_event(){
+        return $this->hasOne(PesertaEvent::class, 'peserta_id');
+    }
 }

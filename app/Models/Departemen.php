@@ -21,7 +21,7 @@ class Departemen extends Model
         return $this->belongsTo(Kelas::class, 'kelas_id');
     }
 
-    public function departemen_fnd()
+    public function peserta_event()
     {
         return $this->belongsToMany(PesertaEvent::class, 'peserta_fnd', 'departemen_id', 'peserta_id');
     }

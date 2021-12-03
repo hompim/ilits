@@ -20,7 +20,11 @@
           </div>
           <div class="row my-4">
               <div class="col">
-                  <a href="#" class="btn-content"> Daftar Sekarang! </a>
+                    <form action="{{ route('open-campus.regis-fnd.store') }}" method="post">
+                        @csrf
+                        {{-- <button type="submit"></button> --}}
+                        <a type="button" onclick="this.parentNode.submit()" class="btn-content"> Daftar Sekarang! </a>
+                    </form>
               </div>
           </div>
       </div>

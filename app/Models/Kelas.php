@@ -21,7 +21,7 @@ class Kelas extends Model
         return $this->hasMany(Departemen::class);
     }
 
-    public function kelas_odl()
+    public function peserta_event()
     {
         return $this->belongsToMany(PesertaEvent::class, 'peserta_odl','kelas_id','peserta_id');
     }

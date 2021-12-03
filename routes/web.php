@@ -41,12 +41,19 @@ Route::get('team', function(){return view('team');});
 Route::get('beasiswa', [BeasiswaController::class,'index'])->name('beasiswa');
 Route::get('eventual', function(){return view('eventual');});
 Route::get('alumni', [AlumniController::class, 'show'])->name('alumni');
-Route::get('/open-campus/register-fnd',function(){return view('open-campus.register-fnd',["title" => "register-fnd"]);});
-Route::get('/open-campus/event-regist',function(){return view('open-campus.event-regist',["title" => "event-regist"]);});
-Route::get('/open-campus/dashboard-fnd',function(){return view('open-campus.dashboard-fnd',["title" => "dashboard-fnd"]);});
-Route::get('/open-campus/thank-you',function(){return view('open-campus.thank-you',["title" => "Thank You!"]);});
-Route::get('/open-campus/sesi-fnd', [OpenCampusController::class, 'opsi'])->name('open-campus.opsi');
-Route::get('/open-campus/choose-fnd', [OpenCampusController::class, 'chooseFnD'])->name('open-campus.choose-fnd');
+
+Route::prefix('open-campus')->group(function(){
+    Route::get('register-fnd',function(){return view('open-campus.register-fnd',["title" => "register-fnd"]);});
+    Route::post('regis-fnd', [OpenCampusController::class, 'regisFnD'])->name('open-campus.regis-fnd.store');
+    Route::get('event-regist',function(){return view('open-campus.event-regist',["title" => "event-regist"]);});
+    Route::get('dashboard-fnd',function(){return view('open-campus.dashboard-fnd',["title" => "dashboard-fnd"]);});
+    Route::get('thank-you',function(){return view('open-campus.thank-you',["title" => "Thank You!"]);})->name('open-campus.thank-you');
+    Route::get('sesi-fnd', [OpenCampusController::class, 'opsi'])->name('open-campus.opsi');
+    Route::get('choose-fnd', [OpenCampusController::class, 'chooseFnD'])->name('open-campus.choose-fnd');
+    Route::get('departemen/{sesi2}/{sesi3}/{sesi4}/{sesi5}', [OpenCampusController::class, 'choosenFnD'])->name('open-campus.api-departemen');
+    Route::post('storeDep', [OpenCampusController::class, 'storeDep'])->name('open-campus.store-dep');
+    Route::get('kuota/{id}', [OpenCampusController::class, 'detailKuota'])->name('open-campus.api-kuota');
+});
 
 // Route untuk admin
 Route::middleware('can:isAdmin')->prefix('admin')->group(function () {

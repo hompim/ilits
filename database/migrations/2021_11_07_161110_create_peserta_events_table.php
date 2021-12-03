@@ -16,9 +16,9 @@ class CreatePesertaEventsTable extends Migration
         Schema::create('peserta_events', function (Blueprint $table) {
             $table->id();
             $table->unsignedBiginteger('peserta_id');
-            $table->unsignedBiginteger('sesi_fakultas');
+            $table->boolean('is_fnd')->default(false);
             $table->boolean('is_its_fair')->default(false);
-            $table->foreign('sesi_fakultas')->references('id')->on('fakultas')->nullable();
+            $table->boolean('is_odl')->default(false);
             $table->foreign('peserta_id')->references('id')->on('peserta');
         });
     }

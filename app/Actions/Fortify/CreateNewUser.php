@@ -5,6 +5,7 @@ namespace App\Actions\Fortify;
 use App\Models\FordaDaerah;
 use App\Models\User;
 use App\Models\Peserta;
+use App\Models\PesertaEvent;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -34,7 +35,7 @@ class CreateNewUser implements CreatesNewUsers
         if ($forda) {
             $id = $forda->forda_id;
         } else {
-            $id = 3578;
+            $id = FordaDaerah::where('kota_kab_id', 3578)->first()->forda_id;
         }
 
         $peserta = Peserta::create([
@@ -48,6 +49,10 @@ class CreateNewUser implements CreatesNewUsers
             'is_pelajar_aktif' => $input['is_pelajar_aktif'],
             'tau_ilits' => $input['tau_ilits'],
             'forda_id' => $id
+        ]);
+
+        $peserta_event = PesertaEvent::create([
+            'peserta_id' => $peserta->id
         ]);
 
         return User::create([

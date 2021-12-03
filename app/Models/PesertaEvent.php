@@ -11,14 +11,23 @@ class PesertaEvent extends Model
 
     protected $table = 'peserta_events';
 
+    public $timestamps = false;
+
+    protected $fillable = [
+        'peserta_id'
+    ];
+
     public function peserta()
     {
         return $this->belongsTo(Peserta::class);
     }
 
-    public function fakultas()
-    {
-        return $this->belongsTo(Fakultas::class, 'sesi_fakultas');
+    public function pesertaFnD(){
+        return $this->hasMany(PesertaFnD::class, 'peserta_id');
+    }
+
+    public function pesertaODL(){
+        return $this->hasMany(PesertaODL::class, 'peserta_id');
     }
 
     public function departemen_fnd()
