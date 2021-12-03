@@ -21,7 +21,7 @@
                         <img src="{{ asset($images[$i]) }}" class="card-img-top mt-lg-4 px-lg-2" alt="Card image cap">
                         <div class="text-center card-body px-0 px-sm-3 px-md-4 d-flex align-items-start flex-column" >
                             <h4 class="card-title mb-auto">{{ $titles[$i] }}</h4>
-                            <x-button-link href='#' class='grad w-100 align-self-end m-0' >Lihat</x-button-link>
+                            <x-button-link href='../{{$route}}/{{$id[$i]}}' class='grad w-100 align-self-end m-0' >Lihat</x-button-link>
                         </div>
                     </div>
                 </div>

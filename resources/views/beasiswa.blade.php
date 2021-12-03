@@ -24,15 +24,7 @@
 
   <section class="d-flex align-items-center" id="info-unik">
     <div class="container text-white">
-      <x-card-with-floating-header title="Info Unik Buat Kamu" image="img/main/prestasi-2.png" text="Scholarship Yayasan Beasiswa Alumni (YBAI) ITS 2021 merupakan program beasiswa yang dikhususkan bagi mahasiswa ITS yang mengalami kesulitan finansial akibat terdampak pandemi."></x-card-with-floating-header>
-    </div>
-  </section>
-
-  <section id="beasiswa-its" class="text-white">
-    <div class="container">
-      @include("partials.section-header", ["title" => "Beasiswa ITS"])
-      <br>
-      <x-three-cards-container-carousel titles="Yayasan Beasiswa Alumni ITS,Jaring Bibit Prestasi Unggul ITS,Ikatan Komite Mahasiswa ITS,Yayasan Beasiswa Alumni ITS 2,Jaring Bibit Prestasi Unggul ITS 2,Ikatan Komite Mahasiswa ITS 2" images="img/main/prestasi-2.png,img/main/prestasi-2.png,img/main/prestasi-2.png,img/main/prestasi-2.png,img/main/prestasi-2.png,img/main/prestasi-2.png"></x-three-cards-container-carousel>
+      <x-card-with-floating-header title="Info Unik Buat Kamu" image="img/main/prestasi-2.png" text="Kesempatan buat berkuliah di Institut Teknologi Sepuluh Nopember terbuka dengan sangat lebar buat siapapun. Buktinya, di ITS ada banyak banget beasiswa yang siap mendukungmu untuk berkuliah disini. Bagi kamu pejuang berkuliah, langsung dicek aja beasiswa yang ada di bawah ini yuk!!"></x-card-with-floating-header>
     </div>
   </section>
 
@@ -42,12 +34,9 @@
         <div class="col-12 col-lg-10 offset-lg-1">
           @include("partials.section-header", ["title" => "Beasiswa Mitra ITS"])
           <br>
-          <x-banner-with-corner-header title="Beasiswa Bank Indonesia" image="img/main/banner.png" href="" />
-          <x-banner-with-corner-header title="Djarum Beasiswa Plus" image="img/main/banner.png" href="" />
-          <x-banner-with-corner-header title="Beasiswa Baznas" image="img/main/banner.png" href="" />
-          <x-banner-with-corner-header title="Beasiswa Bakti BCA" image="img/main/banner.png" href="" />
-          <x-banner-with-corner-header title="Paragon Scholarchip" image="img/main/banner.png" href="" />
-          <x-banner-with-corner-header title="Beasiswa YAGI" image="img/main/banner.png" />
+          @foreach($beasiswa as $b)
+          <x-banner-with-corner-header title="{{$b->nama}}" image="img/main/banner.png" href="https://docs.google.com/spreadsheets/d/1Fn-sQoZr0_qxe2ZjRBD9Altse_ewDp--UVAughZo5Zk/edit#gid=0" />
+          @endforeach
       </div>
       </div>
     </div>

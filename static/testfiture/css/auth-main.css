@@ -1,5 +1,6 @@
 @import url("navbar.css");
 
+
 body {
     background: linear-gradient(
         180deg,
@@ -7,18 +8,20 @@ body {
         #264882 11.98%,
         #305ea0 93.23%
     );
+    height: 100%;
 }
-section {
-    z-index: 999;
-    padding-top: 250px;
-    padding-bottom: 250px;
+
+#daftar-container{
+    padding-top: 150px !important;
+    padding-bottom: 125px !important;
 }
+
 .login-box {
     color: #ffffff;
 }
 .besar {
     background: url("../lambang/soft-star-besar.png");
-    background-position: bottom 80px left 300px;
+    background-position: bottom 180px left 100px;
     background-size: 5%;
     background-repeat: no-repeat;
 }
@@ -30,7 +33,7 @@ section {
 }
 .naga {
     background: url("../lambang/right-side.png");
-    background-position: top 150px right;
+    background-position: top 100px right;
     background-size: 40%;
     background-repeat: no-repeat;
 }
@@ -66,7 +69,7 @@ option {
     border-radius: 0% !important;
     display: block !important;
     transition: all 0.3s ease !important;
-    cursor: pointer !important;
+    cursor: pointer;
     background: transparent;
 }
 .printilan:hover {
@@ -74,14 +77,14 @@ option {
     text-shadow: 0 5px 15px lightseagreen;
     background-color: none;
     transition: transform 0.3s ease;
-    cursor: pointer !important;
+    cursor: pointer;
 }
 .form-check:hover {
     color: none;
     text-shadow: 0 5px 15px lightseagreen;
     background-color: none;
     transition: transform 0.3s ease;
-    cursor: pointer !important;
+    cursor: pointer;
 }
 .masuk {
     transition: transform 0.3s ease;
@@ -140,4 +143,19 @@ footer {
     height: 35px;
     background-repeat: no-repeat;
     padding-top: 35px;
+}
+@media screen and (max-width: 576px) {
+    #daftar-container{
+        padding-top: 125px;
+        padding-bottom: 125px;
+    }
+    .naga {
+        background: url("../lambang/Group-7197.png");
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: 100px;
+    }
+    .login-box {
+        align-items: center;
+    }
 }

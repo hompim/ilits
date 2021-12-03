@@ -28,7 +28,9 @@ class FakultasSeeder extends Seeder
                 'deskripsi' => $record['deskripsi'],
                 'link_zoom' => $record['link_zoom'],
                 'sesi_id' => $record['sesi_id'],
-                'link_video' => $record['link_video']
+                'link_video' => $record['link_video'],
+                'singkatan' => $record['singkatan'],
+                'link_map' => $record['link_map'],
             ]);
         }
     }

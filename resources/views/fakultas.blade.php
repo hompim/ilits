@@ -23,8 +23,8 @@
 <section class="d-flex justify-content-center flex-column" id="jumbotron">
     <article class="container text-white ">
         <div class="left">
-            <h1 class="mb-2">Fakultas Teknologi <br> Elektro & Informatika <br> Cerdas</h1>
-            <h2 class="mb-4">FTEIC/ELECTICS</h2>
+            <h1 class="mb-2">{{$fakultas->nama}}</h1>
+            <h2 class="mb-4">{{$fakultas->singkatan}}</h2>
             <x-button-link href="">Kenali Lebih Lanjut!</x-button-link>
         </div>
     </article>
@@ -32,10 +32,9 @@
 
   <section class="d-flex justify-content-center flex-column" id="info-unik">
     <article class="container text-white">
-      <x-card-with-floating-header title="Kenali Lebih Jauh" image="img/fakultas/kenali.png"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies massa nisl aliquam purus tortor leo, 
-        consectetur pharetra semper. Tristique euismod curabitur tortor dolor. Ultricies massa nisl aliquam purus tortor 
-        leo, consectetur pharetra semper." />
+      <x-card-with-floating-header title="Kenali Lebih Jauh" image="img/fakultas/{{$fakultas->foto}}"
+        text="{{$fakultas->deskripsi}}" /> 
+        <!-- nopal -->
     </article>
   </section>
 
@@ -43,7 +42,7 @@
     <article class="container text-center">
         <div class=" mx-auto row">
           <div class="col-lg-10 offset-lg-1 px-lg-5" >
-            <x-video-embed src="https://www.youtube.com/embed/sdQKeXe3rzQ"/>
+            <x-video-embed src="{{$fakultas->link_video}}"/>
           </div>
       </div>
      </article>
@@ -52,39 +51,31 @@
     <section class="d-flex justify-content-center align-items-center flex-column" id='waktu'>
         <div class="container text-center text-white ">
         @include('partials.section-header', ['title'=>'Waktu Demi Waktu'])
+        <?php
+        $tahun = array();
+        $deskripsi = array();
+        $fak = $fakultas->fakultas_sejarah;
+        foreach($fak as $f){
+          $tahun[] = $f->tahun;
+          $deskripsi[] = $f->deskripsi;
+        }
+        $t = join(",",$tahun);
+        $d = join('|',$deskripsi);
+      ?>
         <div class="col-10 col-lg-11 mx-auto">
-            <x-three-cards-carousel carouselId="idcar" titles="1960, 1976, 1987, 1960, 1976, 1987"
+            <x-three-cards-carousel carouselId="idcar" titles="{{ $t }}"
             images="img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png,img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png"
-            texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
-            |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque. card's content. consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
-            |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.
-            |Some quick example text to build on the card title and make up the bulk of the card's content.
-            |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque. card's content.
-            |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.card's content." 
+            texts="{{ $d }}" 
             />
         </div>
         </div>  
     </section>
 
-    <section class="text-white " id='akreditasi'>
-        <div class="container">
-            @include('partials.section-header', ['title'=>'Akreditasi Bersaing'])
-            <x-three-cards title1="BAN-PT 2020" title2="WUR" title3="THE" 
-            img1="img/fakultas/ban-pt.png" img2="img/fakultas/wur.png" img3="img/fakultas/the.png"
-            text1="Some quick example text to build on the card title and make up the bulk
-            of the card's content."
-            text2="Some quick example text to build on the card title and make up the bulk
-            of the card's content."
-            text3="Some quick example text to build on the card title and make up the bulk
-            of the card's content" />
-        </div>
-    </section>
-
     <section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
     <article class="container text-center position-relative">
-      <x-map text="Virtual Tour ITS" href="/" withLayer="true"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634595959033!2d112.79273125123773!3d-7.28235067356743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1633755459057!5m2!1sen!2sid">
-        <span>Virtual Expo</span>
+      <x-map text="Mampir Yuk" href="/"
+        src="{{ $fakultas->link_map }}">
+        <span>Mampir Yuk!!</span>
         {{-- <a href="" class="d-flex jusitfy-content-center align-items-center text-decoration-none">
           <i class="text-white fa fa-3x fa-arrow-right" aria-hidden="true"></i>
         </a> --}}
@@ -95,10 +86,23 @@
     <section class="d-flex justify-content-center align-items-center flex-column" id='jurusanmu'>
     <div class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Kenali Jurusanmu!'])
+      <?php
+        $nama = array();
+        $foto = array();
+        $deskripsi = array();
+        $route = array();
+        $dep = $fakultas->departemen;
+        foreach($dep as $d){
+          $nama[] = $d->nama;
+          $foto[] = "img/departmen/".$d->foto;
+          $id[] = $d->id;
+        }
+        $n = join(",",$nama);
+        $f = join(',',$foto);
+        $i = join(',',$id);
+      ?>
       <div class="col-lg-11 mx-auto">
-        <x-three-cards-container-carousel carouselId="idcar2" titles="Departemen Teknik Informatika, 
-        Departemen Sistem Informasi,Departemen Teknik Komputer,Departemen Teknik Informatika,Departemen Sistem Informasi,Departemen Teknik Komputer"
-        images="img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png,img/fakultas/departemen.png"
+        <x-three-cards-container-carousel carouselId="idcar2" titles="{{$n}}" images="{{$f}}" id="{{$i}}" route="departemen" 
          />
       </div>
     </div>  
@@ -116,12 +120,22 @@
     <section class="d-flex justify-content-center align-items-center flex-column" id='kerja-sama'>
     <div class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Kerja Sama Kami!'])
+
+      <?php
+        $judul = array();
+        $deskripsi = array();
+        $fak = $fakultas->fakultas_kerjasama;
+        foreach($fak as $f){
+          $judul[] = $f->judul;
+          $deskripsi[] = $f->deskripsi;
+        }
+        $j = join("",$judul);
+        $d = join('|',$deskripsi);
+      ?>
       <div class="col-10 col-lg-11 mx-auto">
         <x-two-side-separated-carousel images="img/fakultas/kerja-sama.png,img/fakultas/kerja-sama.png,img/fakultas/kerja-sama.png"
-        titles="Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet"
-        texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ipsum eget et et nisl adipiscing orci. Eu ipsum eget et et nisl adipiscing orci.
-         | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ipsum eget et et nisl adipiscing orci. Eu ipsum eget et et nisl adipiscing orci.
-        |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu ipsum eget et et nisl adipiscing orci. Eu ipsum eget et et nisl adipiscing orci."
+        titles="{{ $j }}"
+        texts="{{ $d }}"
         carouselId="idcar3"/>
       </div>
     </div>  
