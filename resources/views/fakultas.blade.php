@@ -21,55 +21,55 @@
 @section('content')
 
 <section class="d-flex justify-content-center flex-column" id="jumbotron">
-    <article class="container text-white ">
-        <div class="left">
-            <h1 class="mb-2">{{$fakultas->nama}}</h1>
-            <h2 class="mb-4">{{$fakultas->singkatan}}</h2>
-            <x-button-link href="">Kenali Lebih Lanjut!</x-button-link>
-        </div>
-    </article>
-  </section>
-
-  <section class="d-flex justify-content-center flex-column" id="info-unik">
-    <article class="container text-white">
-      <x-card-with-floating-header title="Kenali Lebih Jauh" image="img/fakultas/{{$fakultas->foto}}"
-        text="{{$fakultas->deskripsi}}" /> 
-        <!-- nopal -->
-    </article>
-  </section>
-
-  <section class="d-flex justify-content-center flex-column" id="video-profile">
-    <article class="container text-center">
-        <div class=" mx-auto row">
-          <div class="col-lg-10 offset-lg-1 px-lg-5" >
-            <x-video-embed src="{{$fakultas->link_video}}"/>
-          </div>
+  <article class="container text-white ">
+      <div class="left">
+        <h1 class="mb-2">{{$fakultas->nama}}</h1>
+        <h2 class="mb-4">{{$fakultas->singkatan}}</h2>
+        <x-button-link href="">Kenali Lebih Lanjut!</x-button-link>
       </div>
-     </article>
-  </section>
+  </article>
+</section>
 
-    <section class="d-flex justify-content-center align-items-center flex-column" id='waktu'>
-        <div class="container text-center text-white ">
-        @include('partials.section-header', ['title'=>'Waktu Demi Waktu'])
-        <?php
-        $tahun = array();
-        $deskripsi = array();
-        $fak = $fakultas->fakultas_sejarah;
-        foreach($fak as $f){
-          $tahun[] = $f->tahun;
-          $deskripsi[] = $f->deskripsi;
-        }
-        $t = join(",",$tahun);
-        $d = join('|',$deskripsi);
-      ?>
-        <div class="col-10 col-lg-11 mx-auto">
-            <x-three-cards-carousel carouselId="idcar" titles="{{ $t }}"
-            images="img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png,img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png"
-            texts="{{ $d }}" 
-            />
+<section class="d-flex justify-content-center flex-column" id="info-unik">
+  <article class="container text-white">
+    <x-card-with-floating-header title="Kenali Lebih Jauh" image="img/fakultas/{{$fakultas->foto}}"
+      text="{{$fakultas->deskripsi}}" />
+      <!-- nopal -->
+  </article>
+</section>
+
+<section class="d-flex justify-content-center flex-column" id="video-profile">
+  <article class="container text-center">
+      <div class=" mx-auto row">
+        <div class="col-lg-10 offset-lg-1 px-lg-5" >
+          <x-video-embed src="{{$fakultas->link_video}}"/>
         </div>
-        </div>  
-    </section>
+    </div>
+    </article>
+</section>
+
+<section class="d-flex justify-content-center align-items-center flex-column" id='waktu'>
+    <div class="container text-center text-white ">
+    @include('partials.section-header', ['title'=>'Waktu Demi Waktu'])
+    <?php
+      $tahun = array();
+      $deskripsi = array();
+      $fak = $fakultas->fakultas_sejarah;
+      foreach($fak as $f){
+        $tahun[] = $f->tahun;
+        $deskripsi[] = $f->deskripsi;
+      }
+      $t = join(",",$tahun);
+      $d = join('|',$deskripsi);
+    ?>
+    <div class="col-10 col-lg-11 mx-auto">
+        <x-three-cards-carousel carouselId="idcar" titles="{{ $t }}"
+        images="img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png,img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png"
+        texts="{{ $d }}"
+        />
+    </div>
+    </div>
+</section>
 
     <section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
     <article class="container text-center position-relative">
@@ -102,19 +102,19 @@
         $i = join(',',$id);
       ?>
       <div class="col-lg-11 mx-auto">
-        <x-three-cards-container-carousel carouselId="idcar2" titles="{{$n}}" images="{{$f}}" id="{{$i}}" route="departemen" 
+        <x-three-cards-container-carousel carouselId="idcar2" titles="{{$n}}" images="{{$f}}" id="{{$i}}" route="departemen"
          />
       </div>
-    </div>  
+    </div>
     </section>
 
     <section class="d-flex justify-content-center align-items-center flex-column" id='perbandingan'>
     <div class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Perbandingan Dosen-Mahasiswa'])
       <div class=" col-lg-11 mx-auto">
-        
+
       </div>
-    </div>  
+    </div>
     </section>
 
     <section class="d-flex justify-content-center align-items-center flex-column" id='kerja-sama'>
@@ -138,7 +138,7 @@
         texts="{{ $d }}"
         carouselId="idcar3"/>
       </div>
-    </div>  
+    </div>
     </section>
 
 

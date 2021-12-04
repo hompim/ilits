@@ -31,22 +31,14 @@
   <section class="d-flex justify-content-center flex-column" id="fasilitas">
     <article class="container text-white">
       @include("partials.section-header", ["title" => "Apa Saja Fasilitas di ITS?"])
-      <?php
-        $index=1;
-      ?>
-      @while($index <= 15)
       <div class="row mb-5">
-        @for($i=0;$i < 2;$i++)
+        @foreach($fasilitas as $f)
         <div class="col-md mx-3">
-          <x-card-with-header title="{{$fasilitas[$index]->judul}}" image="../img/fasilitas/{{$fasilitas[$index]->foto}}"
-            text="{{$fasilitas[$index]->deskripsi}}" />
+          <x-card-with-header title="{{$f->judul}}" image="../img/fasilitas/{{$f->foto}}"
+            text="{{$f->deskripsi}}" />
         </div>
-        <?php
-          $index++;
-        ?>
-        @endfor
+        @endforeach
       </div>
-      @endwhile
     </article>
   </section>
 @endsection

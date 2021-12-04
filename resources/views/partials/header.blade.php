@@ -21,7 +21,7 @@
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/eventual.svg') }}" class="img-responsive img-fluid mr-3" alt="Eventual">
-          <a class="mx-4 nav-link" href="#">Eventual</a>
+          <a class="mx-4 nav-link" href="../eventual">Eventual</a>
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/fakultas.svg') }}" class="img-responsive img-fluid mr-3" alt="Fakultas">
@@ -29,11 +29,11 @@
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/prestasi.svg') }}" class="img-responsive img-fluid mr-3" alt="Prestasi">
-          <a class="mx-4 nav-link" href="#">Prestasi</a>
+          <a class="mx-4 nav-link" href="../main#prestasi">Prestasi</a>
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/fasilitas.svg') }}" class="img-responsive img-fluid mr-3" alt="Fasilitas">
-          <a class="mx-4 nav-link" href="#">Fasilitas</a>
+          <a class="mx-4 nav-link" href="../fasilitas">Fasilitas</a>
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/alumni.svg') }}" class="img-responsive img-fluid mr-3" alt="Alumni">

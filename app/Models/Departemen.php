@@ -48,7 +48,7 @@ class Departemen extends Model
 
     public function akreditasi()
     {
-        return $this->belongsTo(Akreditasi::class);
+        return $this->hasMany(Akreditasi::class);
     }
     
     public function fakultas()
