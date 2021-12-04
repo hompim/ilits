@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Form Login</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Ini Lho ITS! 2022 - Login</title>
 
         <!-- Icon -->
         <link rel="icon" href="{{asset('dashboard/dist/img/logo.png')}}" />
-
-        <link rel="stylesheet" href="{{asset('css/auth-main.css')}}" />
-
         <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+        <!-- Font Awesome -->
         <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
             rel="stylesheet"
-            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-            crossorigin="anonymous"
+            href="{{asset('assets/plugins/fontawesome-free/css/all.min.css')}}"
         />
+        <!-- icheck bootstrap -->
+        <link
+            rel="stylesheet"
+            href="{{asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}"
+        />
+        <!-- My CSS -->
+        <link rel="stylesheet" href="{{asset('css/auth-main.css')}}" />
     </head>
 
     <body>
@@ -30,143 +38,190 @@
                 align-items-center
             "
         >
-            <img
+            {{-- <img
                 class="animation__shake"
                 src="{{asset('dashboard/dist/img/logo.png')}}"
                 alt="AdminLTELogo"
                 height="60"
                 width="60"
-            />
+            /> --}}
         </div>
 
-        <!DOCTYPE html>
-        <html lang="en">
-            <head>
-                <meta charset="utf-8" />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <title>AdminLTE 3 | Log in</title>
-
-                <!-- Google Font: Source Sans Pro -->
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
-                />
-                <!-- Font Awesome -->
-                <link
-                    rel="stylesheet"
-                    href="{{asset('assets/plugins/fontawesome-free/css/all.min.css')}}"
-                />
-                <!-- icheck bootstrap -->
-                <link
-                    rel="stylesheet"
-                    href="{{asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}"
-                />
-                <!-- Theme style -->
-                <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}" />
-            </head>
-            <body class="hold-transition login-page">
-                <div class="login-box">
-                    <div class="login-logo">
-                        <a href="index2.html"><b>Ini Lho ITS</b>2022</a>
-                    </div>
-                    <!-- /.login-logo -->
-                    <div class="card">
-                        <div class="card-body login-card-body">
-                            <p class="login-box-msg">
-                                Masuk untuk membuka akun anda
-                            </p>
-
-                            <x-jet-validation-errors class="mb-3 rounded-0" />
-
-                            @if (session('status'))
-                                <div class="alert alert-success mb-3 rounded-0" role="alert">
-                                    {{ session('status') }}
+        <div class="bg besar">
+        <div class="bg kecil">
+            <div class="bg naga">
+                <!-- Navbar -->
+                <nav class="
+                    navbar navbar-expand-lg navbar-dark
+                    fixed-top
+                    navbar-slide-nav
+                ">
+                    <section class="container">
+                        <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="
+                                close-mobile
+                                d-none
+                                align-items-center
+                                justify-content-between
+                                mb-4
+                            ">
+                                <a href="">
+                                    <img src="{{ asset('img/icons/logo-small.png') }}" class="logo-small"
+                                        alt="Ini Lho ITS! 2022" />
+                                </a>
+                                <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <i class="fa fa-2x border-0 fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="mr-auto navbar-nav">
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ asset('img/icons/home.svg') }}" class="img-responsive img-fluid mr-3"
+                                        alt="Home" />
+                                    <a class="mx-4 nav-link" href="#">Home</a>
                                 </div>
-                            @endif
-
-                            <form action="{{ route('login') }}" method="post">
-                                @csrf
-                                <div class="input-group mb-3">
-                                    <input
-                                        type="email"
-                                        class="form-control"
-                                        placeholder="Email"
-                                        name="email"
-                                    />
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span
-                                                class="fas fa-envelope"
-                                            ></span>
-                                        </div>
-                                    </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ asset('img/icons/eventual.svg') }}"
+                                        class="img-responsive img-fluid mr-3" alt="Eventual" />
+                                    <a class="mx-4 nav-link" href="#">Eventual</a>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <input
-                                        type="password"
-                                        class="form-control"
-                                        placeholder="Kata Sandi"
-                                        name="password"
-                                    />
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-lock"></span>
-                                        </div>
-                                    </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ asset('img/icons/fakultas.svg') }}"
+                                        class="img-responsive img-fluid mr-3" alt="Fakultas" />
+                                    <a class="mx-4 nav-link" href="#">Fakultas</a>
                                 </div>
-                                <div class="row">
-                                    <div class="col-8">
-                                        <div class="icheck-primary">
-                                            <input
-                                                type="checkbox"
-                                                id="remember"
-                                            />
-                                            <label for="remember">
-                                                {{ __('Remember Me') }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <!-- /.col -->
-                                    <div class="col-4">
-                                        <button
-                                            type="submit"
-                                            class="btn btn-primary btn-block"
-                                        >
-                                            {{ __('Log in') }}
-                                        </button>
-                                    </div>
-                                    <!-- /.col -->
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ asset('img/icons/prestasi.svg') }}"
+                                        class="img-responsive img-fluid mr-3" alt="Prestasi" />
+                                    <a class="mx-4 nav-link" href="#">Prestasi</a>
                                 </div>
-                            </form>
-                            
-                            <p class="mb-1">
-                                <a href="forgot-password.html"
-                                    >Lupa kata sandi</a
-                                >
-                            </p>
-                            <p class="mb-0">
-                                <a
-                                    href="{{ route('register') }}"
-                                    class="text-center"
-                                    >Daftar akun baru</a
-                                >
-                            </p>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ asset('img/icons/fasilitas.svg') }}"
+                                        class="img-responsive img-fluid mr-3" alt="Fasilitas" />
+                                    <a class="mx-4 nav-link" href="#">Fasilitas</a>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ asset('img/icons/alumni.svg') }}" class="img-responsive img-fluid mr-3"
+                                        alt="Alumni" />
+                                    <a class="mx-4 nav-link" href="#">Alumni</a>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ asset('img/icons/beasiswa.svg') }}"
+                                        class="img-responsive img-fluid mr-3" alt="Beasiswa" />
+                                    <a class="mx-4 nav-link" href="#">Beasiswa</a>
+                                </div>
+                            </div>
+                            <div class="ms-auto">
+                                <a class="nav-link" href="#">Masuk</a>
+                            </div>
                         </div>
-                        <!-- /.login-card-body -->
-                    </div>
-                </div>
-                <!-- /.login-box -->
+                    </section>
+                </nav>
+                <!-- /.navbar -->
 
-                <!-- jQuery -->
-                <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
-                <!-- Bootstrap 4 -->
-                <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-                <!-- AdminLTE App -->
-                <script src="{{asset('assets/dist/js/adminlte.js')}}"></script>
-            </body>
-        </html>
+                <!-- Section Login -->
+                <section id="section">
+                    <div class="container" id="daftar-container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="login-box">
+                                    <div class="card-body login-card-body">
+                                        <h1 class="login-box-msg"> <b>Sudah punya akun? Ayo Kerjakan
+                                                Tryout</b>
+                                        </h1>
+                                        <br>
+                                        <form action="{{ route('login') }}" method="post">
+                                            @csrf
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                                                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                                    name="email" aria-describedby="emailHelp" />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password">Kata Sandi</label>
+                                                <div class="form-label-group input-group">
+
+                                                    <input type="password" id="password" class="form-control"
+                                                        placeholder="" name="password" required>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text mata"
+                                                            onclick="myFunction()">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="remember" />
+                                                        <label class="remember" for="remember">
+                                                            {{ __('Remember Me') }}
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class=" mb-1">
+                                                        @if (Route::has('password.request'))
+                                                            <a class="printilan" href="{{ route('password.request') }}"  style="color:#ffffff;"">
+                                                            {{ __("Lupa kata sandi?") }}
+                                                            </a>
+                                                        @endif
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <button type="submit" class="btn masuk">
+                                                    <h4>{{ __('Masuk') }}</h4>
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <br />
+                                        <p class="mb-0">
+                                            Kamu belum punya akun?
+                                            <a href="{{ route('register') }}" class="printilan text-center"
+                                                style="color: lightseagreen">
+                                                Daftar di Sini</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            <!-- Akhir Section -->
+
+                <footer>
+                <strong>Copyright &copy;
+                    <a href="https://inilho.its.ac.id/" style="color: lightseagreen">Ini Lho ITS! 2022</a>.</strong>
+                All rights reserved.
+                </footer>
+
+        <!-- jQuery -->
+        <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
+        <script>
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+        $(".mata").click(function () {
+            $(this).toggleClass("mata-ketutup");
+        })
+
+        </script>
+        <!-- Bootstrap 4 -->
+        <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <!-- AdminLTE App -->
+        <script src="{{asset('assets/dist/js/adminlte.js')}}"></script>
     </body>
 </html>
