@@ -43,16 +43,38 @@ Route::get('eventual', function(){return view('eventual');});
 Route::get('alumni', [AlumniController::class, 'show'])->name('alumni');
 
 Route::prefix('open-campus')->group(function(){
-    Route::get('register-fnd',function(){return view('open-campus.register-fnd',["title" => "register-fnd"]);});
-    Route::post('regis-fnd', [OpenCampusController::class, 'regisFnD'])->name('open-campus.regis-fnd.store');
-    Route::get('event-regist',function(){return view('open-campus.event-regist',["title" => "event-regist"]);});
-    Route::get('dashboard-fnd',function(){return view('open-campus.dashboard-fnd',["title" => "dashboard-fnd"]);});
-    Route::get('thank-you',function(){return view('open-campus.thank-you',["title" => "Thank You!"]);})->name('open-campus.thank-you');
-    Route::get('sesi-fnd', [OpenCampusController::class, 'opsi'])->name('open-campus.opsi');
+    //FnD
+    Route::prefix('fnd')->group(function(){
+        Route::get('register', [OpenCampusController::class, 'registerFND'])->name('open-campus.fnd.register');
+        Route::post('register/store', [OpenCampusController::class, 'regisFnD'])->name('open-campus.regis-fnd.store');
+        Route::get('register/fakultas', [OpenCampusController::class, 'fakultas'])->name('open-campus.fnd.fakultas');
+        Route::get('register/departemen', [OpenCampusController::class, 'opsi'])->name('open-campus.opsi');
+        Route::post('register/departemen/store', [OpenCampusController::class, 'storeDep'])->name('open-campus.store-dep');
+        Route::get('thank-you', [OpenCampusController::class, 'thxFND'])->name('open-campus.thank-you');
+    });
+
+    //API
     Route::get('choose-fnd', [OpenCampusController::class, 'chooseFnD'])->name('open-campus.choose-fnd');
     Route::get('departemen/{sesi2}/{sesi3}/{sesi4}/{sesi5}', [OpenCampusController::class, 'choosenFnD'])->name('open-campus.api-departemen');
-    Route::post('storeDep', [OpenCampusController::class, 'storeDep'])->name('open-campus.store-dep');
     Route::get('kuota/{id}', [OpenCampusController::class, 'detailKuota'])->name('open-campus.api-kuota');
+    
+    //ITS Fair
+    Route::prefix('its-fair')->group(function(){
+        Route::get('register', [OpenCampusController::class, 'registerIF'])->name('open-campus.its-fair.register');
+        Route::post('register/store', [OpenCampusController::class, 'regisITSFair'])->name('open-campus.its-fair.register.store');
+        Route::get('thank-you', [OpenCampusController::class, 'thxIF'])->name('open-campus.its-fair.thank-you');
+    });
+
+    Route::prefix('odl')->group(function(){
+        Route::get('register', [OpenCampusController::class, 'register_index'])->name('open-campus.odl.register-form');
+        Route::get('register/form', function(){return view('open-campus.event-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.odl.register-form');
+        Route::post('register/form/store', [OpenCampusController::class, 'regisFormStore'])->name('open-campus.odl.register-form.store');
+        Route::get('register/kelas', [OpenCampusController::class, 'regisKelas'])->name('open-campus.odl.register-kelas');
+        Route::post('register/kelas/store', [OpenCampusController::class, 'regisKelasStore'])->name('open-campus.odl.register-kelas.store');
+        Route::get('thank-you', [OpenCampusController::class, 'thxODL'])->name('open-campus.odl.thank-you');
+        Route::get('kelas/{sesi1}/{sesi2}/{sesi3}/{sesi4}', [OpenCampusController::class, 'kelasODL'])->name('open-campus.odl.api.kelas');
+        Route::get('kuota/{id}', [OpenCampusController::class, 'detailKuotaODL'])->name('open-campus.odl.api.kuota');
+    });
 });
 
 // Route untuk admin

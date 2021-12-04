@@ -48,22 +48,24 @@
           </div>
         </div>
         <div class="col-md-4">
-          <form action="#" method="get">
+          <form action="{{ route('open-campus.odl.register-form.store') }}" method="POST">
+            @csrf
+            @if ($errors->any())
+            <div class="alert alert-danger">
+              <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+            @endif
             <div class="form-group">
-              <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+              <label class="text-white" for="bukti_follow">Bukti follow IG ATAU Follow TikTok ATAU Subscribe youtube INI LHO ITS!</label>
+              <input type="file" class="form-control" id="bukti_follow" name="bukti_follow">
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" id="email" nama="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input type="tel" class="form-control" id="nomor_telepon" name="nomor_telepon"
-                placeholder="Nomor Telepon">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="asal_sekolah" name="asal_sekolah" placeholder="Asal Sekolah">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="forda" name="forda" placeholder="Forum Daerah">
+              <label class="text-white" for="bukti_poster">Upload screenshot bukti poster di story IG (tag ILITS dan minimal 5 teman) ATAU share poster di minimal 3 grup WA/LINE</label>
+              <input type="file" class="form-control" id="email" name="bukti_poster">
             </div>
             <div class="text-center">
               <button type="submit" class="btn-daftar mt-4">Daftar</button>

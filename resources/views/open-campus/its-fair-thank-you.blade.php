@@ -27,11 +27,11 @@
     <div class="row text-white text-center px-2 px-sm-5">
       <div class="col">
         <h2>
-          Kamu telah terdaftar pada Faculty and Department Day Ini Lho ITS! 2022. Jangan lupa untuk terus memantau informasi menarik di sosial media Ini Lho ITS! 2022.
+          Kamu telah terdaftar pada ITS Fair Ini Lho ITS! 2022. Jangan lupa untuk terus memantau informasi menarik di sosial media Ini Lho ITS! 2022.
         </h2>
         <br>
         <h3>
-          Link Zoom Meeting Faculty and Department Day Ini Lho ITS! 2022 akan dikirimkan melalui email masing-masing peserta minimal H-3 Faculty and Department Day Ini Lho ITS! 2022. Link dapat diakses juga melalui Dashboard Peserta.
+          Link Zoom Meeting ITS Fair Ini Lho ITS! 2022 dapat diakses melalui Dashboard Peserta.
         </h3>
         <br>
       </div>
