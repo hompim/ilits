@@ -101,6 +101,29 @@
     </div>
 </section> --}}
 
+<?php
+    $nama = array();
+    $deskripsi = array();
+    $foto = array();
+    foreach($prestasi as $p){
+      $nama[] = $p->nama;
+      $deskripsi[] = $p->deskripsi;
+      $foto[] = "../img/main/".$p->foto;
+    }
+    $n = join(',',$nama);
+    $d = join('|',$deskripsi);
+    $f = join(',',$foto);
+  ?>
+  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="prestasi">
+    <article class="container">
+      @include("partials.section-header", ["title" => "Segudang Prestasi!"])
+      <x-three-cards-carousel titles="{{$n}}"
+        texts="{{$d}}"
+        images="{{$f}}"
+        carouselId="MainPrestasiCarousel" />
+    </article>
+  </section>
+
 <section class="d-flex justify-content-center align-items-center flex-column" id='prospek'>
     <div class="container text-center">
       @include('partials.section-header', ['title'=>'Sesuaikan Prospek'])
@@ -150,7 +173,7 @@
         $activities = $departemen->aktivitas_mahasiswa;
         foreach($activities as $activity){
           $judul[] = $activity->judul;
-          $foto[] = "img/aktivitas-mahasiswa/".$activity->foto;
+          $foto[] = "../img/aktivitas-mahasiswa/".$activity->foto;
           $deskripsi[] = $activity->deskripsi;
           $id[] = $activity->id;
         }
