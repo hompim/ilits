@@ -8,6 +8,7 @@ use App\Models\Alumni;
 use App\Models\Fasilitas;
 use App\Models\Beasiswa;
 use App\Models\Eventual;
+use App\Models\Prestasi;
 
 class MainController extends Controller
 {
@@ -17,12 +18,14 @@ class MainController extends Controller
         $eventual = Eventual::all();
         $fasilitas = Fasilitas::whereNotNull("deskripsi")->get()->random(5);
         $alumni = Alumni::whereNotNull('deskripsi')->get()->random(3);
+        $prestasi = Prestasi::all()->random(10);
         return view('main',[
             'fakultas'=>$fakultas,
             'beasiswa' => $beasiswa,
-            'alumni' =>$alumni,
-            'eventual'=>$eventual,
-            'fasilitas' =>$fasilitas,
+            'alumni' => $alumni,
+            'eventual'=> $eventual,
+            'fasilitas' => $fasilitas,
+            'prestasi' => $prestasi,
         ]);
     }
 }
