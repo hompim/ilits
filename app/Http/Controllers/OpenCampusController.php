@@ -159,7 +159,7 @@ class OpenCampusController extends Controller
         if(Auth::user()->user->peserta_event->is_odl){
             return redirect(route('open-campus.odl.register-kelas'));
         }
-        if(PesertaODL::where('peserta_id', Auth::user()->user->peserta_event->id)){
+        if(PesertaODL::where('peserta_id', Auth::user()->user->peserta_event->id)->count()){
             return redirect(route('open-campus.odl.thank-you'));
         }
         return view('open-campus.register-odl', ["title" => "Pendaftaran ODL!"]);
@@ -182,7 +182,7 @@ class OpenCampusController extends Controller
         if(!Auth::user()->user->peserta_event->is_odl){
             return redirect(route('open-campus.odl.register'));
         }
-        if(PesertaODL::where('peserta_id', Auth::user()->user->peserta_event->id)){
+        if(PesertaODL::where('peserta_id', Auth::user()->user->peserta_event->id)->count()){
             return redirect(route('open-campus.odl.thank-you'));
         }
         $sesi_1 = DB::table('departemens')
@@ -249,7 +249,7 @@ class OpenCampusController extends Controller
 
     public function thxODL(){
         if(Auth::user()->user->peserta_event->is_odl){
-            if(PesertaODL::where('peserta_id', Auth::user()->user->peserta_event->id)){
+            if(PesertaODL::where('peserta_id', Auth::user()->user->peserta_event->id)->count()){
                 return view('open-campus.odl-thank-you', ["title" => "Thank You!"]);
             }
             return redirect(route('open-campus.odl.register-kelas'));
