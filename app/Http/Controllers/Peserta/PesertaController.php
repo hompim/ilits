@@ -95,6 +95,8 @@ class PesertaController extends Controller
             'pilihan_tryout' => $request->pilihan_tryout,
             'keterangan_absen' => '-'
         ]);
+
+        return redirect(route('peserta'));
     }
 
     public function UploadBukti(Request $request)

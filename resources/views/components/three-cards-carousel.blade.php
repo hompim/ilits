@@ -10,10 +10,9 @@
     @for ($i = 0; $i < count($titles); $i++)
       <div class="carousel-item @if ($i == 0) active @endif col-lg-4">
 
-        <div class="overflow-hidden card">
-          <div class="image">
-            <img src="{{ asset($images[$i]) }}" class="w-100 h-100" alt="Card image cap">
-         
+        <div class="overflow-hidden card h-100">
+          <div class="image text-center">
+            <img src="{{ asset($images[$i]) }}" class="h-100 p-4" alt="Card image cap">
           </div>
            <div class="pb-3 text-left card-body">
             <h3 class="card-title">{{ $titles[$i] }}</h3>

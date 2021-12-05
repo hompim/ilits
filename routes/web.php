@@ -42,10 +42,10 @@ Route::get('departemen/{id}', [DepartemenController::class, 'index'])->name('dep
 Route::get('merchandise', [MerchController::class,'index'])->name('merch');
 Route::get('team', function(){return view('team');});
 Route::get('beasiswa', [BeasiswaController::class,'index'])->name('beasiswa');
-Route::get('eventual', function(){return view('eventual');});
+Route::get('eventual', function(){return view('eventual');})->name('eventual');
 Route::get('alumni', [AlumniController::class, 'show'])->name('alumni');
 
-Route::prefix('open-campus')->group(function(){
+Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
     //FnD
     Route::prefix('fnd')->group(function(){
         Route::get('register', [OpenCampusController::class, 'registerFND'])->name('open-campus.fnd.register');

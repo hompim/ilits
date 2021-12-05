@@ -31,9 +31,9 @@
   <section class="d-flex justify-content-center flex-column" id="fasilitas">
     <article class="container text-white">
       @include("partials.section-header", ["title" => "Apa Saja Fasilitas di ITS?"])
-      <div class="row mb-5">
+      <div class="row mb-5 d-flex justify-content-center">
         @foreach($fasilitas as $f)
-        <div class="col-md mx-3">
+        <div class="col-md-5 mx-3 my-3">
           <x-card-with-header title="{{$f->judul}}" image="../img/fasilitas/{{$f->foto}}"
             text="{{$f->deskripsi}}" />
         </div>

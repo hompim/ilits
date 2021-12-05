@@ -17,31 +17,31 @@
       <div class="mr-auto navbar-nav">
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/home.svg') }}" class="img-responsive img-fluid mr-3" alt="Home">
-          <a class="mx-4 nav-link" href="../main">Home</a>
+          <a class="mx-4 nav-link" href="{{route('main')}}">Home</a>
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/eventual.svg') }}" class="img-responsive img-fluid mr-3" alt="Eventual">
-          <a class="mx-4 nav-link" href="../eventual">Eventual</a>
+          <a class="mx-4 nav-link" href="{{ route('eventual') }}">Eventual</a>
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/fakultas.svg') }}" class="img-responsive img-fluid mr-3" alt="Fakultas">
-          <a class="mx-4 nav-link" href="../main#fakultas">Fakultas</a>
+          <a class="mx-4 nav-link" href="{{route('main').'#fakultas'}}">Fakultas</a>
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/prestasi.svg') }}" class="img-responsive img-fluid mr-3" alt="Prestasi">
-          <a class="mx-4 nav-link" href="../main#prestasi">Prestasi</a>
+          <a class="mx-4 nav-link" href="{{route('main').'#prestasi'}}">Prestasi</a>
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/fasilitas.svg') }}" class="img-responsive img-fluid mr-3" alt="Fasilitas">
-          <a class="mx-4 nav-link" href="../fasilitas">Fasilitas</a>
+          <a class="mx-4 nav-link" href="{{route('fasilitas')}}">Fasilitas</a>
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/alumni.svg') }}" class="img-responsive img-fluid mr-3" alt="Alumni">
-          <a class="mx-4 nav-link" href="../alumni">Alumni</a>
+          <a class="mx-4 nav-link" href="{{route('alumni')}}">Alumni</a>
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/beasiswa.svg') }}" class="img-responsive img-fluid mr-3" alt="Beasiswa">
-          <a class="mx-4 nav-link" href="../beasiswa">Beasiswa</a>
+          <a class="mx-4 nav-link" href="{{route('beasiswa')}}">Beasiswa</a>
         </div>
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/open-campus.svg') }}" class="img-responsive img-fluid mr-3" alt="Open campus" style="color: white">
