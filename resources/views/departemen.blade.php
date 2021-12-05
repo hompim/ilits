@@ -195,7 +195,7 @@
         images='../img/fasilitas/{{ $f }}' />
       </div>
     </article>
-</section>
+  </section>
 @endsection
 @push('modals')
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

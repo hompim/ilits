@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\PesertaODL;
 use App\Models\TryoutUser;
 use App\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword;
@@ -47,17 +48,17 @@ class AuthServiceProvider extends ServiceProvider
                 ->line('Jika anda tidak merasa melakukan tidakan ini, maka abaikan pesan ini.');
         });
 
-        Gate::define('isAdmin', function (User $user) {
-            return ($user->user_type === 'App\Models\Admin');
-        });
+        // Gate::define('isAdmin', function (User $user) {
+        //     return ($user->user_type === 'App\Models\Admin');
+        // });
 
-        Gate::define('isPeserta', function (User $user) {
-            return ($user->user_type === 'App\Models\Peserta');
-        });
+        // Gate::define('isPeserta', function (User $user) {
+        //     return ($user->user_type === 'App\Models\Peserta');
+        // });
 
-        Gate::define('isForda', function (User $user) {
-            return ($user->user_type === 'App\Models\Forda');
-        });
+        // Gate::define('isForda', function (User $user) {
+        //     return ($user->user_type === 'App\Models\Forda');
+        // });
 
         Gate::define('admin-dashboard', function(User $user){
             return ($user->user_type === 'App\Models\Admin');
@@ -84,6 +85,27 @@ class AuthServiceProvider extends ServiceProvider
                     return false;
                 }
                 return true;
+            }
+            return false;
+        });
+
+        Gate::define('peserta-its-fair', function(User $user){
+            if (($user->user_type === 'App\Models\Peserta')){
+                return $user->user->peserta_event->is_its_fair;
+            }
+            return false;
+        });
+
+        Gate::define('peserta-fnd', function(User $user){
+            if (($user->user_type === 'App\Models\Peserta')){
+                return $user->user->peserta_event->is_fnd;
+            }
+            return false;
+        });
+        
+        Gate::define('peserta-odl', function(User $user){
+            if (($user->user_type === 'App\Models\Peserta')){
+                return $user->user->peserta_event->is_odl && PesertaODL::where('peserta_id', $user->user->peserta_event->id)->count();
             }
             return false;
         });

@@ -303,6 +303,31 @@ return [
                 ],
             ],
             'can' => ['peserta-dashboard', 'forda-dashboard'],
+        ],
+        [
+            'text'      => 'Open Campus',
+            'icon'      => 'fas fa-building',
+            'submenu'   => [
+                [
+                    'text'  => 'Dashboard FND',
+                    'icon'  => 'far fa-eye',
+                    'url'   => 'peserta/fnd',
+                    'can'   => ['peserta-fnd']
+                ],
+                [
+                    'text'  => 'Dashboard ODL',
+                    'icon'  => 'fas fa-graduation-cap',
+                    'url'   => 'peserta/odl',
+                    'can'   => ['peserta-odl']
+                ],
+                [
+                    'text'  => 'Dashboard ITS Fair',
+                    'icon'  => 'fas fa-chalkboard',
+                    'url'   => 'peserta/its-fair',
+                    'can'   => ['peserta-its-fair']
+                ],
+            ],
+            'can' => ['peserta-odl', 'peserta-fnd', 'peserta-its-fair']
         ]
     ],
 

@@ -48,7 +48,7 @@
         </div>
 
         <div class="bg besar">
-        <div class="bg kecil">
+        <div class="bg kecil" style="margin-top: 8rem">
             <div class="bg naga">
                 <!-- Navbar -->
                 <nav class="
@@ -132,8 +132,7 @@
                             <div class="col-sm-4">
                                 <div class="login-box">
                                     <div class="card-body login-card-body">
-                                        <h1 class="login-box-msg"> <b>Sudah punya akun? Ayo Kerjakan
-                                                Tryout</b>
+                                        <h1 class="login-box-msg"> <b>Login Peserta</b>
                                         </h1>
                                         <br>
                                         <form action="{{ route('login') }}" method="post">
@@ -197,11 +196,11 @@
                 </section>
             <!-- Akhir Section -->
 
-                <footer>
+                {{-- <footer>
                 <strong>Copyright &copy;
                     <a href="https://inilho.its.ac.id/" style="color: lightseagreen">Ini Lho ITS! 2022</a>.</strong>
                 All rights reserved.
-                </footer>
+                </footer> --}}
 
         <!-- jQuery -->
         <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
