@@ -49,20 +49,20 @@ section#video-profile iframe{
 section#waktu {
     background: linear-gradient(to bottom, #2E5998, #2F5999);
 }
-section#akreditasi {
+/* section#akreditasi {
+    background: linear-gradient(to bottom, #2F5999, #2C437B);
+} */
+section#virtual-expo {
     background: linear-gradient(to bottom, #2F5999, #2C437B);
 }
-section#virtual-expo {
-    background: linear-gradient(to bottom, #2C437B, #282F60);
-}
 section#jurusanmu{
-    background: linear-gradient(to bottom, #282F60, #2B1D50);
+    background: linear-gradient(to bottom, #2C437B,  #282F60);
 }
-section#perbandingan {
+/* section#perbandingan {
     background: linear-gradient(to bottom, #2B1D50, #401862);
-}
+} */
 section#kerja-sama {
-    background: linear-gradient(to bottom, #401862, #521373);
+    background: linear-gradient(to bottom, #282F60, #2B1D50);
 }
 
 @media only screen and (max-width: 992px) {

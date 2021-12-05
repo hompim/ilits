@@ -125,7 +125,7 @@
     </div>
     </section> --}}
 
-    <section class="d-flex justify-content-center align-items-center flex-column" id='perbandingan'>
+    <section class="d-flex justify-content-center align-items-center flex-column" id='kerja-sama'>
     <div class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Kerja Sama Kami!'])
 
@@ -148,9 +148,6 @@
       </div>
     </div>
     </section>
-
-
-
 @endsection
 
 @push('modals')
