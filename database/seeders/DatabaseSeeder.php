@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             MerchSeeder::class,
             BeasiswaSeeder::class,
             EventualSeeder::class,
+            PrestasiSeeder::class,
         ]);
     }
 }

@@ -95,7 +95,15 @@
         foreach($dep as $d){
           $nama[] = $d->nama;
           $foto[] = "img/departmen/".$d->foto;
-          $id[] = $d->id;
+          if($d->id==24){
+            $id[] = 20;
+          }
+          else if($d->id==29){
+            $id[] = 27;
+          }
+          else{
+            $id[] = $d->id;
+          }
         }
         $n = join(",",$nama);
         $f = join(',',$foto);

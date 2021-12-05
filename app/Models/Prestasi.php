@@ -9,6 +9,7 @@ class Prestasi extends Model
 {
     use HasFactory;
     public $timestamps = FALSE;
+    protected $table = 'prestasis';
 
     public function departemen()
     {
