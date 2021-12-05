@@ -43,9 +43,34 @@
           <img src="{{ asset('img/icons/beasiswa.svg') }}" class="img-responsive img-fluid mr-3" alt="Beasiswa">
           <a class="mx-4 nav-link" href="../beasiswa">Beasiswa</a>
         </div>
+        {{-- <div class="d-flex align-items-center">
+          <img src="{{ asset('img/icons/open-campus.svg') }}" class="img-responsive img-fluid mr-3" alt="Open campus" style="color: white">
+          <a class="mx-4 nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Daftar</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{route('open-campus.its-fair.register')}}">ITS Fair</a>
+            <a class="dropdown-item" href="{{route('open-campus.fnd.register')}}}">Faculty and Department Day</a>
+            <a class="dropdown-item" href="{{route('open-campus.odl.register')}}">One Day Lecture</a>
+            <a class="dropdown-item" href="{{route('peserta.welcome.register')}}">Welcome</a>
+          </div>
+        </div> --}}
       </div>
       <div class="ml-auto">
-        <a class="nav-link" href="#">Masuk</a>
+        @php
+        if (!Auth::user()) {
+          $route = '/login';
+          $text = 'Masuk';
+        } else{
+          $text = 'Dashboard';
+          if(Auth::user()->user_type=='App\Models\Peserta'){
+            $route = '/peserta/welcome';
+          } else if(Auth::user()->user_type=='App\Models\Forda'){
+            $route = '/forda';
+          } else{
+            $route = '/admin';
+          }
+        }
+        @endphp
+        <a class="nav-link" href="{{$route}}">{{$text}}</a>
       </div>
     </div>
   </section>

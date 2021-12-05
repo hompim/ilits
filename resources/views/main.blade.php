@@ -25,9 +25,6 @@
     <article class="container text-white">
       <div class="col-12 col-md-8 col-lg-6">
         <h1 class="mb-3">INI LHO <br> ITS! 2022</h1>
-        <p class="mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, ipsum? Inventore
-          eius
-          dignissimos</p>
         <x-button-link href="#" angle="20deg" colorFrom="#3b71c7" colorTo="#59d3da">Kenali
           Lebih
           Lanjut
@@ -57,17 +54,17 @@
     </article>
   </section>
 
-  <section class="d-flex justify-content-center flex-column" id="informasi-umum">
+  {{-- <section class="d-flex justify-content-center flex-column" id="informasi-umum">
     <article class="container text-white">
       <div class="container">
-        {{-- @include('partials.section-header', ["title" => "Yuk, Kepoin Kita Lebih Lanjut!"]) --}}
+        @include('partials.section-header', ["title" => "Yuk, Kepoin Kita Lebih Lanjut!"])
         <x-two-side-carousel titles="Web Series ILITS,Web Series ILITS,Web Series ILITS"
           texts="Seperti apa sih ITS itu? Yuk kenali ITS lebih dalam dengan cara yang asyik dalam web series ILITS!|Seperti apa sih ITS itu? Yuk kenali ITS lebih dalam dengan cara yang asyik dalam web series ILITS!|Seperti apa sih ITS itu? Yuk kenali ITS lebih dalam dengan cara yang asyik dalam web series ILITS!"
           images="img/main/web-series.png,img/main/web-series.png,img/main/web-series.png"
           buttonTexts="Tonton Sekarang!,Tonton Sekarang!,Tonton Sekarang!" />
       </div>
     </article>
-  </section>
+  </section> --}}
   <?php
     $nama = array();
     $deskripsi = array();
@@ -87,13 +84,13 @@
     </article>
   </section>
 
-  <section class="d-flex justify-content-center align-items-center" id="informasi-penting">
+  {{-- <section class="d-flex justify-content-center align-items-center" id="informasi-penting">
     <article class="text-white d-flex justify-content-center align-items-center flex-column">
       <h2 class="mb-4 text-center">Pendaftaran Try Out ILITS! <br> Sudah Dibuka </h2>
       <x-button-link href="#" angle="45deg" colorFrom="#8060C9" colorTo="#59D3DA">Daftar
       </x-button-link>
     </article>
-  </section>
+  </section> --}}
 
   <section class="d-flex justify-content-center align-items-center flex-column" id="fakultas">
     <article class="container text-center text-white mb-5">
@@ -180,9 +177,9 @@
     </article>
   </section>
 
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="tim-its">
+  {{-- <section class="text-white d-flex justify-content-center align-items-center flex-column" id="tim-its">
     <article class="container">
-      {{-- @include('partials.section-header', ["title" => "Kenalan dengan Tim di ITS!"]) --}}
+      @include('partials.section-header', ["title" => "Kenalan dengan Tim di ITS!"])
       <x-three-cards title1="Bayucaraka" title2="Ichiro" title3="Sapu Angin" img1="img/main/prestasi-1.png"
         img2="img/main/prestasi-2.png" img3="img/main/prestasi-3.png" :list1="array('Juara 1 Mobil terbang','
           Juara 2 Mobil terbang cepat','
@@ -196,7 +193,7 @@
           Juara 4 Mobil terbang nasional')" />
       <x-button-link href="" class="mx-auto mt-4">Intip Tim Lainnya!</x-button-link>
     </article>
-  </section>
+  </section> --}}
 
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="alumni">
     <article class="container">

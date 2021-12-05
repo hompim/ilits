@@ -16,10 +16,10 @@ class CreatePrestasisTable extends Migration
         Schema::create('prestasis', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('departemen_id');
-            $table->foreign('departemen_id')->references('id')->on('departemen');
             $table->string('nama');
             $table->string('deskripsi');
             $table->string('foto');
+            // $table->foreign('departemen_id')->references('id')->on('departemen');
         });
     }
 

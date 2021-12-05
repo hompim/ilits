@@ -116,16 +116,16 @@
     </div>
     </section>
 
-    <section class="d-flex justify-content-center align-items-center flex-column" id='perbandingan'>
+    {{-- <section class="d-flex justify-content-center align-items-center flex-column" id='perbandingan'>
     <div class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Perbandingan Dosen-Mahasiswa'])
       <div class=" col-lg-11 mx-auto">
 
       </div>
     </div>
-    </section>
+    </section> --}}
 
-    <section class="d-flex justify-content-center align-items-center flex-column" id='kerja-sama'>
+    <section class="d-flex justify-content-center align-items-center flex-column" id='perbandingan'>
     <div class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Kerja Sama Kami!'])
 

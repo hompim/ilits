@@ -69,7 +69,7 @@ Route::prefix('open-campus')->group(function(){
     });
 
     Route::prefix('odl')->group(function(){
-        Route::get('register', [OpenCampusController::class, 'register_index'])->name('open-campus.odl.register-form');
+        Route::get('register', [OpenCampusController::class, 'register_index'])->name('open-campus.odl.register');
         Route::get('register/form', function(){return view('open-campus.event-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.odl.register-form');
         Route::post('register/form/store', [OpenCampusController::class, 'regisFormStore'])->name('open-campus.odl.register-form.store');
         Route::get('register/kelas', [OpenCampusController::class, 'regisKelas'])->name('open-campus.odl.register-kelas');
