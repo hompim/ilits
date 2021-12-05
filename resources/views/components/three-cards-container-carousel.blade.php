@@ -18,7 +18,9 @@
             <div class="carousel-item @if($i == 0) active @endif col-6 col-lg-4">
                 <div class="">
                     <div class="p-3 overflow-hidden card card-container-1 py-2">
-                        <img src="{{ asset($images[$i]) }}" class="card-img-top mt-lg-4 px-lg-2" alt="Card image cap">
+                      <div class="image d-flex justify-content-center align-items-center">
+                        <img src="{{ asset($images[$i]) }}" class="card-img-top px-lg-2" alt="Card image cap">
+                      </div>
                         <div class="text-center card-body px-0 px-sm-3 px-md-4 d-flex align-items-start flex-column" >
                             <h4 class="card-title mb-auto">{{ $titles[$i] }}</h4>
                             <x-button-link href='../{{$route}}/{{$id[$i]}}' class='grad w-100 align-self-end m-0' >Lihat</x-button-link>
