@@ -71,11 +71,11 @@ section#akreditasi .item-three-cards h2{
 /* section#kekekatan{
     background: linear-gradient(to bottom, #2F5999,#2B447C);
 } */
-section#fokus-keilmuan{
+/* section#fokus-keilmuan{
     background: linear-gradient(to bottom,#2E5999, #2F5999);
-}
+} */
 section#prestasi{
-    background: linear-gradient(to bottom, #2F5999,#282F60);
+    background: linear-gradient(to bottom, #2E5999,#282F60);
 }
 section#prospek{
     background: linear-gradient(to bottom,#282F60,#291E4E );
@@ -90,6 +90,7 @@ section#figure .wrapper{
 section#figure .wrapper .flex-item{
     width: 13.125rem;
     margin-bottom: 1.5rem;;
+
 }
 section#kegiatan{
     background: linear-gradient(to bottom, #3D1960, #521373 );

@@ -102,10 +102,6 @@
     object-fit: cover;
 }
 
-#threeCardsCarousel .card .image{
-    height: 200px;
-}
-
 #threeCardsCarousel .card h3 {
     font-size: 1.875rem;
     font-family: "gothammedium";
@@ -149,7 +145,6 @@
     }
 }
 @media screen and (max-width: 768px) {
-
     #threeCardsCarousel a.btn-floating .fa-3x{
         font-size: 2em !important;
     }

@@ -14,7 +14,7 @@
                     </div>
                     <div class="card-text col-lg-4 mx-1 ml-lg-auto p-4 p-md-5 px-lg-4 py-lg-5">
                         <h3 class="mb-3 mb-sm-4">{{ $titles[$i] }}</h3>
-                        <p class="m-0">{{ $texts[$i] }}</p>
+                        <p class="m-0 w-100 text-wrap">{{ $texts[$i] }}</p>
                     </div>
                 </div>
             </div>
