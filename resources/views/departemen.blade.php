@@ -114,7 +114,7 @@
     $d = join('|',$deskripsi);
     $f = join(',',$foto);
   ?>
-  @if($prestasi)
+
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="prestasi">
     <article class="container">
       @include("partials.section-header", ["title" => "Segudang Prestasi!"])
@@ -124,9 +124,7 @@
         carouselId="MainPrestasiCarousel" />
     </article>
   </section>
-  @endif
 
-@if($departemen->prospek)
 <section class="d-flex justify-content-center align-items-center flex-column" id='prospek'>
     <div class="container text-center">
       @include('partials.section-header', ['title'=>'Sesuaikan Prospek'])
@@ -152,7 +150,6 @@
       </div>
     </div>
 </section>
-@endif
 
 <section class="d-flex justify-content-center align-items-center flex-column" id='figure'>
     <div class="container text-center">
@@ -167,8 +164,6 @@
     </div>
 </section>
 
-
-@if($departemen->aktivitas_mahasiswa)
 <section class="text-center d-flex justify-content-center align-items-center flex-column" id='kegiatan'>
     <article class="container">
       @include('partials.section-header', ['title'=>'Kegiatan Mahasiswa'])
@@ -198,7 +193,6 @@
       images="img/departmen/Kegiatan-1.png,img/departmen/Kegiatan-1.png,img/departmen/Kegiatan-1.png" /> --}}
     </article>
   </section>
-  @endif
 
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id='fasilitas'>
   <?php
