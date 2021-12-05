@@ -13,7 +13,6 @@
         <div class="overflow-hidden card">
           <div class="image">
             <img src="{{ asset($images[$i]) }}" class="w-100 h-100" alt="Card image cap">
-         
           </div>
            <div class="pb-3 text-left card-body">
             <h3 class="card-title">{{ $titles[$i] }}</h3>
