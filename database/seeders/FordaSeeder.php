@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Forda;
-use App\Models\FordaDaerah;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
@@ -24,17 +23,11 @@ class FordaSeeder extends Seeder
         $records->setHeaderOffset(0);
         foreach ($records as $record) {
             $forda = Forda::create([
-                'nama' => $record['Nama Forda']
+                'id' => $record['id'],
+                'nama' => $record['nama']
             ]);
-            $kota_kab = explode(" ", $record['kota_kab_id']);
-            foreach ($kota_kab as $i) {
-                FordaDaerah::create([
-                    'forda_id' => $forda->id,
-                    'kota_kab_id' => $i
-                ]);
-            }
             User::create([
-                'name' => $record['Nama Forda'],
+                'name' => $record['nama'],
                 'email_verified_at' => Carbon::now(),
                 'email' => str_replace(' ', '', $forda->nama).'@inilhoits.ac.id',
                 'password' => Hash::make(str_replace(' ', '', $forda->nama).'123'),
