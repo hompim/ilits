@@ -33,7 +33,7 @@
   @if (count($titles) == 3)
     @for ($i = 0; $i < count($titles); $i++)
       <div class="col-lg-4 mb-5" >
-        <div class="overflow-hidden card">
+        <div class="overflow-hidden card h-100">
           <div class="image">
             <img src="{{ asset($images[$i]) }}" class="w-100 h-100" alt="Card image cap">
           </div>

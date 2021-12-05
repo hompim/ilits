@@ -220,8 +220,8 @@
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="sponsor">
     <article class="container">
       @include('partials.section-header', ["title" => "Sponsor & Media Partner"])
-      <div class="p-5 sponsor-box w-100">
-
+      <div class="p-5 w-100 text-center">
+        <img class="p-5 w-75" src="{{asset('/img/sponsor/ln.png')}}" alt="Lulus Negeri">
       </div>
     </article>
   </section>
