@@ -51,10 +51,10 @@
             </a>
           
             <div class="dropdown-menu" id="dropdownItemsLink">
-              <a class="dropdown-item" href="{{route('open-campus.its-fair.register')}}">ITS Fair</a>
-              <a class="dropdown-item" href="{{route('open-campus.fnd.register')}}">Faculty and Department Day</a>
-              <a class="dropdown-item" href="{{route('open-campus.odl.register')}}">One Day Lecture</a>
-              <a class="dropdown-item" href="{{route('peserta.welcome.register')}}">Welcome</a>
+              <a class="dropdown-item text-wrap" href="{{route('open-campus.its-fair.register')}}">ITS Fair</a>
+              <a class="dropdown-item text-wrap" href="{{route('open-campus.fnd.register')}}">Faculty and Department Day</a>
+              <a class="dropdown-item text-wrap" href="{{route('open-campus.odl.register')}}">One Day Lecture</a>
+              <a class="dropdown-item text-wrap" href="{{route('peserta.welcome.register')}}">Welcome</a>
             </div>
           </div>
         </div>
