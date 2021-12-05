@@ -114,6 +114,7 @@
     $d = join('|',$deskripsi);
     $f = join(',',$foto);
   ?>
+  @if($prestasi)
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="prestasi">
     <article class="container">
       @include("partials.section-header", ["title" => "Segudang Prestasi!"])
@@ -123,7 +124,9 @@
         carouselId="MainPrestasiCarousel" />
     </article>
   </section>
+  @endif
 
+@if($departemen->prospek)
 <section class="d-flex justify-content-center align-items-center flex-column" id='prospek'>
     <div class="container text-center">
       @include('partials.section-header', ['title'=>'Sesuaikan Prospek'])
@@ -134,7 +137,7 @@
         $prospeks = $departemen->prospek_kerja;
         foreach($prospeks as $prospek){
           $nama[] = $prospek->nama;
-          $foto[] = "img/prospek/".$prospek->foto;
+          $foto[] = "../img/prospek/".$prospek->foto;
           $id[] = $prospek->id;
         }
         $n = join(",",$nama);
@@ -149,6 +152,7 @@
       </div>
     </div>
 </section>
+@endif
 
 <section class="d-flex justify-content-center align-items-center flex-column" id='figure'>
     <div class="container text-center">
@@ -163,6 +167,8 @@
     </div>
 </section>
 
+
+@if($departemen->aktivitas_mahasiswa)
 <section class="text-center d-flex justify-content-center align-items-center flex-column" id='kegiatan'>
     <article class="container">
       @include('partials.section-header', ['title'=>'Kegiatan Mahasiswa'])
@@ -191,34 +197,30 @@
       |Lorem ipsum dolor sit amet c, provident voluptatum facilis inventore corporis earum animi dolor obcaecati doloribus quibusdam necessitatibus. Dignissimos, cupiditate optio exp, porro mrum earum laboriosam nisi!'
       images="img/departmen/Kegiatan-1.png,img/departmen/Kegiatan-1.png,img/departmen/Kegiatan-1.png" /> --}}
     </article>
-
   </section>
-
+  @endif
 
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id='fasilitas'>
   <?php
         $judul = array();
         $foto = array();
         $deskripsi = array();
-        $facilities = $departemen->fasilitas;
-        foreach($facilities as $facility){
-          $judul[] = $facility->judul;
-          $foto[] = "img/fasilitas/".$facility->foto;
-          $deskripsi[] = $facility->deskripsi;
-          $id[] = $facility->id;
+        foreach($fasilitas as $f){
+          $judul[] = $f->judul;
+          $foto[] = "../img/fasilitas/".$f->foto;
+          $deskripsi[] = $f->deskripsi;
         }
         $j = join(", ",$judul);
         $f = join(',',$foto);
         $d = join('|',$deskripsi);
-        $i = join(',',$id);
       ?>
     <article class="container">
       <x-carousel-with-floating-header headerTitle='Fasilitas Untuk Semua' titles='{{ $j }}'
         texts='{{ $d }}'
-        images='../img/fasilitas/{{ $f }}' />
+        images='{{ $f }}' />
       </div>
     </article>
-</section>
+
 @endsection
 @push('modals')
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

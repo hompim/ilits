@@ -13,6 +13,10 @@ class DepartemenController extends Controller
         $alumni = $departemen->alumni;
         $akreditasi = $departemen->akreditasi;
         $prestasi = $departemen->prestasi;
+        // if($fasilitas->count()!=0){
+        //     dd($fasilitas->count());
+        // }
+
         return view('departemen',[
             'fasilitas' => $fasilitas,
             'alumni' =>$alumni,
