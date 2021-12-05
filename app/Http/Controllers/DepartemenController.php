@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Departemen;
-use App\Models\Fasilitas;
-use App\Models\Alumni;
-use App\Models\Akreditasi;
 use Illuminate\Http\Request;
 
 class DepartemenController extends Controller
@@ -15,11 +12,17 @@ class DepartemenController extends Controller
         $fasilitas = $departemen->fasilitas;
         $alumni = $departemen->alumni;
         $akreditasi = $departemen->akreditasi;
+        $prestasi = $departemen->prestasi;
+        // if($fasilitas->count()!=0){
+        //     dd($fasilitas->count());
+        // }
+
         return view('departemen',[
             'fasilitas' => $fasilitas,
             'alumni' =>$alumni,
             'departemen' => $departemen,
-            'akreditasi' => $akreditasi
+            'akreditasi' => $akreditasi,
+            'prestasi' => $prestasi,
         ]);
     }
 }

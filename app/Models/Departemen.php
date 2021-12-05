@@ -55,4 +55,9 @@ class Departemen extends Model
     {
         return $this->belongsTo(Fakultas::class, 'fakultas_id');
     }
+
+    public function prestasi()
+    {
+        return $this->hasMany(Prestasi::class);
+    }
 }

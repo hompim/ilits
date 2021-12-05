@@ -134,12 +134,25 @@
     </article>
   </section>
 
+  <?php
+    $nama = array();
+    $deskripsi = array();
+    $foto = array();
+    foreach($prestasi as $p){
+      $nama[] = $p->nama;
+      $deskripsi[] = $p->deskripsi;
+      $foto[] = "../img/main/".$p->foto;
+    }
+    $n = join(',',$nama);
+    $d = join('|',$deskripsi);
+    $f = join(',',$foto);
+  ?>
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="prestasi">
     <article class="container">
       @include("partials.section-header", ["title" => "Segudang Prestasi!"])
-      <x-three-cards-carousel titles="Juara 1, Juara 1, Juara 1, Juara 1, Juara 1, Juara 1"
-        texts="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque.|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros, erat sit auctor eleifend scelerisque."
-        images="img/main/web-series.png,img/main/web-series.png,img/main/web-series.png,img/main/web-series.png,img/main/web-series.png,img/main/web-series.png"
+      <x-three-cards-carousel titles="{{$n}}"
+        texts="{{$d}}"
+        images="{{$f}}"
         carouselId="MainPrestasiCarousel" />
     </article>
   </section>
