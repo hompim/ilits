@@ -75,7 +75,7 @@
 #threeCardsCarousel a.btn-floating-prev {
     left:-0.625rem ;
     top: 50%;
-    transform: translate(-3rem, -50%);
+    transform: translate(10%, -50%);
     z-index: 2;
 }
 #threeCardsCarousel a.btn-floating .fa-3x{
@@ -87,7 +87,7 @@
 #threeCardsCarousel a.btn-floating-next {
     right: -0.625rem;
     top: 50%;
-    transform: translate(3rem, -50%);
+    transform: translate(-10%, -50%);
     z-index: 2;
 }
 #threeCardsCarousel .carousel-item{
@@ -127,14 +127,15 @@
     border-radius: 10px;
 }
 @media screen and (max-width: 992px) {
-    #threeCardsCarousel a.btn-floating .fa-3x{
-        font-size: 2em !important;
+    #threeCardsCarousel .carousel-inner {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
     }
     #threeCardsCarousel a.btn-floating-prev {
-        transform: translateX(-2.2rem);
+        transform: translateX(0) !important;
     }
     #threeCardsCarousel a.btn-floating-next {
-        transform: translateX(2.2rem);
+        transform: translateX(0) !important;
     }
     #threeCardsCarousel .card h3 {
         font-size: 1.5rem;

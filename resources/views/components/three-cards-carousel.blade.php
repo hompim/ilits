@@ -7,7 +7,7 @@
     <a class="btn-floating btn-floating-next position-absolute" href=".{{ $carouselId }}" data-slide="next"><i
         class="text-white fa fa-3x fa-arrow-right" aria-hidden="true"></i></a>
   </div>
-  <div class="carousel-inner row w-100 mx-auto" role="listbox">
+  <div class="carousel-inner row w-100 px-5 mx-auto" role="listbox">
     @for ($i = 0; $i < count($titles); $i++)
       <div class="carousel-item @if ($i == 0) active @endif col-lg-4">
 
