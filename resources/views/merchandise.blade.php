@@ -44,8 +44,8 @@
 
       <div class="row">
       @foreach($merch as $m)
-        <div class="col-sm-4">
-            <a href="{{$m->link}}"><img src="../img/merchandise/{{$m->gambar}}" alt="Merchandise" class="img-fluid"></a>
+        <div class="col-sm-4 mb-3">
+            <a href="{{$m->link}}"><img src="../img/merchandise/{{$m->gambar}}" alt="Merchandise" class="img-fluid mb-3"></a>
             <div class="text-col-product-merchandise mb-3">
               <a href="{{$m->link}}" style="text-decoration:none; color:white"><h4>{{$m->nama}}</h4>
               <h5>{{ $m->harga }}</h5></a>

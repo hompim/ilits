@@ -48,33 +48,9 @@
 }
 
 /* Catalog */
-#catalog .text-col-product-merchandise {
-    padding-left: 32px;
-}
+/* Nothing */
 
-@media screen and (max-width: 1200px) {
-    #catalog .text-col-product-merchandise {
-        padding-left: 28px;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    #catalog .text-col-product-merchandise {
-        padding-left: 24px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #catalog .text-col-product-merchandise {
-        padding-left: 20px;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    #catalog .text-col-product-merchandise {
-        padding-left: 45px;
-    }
-}
+/* Background Colour */
 
 section#merchandise-carousel {
     background-color: #305ea0;

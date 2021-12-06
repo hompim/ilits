@@ -35,9 +35,9 @@
 
       <div class="row">
         @foreach($alumni as $a)
-        <div class="col-sm-4 mb-2">
+        <div class="col-sm-4 mb-4">
           <img src="img/alumni/alumni-1.png" alt="{{$a->nama}}" class="img-fluid mb-2">
-          <div class="text-list-alumni mb-3">
+          <div class="text-list-alumni mb-3 text-center">
             <h4>{{$a->nama}}</h4>
             <h5>{{$a->deskripsi}}</h5>
           </div>
