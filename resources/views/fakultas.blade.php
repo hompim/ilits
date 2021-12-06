@@ -90,27 +90,22 @@
         $nama = array();
         $foto = array();
         $deskripsi = array();
-        $route = array();
+        $slug = array();
+        $id = array();
         $dep = $fakultas->departemen;
         foreach($dep as $d){
           $nama[] = $d->nama;
           $foto[] = "img/departmen/".$d->foto;
-          if($d->id==24){
-            $id[] = 20;
-          }
-          else if($d->id==29){
-            $id[] = 27;
-          }
-          else{
-            $id[] = $d->id;
-          }
+          $id[] = $d->id;
+          $slug[] = $d->slug;
         }
         $n = join(",",$nama);
         $f = join(',',$foto);
         $i = join(',',$id);
+        $s = join(',',$slug);
       ?>
       <div class="col-lg-11 mx-auto">
-        <x-three-cards-container-carousel carouselId="idcar2" titles="{{$n}}" images="{{$f}}" id="{{$i}}" route="departemen"
+        <x-three-cards-container-carousel carouselId="idcar2" titles="{{$n}}" images="{{$f}}" id="{{$i}}" slug="{{$s}}" route="departemen"
          />
       </div>
     </div>
@@ -130,20 +125,14 @@
       @include('partials.section-header', ['title'=>'Kerja Sama Kami!'])
 
       <?php
-        $judul = array();
-        $deskripsi = array();
-        $fak = $fakultas->fakultas_kerjasama;
-        foreach($fak as $f){
-          $judul[] = $f->judul;
-          $deskripsi[] = $f->deskripsi;
-        }
-        $j = join("",$judul);
-        $d = join('|',$deskripsi);
+        $fak = $fakultas->fakultas_kerjasama->first();
+        $judul= $fak->judul;
+        $deskripsi = $fak->deskripsi;
       ?>
       <div class="col-10 col-lg-11 mx-auto">
         <x-two-side-separated-carousel images="img/fakultas/kerja-sama.png,img/fakultas/kerja-sama.png,img/fakultas/kerja-sama.png"
-        titles="{{ $j }}"
-        texts="{{ $d }}"
+        titles="{{ $judul }}"
+        texts="{{ $deskripsi }}"
         carouselId="idcar3"/>
       </div>
     </div>

@@ -7,8 +7,8 @@ use App\Models\Fakultas;
 
 class FakultasController extends Controller
 {
-    public function index($id){
-        $fakultas = Fakultas::find($id);
+    public function index($slug){
+        $fakultas = Fakultas::where('slug',$slug)->first();
         return view('fakultas',[
             'fakultas' => $fakultas,
         ]);

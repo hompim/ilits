@@ -23,6 +23,8 @@ class CreateFakultasTable extends Migration
             $table->string('singkatan');
             $table->string('link_zoom');
             $table->text('link_map');
+            $table->string('foto_header');
+            $table->string('slug');
             $table->string('link_video')->nullable();
             $table->date('updated_at')->nullable();
             $table->date('created_at')->nullable();

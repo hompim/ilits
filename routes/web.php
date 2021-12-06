@@ -37,8 +37,8 @@ Route::get('/', function () {
 })->name('coming-soon');
 Route::get('main', [MainController::class, 'index'])->name('main');
 Route::get('fasilitas', [FasilitasController::class,'index'])->name('fasilitas');
-Route::get('fakultas/{id}', [FakultasController::class, 'index'])->name('fakultas');
-Route::get('departemen/{id}', [DepartemenController::class, 'index'])->name('departemen');
+Route::get('fakultas/{slug}', [FakultasController::class, 'index'])->name('fakultas');
+Route::get('departemen/{slug}', [DepartemenController::class, 'index'])->name('departemen');
 Route::get('merchandise', [MerchController::class,'index'])->name('merch');
 Route::get('team', function(){return view('team');});
 Route::get('beasiswa', [BeasiswaController::class,'index'])->name('beasiswa');
