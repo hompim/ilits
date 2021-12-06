@@ -18,6 +18,24 @@
 .carouselWithFloatingHeader{
     background: linear-gradient(-45deg, #ffffff64, #ffffff37);
 }
+.carouselWithFloatingHeader a.btn-floating-prev {
+    left: 0.5rem ;
+    top: 50%;
+    transform: translate(10%, -50%);
+    z-index: 2;
+}
+.carouselWithFloatingHeader a.btn-floating .fa-3x{
+    opacity: 0.5;
+}
+.carouselWithFloatingHeader a.btn-floating .fa-3x:hover{
+    opacity: 1;
+}
+.carouselWithFloatingHeader a.btn-floating-next {
+    right: 0.5rem;
+    top: 50%;
+    transform: translate(-10%, -50%);
+    z-index: 2;
+}
 
 .carouselWithFloatingHeader div.floating-header {
     background: linear-gradient(90.75deg, #53EA90 1.37%, #3B71C7 98.71%);
@@ -61,6 +79,10 @@
     }
 }
 @media only screen and (max-width: 768px) {
+
+    .carouselWithFloatingHeader a.btn-floating .fa-3x{
+        font-size: 2em !important;
+    }
     
     .carouselWithFloatingHeader div.floating-header {
         transform: translate(-0.1rem, -50%) !important;

@@ -145,7 +145,7 @@
       <div class="col-10 col-lg-11 mx-auto">
         <x-three-cards-carousel carouselId="idcar" titles="{{ $n }}"
         images="img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png"
-        texts="NULL"
+        texts=""
          />
       </div>
     </div>

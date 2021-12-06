@@ -20,14 +20,17 @@
 
 @section('content')
 
-<section class="d-flex justify-content-center flex-column" id="jumbotron">
-  <article class="container text-white ">
-      <div class="left">
+<section class="d-flex justify-content-center flex-column " id="jumbotron">
+  <article class="container text-white">
+      <div class="left col-lg-9">
         <h1 class="mb-2">{{$fakultas->nama}}</h1>
         <h2 class="mb-4">{{$fakultas->singkatan}}</h2>
         <x-button-link href="">Kenali Lebih Lanjut!</x-button-link>
       </div>
   </article>
+  <div class="ilustrasi">
+    <img src="http://127.0.0.1:8000/img/fakultas/FTEIC.png" alt="none">
+  </div>
 </section>
 
 <section class="d-flex justify-content-center flex-column" id="info-unik">
