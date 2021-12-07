@@ -45,6 +45,9 @@ Route::get('beasiswa', [BeasiswaController::class,'index'])->name('beasiswa');
 Route::get('eventual', function(){return view('eventual');})->name('eventual');
 Route::get('alumni', [AlumniController::class, 'show'])->name('alumni');
 
+//API
+Route::get('choose-fakultas/{id}', [MainController::class, 'chooseFakultas'])->name('choose-fakultas');
+
 Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
     //FnD
     Route::prefix('fnd')->group(function(){
