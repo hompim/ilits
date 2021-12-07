@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class DepartemenController extends Controller
 {
-    public function index($id){
-        $departemen = Departemen::find($id);
+    public function index($slug){
+        $departemen = Departemen::where('slug',$slug)->first();
         $fasilitas = $departemen->fasilitas;
         $alumni = $departemen->alumni;
         $akreditasi = $departemen->akreditasi;

@@ -29,7 +29,8 @@ class DepartemenSeeder extends Seeder
                     'sesi_id' => NULL,
                     'kelas_id' => NULL,
                     'kuota'=>$record['kuota'],
-                    'link_zoom'=>$record['link_zoom']
+                    'link_zoom'=>$record['link_zoom'],
+                    'slug'=>$record['slug'],
                 ]);
             }
             else{
@@ -42,7 +43,8 @@ class DepartemenSeeder extends Seeder
                     'sesi_id' => $record['sesi_id'],
                     'kelas_id' => $record['kelas_id'],
                     'kuota'=>$record['kuota'],
-                    'link_zoom'=>$record['link_zoom']
+                    'link_zoom'=>$record['link_zoom'],
+                    'slug'=>$record['slug']
                 ]);
             } 
         }

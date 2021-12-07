@@ -25,6 +25,7 @@ class CreateDepartemensTable extends Migration
             $table->string('foto');
             $table->text('deskripsi');
             $table->string('link_zoom');
+            $table->string('slug');
             $table->integer('kuota')->nullable();
             $table->date('updated_at')->nullable();
             $table->date('created_at')->nullable();

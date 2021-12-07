@@ -102,26 +102,26 @@
     <article class="container mb-5 text-center text-white">
       {{-- @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"]) --}}
       <div class="row">
-        <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/4"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button></a>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <a href="fakultas/{{$fakultas[3]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button></a>
         </div>
-        <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/2"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Sains dan Analitika Data</button></a>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <a href="fakultas/{{$fakultas[1]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Sains dan Analitika Data</button></a>
         </div>
-        <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/6"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Teknik Sipil, Perencanaan, dan Kebumian</button></a>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <a href="fakultas/{{$fakultas[5]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknik Sipil, Perencanaan, dan Kebumian</button></a>
         </div>
-        <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/3"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Teknologi Elektro dan Informatika Cerdas</button></a>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <a href="fakultas/{{$fakultas[2]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Elektro dan Informatika Cerdas</button></a>
         </div>
-        <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/5"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Teknologi Kelautan</button></a>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <a href="fakultas/{{$fakultas[4]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Kelautan</button></a>
         </div>
-        <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/1"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Desain Kreatif dan Bisnis Digital</button></a>
+        <div class="col-lg-4 col-md-6 col-12 mb-5">
+          <a href="fakultas/{{$fakultas[0]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Desain Kreatif dan Bisnis Digital</button></a>
         </div>
-        <div class="mx-auto col-lg-4 col-md-6 col-12">
-          <a href="fakultas/7"><button type="button" class="px-3 text-white border-0 w-100 h-100">Vokasi</button></a>
+        <div class="col-lg-4 col-md-6 col-12 mx-auto">
+          <a href="fakultas/{{$fakultas[6]->slug}}"><button type="button" class="text-white border-0 w-100 h-100 px-3">Vokasi</button></a>
         </div>
       </div>
     </article>
