@@ -17,7 +17,7 @@
   <section class="d-flex justify-content-center flex-column" id="jumbotron">
     <article class="container text-white">
       <h1 class="mb-4">Eventual</h1>
-      <h2 class="mb-4">Ini Loh ITS! 2022</h2>
+      <h2 class="mb-4">Ini Lho ITS! 2022</h2>
       <x-button-link href="">Kenali Lebih Lanjut!</x-button-link>
     </article>
   </section>
