@@ -12,7 +12,6 @@
 @endsection
 
 @section('content')
-
   {{-- Jumbotron --}}
   <section id="jumbotron" class="d-flex align-items-center">
     <div class="container text-white d-flex justify-content-center justify-content-sm-between">

@@ -1,6 +1,6 @@
 /* Jumbotron */
 #jumbotron {
-    min-height: calc(100vh - 0px);
+    height: calc(100vh - 0px);
     background: linear-gradient(to bottom, #f7ddd2, #a2566a);
 }
 
