@@ -23,7 +23,7 @@
                       </div>
                         <div class="text-center card-body px-0 px-sm-3 px-md-4 d-flex align-items-start flex-column" >
                             <h4 class="card-title mb-auto">{{ $titles[$i] }}</h4>
-                            <x-button-link href='../{{$route}}/{{$id[$i]}}' class='grad w-100 align-self-end m-0' >Lihat</x-button-link>
+                            <x-button-link href='../{{$route}}/{{$slug[$i]}}' class='grad w-100 align-self-end m-0' >Lihat</x-button-link>
                         </div>
                     </div>
                 </div>

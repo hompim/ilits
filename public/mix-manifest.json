@@ -1,19 +1,4 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/css/globals.css": "/css/globals.css",
-    "/css/fonts.css": "/css/fonts.css",
-    "/css/pages/main.css": "/css/pages/main.css",
-    "/css/components/five-items-grid.css": "/css/components/five-items-grid.css",
-    "/css/components/button-link.css": "/css/components/button-link.css",
-    "/css/components/carousel-with-floating-header.css": "/css/components/carousel-with-floating-header.css",
-    "/css/components/carousel-with-header.css": "/css/components/carousel-with-header.css",
-    "/css/components/footer.css": "/css/components/footer.css",
-    "/css/components/header.css": "/css/components/header.css",
-    "/css/components/map.css": "/css/components/map.css",
-    "/css/components/two-side-card.css": "/css/components/two-side-card.css",
-    "/css/components/two-side-color-carousel.css": "/css/components/two-side-color-carousel.css",
-    "/css/components/three-cards-carousel.css": "/css/components/three-cards-carousel.css",
-    "/css/components/card-with-floating-header.css": "/css/components/card-with-floating-header.css",
-    "/css/partials/section-header.css": "/css/partials/section-header.css"
+    "/css/app.css": "/css/app.css"
 }

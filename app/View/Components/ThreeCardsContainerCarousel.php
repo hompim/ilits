@@ -11,17 +11,19 @@ class ThreeCardsContainerCarousel extends Component
     public $id;
     public $route;
     public $carouselId;
+    public $slug;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($titles, $images, $id, $route, $carouselId="threeCardsContainerCarousel")
+    public function __construct($titles, $images, $id, $route, $slug, $carouselId="threeCardsContainerCarousel")
     {
             $this->titles = explode(',', $titles);
             $this->images = explode(',', $images);
             $this->id = explode(',',$id);
             $this->route = $route;
+            $this->slug = explode(',',$slug);
             $this->carouselId= $carouselId;
     }
 

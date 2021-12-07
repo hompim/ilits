@@ -3,7 +3,7 @@
 }
 
 section#jumbotron {
-    min-height: calc(100vh - 66.516px);
+    min-height: calc(100vh - 0px);
     background: linear-gradient(to left, #fff9ee 0%, #5beb95 50%, #487dbc 100%);
 }
 section#jumbotron h1 {

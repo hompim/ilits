@@ -6,6 +6,7 @@
 
 @section('style')
   <link rel="stylesheet" href="{{ asset('css/pages/main.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/floating-objects/main.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/components/map.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/two-side-color-carousel.css') }}">
@@ -21,10 +22,15 @@
 @endsection
 
 @section('content')
-  <section class="d-flex justify-content-center flex-column" id="jumbotron">
+  <section class="d-flex justify-content-center flex-column position-relative" id="jumbotron">
     <article class="container text-white">
-      <div class="col-12 col-md-8 col-lg-6">
-        <h1 class="mb-3">INI LHO <br> ITS! 2022</h1>
+      <div class="fo-logo d-flex flex-column align-items-end">
+        <img src="{{ asset("img/logo.svg") }}" alt="Ini Lho ITS! 2022" draggable="false" class="img-fluid">
+        <img src="{{ asset("img/logo-layer.svg") }}" alt="Layer" draggable="false">
+      </div>
+      <div class="col-12 d-flex flex-column justify-content-center align-items-start">
+        {{-- <h1 class="mb-3">INI LHO <br> ITS! 2022</h1> --}}
+        <img src="{{ asset("img/main/main-title.png") }}" alt="Ini Lho ITS! 2022" draggable="false" class="mb-4 img-fluid">
         <x-button-link href="#" angle="20deg" colorFrom="#3b71c7" colorTo="#59d3da">Kenali
           Lebih
           Lanjut
@@ -93,41 +99,39 @@
   </section> --}}
 
   <section class="d-flex justify-content-center align-items-center flex-column" id="fakultas">
-    <article class="container text-center text-white mb-5">
+    <article class="container mb-5 text-center text-white">
       {{-- @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"]) --}}
       <div class="row">
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/4"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button></a>
+          <button type="button" onClick="chooseFakultas(4)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/2"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Sains dan Analitika Data</button></a>
+          <button type="button" onClick="chooseFakultas(2)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Sains dan Analitika Data</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/6"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknik Sipil, Perencanaan, dan Kebumian</button></a>
+          <button type="button" onClick="chooseFakultas(6)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Teknik Sipil, Perencanaan, dan Kebumian</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/3"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Elektro dan Informatika Cerdas</button></a>
+          <button type="button" onClick="chooseFakultas(3)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Elektro dan Informatika Cerdas</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/5"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Kelautan</button></a>
+          <button type="button" onClick="chooseFakultas(5)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Kelautan</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/1"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Desain Kreatif dan Bisnis Digital</button></a>
+          <button type="button" onClick="chooseFakultas(1)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Desain Kreatif dan Bisnis Digital</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mx-auto">
-          <a href="fakultas/7"><button type="button" class="text-white border-0 w-100 h-100 px-3">Vokasi</button></a>
+          <button type="button" onClick="chooseFakultas(7)" data-target="#fakultasPilihan" class="text-white border-0 w-100 h-100 px-3">Vokasi</button>
         </div>
       </div>
     </article>
-    <?php
-      $index = rand(0,6);
-    ?>
-    <article class="container text-white d-flex flex-column align-items-center mt-5">
-      <x-two-side-card title="{{$fakultas[$index]->nama}}"
-        text="{{$fakultas[$index]->deskripsi}}"
-        image="{{$fakultas[$index]->foto}}"
-        link="../fakultas/{{$fakultas[$index]->id}}"
-        buttonText="Lihat Departemen" />
+
+    <article id="fakultasPilihan" class="container text-white d-flex flex-column align-items-center mt-5">
+      <x-two-side-card id="sneakpeek" title="{{$fakultas[0]->nama}}"
+        text="{{$fakultas[0]->deskripsi}}"
+        image="{{$fakultas[0]->foto}}"
+        link="../fakultas/{{$fakultas[0]->slug}}"
+        buttonText="Lihat Departemen"/>
     </article>
   </section>
 
@@ -223,19 +227,33 @@
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="sponsor">
     <article class="container">
       @include('partials.section-header', ["title" => "Sponsor & Media Partner"])
-      <div class="p-5 w-100 text-center">
+      <div class="p-5 text-center w-100">
         <img class="p-5 w-75" src="{{asset('/img/sponsor/ln.png')}}" alt="Lulus Negeri">
       </div>
     </article>
   </section>
 @endsection
 
-@push('modals')
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-@endpush
-
 @push('scripts')
-  <script src="{{ asset('js/components/three-cards-carousel.js') }}" defer></script>
   <script src="{{ asset('js/components/map.js') }}" defer></script>
+  <script>
+      function chooseFakultas(id) {
+      $.ajax({
+        url: '../choose-fakultas/'+id,
+        type: 'GET',
+        data: {},
+        dataType: "JSON",
+        success: function(res) {
+          $('div.text-left > a#fakultas-tombol').attr("href","../fakultas/"+res.slug);
+          $('#fakultas-pilihan-image').attr("src","../img/fakultas/"+res.foto);
+          $('#fakultas-pilihan-image').attr("alt",res.nama);
+          $('#fakultas-pilihan-judul').text(res.nama);
+          $('#fakultas-pilihan-deskripsi').text(res.deskripsi);
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          console.log(xhr.responseText);
+        }
+      });
+      }
+  </script>
 @endpush

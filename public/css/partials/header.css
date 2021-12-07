@@ -23,11 +23,12 @@ nav.navbar .navbar-collapse div.ml-auto .nav-link {
     background: linear-gradient(45deg, #3b71c7, #53ea90);
 }
 
-nav.navbar .navbar-nav .nav-link:hover {
-    color: #53ea90;
+nav.navbar .navbar-nav .nav-link:hover,
+nav .nav-link.active {
+    color: #53ea90 !important;
 }
 
-nav.navbar .navbar-nav .nav-link:after {
+nav.navbar .navbar-nav .nav-link:not(.active):after {
     content: "";
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
@@ -48,6 +49,16 @@ nav.navbar .navbar-nav .nav-link:hover:after {
 
 nav.navbar .navbar-collapse div.mr-auto img {
     display: none;
+}
+
+nav .nav-link.active:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #53ea90;
 }
 
 @media only screen and (max-width: 1200px) {

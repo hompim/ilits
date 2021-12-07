@@ -23,9 +23,6 @@
     <link rel="stylesheet" href="{{ asset('css/partials/header.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components/footer.css') }}">
     @yield('style')
-
-    <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
 <body>
@@ -46,10 +43,9 @@
         @include('components.footer')
     </footer>
 
-    
-    
-
-@stack('modals')
-@stack('scripts')
+    <!-- Scripts -->
+    <script src="{{ mix('js/app.js') }}"></script>
+    @stack('modals')
+    @stack('scripts')
 </body>
 </html>
