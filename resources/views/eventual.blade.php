@@ -37,19 +37,18 @@
         
       </div>
     </article>
-  </section>
-
-  <section class="d-flex justify-content-center flex-column px-4 px-sm-0" id="tentang">
-    <article class="container py-5 my-5 text-center text-white d-flex flex-column align-items-center position-relative">
-      @include("partials.section-header", ["title" => "Apa itu Open Campus"])
-      <p id="eventual-deskripsi">
-        Open Campus terdiri dari 3 sub-event, yaitu: ITS Fair, Faculty and Departemen Day, dan One Day Lecture. ITS Fair adalah Suatu kegiatan pengenalan ITS secara umum meliputi jalur masuk ITS (SNMPTN,
-        SBMPTN, SKMP), UKT ITS, beasiswa di ITS, prestasi, hingga talkshow dengan pembicara
-        hebat dengan topik yang disesuaikan dengan kebutuhan peserta. Faculty and Department Day adalah Kegiatan yang dilakukan dalam satu hari untuk mengenalkan fakultas dan
-        departemen yang ada di ITS kepada siswa/siswi SMA/SMK sederajat. Terakhir, One Day Lecture adalah Kegiatan yang dilakukan selama dua hari untuk memberikan pengalaman secara nyata
-        mengenai pembelajaran saat kuliah kepada siswa/siswi SMA/SMK sederajat.
-      </p>
-    </article>
+    <div class="d-flex justify-content-center flex-column px-4 px-sm-0" id="tentang">
+      <article class="container py-5 my-5 text-center text-white d-flex flex-column align-items-center position-relative">
+        @include("partials.section-header", ["title" => "Apa itu Open Campus"])
+        <p id="eventual-deskripsi">
+          Open Campus terdiri dari 3 sub-event, yaitu: ITS Fair, Faculty and Departemen Day, dan One Day Lecture. ITS Fair adalah Suatu kegiatan pengenalan ITS secara umum meliputi jalur masuk ITS (SNMPTN,
+          SBMPTN, SKMP), UKT ITS, beasiswa di ITS, prestasi, hingga talkshow dengan pembicara
+          hebat dengan topik yang disesuaikan dengan kebutuhan peserta. Faculty and Department Day adalah Kegiatan yang dilakukan dalam satu hari untuk mengenalkan fakultas dan
+          departemen yang ada di ITS kepada siswa/siswi SMA/SMK sederajat. Terakhir, One Day Lecture adalah Kegiatan yang dilakukan selama dua hari untuk memberikan pengalaman secara nyata
+          mengenai pembelajaran saat kuliah kepada siswa/siswi SMA/SMK sederajat.
+        </p>
+      </article>
+    </div>
   </section>
 
   {{-- <section class="d-flex justify-content-center flex-column" id="dokumentasi">

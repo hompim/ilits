@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-slide-nav">
-  <section class="container">
+  <section class="container d-flex justify-content-center">
     <button class="border-0 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse w-75" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="mb-4 close-mobile d-none align-items-center justify-content-between">
         <a href="">
           <img src="{{ asset('img/icons/logo-small.png') }}" class="logo-small" alt="Ini Lho ITS! 2022">
@@ -44,6 +44,10 @@
           <a class="mx-4 nav-link {{ str_contains(URL::current(), "/beasiswa") ? "active" : "" }}" href="{{route('beasiswa')}}">Beasiswa</a>
         </div>
         <div class="d-flex align-items-center">
+          <img src="{{ asset('img/icons/beasiswa.svg') }}" class="mr-3 img-responsive img-fluid" alt="Merchandise">
+          <a class="mx-4 nav-link {{ str_contains(URL::current(), "/merchandise") ? "active" : "" }}" href="{{route('merch')}}">Merchandise</a>
+        </div>
+        {{-- <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/open-campus.svg') }}" class="mr-3 img-responsive img-fluid" alt="Open campus" style="color: white">
           <div class="dropdown show">
             <a class="mx-4 nav-link dropdown-toggle" onclick="toggleDropdown()" role="button" id="dropdownMenuLink">
@@ -57,25 +61,25 @@
               <a class="dropdown-item text-wrap" href="{{route('peserta.welcome.register')}}">Welcome</a>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="ml-auto">
-        @php
-        if (!Auth::user()) {
-          $route = '/login';
-          $text = 'Masuk';
-        } else{
-          $text = 'Dashboard';
-          if(Auth::user()->user_type=='App\Models\Peserta'){
-            $route = '/peserta/welcome';
-          } else if(Auth::user()->user_type=='App\Models\Forda'){
-            $route = '/forda';
+        </div> --}}
+        <div class="ml-auto">
+          @php
+          if (!Auth::user()) {
+            $route = '/login';
+            $text = 'Masuk';
           } else{
-            $route = '/admin';
+            $text = 'Dashboard';
+            if(Auth::user()->user_type=='App\Models\Peserta'){
+              $route = '/peserta/welcome';
+            } else if(Auth::user()->user_type=='App\Models\Forda'){
+              $route = '/forda';
+            } else{
+              $route = '/admin';
+            }
           }
-        }
-        @endphp
-        <a class="nav-link" href="{{$route}}">{{$text}}</a>
+          @endphp
+          <a class="mx-4 nav-link" href="{{$route}}">{{$text}}</a>
+        </div>
       </div>
     </div>
   </section>

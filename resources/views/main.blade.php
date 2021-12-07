@@ -22,7 +22,7 @@
 @endsection
 
 @section('content')
-  <section class="d-flex justify-content-center flex-column position-relative" id="jumbotron">
+  <section class="d-flex justify-content-center flex-column position-relative mt-5" id="jumbotron">
     <article class="container text-white">
       <div class="fo-logo d-flex flex-column align-items-end">
         <img src="{{ asset("img/logo.svg") }}" alt="Ini Lho ITS! 2022" draggable="false" class="img-fluid">
@@ -31,7 +31,7 @@
       <div class="col-12 d-flex flex-column justify-content-center align-items-start">
         {{-- <h1 class="mb-3">INI LHO <br> ITS! 2022</h1> --}}
         <img src="{{ asset("img/main/main-title.png") }}" alt="Ini Lho ITS! 2022" draggable="false" class="mb-4 img-fluid">
-        <x-button-link href="#" angle="20deg" colorFrom="#3b71c7" colorTo="#59d3da">Kenali
+        <x-button-link href="#tentang" angle="20deg" colorFrom="#3b71c7" colorTo="#59d3da">Kenali
           Lebih
           Lanjut
         </x-button-link>
