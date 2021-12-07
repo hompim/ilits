@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-  <title>Alumni</title>
+  <title>Ini Lho ITS! 2022</title>
 @endsection
 
 @section('style')
@@ -14,11 +14,14 @@
 @section('content')
 
   {{-- Jumbotron --}}
-  <section class="d-flex align-items-center" id="jumbotron">
-    <div class="container d-flex flex-column justify-content-between text-white">
-      <h1>Alumni</h1>
-      <h3>Institut Teknologi Sepuluh Nopember</h3>
-      <x-button-link href="#info-unik">Kenali Lebih Lanjut</x-button-link>
+  <section id="jumbotron" class="d-flex align-items-center">
+    <div class="container text-white d-flex justify-content-center justify-content-sm-between">
+      <div class="d-flex flex-column justify-content-center">
+        <h1 class="pb-2">Alumni</h1>
+        <h3 class="pb-3">Institut Teknologi Sepuluh Nopember</h3>
+        <x-button-link href="#info-unik">Kenali Lebih Lanjut</x-button-link>
+      </div>
+      <img src="img/alumni/jumbotron_alumni.png" alt="Jumbtoron Icon" class="d-none d-lg-block img-fluid">
     </div>
   </section>
 

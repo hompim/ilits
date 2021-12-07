@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-  <title>Merchandise</title>
+  <title>Ini Lho ITS! 2022</title>
 @endsection
 
 @section('style')
@@ -12,11 +12,14 @@
 @endsection
 
 @section('content')
-  <section class="d-flex align-items-center" id="jumbotron">
-    <div class="container d-flex flex-column justify-content-between text-white">
-      <h1>Merchandise</h1>
-      <h3>Institut Teknologi Sepuluh Nopember</h3>
-      <x-button-link href="#info-unik">Kenali Lebih Lanjut</x-button-link>
+  <section id="jumbotron" class="d-flex align-items-center">
+    <div class="container text-white d-flex justify-content-center justify-content-sm-between">
+      <div class="d-flex flex-column justify-content-center">
+        <h1 class="pb-2">Merchandise</h1>
+        <h3 class="pb-3">Institut Teknologi Sepuluh Nopember</h3>
+        <x-button-link href="#info-unik">Kenali Lebih Lanjut</x-button-link>
+      </div>
+      <img src="img/merchandise/jumbotron_merch.png" alt="Jumbtoron Icon" class="d-none d-xl-block img-fluid">
     </div>
   </section>
 
@@ -41,7 +44,6 @@
   <section id="catalog">
     <div class="container text-white">
       @include("partials.section-header", ["title" => "Katalog Kami!"])
-
       <div class="row">
       @foreach($merch as $m)
         <div class="col-sm-4 mb-3">
@@ -53,7 +55,5 @@
         </div>
       @endforeach
       </div>
-
-      
   </section>
 @endsection
