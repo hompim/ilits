@@ -172,7 +172,10 @@
       <x-carousel-with-floating-header-and-button headerTitle="Fasilitas Apa Saja Yang Ada di ITS"
         titles="{{$n}}"
         texts="{{$d}}"
-        buttonText="Kenali Lebih Lanjut" images="{{$f}}" />
+        buttonText="Kenali Lebih Lanjut" 
+        images="{{$f}}" 
+        routeTo="{{route('fasilitas')}}"
+        />
       </div>
     </article>
   </section>
