@@ -1,11 +1,14 @@
 /* Jumbotron */
 #jumbotron {
-    min-height: calc(100vh - 0px);
+    height: calc(100vh - 0px);
     background: linear-gradient(to bottom, #f7ddd2, #a2566a);
+    background: url("../../img/alumni/bg-jumbotron-alumni.svg");
+    /* background-position: center; */
+    background-size: cover;
 }
 
 #jumbotron .container {
-    height: 40%;
+    height: 80%;
 }
 
 #jumbotron h1 {
@@ -91,10 +94,8 @@
     padding-left: 0px;
 }
 
-section#info-unik {
-    background-color: #305ea0;
-}
-
-section#alumni {
-    background: linear-gradient(to bottom, #305ea0, #251f4a);
+.body {
+  background: url("../../img/alumni/base-page.svg");
+  /* background-position: center; */
+  background-size: cover;
 }

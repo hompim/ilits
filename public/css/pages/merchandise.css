@@ -1,11 +1,14 @@
 /* Jumbotron */
 #jumbotron {
-    min-height: calc(100vh - 0px);
+    height: calc(100vh - 0px);
     background: linear-gradient(to bottom, #fff9ee, #e9a386);
+    background: url("../../img/merchandise/bg-jumbotron-merch.svg");
+    /* background-position: center; */
+    background-size: cover;
 }
 
 #jumbotron .container {
-    height: 40%;
+    height: 80%;
 }
 
 #jumbotron h1 {
@@ -51,11 +54,8 @@
 /* Nothing */
 
 /* Background Colour */
-
-section#merchandise-carousel {
-    background-color: #305ea0;
-}
-
-section#catalog {
-    background: linear-gradient(to bottom, #305ea0, #251f4a);
+.body {
+    background: url("../../img/merchandise/base-page.svg");
+    /* background-position: center; */
+    background-size: cover;
 }
