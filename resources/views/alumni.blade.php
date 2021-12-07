@@ -24,30 +24,29 @@
     </div>
   </section>
 
-  {{-- Info Unik --}}
-  <section class="d-flex align-items-center" id="info-unik">
-    <div class="container text-white">
-      <x-card-with-floating-header title="Info Unik Buat Kamu" image="img/alumni/alumni-2.png" text=" Mulai dari berdirinya pada tahun 1957, Institut Teknologi Sepuluh Nopember Surabaya udah memberikan banyak kontribusinya kepada Indonesia. Salah satunya adalah dengan mencetak alumni yang unggul. Yuk, kenalan sama mereka semua."></x-card-with-floating-header>
-    </div>
-  </section>
-
-  <section id="alumni">
-    <div class="container text-white">
-      @include("partials.section-header", ["title" => "Ikuti Jejak Mereka"])
-
-      <div class="row">
-        @foreach($alumni as $a)
-        <div class="col-sm-4 mb-4">
-          <img src="img/alumni/alumni-1.png" alt="{{$a->nama}}" class="img-fluid mb-2">
-          <div class="text-list-alumni mb-3 text-center">
-            <h4>{{$a->nama}}</h4>
-            <h5>{{$a->deskripsi}}</h5>
-          </div>
-        </div>
-        @endforeach
+  <section class="body">
+    {{-- Info Unik --}}
+    <section class="d-flex align-items-center" id="info-unik">
+      <div class="container text-white">
+        <x-card-with-floating-header title="Info Unik Buat Kamu" image="img/alumni/alumni-2.png" text=" Mulai dari berdirinya pada tahun 1957, Institut Teknologi Sepuluh Nopember Surabaya udah memberikan banyak kontribusinya kepada Indonesia. Salah satunya adalah dengan mencetak alumni yang unggul. Yuk, kenalan sama mereka semua."></x-card-with-floating-header>
       </div>
+    </section>
 
-    </div>
+    <section id="alumni">
+      <div class="container text-white">
+        @include("partials.section-header", ["title" => "Ikuti Jejak Mereka"])
+        <div class="row">
+          @foreach($alumni as $a)
+          <div class="col-sm-4 mb-4">
+            <img src="img/alumni/alumni-1.png" alt="{{$a->nama}}" class="img-fluid mb-2">
+            <div class="text-list-alumni mb-3 text-center">
+              <h4>{{$a->nama}}</h4>
+              <h5>{{$a->deskripsi}}</h5>
+            </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
+    </section>
   </section>
-
 @endsection

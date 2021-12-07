@@ -2,6 +2,9 @@
 #jumbotron {
     height: calc(100vh - 0px);
     background: linear-gradient(to right, #642881, #bf7dde);
+    background: url("../../img/beasiswa/bg-jumbotron-beasiswa.svg");
+    /* background-position: center; */
+    background-size: cover;
 }
 
 #jumbotron .container {
@@ -91,11 +94,8 @@
     }
 }
 
-section#info-unik,
-section#beasiswa-its {
-    background-color: #305ea0;
-}
-
-section#beasiswa-mitra-its {
-    background: linear-gradient(to bottom, #305ea0, #251f4a);
+.body {
+  background: url("../../img/beasiswa/base-page.svg");
+  /* background-position: center; */
+  background-size: cover;
 }
