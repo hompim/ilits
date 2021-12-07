@@ -251,7 +251,6 @@
           console.log(xhr.responseText);
         }
       });
-    }
-
+      }
   </script>
 @endpush
