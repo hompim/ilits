@@ -10,6 +10,10 @@ footer .icons img {
     max-width: 2rem;
 }
 
+footer section:first-of-type img.footer-logo {
+    width: 25%;
+}
+
 footer section:first-child div:first-child {
     width: 35%;
 }
@@ -27,6 +31,14 @@ footer section:nth-child(2) div ul {
 }
 
 @media only screen and (max-width: 768px) {
+    footer section:first-of-type {
+        flex-direction: column;
+        align-items: center !important;
+    }
+    footer section:first-of-type img.footer-logo {
+        width: 40%;
+        margin-bottom: 2rem;
+    }
     footer section:first-child div:first-child {
         width: 75% !important;
     }
