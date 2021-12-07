@@ -244,7 +244,7 @@
         data: {},
         dataType: "JSON",
         success: function(res) {
-          $('div.text-left > a#fakultas-tombol').attr("href","../fakultas/"+res.slug);
+          $('div#tombol-fakultas > a#fakultas-tombol').attr("href","../fakultas/"+res.slug);
           $('#fakultas-pilihan-image').attr("src","../img/fakultas/"+res.foto);
           $('#fakultas-pilihan-image').attr("alt",res.nama);
           $('#fakultas-pilihan-judul').text(res.nama);
