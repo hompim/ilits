@@ -103,37 +103,35 @@
       {{-- @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"]) --}}
       <div class="row">
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/{{$fakultas[3]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button></a>
+          <button type="button" onClick="chooseFakultas(4)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/{{$fakultas[1]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Sains dan Analitika Data</button></a>
+          <button type="button" onClick="chooseFakultas(2)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Sains dan Analitika Data</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/{{$fakultas[5]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknik Sipil, Perencanaan, dan Kebumian</button></a>
+          <button type="button" onClick="chooseFakultas(6)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Teknik Sipil, Perencanaan, dan Kebumian</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/{{$fakultas[2]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Elektro dan Informatika Cerdas</button></a>
+          <button type="button" onClick="chooseFakultas(3)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Elektro dan Informatika Cerdas</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/{{$fakultas[4]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Kelautan</button></a>
+          <button type="button" onClick="chooseFakultas(5)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Teknologi Kelautan</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mb-5">
-          <a href="fakultas/{{$fakultas[0]->slug}}"><button type="button" class="text-white border-0 py-3 px-3 w-100 h-100">Desain Kreatif dan Bisnis Digital</button></a>
+          <button type="button" onClick="chooseFakultas(1)" data-target="#fakultasPilihan" class="text-white border-0 py-3 px-3 w-100 h-100">Desain Kreatif dan Bisnis Digital</button>
         </div>
         <div class="col-lg-4 col-md-6 col-12 mx-auto">
-          <a href="fakultas/{{$fakultas[6]->slug}}"><button type="button" class="text-white border-0 w-100 h-100 px-3">Vokasi</button></a>
+          <button type="button" onClick="chooseFakultas(7)" data-target="#fakultasPilihan" class="text-white border-0 w-100 h-100 px-3">Vokasi</button>
         </div>
       </div>
     </article>
-    <?php
-      $index = rand(0,6);
-    ?>
-    <article class="container mt-5 text-white d-flex flex-column align-items-center">
-      <x-two-side-card title="{{$fakultas[$index]->nama}}"
-        text="{{$fakultas[$index]->deskripsi}}"
-        image="{{$fakultas[$index]->foto}}"
-        link="../fakultas/{{$fakultas[$index]->id}}"
-        buttonText="Lihat Departemen" />
+
+    <article id="fakultasPilihan" class="container text-white d-flex flex-column align-items-center mt-5">
+      <x-two-side-card id="sneakpeek" title="{{$fakultas[0]->nama}}"
+        text="{{$fakultas[0]->deskripsi}}"
+        image="{{$fakultas[0]->foto}}"
+        link="../fakultas/{{$fakultas[0]->slug}}"
+        buttonText="Lihat Departemen"/>
     </article>
   </section>
 
@@ -235,4 +233,24 @@
 
 @push('scripts')
   <script src="{{ asset('js/components/map.js') }}" defer></script>
+  <script>
+      function chooseFakultas(id) {
+      $.ajax({
+        url: '../choose-fakultas/'+id,
+        type: 'GET',
+        data: {},
+        dataType: "JSON",
+        success: function(res) {
+          $('div.text-left > a#fakultas-tombol').attr("href","../fakultas/"+res.slug);
+          $('#fakultas-pilihan-image').attr("src","../img/fakultas/"+res.foto);
+          $('#fakultas-pilihan-image').attr("alt",res.nama);
+          $('#fakultas-pilihan-judul').text(res.nama);
+          $('#fakultas-pilihan-deskripsi').text(res.deskripsi);
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          console.log(xhr.responseText);
+        }
+      });
+      }
+  </script>
 @endpush

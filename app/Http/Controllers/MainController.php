@@ -28,4 +28,15 @@ class MainController extends Controller
             'prestasi' => $prestasi,
         ]);
     }
+
+    public function chooseFakultas($id){
+        $fakultas = Fakultas::find($id);
+        $res = [
+            'nama' => $fakultas->nama,
+            'deskripsi' => $fakultas->deskripsi,
+            'foto' => $fakultas->foto,
+            'slug' =>$fakultas->slug,
+        ];
+        return json_encode($res);
+    }
 }

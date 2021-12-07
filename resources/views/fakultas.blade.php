@@ -29,7 +29,7 @@
       </div>
   </article>
   <div class="ilustrasi">
-    <img src="http://127.0.0.1:8000/img/fakultas/FTEIC.png" alt="none">
+    <img src="../img/fakultas/{{$fakultas->foto_header}}" alt="{{$fakultas->nama}}">
   </div>
 </section>
 
