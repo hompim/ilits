@@ -178,6 +178,9 @@ section#sponsor .sponsor-box {
 }
 
 @media only screen and (max-width: 992px) {
+    section#jumbotron div:last-of-type { 
+        align-items: center !important;
+    }
     section#alumni div.row div {
         margin: auto;
         width: 80%;

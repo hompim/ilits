@@ -17,8 +17,8 @@
           </div>
            <div class="pb-3 text-left card-body">
             <h3 class="card-title">{{ $titles[$i] }}</h3>
-            @if($texts[$i] != "NULL")
-            <p class="card-text">{{ $texts[$i] }}</p>
+            @if($texts[$i] != "")
+              <p class="card-text">{{ $texts[$i] }}</p>
             @endif
           </div>
         </div>
@@ -39,7 +39,7 @@
           </div>
           <div class="pb-3 text-left card-body">
             <h3 class="card-title">{{ $titles[$i] }}</h3>
-            @if($texts[$i] != "NULL")
+            @if($texts[$i] != "")
             <p class="card-text">{{ $texts[$i] }}</p>
             @endif
           </div>
@@ -55,14 +55,14 @@
             </div>
             <div class="pb-3 text-left card-body">
               <h3 class="card-title">{{ $titles[$i] }}</h3>
-              @if($texts[$i] != "NULL")
+              @if($texts[$i] != "")
               <p class="card-text">{{ $texts[$i] }}</p>
               @endif
             </div>
           </div>
         </div>
       @endfor
-    @else 
+    @elseif (count($titles) == 1)
       <div class="col-8 mx-auto mb-5" >
         <div class="overflow-hidden card">
           <div class="image">
@@ -70,13 +70,13 @@
           </div>
           <div class="pb-3 text-left card-body">
             <h3 class="card-title">{{ $titles[0] }}</h3>
-            @if($texts[0] != "NULL")
+            @if($texts[0] != "")
             <p class="card-text">{{ $texts[0] }}</p>
             @endif
           </div>
         </div>
       </div>
-    
+    @else
   @endif  
 </div>
 
