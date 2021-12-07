@@ -1,4 +1,10 @@
 <div class="container position-relative carouselWithFloatingHeader py-3 px-5">
+    <div class="controls-top">
+        <a class="btn-floating btn-floating-prev position-absolute" href="#facilityCarousel-b" data-slide="prev"><i
+            class="text-white fa fa-3x fa-arrow-left" aria-hidden="true"></i></a>
+        <a class="btn-floating btn-floating-next position-absolute" href="#facilityCarousel-b" data-slide="next"><i
+            class="text-white fa fa-3x fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
     <div class="top-0 px-3 py-2 px-sm-4 py-sm-3 floating-header position-absolute">
         <h2 class="m-0">{{ $headerTitle }}</h2>
     </div>
@@ -9,7 +15,7 @@
         @endfor
     </ol>
     <div id="facilityCarousel-b" class="carousel slide position-relative" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner col-11 mx-auto">
             @for($i = 0; $i < count($titles); $i++) <div class="carousel-item @if($i == 0) active @endif">
                 <div class="mx-0 my-4 m-lg-5 ">
                     <div class="mb-4">
@@ -23,8 +29,7 @@
                             <p class="pr-2 text-justify m-0  overflow-auto">{{ $texts[$i] }}</p>
                         </div>
                     </div>
-                </div>
-                
+                </div> 
         </div>
         @endfor
     </div>

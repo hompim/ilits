@@ -1,50 +1,50 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-slide-nav">
   <section class="container">
-    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    <button class="border-0 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse w-75" id="navbarNavAltMarkup">
-      <div class="close-mobile d-none align-items-center justify-content-between mb-4">
+      <div class="mb-4 close-mobile d-none align-items-center justify-content-between">
         <a href="">
           <img src="{{ asset('img/icons/logo-small.png') }}" class="logo-small" alt="Ini Lho ITS! 2022">
         </a>
-        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        <button class="border-0 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-2x border-0 fa-chevron-left" aria-hidden="true"></i>
+          <i class="border-0 fa fa-2x fa-chevron-left" aria-hidden="true"></i>
         </button>
       </div>
       <div class="mr-auto navbar-nav">
         <div class="d-flex align-items-center">
-          <img src="{{ asset('img/icons/home.svg') }}" class="img-responsive img-fluid mr-3" alt="Home">
-          <a class="mx-4 nav-link" href="{{route('main')}}">Home</a>
+          <img src="{{ asset('img/icons/home.svg') }}" class="mr-3 img-responsive img-fluid" alt="Home">
+          <a class="mx-4 nav-link {{ str_contains(URL::current(), "/main") ? "active" : "" }}" href="{{route('main')}}">Home</a>
         </div>
         <div class="d-flex align-items-center">
-          <img src="{{ asset('img/icons/eventual.svg') }}" class="img-responsive img-fluid mr-3" alt="Eventual">
-          <a class="mx-4 nav-link" href="{{ route('eventual') }}">Eventual</a>
+          <img src="{{ asset('img/icons/eventual.svg') }}" class="mr-3 img-responsive img-fluid" alt="Eventual">
+          <a class="mx-4 nav-link {{ str_contains(URL::current(), "/eventual") ? "active" : "" }}" href="{{ route('eventual') }}">Eventual</a>
         </div>
         <div class="d-flex align-items-center">
-          <img src="{{ asset('img/icons/fakultas.svg') }}" class="img-responsive img-fluid mr-3" alt="Fakultas">
-          <a class="mx-4 nav-link" href="{{route('main').'#fakultas'}}">Fakultas</a>
+          <img src="{{ asset('img/icons/fakultas.svg') }}" class="mr-3 img-responsive img-fluid" alt="Fakultas">
+          <a class="mx-4 nav-link {{ str_contains(URL::current(), "/fakultas") ? "active" : "" }}" href="{{route('main').'#fakultas'}}">Fakultas</a>
         </div>
         <div class="d-flex align-items-center">
-          <img src="{{ asset('img/icons/prestasi.svg') }}" class="img-responsive img-fluid mr-3" alt="Prestasi">
-          <a class="mx-4 nav-link" href="{{route('main').'#prestasi'}}">Prestasi</a>
+          <img src="{{ asset('img/icons/prestasi.svg') }}" class="mr-3 img-responsive img-fluid" alt="Prestasi">
+          <a class="mx-4 nav-link{{ str_contains(URL::current(), "/prestasi") ? "active" : "" }}" href="{{route('main').'#prestasi'}}">Prestasi</a>
         </div>
         <div class="d-flex align-items-center">
-          <img src="{{ asset('img/icons/fasilitas.svg') }}" class="img-responsive img-fluid mr-3" alt="Fasilitas">
-          <a class="mx-4 nav-link" href="{{route('fasilitas')}}">Fasilitas</a>
+          <img src="{{ asset('img/icons/fasilitas.svg') }}" class="mr-3 img-responsive img-fluid" alt="Fasilitas">
+          <a class="mx-4 nav-link {{ str_contains(URL::current(), "/fasilitas") ? "active" : "" }}" href="{{route('fasilitas')}}">Fasilitas</a>
         </div>
         <div class="d-flex align-items-center">
-          <img src="{{ asset('img/icons/alumni.svg') }}" class="img-responsive img-fluid mr-3" alt="Alumni">
-          <a class="mx-4 nav-link" href="{{route('alumni')}}">Alumni</a>
+          <img src="{{ asset('img/icons/alumni.svg') }}" class="mr-3 img-responsive img-fluid" alt="Alumni">
+          <a class="mx-4 nav-link {{ str_contains(URL::current(), "/alumni") ? "active" : "" }}" href="{{route('alumni')}}">Alumni</a>
         </div>
         <div class="d-flex align-items-center">
-          <img src="{{ asset('img/icons/beasiswa.svg') }}" class="img-responsive img-fluid mr-3" alt="Beasiswa">
-          <a class="mx-4 nav-link" href="{{route('beasiswa')}}">Beasiswa</a>
+          <img src="{{ asset('img/icons/beasiswa.svg') }}" class="mr-3 img-responsive img-fluid" alt="Beasiswa">
+          <a class="mx-4 nav-link {{ str_contains(URL::current(), "/beasiswa") ? "active" : "" }}" href="{{route('beasiswa')}}">Beasiswa</a>
         </div>
         <div class="d-flex align-items-center">
-          <img src="{{ asset('img/icons/open-campus.svg') }}" class="img-responsive img-fluid mr-3" alt="Open campus" style="color: white">
+          <img src="{{ asset('img/icons/open-campus.svg') }}" class="mr-3 img-responsive img-fluid" alt="Open campus" style="color: white">
           <div class="dropdown show">
             <a class="mx-4 nav-link dropdown-toggle" onclick="toggleDropdown()" role="button" id="dropdownMenuLink">
               Daftar

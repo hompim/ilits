@@ -6,6 +6,7 @@
 
 @section('style')
   <link rel="stylesheet" href="{{ asset('css/pages/main.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/floating-objects/main.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/components/map.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/two-side-color-carousel.css') }}">
@@ -21,10 +22,15 @@
 @endsection
 
 @section('content')
-  <section class="d-flex justify-content-center flex-column" id="jumbotron">
+  <section class="d-flex justify-content-center flex-column position-relative" id="jumbotron">
     <article class="container text-white">
-      <div class="col-12 col-md-8 col-lg-6">
-        <h1 class="mb-3">INI LHO <br> ITS! 2022</h1>
+      <div class="fo-logo d-flex flex-column align-items-end">
+        <img src="{{ asset("img/logo.svg") }}" alt="Ini Lho ITS! 2022" draggable="false" class="img-fluid">
+        <img src="{{ asset("img/logo-layer.svg") }}" alt="Layer" draggable="false">
+      </div>
+      <div class="col-12 d-flex flex-column justify-content-center align-items-start">
+        {{-- <h1 class="mb-3">INI LHO <br> ITS! 2022</h1> --}}
+        <img src="{{ asset("img/main/main-title.png") }}" alt="Ini Lho ITS! 2022" draggable="false" class="mb-4 img-fluid">
         <x-button-link href="#" angle="20deg" colorFrom="#3b71c7" colorTo="#59d3da">Kenali
           Lebih
           Lanjut
@@ -93,7 +99,7 @@
   </section> --}}
 
   <section class="d-flex justify-content-center align-items-center flex-column" id="fakultas">
-    <article class="container text-center text-white mb-5">
+    <article class="container mb-5 text-center text-white">
       {{-- @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"]) --}}
       <div class="row">
         <div class="col-lg-4 col-md-6 col-12 mb-5">
@@ -218,7 +224,7 @@
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="sponsor">
     <article class="container">
       @include('partials.section-header', ["title" => "Sponsor & Media Partner"])
-      <div class="p-5 w-100 text-center">
+      <div class="p-5 text-center w-100">
         <img class="p-5 w-75" src="{{asset('/img/sponsor/ln.png')}}" alt="Lulus Negeri">
       </div>
     </article>
