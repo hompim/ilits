@@ -86,24 +86,24 @@ section#fakultas {
 section#fakultas h2 {
     font-size: 3rem;
 }
-section#fakultas article:first-child button {
+section#fakultas article:nth-child(5) button {
     background: linear-gradient(-45deg, #FFFFFF64, #FFFFFF37);
     font-size: 1.625rem;
     border-radius: 22px;
     font-family: "gothammedium";
 }
-section#fakultas article:first-child div:last-child button {
+section#fakultas article:nth-child(5) div:last-child button {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
-section#fakultas article:first-child div:nth-child(4),
-section#fakultas article:first-child div:nth-child(5),
-section#fakultas article:first-child div:nth-child(6) {
+section#fakultas article:nth-child(5) div:nth-child(4),
+section#fakultas article:nth-child(5) div:nth-child(5),
+section#fakultas article:nth-child(5) div:nth-child(6) {
     padding-right: 2rem;
     padding-left: 2rem;
 }
 
-section#fakultas article:first-child div:nth-child(7) {
+section#fakultas article:nth-child(5) div:nth-child(7) {
     padding-right: 5rem;
     padding-left: 5rem;
 }
@@ -186,13 +186,13 @@ section#sponsor .sponsor-box {
         width: 80%;
         margin-bottom: 2rem;
     }
-    section#fakultas article:first-child div:nth-child(4),
-    section#fakultas article:first-child div:nth-child(5),
-    section#fakultas article:first-child div:nth-child(6) {
+    section#fakultas article:nth-child(5) div:nth-child(4),
+    section#fakultas article:nth-child(5) div:nth-child(5),
+    section#fakultas article:nth-child(5) div:nth-child(6) {
         padding-right: 0.75rem;
         padding-left: 0.75rem;
     }
-    section#fakultas article:first-child div:nth-child(7) {
+    section#fakultas article:nth-child(5) div:nth-child(7) {
         padding-right: 0.75rem;
         padding-left: 0.75rem;
     }
@@ -220,7 +220,7 @@ section#sponsor .sponsor-box {
     section#informasi-penting {
         min-height: auto;
     }
-    section#fakultas article:first-child a:last-child button {
+    section#fakultas article:nth-child(5) a:last-child button {
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
