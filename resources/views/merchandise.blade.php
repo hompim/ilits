@@ -23,7 +23,7 @@
     </div>
   </section>
 
-  <section class="body">
+  <section class="body" id="info-unik">
     <section id="merchandise-carousel">
       <div class="container text-white">
         <?php
