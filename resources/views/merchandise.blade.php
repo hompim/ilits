@@ -12,18 +12,18 @@
 @endsection
 
 @section('content')
-  <section id="jumbotron" class="d-flex align-items-center">
-    <div class="container text-white d-flex justify-content-center justify-content-sm-between">
-      <div class="d-flex flex-column justify-content-center">
-        <h1 class="pb-2">Merchandise</h1>
-        <h3 class="pb-3">Institut Teknologi Sepuluh Nopember</h3>
+    <section id="jumbotron" class="d-flex align-items-center">
+    <div class="container d-flex flex-column flex-lg-row justify-content-around justify-content-lg-between">
+      <div class="d-flex flex-column justify-content-center text-white text-jumbotron">
+        <h1 class="mb-2">Merchandise</h1>
+        <h3 class="mb-3">Institut Teknologi Sepuluh Nopember</h3>
         <x-button-link href="#info-unik">Kenali Lebih Lanjut</x-button-link>
       </div>
-      <img src="img/merchandise/jumbotron_merch.png" alt="Jumbtoron Icon" class="d-none d-xl-block img-fluid">
+      <img src="img/merchandise/jumbotron_merch.png" alt="Jumbtoron Icon" class="img-fluid">
     </div>
   </section>
 
-  <section class="body" id="info-unik">
+  <section class="body">
     <section id="merchandise-carousel">
       <div class="container text-white">
         <?php
@@ -45,10 +45,12 @@
     <section id="catalog">
       <div class="container text-white">
         @include("partials.section-header", ["title" => "Katalog Kami!"])
-        <div class="row">
+        <div class="row justify-content-center">
         @foreach($merch as $m)
-          <div class="col-sm-4 mb-3">
-              <a target="_blank" href="https://www.tokopedia.com/merchandiseilits"><img src="../img/merchandise/{{$m->gambar}}" alt="Merchandise" class="img-fluid mb-3"></a>
+          <div class="col-md-3 m-3 catalog-item">
+              <a target="_blank" href="https://www.tokopedia.com/merchandiseilits">
+                <img src="../img/merchandise/{{$m->gambar}}" alt="Merchandise" class="img-fluid mb-3">
+              </a>
               <div class="text-col-product-merchandise mb-3">
                 <a target="_blank" href="https://www.tokopedia.com/merchandiseilits" style="text-decoration:none; color:white"><h4>{{$m->nama}}</h4>
                 <h5>{{ $m->harga }}</h5></a>
