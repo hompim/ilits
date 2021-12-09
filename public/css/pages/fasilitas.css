@@ -16,6 +16,10 @@ section#jumbotron h1 {
 section#jumbotron h2 {
     font-size: 1.875rem;
 }
+section#jumbotron a {
+    position: relative;
+    z-index: 10;
+}
 
 section#info-unik {
     background: linear-gradient(to bottom, #264882, #2a518e);
@@ -26,6 +30,12 @@ section#fasilitas {
 }
 section#fasilitas h2 {
     font-size: 3rem;
+}
+
+@media only screen and (max-width: 992px) {
+    section#jumbotron article {
+        position: static !important;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -43,5 +53,14 @@ section#fasilitas h2 {
         margin-left: 0 !important;
         margin-right: 0 !important;
         margin-bottom: 0.75rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    h1 {
+        font-size: 3rem !important;
+    }
+    h2 {
+        font-size: 1.5rem !important;
     }
 }
