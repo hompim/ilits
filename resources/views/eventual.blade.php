@@ -16,17 +16,22 @@
 @section('content')
   <section class="d-flex justify-content-center flex-column" id="jumbotron">
     <article class="container text-white">
-      <h1 class="mb-4">Eventual</h1>
-      <h2 class="mb-4">Ini Lho ITS! 2022</h2>
-      <x-button-link href="">Kenali Lebih Lanjut!</x-button-link>
+        <div class="left col-lg-9">
+          <h1 class="mb-4">Eventual</h1>
+          <h2 class="mb-4">Ini Lho ITS! 2022</h2>
+          <x-button-link href="">Kenali Lebih Lanjut!</x-button-link>
+        </div>
     </article>
+    <div class="ilustrasi ">
+      <img src="http://127.0.0.1:8000/img/eventual/EVENT.png" alt="none">
+    </div>
   </section>
 
   <section class="d-flex justify-content-center align-items-center flex-column" id="event">
     <article class="container text-center text-white mb-5">
       @include('partials.section-header', ["title" => "Ikuti Eventual ILITS! 2022!"])
       <div class="row col-lg-11 m-auto -5">
-        <div class="col-lg-4 col-6 mt-4 mx-auto">
+        <div class="col-lg-4 col-6 mt-4 mx-auto ">
           <button type="button" class="text-white border-0 p-2 p-md-3 w-100 h-100">Open Campus Nirwana Asa</button>
         </div>
         <div class="col-lg-4 col-6 mt-4 mx-auto">
