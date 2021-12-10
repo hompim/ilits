@@ -149,6 +149,9 @@ section#informasi-penting a {
     section#jumbotron .ilustrasi{
         position: unset;
     }
+    section#jumbotron h1{
+        margin-top: 5rem;
+    }
     section#jumbotron .ilustrasi img{
         width: 515px;
     }
