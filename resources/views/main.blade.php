@@ -22,7 +22,7 @@
 @endsection
 
 @section('content')
-  <section class="d-flex justify-content-center flex-column position-relative" id="jumbotron">
+  <section class="mt-5 overflow-hidden d-flex justify-content-center flex-column position-relative" id="jumbotron">
     <article class="container text-white">
       <div class="fo-logo d-flex flex-column align-items-end">
         <img src="{{ asset("img/logo.svg") }}" alt="Ini Lho ITS! 2022" draggable="false" class="img-fluid">
@@ -31,7 +31,7 @@
       <div class="col-12 d-flex flex-column justify-content-center align-items-start">
         {{-- <h1 class="mb-3">INI LHO <br> ITS! 2022</h1> --}}
         <img src="{{ asset("img/main/main-title.png") }}" alt="Ini Lho ITS! 2022" draggable="false" class="mb-4 img-fluid">
-        <x-button-link href="#" angle="20deg" colorFrom="#3b71c7" colorTo="#59d3da">Kenali
+        <x-button-link href="#tentang" angle="20deg" colorFrom="#3b71c7" colorTo="#59d3da">Kenali
           Lebih
           Lanjut
         </x-button-link>
@@ -39,8 +39,14 @@
     </article>
   </section>
 
-  <section class="d-flex justify-content-center flex-column" id="tentang">
+  <section class="overflow-hidden d-flex justify-content-center flex-column position-relative" id="tentang">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-1 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-2 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-3 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-4 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-5 position-absolute">
     <article class="container py-5 text-center text-white d-flex flex-column align-items-center position-relative">
+      <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-6 position-absolute">
       @include("partials.section-header", ["title" => "Apa itu ILITS?"])
       <p>"Kenali Dirimu, Kenali Masa Depanmu, Di Ini Lho ITS! 2022"
         Ini Lho ITS! 2022 membantu calon mahasiswa baru ITS dalam menemukan jurusan yang sesuai minat & bakat yang
@@ -48,7 +54,8 @@
     </article>
   </section>
 
-  <section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
+  <section class="overflow-hidden text-white d-flex justify-content-center flex-column position-relative" id="virtual-expo">
+    <img src="{{ asset("img/icons/circle-pink.svg") }}" alt="Circle icon" class="circle position-absolute">
     <article class="container text-center position-relative">
       <x-map text="Virtual Tour ITS" href="/" withLayer="true"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634595959033!2d112.79273125123773!3d-7.28235067356743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1633755459057!5m2!1sen!2sid">
@@ -81,7 +88,9 @@
     $n = join(',',$nama);
     $d = join('|',$deskripsi);
   ?>
-  <section class="text-white d-flex justify-content-center flex-column" id="acara">
+  <section class="overflow-hidden text-white d-flex justify-content-center flex-column position-relative" id="acara">
+    <img src="{{ asset("img/icons/ring-cyan.svg") }}" alt="Ring icon" class="ring-cyan position-absolute">
+    <img src="{{ asset("img/icons/hollow-rec.svg") }}" alt="Hollow rectangle icon" class="hollow-rec position-absolute">
     <article class="container d-flex flex-column align-items-center">
       <x-carousel-with-header buttonText="Kenali Lebih Lanjut" headerTitle="Ada acara apa aja di ILITS! 2022?"
         titles="{{$n}}"
@@ -98,42 +107,44 @@
     </article>
   </section> --}}
 
-  <section class="d-flex justify-content-center align-items-center flex-column" id="fakultas">
+  <section class="z-10 overflow-hidden d-flex justify-content-center align-items-center flex-column position-relative" id="fakultas">
+    <img src="{{ asset("img/icons/ring-pink.svg") }}" alt="Ring icon" class="ring-pink position-absolute">
+    <img src="{{ asset("img/icons/rec-pink.svg") }}" alt="Ring icon" class="rec-pink position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Ring icon" class="star-1 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Ring icon" class="star-2 position-absolute">
     <article class="container mb-5 text-center text-white">
       {{-- @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"]) --}}
       <div class="row">
         <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/4"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button></a>
+          <button type="button" onClick="chooseFakultas(4)" data-target="#fakultasPilihan" class="px-3 py-3 text-white border-0 w-100 h-100">Teknologi Industri dan Rekayasa Sistem</button>
         </div>
         <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/2"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Sains dan Analitika Data</button></a>
+          <button type="button" onClick="chooseFakultas(2)" data-target="#fakultasPilihan" class="px-3 py-3 text-white border-0 w-100 h-100">Sains dan Analitika Data</button>
         </div>
         <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/6"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Teknik Sipil, Perencanaan, dan Kebumian</button></a>
+          <button type="button" onClick="chooseFakultas(6)" data-target="#fakultasPilihan" class="px-3 py-3 text-white border-0 w-100 h-100">Teknik Sipil, Perencanaan, dan Kebumian</button>
         </div>
         <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/3"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Teknologi Elektro dan Informatika Cerdas</button></a>
+          <button type="button" onClick="chooseFakultas(3)" data-target="#fakultasPilihan" class="px-3 py-3 text-white border-0 w-100 h-100">Teknologi Elektro dan Informatika Cerdas</button>
         </div>
         <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/5"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Teknologi Kelautan</button></a>
+          <button type="button" onClick="chooseFakultas(5)" data-target="#fakultasPilihan" class="px-3 py-3 text-white border-0 w-100 h-100">Teknologi Kelautan</button>
         </div>
         <div class="mb-5 col-lg-4 col-md-6 col-12">
-          <a href="fakultas/1"><button type="button" class="px-3 py-3 text-white border-0 w-100 h-100">Desain Kreatif dan Bisnis Digital</button></a>
+          <button type="button" onClick="chooseFakultas(1)" data-target="#fakultasPilihan" class="px-3 py-3 text-white border-0 w-100 h-100">Desain Kreatif dan Bisnis Digital</button>
         </div>
         <div class="mx-auto col-lg-4 col-md-6 col-12">
-          <a href="fakultas/7"><button type="button" class="px-3 text-white border-0 w-100 h-100">Vokasi</button></a>
+          <button type="button" onClick="chooseFakultas(7)" data-target="#fakultasPilihan" class="px-3 text-white border-0 w-100 h-100">Vokasi</button>
         </div>
       </div>
     </article>
-    <?php
-      $index = rand(0,6);
-    ?>
-    <article class="container mt-5 text-white d-flex flex-column align-items-center">
-      <x-two-side-card title="{{$fakultas[$index]->nama}}"
-        text="{{$fakultas[$index]->deskripsi}}"
-        image="{{$fakultas[$index]->foto}}"
-        link="../fakultas/{{$fakultas[$index]->id}}"
-        buttonText="Lihat Departemen" />
+
+    <article id="fakultasPilihan" class="container mt-5 text-white d-flex flex-column align-items-center">
+      <x-two-side-card id="sneakpeek" title="{{$fakultas[0]->nama}}"
+        text="{{$fakultas[0]->deskripsi}}"
+        image="{{$fakultas[0]->foto}}"
+        link="../fakultas/{{$fakultas[0]->slug}}"
+        buttonText="Lihat Departemen"/>
     </article>
   </section>
 
@@ -150,7 +161,8 @@
     $d = join('|',$deskripsi);
     $f = join(',',$foto);
   ?>
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="prestasi">
+  <section class="overflow-hidden text-white d-flex justify-content-center align-items-center flex-column position-relative" id="prestasi">
+    <img src="{{ asset("img/icons/circle-gradation-2.svg") }}" alt="Circle icon" class="circle position-absolute">
     <article class="container">
       @include("partials.section-header", ["title" => "Segudang Prestasi!"])
       <x-three-cards-carousel titles="{{$n}}"
@@ -160,8 +172,10 @@
     </article>
   </section>
 
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="fasilitas">
-    <article class="container d-flex flex-column align-items-center">
+  <section class="overflow-hidden text-white d-flex justify-content-center align-items-center flex-column position-relative" id="fasilitas">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star position-absolute">
+    <article class="container d-flex flex-column align-items-center position-relative">
+      <img src="{{ asset("img/icons/ring-thin-cyan.svg") }}" alt="Ring icon" class="ring-thin-cyan position-absolute">
     <?php
     $nama = array();
     $deskripsi = array();
@@ -178,7 +192,10 @@
       <x-carousel-with-floating-header-and-button headerTitle="Fasilitas Apa Saja Yang Ada di ITS"
         titles="{{$n}}"
         texts="{{$d}}"
-        buttonText="Kenali Lebih Lanjut" images="{{$f}}" />
+        buttonText="Kenali Lebih Lanjut" 
+        images="{{$f}}" 
+        routeTo="{{route('fasilitas')}}"
+        />
       </div>
     </article>
   </section>
@@ -201,7 +218,8 @@
     </article>
   </section> --}}
 
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="alumni">
+  <section class="overflow-hidden text-white d-flex justify-content-center align-items-center flex-column position-relative" id="alumni">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star position-absolute">
     <article class="container">
       @include('partials.section-header', ["title" => "Jadilah Penerus Mereka!"])
       <div class="container row">
@@ -214,7 +232,9 @@
     </article>
   </section>
 
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="beasiswa">
+  <section class="overflow-hidden text-white d-flex justify-content-center align-items-center flex-column position-relative" id="beasiswa">
+    <img src="{{ asset("img/icons/circle-gradation-2.svg") }}" alt="Circle icon" class="circle position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star position-absolute">
     <article class="container">
       {{-- @include('partials.section-header', ["title" => "Pilihan Beasiswa Untukmu!"]) --}}
       @foreach($beasiswa as $b)
@@ -223,7 +243,9 @@
     </article>
   </section>
 
-  <section class="text-white d-flex justify-content-center align-items-center flex-column" id="sponsor">
+  <section class="overflow-hidden text-white d-flex justify-content-center align-items-center flex-column position-relative" id="sponsor">
+    {{-- <img src="{{ asset("img/icons/ring-gradation.svg") }}" alt="Ring icon" class="ring position-absolute"> --}}
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star position-absolute">
     <article class="container">
       @include('partials.section-header', ["title" => "Sponsor & Media Partner"])
       <div class="p-5 text-center w-100">
@@ -235,4 +257,24 @@
 
 @push('scripts')
   <script src="{{ asset('js/components/map.js') }}" defer></script>
+  <script>
+      function chooseFakultas(id) {
+      $.ajax({
+        url: '../choose-fakultas/'+id,
+        type: 'GET',
+        data: {},
+        dataType: "JSON",
+        success: function(res) {
+          $('div#tombol-fakultas > a#fakultas-tombol').attr("href","../fakultas/"+res.slug);
+          $('#fakultas-pilihan-image').attr("src","../img/fakultas/"+res.foto);
+          $('#fakultas-pilihan-image').attr("alt",res.nama);
+          $('#fakultas-pilihan-judul').text(res.nama);
+          $('#fakultas-pilihan-deskripsi').text(res.deskripsi);
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          console.log(xhr.responseText);
+        }
+      });
+      }
+  </script>
 @endpush

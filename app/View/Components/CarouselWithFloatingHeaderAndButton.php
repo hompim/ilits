@@ -11,16 +11,18 @@ class CarouselWithFloatingHeaderAndButton extends Component
     public $texts;
     public $buttonText;
     public $images;
+    public $routeTo;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($headerTitle, $buttonText, $titles = [], $texts = [], $images = [])
+    public function __construct($routeTo, $headerTitle, $buttonText, $titles = [], $texts = [], $images = [])
     {
         $this->headerTitle = $headerTitle;
         $this->buttonText = $buttonText;
+        $this->routeTo = $routeTo;
         if($titles)
             $this->titles = explode(',', $titles);
         if($texts)

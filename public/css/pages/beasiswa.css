@@ -1,11 +1,13 @@
 /* JUMBOTRON */
 #jumbotron {
-    min-height: calc(100vh - 0px);
+    height: calc(100vh - 0px);
     background: linear-gradient(to right, #642881, #bf7dde);
+    background: url("../../img/beasiswa/bg-jumbotron-beasiswa.svg");
+    background-size: cover;
 }
 
 #jumbotron .container {
-    height: 40%;
+    height: 80%;
 }
 
 #jumbotron h1 {
@@ -20,9 +22,9 @@
     background: linear-gradient(90.75deg, #e2c0e8, #8649d7) !important;
 }
 
-@media screen and (max-width: 576px) {
-    #jumbotron .container {
-        height: 30%;
+@media screen and (max-width: 992px) {
+    #jumbotron {
+        min-height: 730px;
     }
 
     #jumbotron h1 {
@@ -38,6 +40,17 @@
     #jumbotron a.button-link {
         margin: auto;
     }
+
+    #jumbotron img {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #jumbotron img {
+        width: 100%;
+    }
 }
 
 /* INFO-UNIK */
@@ -46,17 +59,11 @@
 }
 
 #info-unik h2 {
-    font-size: 34px;
+    font-size: 30px;
 }
 
 #info-unik p {
-    font-size: 25px;
-}
-
-@media screen and (max-width: 1200px) {
-    #info-unik p {
-        font-size: 20px;
-    }
+    font-size: 20px;
 }
 
 @media screen and (max-width: 992px) {
@@ -91,11 +98,7 @@
     }
 }
 
-section#info-unik,
-section#beasiswa-its {
-    background-color: #305ea0;
-}
-
-section#beasiswa-mitra-its {
-    background: linear-gradient(to bottom, #305ea0, #251f4a);
+.body {
+  background: url("../../img/beasiswa/base-page.svg");
+  background-size: cover;
 }

@@ -1,11 +1,13 @@
 /* Jumbotron */
 #jumbotron {
-    min-height: calc(100vh - 0px);
+    height: calc(100vh - 0px);
     background: linear-gradient(to bottom, #fff9ee, #e9a386);
+    background: url("../../img/merchandise/bg-jumbotron-merch.svg");
+    background-size: cover;
 }
 
 #jumbotron .container {
-    height: 40%;
+    height: 80%;
 }
 
 #jumbotron h1 {
@@ -27,13 +29,13 @@
     background: linear-gradient(90.75deg, #ae65d3, #e67346) !important;
 }
 
-@media screen and (max-width: 576px) {
-    #jumbotron .container {
-        height: 30%;
+@media screen and (max-width: 992px) {
+    #jumbotron {
+        min-height: 730px;
     }
 
     #jumbotron h1 {
-        font-size: 54px;
+        font-size: 50px;
         text-align: center;
     }
 
@@ -45,17 +47,30 @@
     #jumbotron a.button-link {
         margin: auto;
     }
+
+    #jumbotron img {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #jumbotron img {
+        width: 100%;
+    }
 }
 
 /* Catalog */
-/* Nothing */
-
-/* Background Colour */
-
-section#merchandise-carousel {
-    background-color: #305ea0;
+#catalog .catalog-item {
+    transition: all 0.3s ease;
 }
 
-section#catalog {
-    background: linear-gradient(to bottom, #305ea0, #251f4a);
+#catalog .catalog-item:hover {
+    transform: scale(1.035);
+}
+
+/* Background */
+.body {
+    background: url("../../img/merchandise/base-page.svg");
+    background-size: cover;
 }

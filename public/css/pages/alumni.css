@@ -1,11 +1,13 @@
 /* Jumbotron */
 #jumbotron {
-    min-height: calc(100vh - 0px);
+    height: calc(100vh - 0px);
     background: linear-gradient(to bottom, #f7ddd2, #a2566a);
+    background: url("../../img/alumni/bg-jumbotron-alumni.svg");
+    background-size: cover;
 }
 
 #jumbotron .container {
-    height: 40%;
+    height: 80%;
 }
 
 #jumbotron h1 {
@@ -27,9 +29,9 @@
     background: linear-gradient(90.75deg, #d9c7cf, #78295a) !important;
 }
 
-@media screen and (max-width: 576px) {
-    #jumbotron .container {
-        height: 30%;
+@media screen and (max-width: 992px) {
+    #jumbotron {
+        min-height: 730px;
     }
 
     #jumbotron h1 {
@@ -45,6 +47,17 @@
     #jumbotron a.button-link {
         margin: auto;
     }
+
+    #jumbotron img {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #jumbotron img {
+        width: 100%;
+    }
 }
 
 /* INFO-UNIK */
@@ -53,17 +66,11 @@
 }
 
 #info-unik h2 {
-    font-size: 34px;
+    font-size: 30px;
 }
 
 #info-unik p {
-    font-size: 25px;
-}
-
-@media screen and (max-width: 1200px) {
-    #info-unik p {
-        font-size: 20px;
-    }
+    font-size: 20px;
 }
 
 @media screen and (max-width: 992px) {
@@ -91,10 +98,16 @@
     padding-left: 0px;
 }
 
-section#info-unik {
-    background-color: #305ea0;
+#alumni .alumni-item {
+    transition: all 0.3s ease;
 }
 
-section#alumni {
-    background: linear-gradient(to bottom, #305ea0, #251f4a);
+#alumni .alumni-item:hover {
+    transform: scale(1.03);
+}
+
+/* Background */
+.body {
+  background: url("../../img/alumni/base-page.svg");
+  background-size: cover;
 }

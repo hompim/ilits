@@ -68,7 +68,7 @@
                                                 <input type="password" name="password" id="password" class="form-control" placeholder=""
                                                     required>
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text mata" onclick="myFunction()">
+                                                    <span class="input-group-text mata" onclick="myFunction(1)">
                                                     </span>
                                                 </div>
                                             </div>
@@ -80,7 +80,7 @@
                                                 <input type="password" name="password_confirmation" id="ulangi_password" class="form-control" placeholder=""
                                                     required>
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text mata" onclick="myFunction()">
+                                                    <span class="input-group-text mata" onclick="myFunction(2)">
                                                     </span>
                                                 </div>
                                             </div>
@@ -194,8 +194,13 @@
                 <!-- AdminLTE App -->
                 <script src="{{asset('testfiture/dist/js/adminlte.js')}}"></script>
                 <script>
-                    function myFunction() {
+                    function myFunction(y) {
+                        if(y==1){
                         var x = document.getElementById("password");
+                        }
+                        if(y==2){
+                        var x = document.getElementById("ulangi_password");
+                        }
                         if (x.type === "password") {
                             x.type = "text";
                         } else {

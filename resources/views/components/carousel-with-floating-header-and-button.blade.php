@@ -22,7 +22,7 @@
         <div class="px-5 text-left col-lg-6 left d-flex flex-column justify-content-between align-items-center">
           <p class="text-left">{{ $texts[$i] }}</p>
           <div class="text-left w-100">
-            <x-button-link href='#' angle='45deg' colorFrom="#E4BDCD" colorTo='#AD53CC' class='w-75'>
+            <x-button-link href='{{ $routeTo }}' angle='45deg' colorFrom="#E4BDCD" colorTo='#AD53CC' class='w-75'>
               {{ $buttonText }}
             </x-button-link>
           </div>
