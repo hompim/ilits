@@ -37,6 +37,8 @@ body {
     background-size: 40%;
     background-repeat: no-repeat;
 }
+
+
 input[type="password"],
 input[type="text"],
 input[type="email"],
@@ -88,7 +90,7 @@ option {
     color: white;
     background-color: #305ea0 !important;
 }
-.tau_ilits{
+.tau_ilits,.pelajar_aktif{
     border-bottom: 2px solid #ffffff !important;
 }
 .form-check-input {

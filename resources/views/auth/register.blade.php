@@ -124,22 +124,23 @@
 
 
                                         <!-- Radio -->
-                                        <p>Apakah Kamu Pelajar Aktif?</p>
-                                        <div class="form-check">
-                                            <input class="form-check-input" value="1" type="radio" name="is_pelajar_aktif"
-                                                id="flexRadioDefault1" />
-                                            <label class="form-check-label"  for="flexRadioDefault1">
-                                                Pelajar Aktif
-                                            </label>
+                                        <div class="mb-3 pb-3 pelajar_aktif">
+                                            <p>Apakah Kamu Pelajar Aktif?</p>
+                                            <div class="form-check">
+                                                <input class="form-check-input" value="1" type="radio" name="is_pelajar_aktif"
+                                                    id="flexRadioDefault1" />
+                                                <label class="form-check-label"  for="flexRadioDefault1">
+                                                    Pelajar Aktif
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" value="0" type="radio" name="is_pelajar_aktif"
+                                                    id="flexRadioDefault2" checked />
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Tidak
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" value="0" type="radio" name="is_pelajar_aktif"
-                                                id="flexRadioDefault2" checked />
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                Tidak
-                                            </label>
-                                        </div>
-                                        <br />
                                         <!-- Akhir radio -->
                                         <div class="mb-3 pb-3 tau_ilits">
                                             <label for="tau_ilits" class="form-label">Kamu tau ILITS dari mana?</label>
@@ -160,7 +161,7 @@
                                             <div class="col-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" id="agreeTerms"
-                                                        name="terms" value="agree" />
+                                                        name="terms" value="agree" required />
                                                     <label class="saya-yakin form-check-label" for="agreeTerms">
                                                         Saya yakin, data yang saya
                                                         isikan sudah benar
