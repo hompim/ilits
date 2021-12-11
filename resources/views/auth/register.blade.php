@@ -26,15 +26,6 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="
-                preloader
-                flex-column
-                justify-content-center
-                align-items-center
-            ">
-        <img class="animation__shake" src="{{asset('testfiture/lambang/Group-7197.png')}}" alt="AdminLTELogo" height="60" width="60" />
-    </div>
     <div class="bg besar">
         <div class="bg kecil">
             <div class="bg naga">
@@ -45,7 +36,7 @@
                 <section id="section">
                     <div class="container" id="daftar-container">
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-5">
                                 <div class="login-box">
                                     <h1 class="login-box-msg"><b>Daftarkan Dirimu!</b> </h1>
                                     <br>
@@ -97,7 +88,7 @@
                                         <!-- Dropdown -->
                                         <div class="form-group">
                                             <label for="provinsi_domisili">Provinsi Domisili</label>
-                                            <select class="provinsi_domisili form-control" id="provinsi_domisili"
+                                            <select class="provinsi_domisili form-select" id="provinsi_domisili"
                                                 name="provinsi_domisili_id">
                                                 <option value="null"></option>
                                                 @foreach($provinsi as $p)
@@ -107,7 +98,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="kab_domisili">Kabupaten Domisili</label>
-                                            <select class="kab_domisili_id form-control" id="kab_domisili"
+                                            <select class="kab_domisili_id form-select" id="kab_domisili"
                                                 name="kab_domisili_id">
                                                 <option value="null"></option>
                                                 @foreach($kabupaten as $k)
@@ -121,7 +112,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="kota_kab_asal_sekolah">Kabupaten Domisili Sekolah</label>
-                                            <select class="kota_kab_asal_sekolah form-control"
+                                            <select class="kota_kab_asal_sekolah form-select"
                                                 id="kota_kab_asal_sekolah" name="kab_sekolah_id">
                                                 <option value="null"></option>
                                                 @foreach($kabupaten as $k)
@@ -133,7 +124,7 @@
 
 
                                         <!-- Radio -->
-                                        <div>Apakah Kamu Pelajar Aktif?</div>
+                                        <p>Apakah Kamu Pelajar Aktif?</p>
                                         <div class="form-check">
                                             <input class="form-check-input" value="1" type="radio" name="is_pelajar_aktif"
                                                 id="flexRadioDefault1" />
@@ -150,16 +141,27 @@
                                         </div>
                                         <br />
                                         <!-- Akhir radio -->
-                                        <div class="mb-3">
+                                        <div class="mb-3 pb-3 tau_ilits">
                                             <label for="tau_ilits" class="form-label">Kamu tau ILITS dari mana?</label>
-                                            <textarea type="text" class="form-control" name="tau_ilits" id="tau_ilits"></textarea>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="Instagram" id="instagram" name="tau_ilits">
+                                                <label class="form-check-label w-100" for="instagram">
+                                                  Instagram
+                                                </label>
+                                              </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="Tiktok" id="tiktok" name="tau_ilits">
+                                                <label class="form-check-label w-100" for="tiktok">
+                                                  Tiktok
+                                                </label>
+                                              </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" id="agreeTerms"
                                                         name="terms" value="agree" />
-                                                    <label class="saya-yakin" for="agreeTerms">
+                                                    <label class="saya-yakin form-check-label" for="agreeTerms">
                                                         Saya yakin, data yang saya
                                                         isikan sudah benar
                                                     </label>
@@ -189,8 +191,8 @@
 
                 <!-- jQuery -->
                 <script src="{{asset('testfiture/plugins/jquery/jquery.min.js')}}"></script>
-                <!-- Bootstrap 4 -->
-                <script src="{{asset('testfiture/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+                {{-- bootstrap 5 --}}
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
                 <!-- AdminLTE App -->
                 <script src="{{asset('testfiture/dist/js/adminlte.js')}}"></script>
                 <script>
