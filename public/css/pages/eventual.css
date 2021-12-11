@@ -25,6 +25,10 @@ section#jumbotron {
     min-height: 100vh;
     background: linear-gradient(180deg, #F6ECFB 0%, #C17FE0 116.03%);
 }
+section#jumbotron .left{
+    position: relative;
+    z-index: 1;
+}
 section#jumbotron h1 {
     font-size: 5rem;
     background: linear-gradient(267.28deg, #3B71C7 58.44%, #A562E9 100%);
@@ -40,6 +44,16 @@ section#jumbotron a.btn{
     background: linear-gradient(90.75deg, rgba(59, 113, 199, 0.7) 1.29%, rgba(166, 127, 216, 0.7) 55.07%, rgba(244, 230, 250, 0.7) 98.71%);
     backdrop-filter: blur(20px);
 }
+section#jumbotron .ilustrasi{
+    position: absolute;
+    bottom: -108px;
+    right: 0;
+
+}
+section#jumbotron .ilustrasi img{
+    width: 778px;
+    height: auto;
+}
 
 
 section#event {
@@ -52,6 +66,10 @@ section#event article:first-child button {
     font-size: 1.625rem;
     border-radius: 1.25rem;
     font-family: "gothammedium";
+}
+section#event article:first-child button:hover {
+    background: linear-gradient(82.07deg, rgba(83, 234, 144, 0.9) 0%, rgba(59, 113, 199, 0.9) 100%);
+    backdrop-filter: blur(20px);
 }
 section#event article:first-child div:last-child button {
     padding-top: 2rem;
@@ -119,6 +137,24 @@ section#informasi-penting a {
     section#jumbotron h1{
         font-size: 4rem;
     }
+    section#jumbotron{
+        text-align: center;
+    }
+    section#jumbotron .left{
+        position:unset
+    }
+    section#jumbotron a.button-link{
+        margin: auto;
+    }
+    section#jumbotron .ilustrasi{
+        position: unset;
+    }
+    section#jumbotron h1{
+        margin-top: 5rem;
+    }
+    section#jumbotron .ilustrasi img{
+        width: 515px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -131,6 +167,10 @@ section#informasi-penting a {
     body main p {
         font-size: 1rem !important;
     }
+    section#jumbotron h1{
+        margin-top: 5rem;
+    }
+    
 
     section#event article:first-child button{
         font-size: 1.125rem;
@@ -178,9 +218,13 @@ section#informasi-penting a {
     section#jumbotron a.button-link{
         margin: auto;
     }
+    section#jumbotron .ilustrasi img{
+        width: 360px;
+    }
     section#event article:first-child button{
         font-size: 0.875rem;
         min-height: 50px;
     }
+
     
 }

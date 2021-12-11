@@ -31,7 +31,7 @@ section#jumbotron .ilustrasi{
     right: 0;
 }
 section#jumbotron .ilustrasi img{
-    width: 515px;
+    width: 600px;
     height: auto;
 }
 section#jumbotron h1 {
@@ -98,6 +98,9 @@ section#kerja-sama {
         position: unset;
         margin: auto;
     }
+    section#jumbotron h1{
+      padding-top: 5rem;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -150,10 +153,8 @@ section#kerja-sama {
     }
     section#jumbotron .ilustrasi img{
         width: 360px;
-
     }
     section#jumbotron h1{
-        margin-top: 5rem;
         font-size: 2.625rem;
     }
     section#jumbotron h2{

@@ -9,16 +9,18 @@
   <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
   <link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}">
 @endsection
-
-
-
 @section('content')
   <section class="d-flex justify-content-center flex-column" id="jumbotron">
     <article class="container text-white">
-      <h1 class="mb-4">Eventual</h1>
-      <h2 class="mb-4">Ini Lho ITS! 2022</h2>
-      <x-button-link href="">Kenali Lebih Lanjut!</x-button-link>
+        <div class="left col-lg-9">
+          <h1 class="mb-4">Eventual</h1>
+          <h2 class="mb-4">Ini Lho ITS! 2022</h2>
+          <x-button-link href="">Kenali Lebih Lanjut!</x-button-link>
+        </div>
     </article>
+    <div class="ilustrasi ">
+      <img src="http://127.0.0.1:8000/img/eventual/EVENT.png" alt="none">
+    </div>
   </section>
 
   <section class="d-flex justify-content-center align-items-center flex-column" id="event">
