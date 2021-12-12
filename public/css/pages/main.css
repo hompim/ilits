@@ -88,7 +88,7 @@ section#fakultas h2 {
 }
 section#fakultas article:nth-child(5) button {
     background: linear-gradient(-45deg, #FFFFFF64, #FFFFFF37);
-    font-size: 1.625rem;
+    font-size: 1.375rem;
     border-radius: 22px;
     font-family: "gothammedium";
 }
@@ -107,7 +107,10 @@ section#fakultas article:nth-child(5) div:nth-child(7) {
     padding-right: 5rem;
     padding-left: 5rem;
 }
-
+section#fakultas article button:hover {
+    background: linear-gradient(82.07deg, rgba(83, 234, 144, 0.9) 0%, rgba(59, 113, 199, 0.9) 100%);
+    backdrop-filter: blur(20px);
+}
 section#prestasi {
     background: linear-gradient(to bottom, #3f1862, #531373);
 }

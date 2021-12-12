@@ -1,3 +1,11 @@
+/* how to use:
+- call css
+- tambahkan image-image yang diperlukan sesuai urutan dan letak (departemen-page sebagai patokan [karena section paling banyak])
+- setiap section yang memiliki floating obj harus meng-contain article (section>image(floatingObj)>article>isi) [untuk apply z-index] 
+- Khusus Jumbotron, tambahkan class baru pada css ini untuk obj rec,cycle dan ring [untuk variasi warna] di jumbotron (skitar line 70)
+- di page: ubah class untuk floating di jumbotron sesuia dengan nama object yang baru yang  dibuat di skitar line 70 
+*/
+
 section#jumbotron img.logo {
     width: 50%;
     top: 50%;
@@ -15,7 +23,7 @@ main article{
     z-index: 5;
 }
 
-
+/*  */
 section#jumbotron img.star-1 {
     top: 10%;
     left: 20%;
@@ -91,7 +99,6 @@ section#jumbotron .ring-departemen{
 }
 section#jumbotron .ring-eventual{
     background:  linear-gradient(196.86deg, #FFF9EE 1.22%, #C17FE0 38.17%, #305EA0 97.28%);
-
 }
 /*  */
 

@@ -112,7 +112,10 @@
     <img src="{{ asset("img/icons/rec-pink.svg") }}" alt="Ring icon" class="rec-pink position-absolute">
     <img src="{{ asset("img/icons/star.svg") }}" alt="Ring icon" class="star-1 position-absolute">
     <img src="{{ asset("img/icons/star.svg") }}" alt="Ring icon" class="star-2 position-absolute">
+      
     <article class="container mb-5 text-center text-white">
+      @include("partials.section-header", ["title" => "Kenali Fakultas Impianmu"])
+    
       {{-- @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"]) --}}
       <div class="row">
         <div class="mb-5 col-lg-4 col-md-6 col-12">
