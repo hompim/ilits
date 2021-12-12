@@ -60,28 +60,28 @@ section#event {
     background: linear-gradient(to bottom, #264882, #284c88);
 }
 
-section#event article:first-child button {
+section#event .container-btn button {
     background: linear-gradient(45deg, #FFFFFF64, #FFFFFF37);
     backdrop-filter: blur(20px);
-    font-size: 1.625rem;
+    font-size: 1.375rem;
     border-radius: 1.25rem;
     font-family: "gothammedium";
 }
-section#event article:first-child button:hover {
+section#event .container-btn button:hover {
     background: linear-gradient(82.07deg, rgba(83, 234, 144, 0.9) 0%, rgba(59, 113, 199, 0.9) 100%);
     backdrop-filter: blur(20px);
 }
-section#event article:first-child div:last-child button {
+section#event .container-btn div:last-child button {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
-section#event article:first-child div:nth-child(4),
-section#event article:first-child div:nth-child(5),
-section#event article:first-child div:nth-child(6) {
+section#event .container-btn div:nth-child(4),
+section#event .container-btn div:nth-child(5),
+section#event .container-btn div:nth-child(6) {
     padding-right: 2rem;
     padding-left: 2rem;
 }
-section#event article:first-child div:nth-child(7) {
+section#event .container-btn div:nth-child(7) {
     padding-right: 5rem;
     padding-left: 5rem;
 }

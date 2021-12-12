@@ -6,11 +6,19 @@
 
 @section('style')
   <link rel="stylesheet" href="{{ asset('css/pages/eventual.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/floating-objects/generalFloating.css') }}" />
+
   <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
   <link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}">
 @endsection
 @section('content')
   <section class="d-flex justify-content-center flex-column" id="jumbotron">
+    <div class="rec rec-eventual"></div>
+    <div class="circle circle-eventual"></div>
+    <div class="ring ring-eventual"></div>
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star" draggable="false" class="position-absolute star-1">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star" draggable="false" class="position-absolute star-2">
+    
     <article class="container text-white">
         <div class="left col-lg-9">
           <h1 class="mb-4">Eventual</h1>
@@ -24,7 +32,15 @@
   </section>
 
   <section class="d-flex justify-content-center align-items-center flex-column" id="event">
-    <article class="container text-center text-white mb-5">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-1 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-1 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-2 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-3 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-4 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-5 position-absolute">
+    <img src="{{ asset("img/icons/circle-pink.svg") }}" alt="Circle" draggable="false" class="position-absolute circle">
+   
+    <div class="container container-btn text-center text-white mb-5">
       @include('partials.section-header', ["title" => "Ikuti Eventual ILITS! 2022!"])
       <div class="row col-lg-11 m-auto -5">
         <div class="col-lg-4 col-6 mt-4 mx-auto">
@@ -36,9 +52,8 @@
         <div class="col-lg-4 col-6 mt-4 mx-auto">
           <button type="button" onClick="chooseEvent(3)" data-target="#tentang" class="text-white border-0 py-3 px-3 w-100 h-100">Visit</button>
         </div>
-        
       </div>
-    </article>
+    </div>
     <div class="d-flex justify-content-center flex-column px-4 px-sm-0" id="tentang">
       <article class="container py-5 my-5 text-center text-white d-flex flex-column align-items-center position-relative">
         @include("partials.section-header", ["title" => "Apa itu Open Campus"])
