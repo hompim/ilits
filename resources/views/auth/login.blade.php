@@ -31,23 +31,6 @@
     </head>
 
     <body>
-        <!-- Preloader -->
-        <div
-            class="
-                preloader
-                flex-column
-                justify-content-center
-                align-items-center
-            "
-        >
-            {{-- <img
-                class="animation__shake"
-                src="{{asset('dashboard/dist/img/logo.png')}}"
-                alt="AdminLTELogo"
-                height="60"
-                width="60"
-            /> --}}
-        </div>
             <!-- Header -->
     <header>
         @include('partials.header')
@@ -59,7 +42,7 @@
                 <section id="section">
                     <div class="container" id="daftar-container">
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-5">
                                 <div class="login-box">
                                     <div class="card-body login-card-body">
                                         <h1 class="login-box-msg"> <b>Login Peserta</b>
