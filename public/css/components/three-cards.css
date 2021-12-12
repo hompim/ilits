@@ -5,12 +5,18 @@
     backdrop-filter: blur(20px);
     border-radius: 18px;
 }
+.three-cards .item-three-cards .container-image{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .three-cards .item-three-cards img {
+    margin: auto;
     width: 100%;
     height: auto;
-    border-radius: 18px 18px 0 0;
-    filter: grayscale(100%);
+    border-radius: 18px;
 }
 
 .item-three-cards li {
@@ -18,6 +24,7 @@
 }
 
 .container-text {
+    margin-top: auto;
     padding: 18px;
 }
 

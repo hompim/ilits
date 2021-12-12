@@ -7,7 +7,8 @@
 @section('style')
 <link rel="stylesheet" href="{{ asset('css/pages/department.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/floating-objects/generalFloating.css') }}" />
+  
 <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/carousel-with-floating-header.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/three-cards-carousel.css') }}">
@@ -19,8 +20,15 @@
 @endsection
 
 @section('content')
-<section class="d-flex justify-content-center flex-column" id='jumbotron'>
-  <article class="container">
+<section class="d-flex justify-content-center flex-column position-relative " id='jumbotron'>
+  <div class="rec rec-departemen"></div>
+  <div class="circle circle-departemen"></div>
+  <div class="ring ring-departemen"></div>
+
+  <img src="{{ asset("img/icons/star.svg") }}" alt="Star" draggable="false" class="position-absolute star-1">
+  <img src="{{ asset("img/icons/star.svg") }}" alt="Star" draggable="false" class="position-absolute star-2">
+      
+  <article class="container position-relative">
     <div class="left">
       <h1>Departemen<br>{{ $departemen->nama }}</h1>
       <h2 class="my-4">{{ $departemen->fakultas->singkatan }}</h2>
@@ -34,17 +42,27 @@
 
 {{-- fix --}}
 <section class="text-white d-flex justify-content-center align-items-center flex-column" id='about'>
-    <article class="container" class="row">
-        <x-card-with-floating-header title='Kenali Lebih Lanjut!'
-        text='{{ $departemen->deskripsi }}'
-        image='img/departmen/{{$departemen->foto}}'
-      />
-    </article>
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-1 position-absolute">
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-1 position-absolute">
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-2 position-absolute">
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-3 position-absolute">
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-4 position-absolute">
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-5 position-absolute">
+ <img src="{{ asset("img/icons/circle-pink.svg") }}" alt="Circle" draggable="false" class="position-absolute circle">
+    
+ <article class="container">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-6 position-absolute">
+    <x-card-with-floating-header title='Kenali Lebih Lanjut!'
+    text='{{ $departemen->deskripsi }}'
+    image='img/departmen/{{$departemen->foto}}'
+    />
+  </article>
 </section>
 
-{{-- fix --}}
+
 <section class="" id='akreditasi'>
-  <div class="container">
+  <img src="{{ asset("img/icons/circle-gradation-1.svg") }}" alt="Star" draggable="false" class="position-absolute circle">
+  <article class="container">
     @include('partials.section-header', ['title'=>'Akreditasi Bersaing'])
     <?php
         $title1=$akreditasi[0]->judul;
@@ -63,7 +81,7 @@
       text1="{{$text1}}"
       text2="{{$text2}}"
       text3="{{$text3}}" />
-  </div>
+  </article>
 </section>
 
 {{-- fix --}}
@@ -116,6 +134,9 @@
   ?>
 
   <section class="text-white d-flex justify-content-center align-items-center flex-column" id="prestasi">
+    <img src="{{ asset("img/icons/hollow-rec.svg") }}" alt="Hollow rectangle icon" class="hollow-rec position-absolute">
+    <img src="{{ asset("img/icons/ring-cyan.svg") }}" alt="Ring icon" class="ring-cyan position-absolute">
+    
     <article class="container">
       @include("partials.section-header", ["title" => "Segudang Prestasi!"])
       <x-three-cards-carousel titles="{{$n}}"
@@ -126,7 +147,8 @@
   </section>
 
 <section class="d-flex justify-content-center align-items-center flex-column" id='prospek'>
-    <div class="container text-center">
+  <img src="{{ asset("img/icons/ring-pink.svg") }}" alt="Ring icon" class="ring-pink position-absolute">  
+  <article class="container text-center">
       @include('partials.section-header', ['title'=>'Sesuaikan Prospek'])
       <?php
         $nama = array();
@@ -148,11 +170,15 @@
         texts=""
          />
       </div>
-    </div>
+    </article>
 </section>
 
 <section class="d-flex justify-content-center align-items-center flex-column" id='figure'>
-    <div class="container text-center">
+  <img src="{{ asset("img/icons/rec-pink.svg") }}" alt="Ring icon" class="rec-pink position-absolute">  
+  <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-1 position-absolute">
+  <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-2 position-absolute">
+ 
+  <article class="container text-center">
       @include('partials.section-header', ['title'=>'Oustanding Figure'])
       <div class="wrapper text-left d-flex align-items-center">
         @foreach($alumni as $a)
@@ -161,11 +187,12 @@
         </div>
         @endforeach
       </div>
-    </div>
+    </article>
 </section>
 
 <section class="text-center d-flex justify-content-center align-items-center flex-column" id='kegiatan'>
-    <article class="container">
+  <img src="{{ asset("img/icons/circle-gradation-2.svg") }}" alt="Circle icon" class="circle position-absolute">  
+  <article class="container">
       @include('partials.section-header', ['title'=>'Kegiatan Mahasiswa'])
       <?php
         $judul = array();
@@ -208,6 +235,8 @@
         $f = join(',',$foto);
         $d = join('|',$deskripsi);
       ?>
+    <img src="{{ asset("img/icons/ring-thin-cyan.svg") }}" alt="Ring icon" class="ring-thin-cyan position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star position-absolute">
     <article class="container">
       <x-carousel-with-floating-header headerTitle='Fasilitas Untuk Semua' titles='{{ $j }}'
         texts='{{ $d }}'
