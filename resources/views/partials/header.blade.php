@@ -78,7 +78,7 @@
             }
           }
           @endphp
-          <a class="mx-4 nav-link" href="{{$route}}">{{$text}}</a>
+          <a class="mx-4 nav-link nav-action" href="{{$route}}">{{$text}}</a>
         </div>
       </div>
     </div>
