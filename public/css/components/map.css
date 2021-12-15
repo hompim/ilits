@@ -3,8 +3,8 @@
 }
 
 .Map iframe {
-    width: 80%;
-    min-height: 440px;
+    width: 60%;
+    min-height: 400px;
     z-index: 2;
     border-radius: 0.625rem;
 }
@@ -13,9 +13,9 @@
     position: absolute;
     z-index: 10;
     top: 0;
-    left: 10%;
-    right: 10%;
-    min-height: 440px;
+    left: 20%;
+    right: 20%;
+    min-height: 400px;
     border-radius: 0.625rem;
     background-color: #00000070;
     -webkit-user-select: none;
@@ -41,11 +41,11 @@
 }
 
 .Map .map-stage {
-    transform: translateY(-13rem);
+    transform: translateY(-11.5rem);
 }
 
 .Map .map-stage img {
-    width: 100%;
+    width: 80%;
 }
 
 .Map .map-content {
@@ -55,11 +55,24 @@
 }
 
 .Map .map-content span {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-family: "gothammedium";
 }
 
 @media only screen and (max-width: 1200px) {
+    .Map iframe {
+        width: 70%;
+        min-height: 440px;
+    }
+    
+    .Map .layer-play {
+        left: 15%;
+        right: 15%;
+    }
+    
+    .Map .map-stage img {
+        width: 90%;
+    }
     .Map .map-stage {
         transform: translateY(-10rem);
     }
@@ -70,11 +83,13 @@
         height: 25rem;
     }
     .Map iframe {
-        width: 75%;
         min-height: 300px;
     }
     .Map .map-stage {
         transform: translateY(-7rem);
+    }
+    .Map .map-stage img {
+        width: 90%;
     }
     .Map .map-content {
         width: 100%;
@@ -85,8 +100,8 @@
         font-size: 2rem;
     }
     .Map .layer-play {
-        left: 12.5%;
-        right: 12.5%;
+        left: 15%;
+        right: 15%;
         min-height: 300px;
     }
 }
@@ -96,7 +111,6 @@
         height: 18rem;
     }
     .Map iframe {
-        width: 70%;
         min-height: 200px;
     }
     .Map .map-stage {
@@ -104,7 +118,7 @@
         right: 0;
         margin: auto;
         width: 100%;
-        transform: translateY(-4.5rem);
+        transform: translateY(-5.25rem);
     }
     .Map .map-content {
         width: 100%;

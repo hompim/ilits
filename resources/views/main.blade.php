@@ -30,7 +30,7 @@
       </div>
       <div class="col-12 d-flex flex-column justify-content-center align-items-start">
         {{-- <h1 class="mb-3">INI LHO <br> ITS! 2022</h1> --}}
-        <img src="{{ asset("img/main/main-title.png") }}" alt="Ini Lho ITS! 2022" draggable="false" class="mb-4 img-fluid">
+        <img src="{{ asset("img/main/main-title.png") }}" alt="Ini Lho ITS! 2022" draggable="false" class="mb-2 img-fluid logo-type">
         <x-button-link href="#tentang" angle="20deg" colorFrom="#3b71c7" colorTo="#59d3da">Kenali
           Lebih
           Lanjut
@@ -251,8 +251,8 @@
     <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star position-absolute">
     <article class="container">
       @include('partials.section-header', ["title" => "Sponsor & Media Partner"])
-      <div class="p-5 text-center w-100">
-        <img class="p-5 w-75" src="{{asset('/img/sponsor/ln.png')}}" alt="Lulus Negeri">
+      <div class="text-center">
+        <img class="w-50" src="{{asset('/img/sponsor/ln.png')}}" alt="Lulus Negeri">
       </div>
     </article>
   </section>

@@ -9,14 +9,14 @@
     z-index: 2;
 }
 .CarouselWithFloatingHeaderAndButton div.floating-header h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 .CarouselWithFloatingHeaderAndButton .row h3 {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 .CarouselWithFloatingHeaderAndButton .row p {
-    font-size: 1.625rem;
-    font-family: "gothammedium";
+    font-size: 1.25rem;
+    font-family: "gothamlight";
 }
 .CarouselWithFloatingHeaderAndButton .carousel-indicators {
     bottom: 0;

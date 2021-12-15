@@ -14,13 +14,13 @@ section#jumbotron {
     min-height: calc(100vh - 66.516px);
     background: linear-gradient(to bottom, #111028, #264882);
 }
-section#jumbotron h1 {
+/* section#jumbotron h1 {
     font-size: 5rem;
 }
 section#jumbotron p {
     font-size: 1.625rem;
     font-family: "gothammedium";
-}
+} */
 
 section#tentang {
     background: linear-gradient(to bottom, #264882, #3d5e94);
@@ -31,7 +31,7 @@ section#tentang article {
     padding-top: 4rem !important;
 }
 section#tentang p {
-    font-size: 1.875rem;
+    font-size: 1.25rem;
     font-family: "gothammedium";
 }
 section#tentang .SectionHeader {
@@ -83,12 +83,9 @@ section#informasi-penting a {
 section#fakultas {
     background: linear-gradient(to bottom, #272b5a, #3f1862);
 }
-section#fakultas h2 {
-    font-size: 3rem;
-}
 section#fakultas article:nth-child(5) button {
     background: linear-gradient(-45deg, #FFFFFF64, #FFFFFF37);
-    font-size: 1.375rem;
+    font-size: 1.25rem;
     border-radius: 22px;
     font-family: "gothammedium";
 }
@@ -241,5 +238,8 @@ section#sponsor .sponsor-box {
     }
     section#alumni div.row div {
         margin-bottom: 2rem;
+    }
+    section#sponsord div img {
+        width: 75% !important;
     }
 }
