@@ -1,10 +1,15 @@
 a.button-link {
+    transition: transform 0.3s ease;
     width: fit-content;
     font-size: 1rem;
     font-family: "gothammedium";
     color: #fff;
     border-radius: 1.125rem;
     background: linear-gradient(75deg, #53ea90, #3b71c7);
+}
+a.button-link:hover {
+    color: white;
+    transform: scale(1.05); 
 }
 
 @media only screen and (max-width: 768px) {

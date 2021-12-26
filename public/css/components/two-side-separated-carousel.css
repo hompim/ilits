@@ -2,6 +2,7 @@
     background:linear-gradient( 95deg,#ffffff64,#ffffff37);
     backdrop-filter:blur(20px);
     border-radius:1.125rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.259);
 }
 
 #twoSideSeparatedCarousel .card-text h3{

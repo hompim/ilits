@@ -7,10 +7,9 @@
     <a class="btn-floating btn-floating-next position-absolute" href=".{{ $carouselId }}" data-slide="next"><i
         class="text-white fa fa-3x fa-arrow-right" aria-hidden="true"></i></a>
   </div>
-  <div class="carousel-inner row w-100 px-5 mx-auto" role="listbox">
+  <div class="carousel-inner row w-100 px-5 mx-auto py-2" role="listbox">
     @for ($i = 0; $i < count($titles); $i++)
       <div class="carousel-item @if ($i == 0) active @endif col-lg-4">
-
         <div class="overflow-hidden card h-100">
           <div class="image text-center w-100">
             <img src="{{ asset($images[$i]) }}" class="w-100 p-4" alt="Card image cap">
@@ -22,7 +21,6 @@
             @endif
           </div>
         </div>
-
       </div>
     @endfor
   </div>
@@ -49,7 +47,7 @@
     @elseif (count($titles) == 2)
       @for ($i = 0; $i < count($titles); $i++)
         <div class="col-lg-6 mb-5" >
-          <div class="overflow-hidden card">
+          <div class="overflow-hidden card  h-100">
             <div class="image">
               <img src="{{ asset($images[$i]) }}" class="w-100 h-100" alt="Card image cap">
             </div>
@@ -63,8 +61,8 @@
         </div>
       @endfor
     @elseif (count($titles) == 1)
-      <div class="col-8 mx-auto mb-5" >
-        <div class="overflow-hidden card">
+      <div class="col-6 mx-auto mb-5" >
+        <div class="overflow-hidden card  h-100">
           <div class="image">
             <img src="{{ asset($images[0]) }}" class="w-100 h-100" alt="Card image cap">
           </div>
@@ -85,6 +83,14 @@
 
 @push('scripts')
   <script>
+    if( '{{$images[0]}}' ==''){
+      $('.image').addClass('d-none')
+      $('.card-body').addClass('text-center')
+      $('.card p').addClass('h-100')
+      
+    }
+
+      
     $('.{{ $carouselId }}').on('slide.bs.carousel', function(e) {
       /*
           CC 2.0 License Iatek LLC 2018 - Attribution required

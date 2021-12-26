@@ -22,8 +22,14 @@ main{
 main article{
     z-index: 5;
 }
+main section:last-child{
+    overflow: hidden;
+}
 
 /*  */
+section#jumbotron{
+    position: relative;
+}
 section#jumbotron img.star-1 {
     top: 10%;
     left: 20%;
@@ -100,7 +106,6 @@ section#jumbotron .ring-departemen{
 section#jumbotron .ring-eventual{
     background:  linear-gradient(196.86deg, #FFF9EE 1.22%, #C17FE0 38.17%, #305EA0 97.28%);
 }
-/*  */
 
 /*  */
 section:nth-child(2) img.star-1 {

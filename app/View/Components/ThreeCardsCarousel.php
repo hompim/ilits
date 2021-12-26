@@ -15,7 +15,7 @@ class ThreeCardsCarousel extends Component
      *
      * @return void
      */
-    public function __construct($titles, $images, $texts, $carouselId="threeCardsCarousel")
+    public function __construct($titles, $images='', $texts, $carouselId="threeCardsCarousel")
     {
             $this->titles = explode(',', $titles);
             $this->texts = explode('|', $texts);

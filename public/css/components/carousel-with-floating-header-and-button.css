@@ -1,5 +1,6 @@
 .CarouselWithFloatingHeaderAndButton {
     padding-bottom: 5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.259);
 }
 .CarouselWithFloatingHeaderAndButton div.floating-header {
     background: linear-gradient(75deg, #53ea90, #3b71c7);

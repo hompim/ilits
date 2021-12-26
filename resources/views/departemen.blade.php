@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}">
 <link rel="stylesheet" href="{{ asset('css/floating-objects/generalFloating.css') }}" />
   
+<link rel="stylesheet" href="{{ asset('css/components/text-card.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/carousel-with-floating-header.css') }}">
 <link rel="stylesheet" href="{{ asset('css/components/three-cards-carousel.css') }}">
@@ -32,7 +33,7 @@
     <div class="left">
       <h1>Departemen<br>{{ $departemen->nama }}</h1>
       <h2 class="my-4">{{ $departemen->fakultas->singkatan }}</h2>
-      <x-button-link href='#' isBlur="100px">
+      <x-button-link href='#about' isBlur="100px">
         Kenali Lebih Lanjut
       </x-button-link>
 
@@ -160,15 +161,16 @@
           $foto[] = "../img/prospek/".$prospek->foto;
           $id[] = $prospek->id;
         }
-        $n = join(",",$nama);
+        $n = join("|",$nama);
         $f = join(',',$foto);
         $i = join(',',$id);
       ?>
       <div class="col-10 col-lg-11 mx-auto">
-        <x-three-cards-carousel carouselId="idcar" titles="{{ $n }}"
-        images="img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png,img/departmen/prospek.png"
+        {{-- <x-three-cards-carousel carouselId="idcar" titles="{{ $n }}"
+        images="{{$f}}"
         texts=""
-         />
+         /> --}}
+         <x-text-card texts="{{$n}}"/>
       </div>
     </article>
 </section>

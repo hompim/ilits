@@ -27,7 +27,7 @@ section#jumbotron .left{
 }
 section#jumbotron .ilustrasi{
     position: absolute;
-    bottom: 50;
+    bottom: 0;
     right: 0;
 }
 section#jumbotron .ilustrasi img{

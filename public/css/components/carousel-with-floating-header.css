@@ -17,6 +17,7 @@
 }
 .carouselWithFloatingHeader{
     background: linear-gradient(-45deg, #ffffff64, #ffffff37);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.259);
 }
 .carouselWithFloatingHeader a.btn-floating-prev {
     left: 0.5rem ;

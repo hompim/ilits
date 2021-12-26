@@ -13,6 +13,7 @@
     border-end-end-radius: 1.125rem;
     background: linear-gradient(-45deg, #ffffff64, #ffffff37);
     backdrop-filter: blur(20px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.259);
 }
 
 #CardWithHeader .card-content img{

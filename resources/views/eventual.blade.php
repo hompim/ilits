@@ -23,7 +23,7 @@
         <div class="left col-lg-9">
           <h1 class="mb-4">Eventual</h1>
           <h2 class="mb-4">Ini Lho ITS! 2022</h2>
-          <x-button-link href="">Kenali Lebih Lanjut!</x-button-link>
+          <x-button-link href="#event">Kenali Lebih Lanjut!</x-button-link>
         </div>
     </article>
     <div class="ilustrasi ">
