@@ -16,7 +16,7 @@
         <h3 class="px-5 text-left col-12">{{ $titles[$i] }}</h3>
       </div>
       <div class="row">
-        <div class="px-5 col-lg-6 right d-flex flex-column justify-content-center align-items-center">
+        <div class="px-5 col-lg-6 right d-flex flex-column justify-content-start align-items-center test" >
           <img src="{{ asset($images[$i]) }}" class="d-block w-100" alt="{{ $titles[$i] }}">
         </div>
         <div class="px-5 text-left col-lg-6 left d-flex flex-column justify-content-between align-items-center">

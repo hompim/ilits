@@ -6,7 +6,7 @@
     <div class="px-5 col-lg-6 right d-flex flex-column justify-content-start align-items-center">
       <img src="{{ asset($image) }}" class="d-block w-100" alt="{{ $title }}">
     </div>
-    <div class="px-5 text-left col-lg-6 left d-flex flex-column justify-content-between align-items-center">
+    <div class="pt-md-4 px-5 text-left col-lg-6 left d-flex flex-column justify-content-between align-items-center">
       <p class="text-justify">{{ $text }}
       </p>
     </div>

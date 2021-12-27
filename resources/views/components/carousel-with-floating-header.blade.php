@@ -10,7 +10,7 @@
     </div>
     <ol class="carousel-indicators position-absolute">
         @for($i = 0; $i < count($titles); $i++) <li data-target="#facilityCarousel-b" data-slide-to="{{ $i }}"
-            class="mx-2 bg-white rounded-circle active">
+            class="mx-md-2 bg-white rounded-circle active">
             </li>
         @endfor
     </ol>

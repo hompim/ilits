@@ -1,6 +1,6 @@
 <div class="overflow-hidden text-center bg-transparent card CarouselWithHeader">
-  <h3 class="p-4 text-center card-header">{{ $headerTitle }}</h3>
-  <div class="p-5 card-body position-relative">
+  <h3 class="p-3 text-center card-header">{{ $headerTitle }}</h3>
+  <div class="p-4 card-body position-relative">
     <div id="carouselWithHeaderList" class="mb-5 bg-transparent carousel slide" data-ride="carousel">
       <div class="container carousel-inner">
         @for ($i = 0; $i < count($titles); $i++) <div class="carousel-item @if ($i == 0) active @endif">

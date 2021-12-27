@@ -7,6 +7,9 @@
 @section('style')
   <link rel="stylesheet" href="{{ asset('css/pages/fakultas.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/partials/section-header.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/floating-objects/generalFloating.css') }}" />
+
+  
   <link rel="stylesheet" href="{{ asset('css/components/map.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/button-link.css') }}">
   <link rel="stylesheet" href="{{ asset('css/components/two-side-separated-carousel.css') }}">
@@ -21,8 +24,16 @@
 @section('content')
 
 <section class="d-flex justify-content-center flex-column " id="jumbotron">
-  <article class="container text-white">
-      <div class="left col-lg-9">
+  <div class="rec rec-fakultas"></div>
+  <div class="circle circle-fakultas"></div>
+  <div class="ring ring-fakultas"></div>
+
+
+  <img src="{{ asset("img/icons/star.svg") }}" alt="Star" draggable="false" class="position-absolute star-1">
+  <img src="{{ asset("img/icons/star.svg") }}" alt="Star" draggable="false" class="position-absolute star-2">
+  
+  <article class="container text-white mt-5">
+      <div class="left col-lg-9 mt-5">
         <h1 class="mb-2">{{$fakultas->nama}}</h1>
         <h2 class="mb-4">{{$fakultas->singkatan}}</h2>
         <x-button-link href="#info-unik">Kenali Lebih Lanjut!</x-button-link>
@@ -34,6 +45,13 @@
 </section>
 
 <section class="d-flex justify-content-center flex-column" id="info-unik">
+  <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-1 position-absolute">
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-1 position-absolute">
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-2 position-absolute">
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-3 position-absolute">
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-4 position-absolute">
+ <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-5 position-absolute">
+ <img src="{{ asset("img/icons/circle-pink.svg") }}" alt="Circle" draggable="false" class="position-absolute circle">
   <article class="container text-white">
     <x-card-with-floating-header title="Kenali Lebih Jauh" image="img/fakultas/{{$fakultas->foto}}"
       text="{{$fakultas->deskripsi}}" />
@@ -42,6 +60,7 @@
 </section>
 
 <section class="d-flex justify-content-center flex-column" id="video-profile">
+  <img src="{{ asset("img/icons/circle-gradation-1.svg") }}" alt="Star" draggable="false" class="position-absolute circle">
   <article class="container text-center">
       <div class=" mx-auto row">
         <div class="col-lg-10 offset-lg-1 px-lg-5" >
@@ -52,7 +71,10 @@
 </section>
 
 <section class="d-flex justify-content-center align-items-center flex-column" id='waktu'>
-    <div class="container text-center text-white ">
+  <img src="{{ asset("img/icons/hollow-rec.svg") }}" alt="Hollow rectangle icon" class="hollow-rec position-absolute">
+  <img src="{{ asset("img/icons/ring-cyan.svg") }}" alt="Ring icon" class="ring-cyan position-absolute">
+      
+  <article class="container text-center text-white ">
     @include('partials.section-header', ['title'=>'Waktu Demi Waktu'])
     <?php
       $tahun = array();
@@ -71,10 +93,11 @@
         texts="{{ $d }}"
         />
     </div>
-    </div>
+  </article>
 </section>
 
-    <section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
+ <section class="text-white d-flex justify-content-center flex-column" id="virtual-expo">
+  <img src="{{ asset("img/icons/ring-pink.svg") }}" alt="Ring icon" class="ring-pink position-absolute">  
     <article class="container text-center position-relative">
       <x-map text="Mampir Yuk" href="/"
         src="{{ $fakultas->link_map }}">
@@ -86,8 +109,11 @@
     </article>
   </section>
 
-    <section class="d-flex justify-content-center align-items-center flex-column" id='jurusanmu'>
-    <div class="container text-center text-white ">
+  <section class="d-flex justify-content-center align-items-center flex-column" id='jurusanmu'>
+    <img src="{{ asset("img/icons/rec-pink.svg") }}" alt="Ring icon" class="rec-pink position-absolute">  
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-1 position-absolute">
+    <img src="{{ asset("img/icons/star.svg") }}" alt="Star icon" class="star-2 position-absolute">  
+    <article class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Kenali Jurusanmu!'])
       <?php
         $nama = array();
@@ -111,8 +137,8 @@
         <x-three-cards-container-carousel carouselId="idcar2" titles="{{$n}}" images="{{$f}}" id="{{$i}}" slug="{{$s}}" route="departemen"
          />
       </div>
-    </div>
-    </section>
+    </article>
+  </section>
 
     {{-- <section class="d-flex justify-content-center align-items-center flex-column" id='perbandingan'>
     <div class="container text-center text-white ">
@@ -123,8 +149,9 @@
     </div>
     </section> --}}
 
-    <section class="d-flex justify-content-center align-items-center flex-column" id='kerja-sama'>
-    <div class="container text-center text-white ">
+  <section class="d-flex justify-content-center align-items-center flex-column" id='kerja-sama'>
+    <img src="{{ asset("img/icons/circle-gradation-2.svg") }}" alt="Circle icon" class="circle position-absolute">  
+    <article class="container text-center text-white ">
       @include('partials.section-header', ['title'=>'Kerja Sama Kami!'])
 
       <?php
@@ -138,8 +165,8 @@
         texts="{{ $deskripsi }}"
         carouselId="idcar3"/>
       </div>
-    </div>
-    </section>
+    </article>
+  </section>
 @endsection
 
 @push('modals')

@@ -122,7 +122,7 @@
                                             <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="kota_kab_asal_sekolah">Kabupaten Asal Sekolah</label>
+                                            <label for="kota_kab_asal_sekolah">Kabupaten Domisili Sekolah</label>
                                             <select class="kota_kab_asal_sekolah form-select"
                                                 id="kota_kab_asal_sekolah" name="kab_sekolah_id">
                                                 <option value="null"></option>
@@ -204,8 +204,6 @@
 
                 <!-- jQuery -->
                 <script src="{{asset('testfiture/plugins/jquery/jquery.min.js')}}"></script>
-                {{-- select2 --}}
-                <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
                 {{-- bootstrap 5 --}}
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
                 <!-- AdminLTE App -->
