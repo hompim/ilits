@@ -63,11 +63,18 @@ class OpenCampusController extends Controller
             ]);
         }
     }
-    
-    public function regisFnD(Request $request){
+
+    public function regisFNDFormStore(Request $request)
+    {
+        $request->validate([
+            'bukti_follow' => "required",
+            'bukti_poster' => "required"
+        ]);
+
         $peserta_event = Auth::user()->user->peserta_event;
         $peserta_event->is_fnd = true;
         $peserta_event->save();
+
         return redirect(route('open-campus.fnd.fakultas'));
     }
     
@@ -137,11 +144,18 @@ class OpenCampusController extends Controller
         }
         return view('open-campus.register-itsFair', ["title" => "Daftar ITS Fair"]);
     }
+    
+    public function regisIFFormStore(Request $request)
+    {
+        $request->validate([
+            'bukti_follow' => "required",
+            'bukti_poster' => "required"
+        ]);
 
-    public function regisITSFair(Request $request){
         $peserta_event = Auth::user()->user->peserta_event;
         $peserta_event->is_its_fair = true;
         $peserta_event->save();
+
         return redirect(route('open-campus.its-fair.thank-you'));
     }
 
@@ -152,6 +166,7 @@ class OpenCampusController extends Controller
         }
         return redirect(route('open-campus.its-fair.register'));
     }
+
 
     //OpenCampus
     public function register_index()

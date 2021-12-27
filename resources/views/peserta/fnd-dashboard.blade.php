@@ -33,7 +33,7 @@
                   :
                 </div>
                 <div class="col-8">
-                  <span><strong>Menyusul</strong></span>
+                  <span><strong>Daksa</strong></span>
                 </div>
               </div>
               <div class="row">
@@ -44,19 +44,40 @@
                   :
                 </div>
                 <div class="col-8">
-                  <span><strong>Menyusul</strong></span>
+                  <span><strong>daksalintang</strong></span>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-2 col-sm-3 col-6">
-                  Whatsapp
+                  Nama
                 </div>
                 <div class="col-0">
                   :
                 </div>
                 <div class="col-8">
-                    <span><strong>Menyusul</strong></span>
-                  {{-- <a href="https://wa.me/{{Auth::user()->user->forda->tryoutForda->hp_pj}}" target="_blank"><span><strong>0{{Auth::user()->user->forda->tryoutForda->hp_pj}}</strong></span></a> --}}
+                  <span><strong>Avintha</strong></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  ID Line
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <span><strong>vinthadevany</strong></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Grup Koordinasi FnD
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <a href="https://bit.ly/OpenChatFND"><strong>klik disini</strong></a>
                 </div>
               </div>
             </div>

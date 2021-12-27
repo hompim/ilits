@@ -31,7 +31,7 @@
         </h2>
         <br>
         <h3>
-          Link Zoom Meeting ITS Fair Ini Lho ITS! 2022 dapat diakses melalui Dashboard Peserta.
+          Segala informasi tentang ITS Fair dapat diakses melalui dashboard atau grup peserta ITS Fair. Silahkan masuk pada grup peserta ITS Fair dengan link <a href="https://chat.whatsapp.com/FN6aHm5YC1SFY9tHiqZJyr" target="_blank">berikut</a>.
         </h3>
         <br>
       </div>

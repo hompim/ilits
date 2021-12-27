@@ -8,6 +8,7 @@ use App\Models\TryoutUser;
 use App\Models\TryoutForda;
 use App\Models\Forda;
 use App\Models\KotaKab;
+use App\Models\FordaDaerah;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -37,6 +38,10 @@ class PesertaController extends Controller
     }
 
     public function registerWelcome(){
+        if(Auth::user()->tryoutUser){
+            return redirect(route('peserta'));
+        }
+        
         $peserta = Auth::user()->user;
         $kab = KotaKab::all();
 
@@ -82,12 +87,20 @@ class PesertaController extends Controller
     public function storeWelcome(Request $request)
     {
         $peserta = Auth::user()->user;
+        if(Auth::user()->tryoutUser){
+            return redirect(route('peserta'));
+        }
 
         //Update data user;
         $peserta->nama_lengkap = $request->nama_lengkap;
         $peserta->asal_sekolah = $request->asal_sekolah;
         $peserta->kab_sekolah_id = $request->kab_sekolah_id;
         $peserta->no_wa = $request->no_wa;
+        $forda_id = $peserta->forda_id;
+        if(!TryoutForda::where('forda_id', $forda_id)->count()){
+            $id = FordaDaerah::where('kota_kab_id', 3578)->first()->forda_id;
+            $peserta->forda_id = $id;
+        }
         $peserta->save();
 
         TryoutUser::create([  // <= the error is Here!!!

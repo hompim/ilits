@@ -47,7 +47,7 @@
           <img src="{{ asset('img/icons/beasiswa.svg') }}" class="mr-3 img-responsive img-fluid" alt="Merchandise">
           <a class="mx-4 nav-link {{ str_contains(URL::current(), "/merchandise") ? "active" : "" }}" href="{{route('merch')}}">Merchandise</a>
         </div>
-        {{-- <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/open-campus.svg') }}" class="mr-3 img-responsive img-fluid" alt="Open campus" style="color: white">
           <div class="dropdown show">
             <a class="mx-4 nav-link dropdown-toggle" onclick="toggleDropdown()" role="button" id="dropdownMenuLink">
@@ -61,7 +61,7 @@
               <a class="dropdown-item text-wrap" href="{{route('peserta.welcome.register')}}">Welcome</a>
             </div>
           </div>
-        </div> --}}
+        </div>
         <div class="ml-auto">
           @php
           if (!Auth::user()) {

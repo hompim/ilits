@@ -31,12 +31,12 @@ section#jumbotron .ilustrasi{
     right: 0;
 }
 section#jumbotron .ilustrasi img{
-    width: 515px;
+    width: 600px;
     height: auto;
 }
 section#jumbotron h1 {
     font-size: 5rem;
-    background: linear-gradient(to left, #A562E9 0%, #3B71C7 50%, #A3B4CC 100%);
+    background: linear-gradient(to right, #A562E9 0%, #3B71C7 50%, #A3B4CC 100%);
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -46,7 +46,7 @@ section#jumbotron h2 {
     font-size: 1.875rem;
 }
 section#jumbotron a.btn{
-    background: linear-gradient(90.75deg, rgba(229, 227, 241, 0.7) 1.29%, rgba(59, 113, 199, 0.7) 98.71%);
+    background: linear-gradient(90.75deg, rgba(229, 227, 241, 0.5) 1.29%, rgba(59, 113, 199, 0.5) 98.71%);
     backdrop-filter: blur(20px);
     filter: drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.25));
 
@@ -97,6 +97,9 @@ section#kerja-sama {
     section#jumbotron .ilustrasi{
         position: unset;
         margin: auto;
+    }
+    section#jumbotron h1{
+      padding-top: 5rem;
     }
 }
 
@@ -150,10 +153,8 @@ section#kerja-sama {
     }
     section#jumbotron .ilustrasi img{
         width: 360px;
-
     }
     section#jumbotron h1{
-        margin-top: 5rem;
         font-size: 2.625rem;
     }
     section#jumbotron h2{

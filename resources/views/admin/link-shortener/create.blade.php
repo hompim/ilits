@@ -37,10 +37,10 @@
         </form>
     </div>
     
-    <div class="container">
+    <div class="container py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-12">
-                <table class="table table-bordered">
+                <table id="example1" class="table table-bordered table-striped">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col" class="col-5">Url</th>
@@ -69,4 +69,14 @@
         </div>
     </div>
 </div>
+@stop
+
+@section('js')
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false, "ordering": false
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
+</script>
 @stop

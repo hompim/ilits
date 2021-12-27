@@ -50,7 +50,7 @@ return [
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'ILITS 22',
 
     /*
     |--------------------------------------------------------------------------
@@ -244,6 +244,38 @@ return [
             'can' => ['admin-dashboard'],
         ],
         [
+            'text'    => 'Main Events',
+            'icon'    => 'fas fa-calendar-alt',
+            'submenu' => [
+                [
+                    'text' => 'Welcome Per Forda',
+                    'url'  => 'admin/main-event/welcome',
+                    'active' => ['admin/main-event/welcome', 'regex:@^admin/main-event/welcome/[0-9]@']
+                ],
+                [
+                    'text' => 'Semua Peserta Welcome',
+                    'url'  => 'admin/main-event/welcome/all',
+                    'active' => ['admin/main-event/welcome/all']
+                ],
+                [
+                    'text' => 'Peserta ITS Fair',
+                    'url'  => 'admin/main-event/its-fair',
+                    'active' => ['admin/main-event/its-fair']
+                ],
+                [
+                    'text' => 'Peserta FnD',
+                    'url'  => 'admin/main-event/fnd',
+                    'active' => ['admin/main-event/fnd']
+                ],
+                [
+                    'text' => 'Peserta ODL',
+                    'url'  => 'admin/main-event/odl',
+                    'active' => ['admin/main-event/odl']
+                ],
+            ],
+            'can' => ['admin-dashboard'],
+        ],
+        [
             'text'      => 'Welcome',
             'icon'      => 'fas fa-pencil-ruler',
             'submenu'   => [
@@ -253,12 +285,12 @@ return [
                     'url'   => 'peserta/welcome/',
                     'can'   => ['peserta-tryout']
                 ],
-                [
-                    'text'  => 'Absensi',
-                    'icon'  => 'fas fa-pager',
-                    'url'   => 'peserta/welcome/absensi/',
-                    'can'   => ['peserta-tryout']
-                ],
+                // [
+                //     'text'  => 'Absensi',
+                //     'icon'  => 'fas fa-pager',
+                //     'url'   => 'peserta/welcome/absensi/',
+                //     'can'   => ['peserta-tryout']
+                // ],
                 [
                     'text'  => 'Upload Bukti Bayar',
                     'icon'  => 'fas fa-money-check-alt',
@@ -293,6 +325,18 @@ return [
                     'text'  => 'Edit Biaya',
                     'icon'  => 'fas fa-edit',
                     'url'   => 'forda/edit-biaya',
+                    'can'   => ['forda-dashboard']
+                ],
+                [
+                    'text'  => 'Edit Link Meet',
+                    'icon'  => 'fas fa-video',
+                    'url'   => 'forda/link-meet',
+                    'can'   => ['forda-dashboard']
+                ],
+                [
+                    'text'  => 'Edit Grup Koordinasi',
+                    'icon'  => 'fas fa-user-friends',
+                    'url'   => 'forda/edit-grup',
                     'can'   => ['forda-dashboard']
                 ],
                 [

@@ -98,6 +98,7 @@
                             <th>Email</th>
                             <th>Asal Sekolah</th>
                             <th>No. Telp</th>
+                            <th>Tanggal Daftar</th>
                             <th>Jurusan Tryout</th>
                             <th>Status</th>
                           </tr>
@@ -109,6 +110,7 @@
                             <td>{{$p->email}}</td>
                             <td>{{$p->user->asal_sekolah}}</td>
                             <td>{{$p->user->no_wa}}</td>
+                            <td>{{substr($p->tryoutUser->created_at, 0, 10)}}</td>
                             <td class="text-capitalize">{{$p->tryoutUser->pilihan_tryout}}</td>
                             <td class="text-center">
                                 <!-- Button trigger modal -->
@@ -235,7 +237,7 @@
       "paging": true,
       "lengthChange": false,
       "searching": false,
-      "ordering": true,
+      "ordering": false,
       "info": true,
       "autoWidth": false,
       "responsive": true,

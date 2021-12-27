@@ -106,6 +106,10 @@
                                 <input type="text" class="form-control" id="biaya"
                                     value="{{ $forda->biaya }}" name="biaya"/>
                             </div>
+                            <div class="form-group">
+                                <label for="deskripsi_pembayaran">Keterangan Lanjutan</label>
+                                <textarea type="text" class="form-control" id="deskripsi_pembayaran" rows="3" name="deskripsi_pembayaran">{{ $forda->deskripsi_pembayaran }}</textarea>
+                            </div>
                         </div>
                                 <!-- /.card-body -->
                         <div class="card-footer text-right">

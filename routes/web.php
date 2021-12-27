@@ -2,6 +2,7 @@
 
 use App\Exports\OprecStaffExport;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminMainEventController;
 use App\Http\Controllers\OprecStaffController;
 use App\Http\Controllers\LinkShortenerController;
 use App\Http\Controllers\OpenCampusController;
@@ -33,10 +34,7 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 |
 */
 //Route web informasi
-Route::get('/', function () {
-    return view('coming-soon');
-})->name('coming-soon');
-Route::get('main', [MainController::class, 'index'])->name('main');
+Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('fasilitas', [FasilitasController::class,'index'])->name('fasilitas');
 Route::get('fakultas/{slug}', [FakultasController::class, 'index'])->name('fakultas');
 Route::get('departemen/{slug}', [DepartemenController::class, 'index'])->name('departemen');
@@ -54,7 +52,8 @@ Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
     //FnD
     Route::prefix('fnd')->group(function(){
         Route::get('register', [OpenCampusController::class, 'registerFND'])->name('open-campus.fnd.register');
-        Route::post('register/store', [OpenCampusController::class, 'regisFnD'])->name('open-campus.regis-fnd.store');
+        Route::get('register/form', function(){return view('open-campus.fnd-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.fnd.register-form');
+        Route::post('register/form/store', [OpenCampusController::class, 'regisFNDFormStore'])->name('open-campus.fnd.register-form.store');
         Route::get('register/fakultas', [OpenCampusController::class, 'fakultas'])->name('open-campus.fnd.fakultas');
         Route::get('register/departemen', [OpenCampusController::class, 'opsi'])->name('open-campus.opsi');
         Route::post('register/departemen/store', [OpenCampusController::class, 'storeDep'])->name('open-campus.store-dep');
@@ -69,7 +68,8 @@ Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
     //ITS Fair
     Route::prefix('its-fair')->group(function(){
         Route::get('register', [OpenCampusController::class, 'registerIF'])->name('open-campus.its-fair.register');
-        Route::post('register/store', [OpenCampusController::class, 'regisITSFair'])->name('open-campus.its-fair.register.store');
+        Route::get('register/form', function(){return view('open-campus.its-fair-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.its-fair.register-form');
+        Route::post('register/form/store', [OpenCampusController::class, 'regisIFFormStore'])->name('open-campus.its-fair.register-form.store');
         Route::get('thank-you', [OpenCampusController::class, 'thxIF'])->name('open-campus.its-fair.thank-you');
     });
 
@@ -93,6 +93,12 @@ Route::middleware('isadmin')->prefix('admin')->group(function () {
     Route::get('shortener/update/{id}', [LinkShortenerController::class, 'update'])->name('link.update');
     Route::post('shortener/update/{id}', [LinkShortenerController::class, 'storeUpdate'])->name('link.update.store');
     Route::post('shortener/delete/{id}', [LinkShortenerController::class, 'delete'])->name('link.delete');
+    Route::get('main-event/fnd', [AdminMainEventController::class, 'fnd'])->name('admin.fnd');
+    Route::get('main-event/odl', [AdminMainEventController::class, 'odl'])->name('admin.odl');
+    Route::get('main-event/its-fair', [AdminMainEventController::class, 'itsFair'])->name('admin.its-fair');
+    Route::get('main-event/welcome', [AdminMainEventController::class, 'welcome'])->name('admin.welcome');
+    Route::get('main-event/welcome/all', [AdminMainEventController::class, 'welcomeAll'])->name('admin.welcome-all');
+    Route::get('main-event/welcome/{id}', [AdminMainEventController::class, 'welcomeForda'])->name('admin.welcome-detail');
 });
 
 //Route untuk Peserta
@@ -100,7 +106,7 @@ Route::prefix('peserta')->middleware('ispeserta')->group(function () {
     Route::prefix('welcome')->group(function () {
         Route::get('/', [PesertaController::class, 'index'])->name('peserta');
         Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
-        Route::get('/absensi', [PesertaController::class, 'absen'])->name('peserta.absen');
+        // Route::get('/absensi', [PesertaController::class, 'absen'])->name('peserta.absen');
         Route::post('/absens/proses', [PesertaController::class, 'prosesAbsensi'])->name('peserta.proses.absen');
         Route::get('/daftar', [PesertaController::class, 'registerWelcome'])->name('peserta.welcome.register');
         Route::post('/daftar', [PesertaController::class, 'storeWelcome'])->name('peserta.welcome.store');
@@ -117,6 +123,8 @@ Route::prefix('forda')->middleware('isforda')->group(function () {
     Route::get('/absensi', [FordaController::class, 'absensi'])->name('forda.absensi');
     Route::get('/edit-biaya', [FordaController::class, 'editBiaya'])->name('forda.edit-biaya');
     Route::post('/edit-biaya', [FordaController::class, 'storeBiaya'])->name('forda.edit-biaya.store');
+    Route::get('/edit-grup', [FordaController::class, 'indexEditGrup'])->name('forda.edit-grup');
+    Route::post('/edit-grup', [FordaController::class, 'storeEditGrup'])->name('forda.edit-grup.store');
     Route::get('/edit-pj', [FordaController::class, 'editPJ'])->name('forda.edit-pj');
     Route::post('/edit-pj', [FordaController::class, 'storePJ'])->name('forda.edit-pj.store');
     Route::get('/link-meet', [FordaController::class, 'LinkMeetPage'])->name('forda.link-meet-page');

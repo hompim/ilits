@@ -9,7 +9,7 @@
   <section>
     <div class="SectionHeader container">
       <div class="container-fluid">
-        <h2 class="px-5 py-2 m-auto bg-info position-relative">Pendaftaran Open Campus</h2>
+        <h2 class="px-5 py-2 m-auto bg-info position-relative">Pendaftaran One Day Lecture</h2>
       </div>
     </div>
   </section>
@@ -60,11 +60,11 @@
             </div>
             @endif
             <div class="form-group">
-              <label class="text-white" for="bukti_follow">Bukti follow IG ATAU Follow TikTok ATAU Subscribe youtube INI LHO ITS!</label>
+                <label class="text-white" for="bukti_follow">Upload screenshot bukti Share Guide Post Event pada link <a href="https://inilho.its.ac.id/GuideEventILITS" target="_blank">https://inilho.its.ac.id/GuideEventILITS</a> ke Insta Story dan tag @inilhoits serta 2 teman</label>
               <input type="file" class="form-control" id="bukti_follow" name="bukti_follow">
             </div>
             <div class="form-group">
-              <label class="text-white" for="bukti_poster">Upload screenshot bukti poster di story IG (tag ILITS dan minimal 5 teman) ATAU share poster di minimal 3 grup WA/LINE</label>
+              <label class="text-white" for="bukti_poster">Upload screenshot bukti share poster di minimal 3 grup WA/LINE</label>
               <input type="file" class="form-control" id="email" name="bukti_poster">
             </div>
             <div class="text-center">

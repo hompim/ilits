@@ -257,6 +257,17 @@
                   <span><strong>Rp {{Auth::user()->user->forda->tryoutForda->biaya}}</strong></span>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Keterangan Tambahan
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+              </div>
+              <div class="row my-2">
+                <textarea rows="3" class="w-100 p-2" disabled>{{Auth::user()->user->forda->tryoutForda->deskripsi_pembayaran}}</textarea>
+              </div>
             </div>
           </p>
         </div>
@@ -264,20 +275,75 @@
       <div class="card elevation-2">
         <div class="card-header">
           <h1 class="card-title">
-            Link Zoom Meeting
+            Informasi Pelaksanaan Tryout
           </h1>
         </div>
-            <br>
-                <form>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for=" input link_meet"><h2> <a href="#">Link Zoom Meeting</a> </h2></label>
-                            <input type="text" class="form-control" id="link_meet"
-                                value= "{{Auth::user()->user->forda->tryoutForda->link_meet}}" name="link_meet"/>
-                        </div>
-                     </div>
-                </form>
+        <div class="card-body">
+          <p>
+            Segala informasi yang kamu perlukan untuk melaksanakan welcome
+          </p>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Tanggal dan Waktu:
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <span><strong>{{Auth::user()->user->forda->tryoutForda->tanggal_welcome." ".Auth::user()->user->forda->tryoutForda->sesi_welcome}}</strong></span>
+                </div>
+              </div>
+            @if (Auth::user()->tryoutUser->status_bayar=='aktif')
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Link Grup Koordinasi
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <a href="{{Auth::user()->user->forda->tryoutForda->grup_koordinasi}}" target="_blank"><strong> {{Auth::user()->user->forda->tryoutForda->grup_koordinasi?'Klik disini':'Menyusul'}}</strong></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Link meet
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <a href="{{Auth::user()->user->forda->tryoutForda->link_meet}}" target="_blank"><strong> {{Auth::user()->user->forda->tryoutForda->link_meet?'Klik disini':'Menyusul'}}</strong></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Username
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <span><strong>{{Auth::user()->tryoutUser->username_tryout?Auth::user()->tryoutUser->username_tryout:'Menyusul'}}</strong></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Password
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <span><strong>{{Auth::user()->tryoutUser->password_tryout?Auth::user()->tryoutUser->password_tryout:'Menyusul'}}</strong></span>
+                </div>
+              </div>
+            </div>
+            @endif
+          </p>
         </div>
+      </div>
     </section>
   </div>
   <!-- /.row (main row) -->

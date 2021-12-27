@@ -14,14 +14,14 @@
 @endsection
 
 @section('content')
-  <section id="jumbotron" class="d-flex align-items-center">
-    <div class="container text-white d-flex justify-content-center justify-content-sm-between">
-      <div class="d-flex flex-column justify-content-center">
-        <h1 class="pb-2">Beasiswa</h1>
-        <h3 class="pb-3">Institut Teknologi Sepuluh Nopember</h3>
+    <section id="jumbotron" class="d-flex align-items-center">
+    <div class="container d-flex flex-column flex-lg-row justify-content-around justify-content-lg-between">
+      <div class="d-flex flex-column justify-content-center text-white text-jumbotron">
+        <h1 class="mb-2">Beasiswa</h1>
+        <h3 class="mb-3">Institut Teknologi Sepuluh Nopember</h3>
         <x-button-link href="#info-unik">Kenali Lebih Lanjut</x-button-link>
       </div>
-      <img src="img/beasiswa/jumbotron_beasiswa.png" alt="Jumbtoron Icon" class="d-none d-lg-block img-fluid">
+      <img src="img/beasiswa/jumbotron_beasiswa.png" alt="Jumbtoron Icon" class="img-fluid">
     </div>
   </section>
 
@@ -40,6 +40,7 @@
             <br>
             @foreach($beasiswa as $b)
             <x-banner-with-corner-header title="{{$b->nama}}" image="img/main/banner.png" href="https://docs.google.com/spreadsheets/d/1Fn-sQoZr0_qxe2ZjRBD9Altse_ewDp--UVAughZo5Zk/edit#gid=0" />
+            <br>
             @endforeach
         </div>
         </div>
@@ -47,9 +48,3 @@
     </section>
   </section>
 @endsection
-
-{{-- 
-@push('modals')
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-@endpush --}}

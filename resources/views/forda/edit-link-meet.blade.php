@@ -82,7 +82,7 @@
                     <div class="form-group">
                         <label for="link_meet">Masukkan link meet yang akan digunakan pada saat try out nanti</label>
                         <input type="text"
-                            class="form-control" name="link_meet" id="link_meet" required value="">
+                            class="form-control" name="link_meet" id="link_meet" required value="{{ Auth::user()->user->tryoutForda->link_meet }}">
                     </div>
                     <button type="submit" class="btn btn-outline-success">Simpan</button>
                 </form>

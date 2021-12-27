@@ -37,7 +37,9 @@ class FordaController extends Controller
         $pesertas = User::with(["tryoutUser", "user"])
             ->whereHas('peserta', function($q) use($forda){
                 $q->where('forda_id', $forda->id);
-            })->get();
+            })
+            ->has('tryoutUser')
+            ->get()->sortByDesc('created_at');
         return view('forda.dashboard', [
             'forda' => $forda,
             'peserta_pending' => $peserta_pending,
@@ -68,7 +70,9 @@ class FordaController extends Controller
         $pesertas = User::with(["tryoutUser", "user"])
             ->whereHas('peserta', function($q) use($forda){
                 $q->where('forda_id', $forda->id);
-            })->get();
+            })
+            ->has('tryoutUser')
+            ->get();
 
         return view('forda.absensi-forda', [
             'forda' => $forda,
@@ -116,6 +120,7 @@ class FordaController extends Controller
             $forda->nama_bank = $request->nama_bank;
             $forda->no_rek = $request->no_rek;
             $forda->biaya = $request->biaya;
+            $forda->deskripsi_pembayaran = $request->deskripsi_pembayaran;
             $forda->save();
             return redirect()->back()->with([
                 'message' => "Data Biaya berhasil diubah",
@@ -243,7 +248,11 @@ class FordaController extends Controller
         $peserta = User::with(["tryoutUser", "user"])
             ->whereHas('peserta', function($q) use($forda){
                 $q->where('forda_id', $forda->id);
-            })->get();
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'pending_pembayaran');
+            })
+            ->get()->sortByDesc('created_at');
         return view('forda.verif-bayar', [
             'forda' => $forda,
             'peserta_pending' => $peserta_pending,
@@ -274,5 +283,49 @@ class FordaController extends Controller
             $q->where('forda_id', $forda->id);
         }])->where('id', $id)->first();
         return json_encode($tryoutUser);
+    }
+    
+    
+    public function indexEditGrup(){
+        $forda_peserta = Auth::user()->user;
+        $peserta_konfirmasi = User::whereHas('peserta', function($q) use($forda_peserta){
+            $q->where('forda_id', $forda_peserta->id);
+        })
+        ->whereHas('tryoutUser', function($q){
+            $q->where('status_bayar', 'aktif');
+        })->count();
+        $peserta_terdaftar = User::whereHas('peserta', function($q) use($forda_peserta){
+                $q->where('forda_id', $forda_peserta->id);
+            })
+            ->has('tryoutUser')->count();
+        $peserta_pending = User::whereHas('peserta', function($q) use($forda_peserta){
+                $q->where('forda_id', $forda_peserta->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'pending_pembayaran');
+            })->count();
+        return view('forda.edit-grup', [
+            'forda_peserta' => $forda_peserta,
+            'peserta_pending' => $peserta_pending,
+            'peserta_terdaftar' => $peserta_terdaftar,
+            'peserta_konfirmasi' => $peserta_konfirmasi,
+        ]);
+    }
+
+    public function storeEditGrup(Request $request){
+        try {
+            $forda = Auth::user()->user->tryoutForda;
+            $forda->grup_koordinasi = $request->grup_koordinasi;
+            $forda->save();
+            return redirect()->back()->with([
+                'message' => "Link grup koordinasi berhasil diubah",
+                'status' => "success"
+            ]);
+        } catch (Exception $e) {
+            return redirect()->back()->with([
+                'message' => "Link grup koordinasi gagal diubah",
+                'status' => "danger"
+            ]);
+        }
     }
 }

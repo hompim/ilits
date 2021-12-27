@@ -19,6 +19,8 @@ class TryoutForda extends Model
         'hp_pj',
         'kode_presensi',
         'id_line_pj',
+        'grup_koordinasi',
+        'deskripsi_pembayaran',
     ];
     public function forda()
     {

@@ -33,7 +33,7 @@
                   :
                 </div>
                 <div class="col-8">
-                  <span><strong>Menyusul</strong></span>
+                  <span><strong>Ghani</strong></span>
                 </div>
               </div>
               <div class="row">
@@ -44,19 +44,29 @@
                   :
                 </div>
                 <div class="col-8">
-                  <span><strong>Menyusul</strong></span>
+                  <span><strong>ghani_ghani</strong></span>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-2 col-sm-3 col-6">
-                  Whatsapp
+                  Nama
                 </div>
                 <div class="col-0">
                   :
                 </div>
                 <div class="col-8">
-                    <span><strong>Menyusul</strong></span>
-                  {{-- <a href="https://wa.me/{{Auth::user()->user->forda->tryoutForda->hp_pj}}" target="_blank"><span><strong>0{{Auth::user()->user->forda->tryoutForda->hp_pj}}</strong></span></a> --}}
+                  <span><strong>Tobing</strong></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  ID Line
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <span><strong>gumelart25</strong></span>
                 </div>
               </div>
             </div>
@@ -74,6 +84,17 @@
             Berikut adalah keperluan umum dalam ITS Fair:
           </p>
             <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-6">
+                  Link Grup
+                </div>
+                <div class="col-0">
+                  :
+                </div>
+                <div class="col-8">
+                  <a href="https://chat.whatsapp.com/FN6aHm5YC1SFY9tHiqZJyr"><strong>https://chat.whatsapp.com/FN6aHm5YC1SFY9tHiqZJyr</strong></a>
+                </div>
+              </div>
               <div class="row">
                 <div class="col-md-2 col-sm-3 col-6">
                   Virtual Background

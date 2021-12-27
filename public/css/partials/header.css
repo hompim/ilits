@@ -13,7 +13,7 @@ nav.navbar .navbar-collapse div:nth-child(2) div img {
 }
 
 nav.navbar .navbar-collapse .nav-link {
-    font-size: 1.25rem;
+    font-size: .9rem;
     color: white;
     position: relative;
     font-family: "gothambold";
@@ -23,12 +23,12 @@ nav.navbar .navbar-collapse div.ml-auto .nav-link {
     background: linear-gradient(45deg, #3b71c7, #53ea90);
 }
 
-nav.navbar .navbar-nav .nav-link:hover,
+nav.navbar .navbar-nav .nav-link:not(.nav-action):hover,
 nav .nav-link.active {
     color: #53ea90 !important;
 }
 
-nav.navbar .navbar-nav .nav-link:not(.active):after {
+nav.navbar .navbar-nav .nav-link:not(.active, .nav-action):after {
     content: "";
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
@@ -104,8 +104,10 @@ nav .nav-link.active:after {
         display: block;
     }
     nav.navbar .navbar-collapse div.ml-auto {
+        margin-top: 0.5rem;
         padding-top: 1rem;
         border-top: 1px solid #FFFFFF;
+        width: 100%;
     }
     nav.navbar .navbar-collapse div.ml-auto .nav-link {
         border-radius: 5px;

@@ -26,7 +26,7 @@ class LinkShortenerController extends Controller
      */
     public function create()
     {
-        $link_all = LinkShortener::all();
+        $link_all = LinkShortener::all()->sortByDesc('updated_at');
         return view('admin.link-shortener.create', [
             'link_all' => $link_all,
         ]);

@@ -31,7 +31,7 @@
         </h2>
         <br>
         <h3>
-          Link Zoom Meeting Faculty and Department Day Ini Lho ITS! 2022 akan dikirimkan melalui email masing-masing peserta minimal H-3 Faculty and Department Day Ini Lho ITS! 2022. Link dapat diakses juga melalui Dashboard Peserta.
+          Link Zoom Meeting dan Grup Faculty and Department Day Ini Lho ITS! 2022 akan dikirimkan melalui email masing-masing peserta minimal H-3 Faculty and Department Day Ini Lho ITS! 2022. Link dapat diakses juga melalui Dashboard Peserta atau bisa langsung masuk ke grupnya <a href="https://bit.ly/OpenChatFND">disini</a> dengan kode 090122. Jangan lupa gabung di Open Chat FnD karena segala informasi penting akan disampaikan di sana. Selain itu, kalian juga bisa berinteraksi maupun bertanya kepada kakak-kakak mahasiswa ITS seputar perkuliahan.
         </h3>
         <br>
       </div>

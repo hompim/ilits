@@ -1,0 +1,166 @@
+section#jumbotron img.logo {
+    width: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 50;
+}
+
+section#jumbotron img.rec {
+    top: 10%;
+    left: -10%;
+}
+
+section#jumbotron img.circle {
+    top: -10%;
+    right: 20%;
+}
+
+section#jumbotron img.ring {
+    bottom: -60%;
+    left: 12%;
+}
+
+section#jumbotron img.star-1 {
+    top: 10%;
+    left: 20%;
+}
+
+section#jumbotron img.star-2 {
+    bottom: 30%;
+    right: 2%;
+}
+
+section#info-unik img.star-1 {
+    width: 2.5rem;
+    bottom: 5%;
+    right: 5%;
+}
+
+section#info-unik img.star-2 {
+    width: 5rem;
+    top: -12%;
+    left: 20%;
+}
+
+section#info-unik img.star-3 {
+    width: 4rem;
+    top: -2%;
+    left: 2%;
+    z-index: 100;
+}
+
+section#info-unik img.star-4 {
+    bottom: 50%;
+    right: -2%;
+}
+
+section#info-unik img.star-5 {
+    width: 2.5rem;
+    bottom: -2%;
+    right: 20%;   
+}
+
+section#info-unik img.star-6 {
+    bottom: -12%;
+    right: 30%;   
+}
+
+section#info-unik img.circle {
+    bottom: 0;
+    left: 1%;
+}
+
+section#fasilitas img.circle {
+    top: 20%;
+    right: -5%;
+}
+
+section#fasilitas img.ring {
+    bottom: 20%;
+    right: -5%;
+}
+
+@media only screen and (max-width: 1200px) {
+    section#jumbotron h2 br {
+        display: block !important;
+    }
+    section#jumbotron img.rec {
+        width: 15rem;
+    }
+    
+    section#jumbotron img.circle {
+        width: 20rem;
+    }
+    
+    section#jumbotron img.ring {
+        width: 10rem;
+        bottom: -40%;
+        left: 20%;
+    }
+    
+    section#jumbotron img.star-1,
+    section#jumbotron img.star-2 {
+        width: 4rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    section#jumbotron {
+        justify-content: flex-start !important;
+        padding-top: 25%;    
+        text-align: center;
+    }
+    section#jumbotron a {
+        margin: auto;
+    }
+    section#jumbotron img.logo {
+        width: 70%;
+        bottom: 0 !important;
+        transform: translate(-20%, 10%);
+    }
+    section#jumbotron img.rec,
+    section#jumbotron img.circle,
+    section#jumbotron img.ring,
+    section#jumbotron img.star-1,
+    section#jumbotron img.star-2 {
+        display: none;
+    }
+    section#info-unik img.circle,
+    section#fasilitas img.circle,
+    section#fasilitas img.ring {
+        width: 20rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    section#jumbotron img.logo {
+        transform: translate(-20%, 25%);
+    }
+    section#info-unik img.circle,
+    section#fasilitas img.circle,
+    section#fasilitas img.ring {
+        display: none;
+    }
+    section#info-unik img.star-1 {
+        width: 1.5rem;
+        bottom: 0;
+        right: 2%;
+    }
+    section#info-unik img.star-2 {
+        width: 2.5rem;
+        top: -10%;
+    }
+    section#info-unik img.star-3 {
+        width: 1.5rem;
+    }
+    section#info-unik img.star-6{
+        width: 3.5rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    section#jumbotron img.logo {
+        transform: translate(-20%, 50%);
+    }
+}

@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{asset('testfiture/plugins/fontawesome-free/css/all.min.css')}}" />
     <!-- icheck bootstrap -->
     <link rel="stylesheet" href="{{asset('testfiture/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}" />
+    {{-- select2 --}}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- My CSS -->
     <link rel="stylesheet" href="{{asset('testfiture/css/auth-main.css')}}" />
     <link rel="stylesheet" href="{{ asset('css/globals.css') }}">
@@ -26,15 +28,6 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="
-                preloader
-                flex-column
-                justify-content-center
-                align-items-center
-            ">
-        <img class="animation__shake" src="{{asset('testfiture/lambang/Group-7197.png')}}" alt="AdminLTELogo" height="60" width="60" />
-    </div>
     <div class="bg besar">
         <div class="bg kecil">
             <div class="bg naga">
@@ -45,11 +38,20 @@
                 <section id="section">
                     <div class="container" id="daftar-container">
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-5">
                                 <div class="login-box">
                                     <h1 class="login-box-msg"><b>Daftarkan Dirimu!</b> </h1>
                                     <br>
                                     <form action="{{ route('register') }}" method="post">
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
                                         @csrf
                                         <div class="mb-3">
                                             <label for="nama" class="form-label">Nama</label>
@@ -68,7 +70,7 @@
                                                 <input type="password" name="password" id="password" class="form-control" placeholder=""
                                                     required>
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text mata" onclick="myFunction()">
+                                                    <span class="input-group-text mata" onclick="myFunction(1)">
                                                     </span>
                                                 </div>
                                             </div>
@@ -80,7 +82,7 @@
                                                 <input type="password" name="password_confirmation" id="ulangi_password" class="form-control" placeholder=""
                                                     required>
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text mata" onclick="myFunction()">
+                                                    <span class="input-group-text mata" onclick="myFunction(2)">
                                                     </span>
                                                 </div>
                                             </div>
@@ -97,7 +99,7 @@
                                         <!-- Dropdown -->
                                         <div class="form-group">
                                             <label for="provinsi_domisili">Provinsi Domisili</label>
-                                            <select class="provinsi_domisili form-control" id="provinsi_domisili"
+                                            <select class="provinsi_domisili form-select" id="provinsi_domisili"
                                                 name="provinsi_domisili_id">
                                                 <option value="null"></option>
                                                 @foreach($provinsi as $p)
@@ -107,7 +109,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="kab_domisili">Kabupaten Domisili</label>
-                                            <select class="kab_domisili_id form-control" id="kab_domisili"
+                                            <select class="kab_domisili_id form-select" id="kab_domisili"
                                                 name="kab_domisili_id">
                                                 <option value="null"></option>
                                                 @foreach($kabupaten as $k)
@@ -120,8 +122,8 @@
                                             <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="kota_kab_asal_sekolah">Kabupaten Domisili Sekolah</label>
-                                            <select class="kota_kab_asal_sekolah form-control"
+                                            <label for="kota_kab_asal_sekolah">Kabupaten Asal Sekolah</label>
+                                            <select class="kota_kab_asal_sekolah form-select"
                                                 id="kota_kab_asal_sekolah" name="kab_sekolah_id">
                                                 <option value="null"></option>
                                                 @foreach($kabupaten as $k)
@@ -133,33 +135,45 @@
 
 
                                         <!-- Radio -->
-                                        <div>Apakah Kamu Pelajar Aktif?</div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" value="1" type="radio" name="is_pelajar_aktif"
-                                                id="flexRadioDefault1" />
-                                            <label class="form-check-label"  for="flexRadioDefault1">
-                                                Pelajar Aktif
-                                            </label>
+                                        <div class="mb-3 pb-3 pelajar_aktif">
+                                            <p>Apakah Kamu Pelajar Aktif?</p>
+                                            <div class="form-check">
+                                                <input class="form-check-input" value="1" type="radio" name="is_pelajar_aktif"
+                                                    id="flexRadioDefault1" />
+                                                <label class="form-check-label"  for="flexRadioDefault1">
+                                                    Pelajar Aktif
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" value="0" type="radio" name="is_pelajar_aktif"
+                                                    id="flexRadioDefault2" checked />
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Tidak
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" value="0" type="radio" name="is_pelajar_aktif"
-                                                id="flexRadioDefault2" checked />
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                Tidak
-                                            </label>
-                                        </div>
-                                        <br />
                                         <!-- Akhir radio -->
-                                        <div class="mb-3">
+                                        <div class="mb-3 pb-3 tau_ilits">
                                             <label for="tau_ilits" class="form-label">Kamu tau ILITS dari mana?</label>
-                                            <textarea type="text" class="form-control" name="tau_ilits" id="tau_ilits"></textarea>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="Instagram" id="instagram" name="tau_ilits">
+                                                <label class="form-check-label w-100" for="instagram">
+                                                  Instagram
+                                                </label>
+                                              </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="Tiktok" id="tiktok" name="tau_ilits">
+                                                <label class="form-check-label w-100" for="tiktok">
+                                                  Tiktok
+                                                </label>
+                                              </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" id="agreeTerms"
-                                                        name="terms" value="agree" />
-                                                    <label class="saya-yakin" for="agreeTerms">
+                                                        name="terms" value="agree" required />
+                                                    <label class="saya-yakin form-check-label" for="agreeTerms">
                                                         Saya yakin, data yang saya
                                                         isikan sudah benar
                                                     </label>
@@ -187,15 +201,23 @@
                     All rights reserved.
                 </footer>
 
+
                 <!-- jQuery -->
                 <script src="{{asset('testfiture/plugins/jquery/jquery.min.js')}}"></script>
-                <!-- Bootstrap 4 -->
-                <script src="{{asset('testfiture/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+                {{-- select2 --}}
+                <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+                {{-- bootstrap 5 --}}
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
                 <!-- AdminLTE App -->
                 <script src="{{asset('testfiture/dist/js/adminlte.js')}}"></script>
                 <script>
-                    function myFunction() {
+                    function myFunction(y) {
+                        if(y==1){
                         var x = document.getElementById("password");
+                        }
+                        if(y==2){
+                        var x = document.getElementById("ulangi_password");
+                        }
                         if (x.type === "password") {
                             x.type = "text";
                         } else {
@@ -204,6 +226,13 @@
                     }
                     $(".mata").click(function () {
                         $(this).toggleClass("mata-ketutup");
+                    })
+                </script>
+                <script>
+                    $(document).ready(function(){
+                        $('#provinsi_domisili').select2();
+                        $('#kab_domisili').select2();
+                        $('#kota_kab_asal_sekolah').select2();
                     })
                 </script>
 </body>
