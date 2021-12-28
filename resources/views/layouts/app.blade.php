@@ -45,6 +45,7 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('js/partials/header.js') }}"></script>
     @stack('modals')
     @stack('scripts')
 </body>
