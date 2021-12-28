@@ -13,13 +13,13 @@ nav.navbar .navbar-collapse div:nth-child(2) div img {
 }
 
 nav.navbar .navbar-collapse .nav-link {
-    font-size: .9rem;
+    font-size: .875rem;
     color: white;
     position: relative;
     font-family: "gothambold";
 }
 
-nav.navbar .navbar-collapse div.ml-auto .nav-link {
+nav.navbar .navbar-collapse a.cta.nav-link {
     background: linear-gradient(45deg, #3b71c7, #53ea90);
 }
 
@@ -28,7 +28,7 @@ nav .nav-link.active {
     color: #53ea90 !important;
 }
 
-nav.navbar .navbar-nav .nav-link:not(.active, .nav-action):after {
+nav.navbar .navbar-nav .nav-link:not(.active, .nav-action, .dropdown-toggle):after {
     content: "";
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
@@ -41,13 +41,13 @@ nav.navbar .navbar-nav .nav-link:not(.active, .nav-action):after {
     width: 0;
 }
 
-nav.navbar .navbar-nav .nav-link:hover:after {
+nav.navbar .navbar-nav .nav-link:not(.dropdown-toggle):hover:after {
     width: 100%;
     left: 0;
     background-color: #53ea90;
 }
 
-nav.navbar .navbar-collapse div.mr-auto img {
+nav.navbar .navbar-collapse div.nav-options img {
     display: none;
 }
 
@@ -61,32 +61,47 @@ nav .nav-link.active:after {
     background-color: #53ea90;
 }
 
+nav .dropdown .dropdown-menu {
+    font-family: 'gothammedium';
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+nav .dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #53ea90;
+}
+
 @media only screen and (max-width: 1200px) {
     nav.navbar .navbar-collapse .nav-link {
-        font-size: 1.25rem;
         margin-left: 0.5rem !important;
         margin-right: 0.5rem !important;
     }
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 978px) {
     nav .navbar-collapse {
         background-color: #111028;
         position: fixed;
         top: 0;
         bottom: 0;
+        max-width: 75%;
         left: 0;
         padding-top: 1rem;
         padding-left: 3rem;
         padding-right: 3rem;
-        height: 100vh;
+        height: 100vh !important;
+        overflow-y: scroll;
     }
+    nav .navbar-collapse::-webkit-scrollbar {
+        display: none;
+      }
     nav .navbar-collapse.collapsing {
         height: 100%;
         left: -75%;
         transition: height 0s ease;
     }
-    nav .navbar-collapse.show .close-mobile {
+    nav .navbar-collapse .close-mobile {
         display: flex !important;
     }
     nav .navbar-collapse.show {
@@ -97,36 +112,38 @@ nav .nav-link.active:after {
     nav .navbar-toggler.collapsed ~ .navbar-collapse {
         transition: left 400ms ease-in;
     }
-    nav.navbar .navbar-collapse div.mr-auto {
+    nav.navbar .navbar-collapse div.nav-options {
         padding-bottom: 1rem;
+        align-items: start !important;
     }
-    nav.navbar .navbar-collapse div.mr-auto img {
+    nav.navbar .navbar-collapse div.nav-options img {
         display: block;
     }
-    nav.navbar .navbar-collapse div.ml-auto {
-        margin-top: 0.5rem;
-        padding-top: 1rem;
-        border-top: 1px solid #FFFFFF;
+    nav.navbar .navbar-collapse a.cta.nav-link {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 1rem !important;
+        margin-bottom: 5rem !important;
+        border-radius: 0.5rem;
+        text-align: center;
         width: 100%;
     }
-    nav.navbar .navbar-collapse div.ml-auto .nav-link {
-        border-radius: 5px;
-        text-align: center;
+    nav .dropdown {
+        display: none;
+    }
+    nav .dropdown-nav-link {
+        display: block !important;
     }
 }
 
 @media only screen and (max-width: 768px) {
     nav.navbar .navbar-nav .nav-link {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
     nav .logo-small {
         max-width: 5rem;
         height: auto;
-    }
-}
-
-@media only screen and (max-width: 576px) {
-    nav.navbar .navbar-nav .nav-link {
-        margin: 0 !important;
     }
 }
