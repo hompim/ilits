@@ -4,6 +4,11 @@
     filter: drop-shadow(0px 0px 40px 10px rgba(0, 0, 0, 0.25));
     backdrop-filter: blur(20px);
     border-radius: 18px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.259);
+    transition: transform 0.2s ease;
+}
+.three-cards .item-three-cards:hover {
+    transform: scale(1.025)
 }
 .three-cards .item-three-cards .container-image{
     height: 80%;
@@ -15,7 +20,8 @@
 .three-cards .item-three-cards img {
     margin: auto;
     width: 100%;
-    height: auto;
+    height: 100%;
+     
     border-radius: 18px;
 }
 

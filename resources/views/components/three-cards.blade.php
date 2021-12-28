@@ -1,6 +1,8 @@
 <div class="isNotMobileView m-auto text-white three-cards row justify-content-around">
   <div class="p-0 mx-4 item-three-cards col-lg @if ($title2=='') col-lg-6 @endif">
-    <img src="{{ $img1 }}" alt="{{ $title1 }}">
+    <div class="container-image">
+      <img src="{{ $img1 }}" alt="{{ $title1 }}">
+    </div>
     <div class="container-text">
       <h2>{{ $title1 }}</h2>
       <p>{{ $text1 }}</p>
@@ -31,7 +33,9 @@
 
   @if ($title3 != '')
     <div class="p-0 mx-4 item-three-cards col-lg">
-      <img src="{{ $img3 }}" alt="{{ $title3 }}">
+      <div class="container-image">
+        <img src="{{ $img3 }}" alt="{{ $title3 }}">
+      </div>
       <div class="container-text">
         <h2>{{ $title3 }}</h2>
         <p>{{ $text3 }}</p>

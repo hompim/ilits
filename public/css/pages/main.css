@@ -88,6 +88,8 @@ section#fakultas article:nth-child(5) button {
     font-size: 1.25rem;
     border-radius: 22px;
     font-family: "gothammedium";
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.259);
+    transition: transform 0.2s ease;
 }
 section#fakultas article:nth-child(5) div:last-child button {
     padding-top: 2rem;
@@ -106,7 +108,12 @@ section#fakultas article:nth-child(5) div:nth-child(7) {
 }
 section#fakultas article button:hover {
     background: linear-gradient(82.07deg, rgba(83, 234, 144, 0.9) 0%, rgba(59, 113, 199, 0.9) 100%);
+    transform: scale(1.025)
+}
+section#fakultas article button:focus {
+    background: linear-gradient(82.07deg, rgba(83, 234, 144, 0.9) 0%, rgba(59, 113, 199, 0.9) 100%);
     backdrop-filter: blur(20px);
+    box-shadow: 0 5px 10px lightseagreen;
 }
 section#prestasi {
     background: linear-gradient(to bottom, #3f1862, #531373);

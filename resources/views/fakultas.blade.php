@@ -89,7 +89,6 @@
     ?>
     <div class="col-10 col-lg-11 mx-auto">
         <x-three-cards-carousel carouselId="idcar" titles="{{ $t }}"
-        images="img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png,img/fakultas/1960.png,img/fakultas/1976.png,img/fakultas/1987.png"
         texts="{{ $d }}"
         />
     </div>

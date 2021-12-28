@@ -46,9 +46,8 @@ section#jumbotron a.btn{
 }
 section#jumbotron .ilustrasi{
     position: absolute;
-    bottom: -108px;
+    bottom: 0;
     right: 0;
-
 }
 section#jumbotron .ilustrasi img{
     width: 778px;
@@ -65,11 +64,21 @@ section#event .container-btn button {
     backdrop-filter: blur(20px);
     font-size: 1.375rem;
     border-radius: 1.25rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.259);
     font-family: "gothammedium";
+    transition: transform 0.2s ease;
 }
 section#event .container-btn button:hover {
     background: linear-gradient(82.07deg, rgba(83, 234, 144, 0.9) 0%, rgba(59, 113, 199, 0.9) 100%);
     backdrop-filter: blur(20px);
+    transform: scale(1.025)
+    /* box-shadow: 0 5px 15px lightseagreen; */
+    
+}
+section#event .container-btn button:focus {
+    background: linear-gradient(82.07deg, rgba(83, 234, 144, 0.9) 0%, rgba(59, 113, 199, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 5px 10px lightseagreen;
 }
 section#event .container-btn div:last-child button {
     padding-top: 2rem;
@@ -109,8 +118,6 @@ div#tentang .SectionHeader div::before {
 section#dokumentasi {
     background: linear-gradient(to bottom, #2b5391, #2e5b9b );
 }
-
-
 
 section#informasi-penting {
     background-image: url("/img/main/informasi-penting-bg.png");

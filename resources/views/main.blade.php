@@ -147,7 +147,7 @@
         text="{{$fakultas[0]->deskripsi}}"
         image="{{$fakultas[0]->foto}}"
         link="../fakultas/{{$fakultas[0]->slug}}"
-        buttonText="Lihat Departemen"/>
+        buttonText="Lihat Fakultas"/>
     </article>
   </section>
 

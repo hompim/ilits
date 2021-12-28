@@ -1,0 +1,14 @@
+
+#textCard .text h4{
+    background: linear-gradient(45deg, #FFFFFF64, #FFFFFF37);
+    backdrop-filter: blur(20px);
+    font-size: 1.375rem;
+    border-radius: 1.25rem;
+    font-family: "gothammedium";
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.259);
+    transition: transform 0.2s ease;
+}
+
+#textCard .text h4:hover{
+    transform: scale(1.025)
+}

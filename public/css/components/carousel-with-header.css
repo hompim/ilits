@@ -1,5 +1,6 @@
 .CarouselWithHeader {
     border-radius: 1.125rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.259);
 }
 .CarouselWithHeader h3.card-header {
     font-size: 1.75rem;

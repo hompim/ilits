@@ -18,9 +18,16 @@
 }
 
 #threeCardsContainerCarousel .card{
+    margin: 10px 0;
     border-radius:1.125rem;
     background:linear-gradient(95deg,#ffffff64,#ffffff37);
     backdrop-filter:blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.259);
+    transition: transform 0.2s ease;
+    
+}
+#threeCardsContainerCarousel .card:hover{
+    transform: scale(1.025)
 }
 #threeCardsContainerCarousel .card .card-body{
     min-height:200px;
@@ -40,7 +47,11 @@
     font-size:1.375rem;
     padding: 0.5rem 0 !important;
     border-radius: 14px;
-    background: linear-gradient(91.6deg, #53ea90 2.71%, #3b71c7 97.29%);
+    background: linear-gradient(91.6deg, #53ea90 2.71%, #3b71c7 97.29%);    
+}
+#threeCardsContainerCarousel .grad:hover{
+    backdrop-filter: blur(20px);
+    transform: scale(1.05); 
 }
 
 #threeCardsContainerCarousel div.rounded-circle{
