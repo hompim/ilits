@@ -328,4 +328,47 @@ class FordaController extends Controller
             ]);
         }
     }
+
+    public function indexJadwalWelcome(){
+        $forda_peserta = Auth::user()->user;
+        $peserta_konfirmasi = User::whereHas('peserta', function($q) use($forda_peserta){
+            $q->where('forda_id', $forda_peserta->id);
+        })
+        ->whereHas('tryoutUser', function($q){
+            $q->where('status_bayar', 'aktif');
+        })->count();
+        $peserta_terdaftar = User::whereHas('peserta', function($q) use($forda_peserta){
+                $q->where('forda_id', $forda_peserta->id);
+            })
+            ->has('tryoutUser')->count();
+        $peserta_pending = User::whereHas('peserta', function($q) use($forda_peserta){
+                $q->where('forda_id', $forda_peserta->id);
+            })
+            ->whereHas('tryoutUser', function($q){
+                $q->where('status_bayar', 'pending_pembayaran');
+            })->count();
+        return view('forda.edit-sesi', [
+            'forda_peserta' => $forda_peserta,
+            'peserta_pending' => $peserta_pending,
+            'peserta_terdaftar' => $peserta_terdaftar,
+            'peserta_konfirmasi' => $peserta_konfirmasi,
+        ]);
+    }
+
+    public function storeJadwalWelcome(Request $request){
+        try {
+            $forda = Auth::user()->user->tryoutForda;
+            $forda->sesi_welcome = $request->sesi_welcome;
+            $forda->save();
+            return redirect()->back()->with([
+                'message' => "Waktu pelaksanaan welcome berhasil diubah",
+                'status' => "success"
+            ]);
+        } catch (Exception $e) {
+            return redirect()->back()->with([
+                'message' => "Waktu pelaksanaan welcome gagal diubah",
+                'status' => "danger"
+            ]);
+        }
+    }
 }

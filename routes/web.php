@@ -125,6 +125,8 @@ Route::prefix('forda')->middleware('isforda')->group(function () {
     Route::post('/edit-biaya', [FordaController::class, 'storeBiaya'])->name('forda.edit-biaya.store');
     Route::get('/edit-grup', [FordaController::class, 'indexEditGrup'])->name('forda.edit-grup');
     Route::post('/edit-grup', [FordaController::class, 'storeEditGrup'])->name('forda.edit-grup.store');
+    Route::get('/edit-sesi', [FordaController::class, 'indexJadwalWelcome'])->name('forda.edit-sesi');
+    Route::post('/edit-sesi', [FordaController::class, 'storeJadwalWelcome'])->name('forda.edit-sesi.store');
     Route::get('/edit-pj', [FordaController::class, 'editPJ'])->name('forda.edit-pj');
     Route::post('/edit-pj', [FordaController::class, 'storePJ'])->name('forda.edit-pj.store');
     Route::get('/link-meet', [FordaController::class, 'LinkMeetPage'])->name('forda.link-meet-page');

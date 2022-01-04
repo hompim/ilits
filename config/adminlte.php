@@ -340,6 +340,12 @@ return [
                     'can'   => ['forda-dashboard']
                 ],
                 [
+                    'text'  => 'Edit Waktu Pelaksanaan',
+                    'icon'  => 'fas fa-clock',
+                    'url'   => 'forda/edit-sesi',
+                    'can'   => ['forda-dashboard']
+                ],
+                [
                     'text'  => 'Verifikasi Biaya',
                     'icon'  => 'fas fa-money-check-alt',
                     'url'   => 'forda/verif-bayar',
