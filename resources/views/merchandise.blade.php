@@ -41,7 +41,7 @@
         <x-two-side-carousel titles="{{$n}}" texts="Cek marketplace ILITS 2022 buat dapetin merchandise yang kece! |Cek marketplace ILITS 2022 buat dapetin merchandise yang kece! |Cek marketplace ILITS 2022 buat dapetin merchandise yang kece!" images="{{ $g }}" ></x-two-side-carousel>
       </div>
     </section>
-  
+
     <section id="catalog">
       <div class="container text-white">
         @include("partials.section-header", ["title" => "Katalog Kami!"])
@@ -53,7 +53,7 @@
               </a>
               <div class="text-col-product-merchandise mb-3">
                 <a target="_blank" href="https://www.tokopedia.com/merchandiseilits" style="text-decoration:none; color:white"><h4>{{$m->nama}}</h4>
-                <h5>{{ $m->harga }}</h5></a>
+                <h5>{{'Rp.' .number_format($m->harga, 0, '','.') }}</h5></a>
               </div>
           </div>
         @endforeach
