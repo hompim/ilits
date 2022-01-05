@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddGrupKoordinasiColumnFromTryoutForda extends Migration
+class CreateSoalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AddGrupKoordinasiColumnFromTryoutForda extends Migration
      */
     public function up()
     {
-        Schema::table('tryout_forda', function (Blueprint $table) {
-            $table->string('grup_koordinasi')->nullable();
+        Schema::create('soals', function (Blueprint $table) {
+            $table->id();
+            $table->integer('subtes_id');
+            $table->integer('kode_soal');
+            $table->integer('nomer_soal');
+            $table->string('link_gambar');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class AddGrupKoordinasiColumnFromTryoutForda extends Migration
      */
     public function down()
     {
-        Schema::table('tryout_forda', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('soals');
     }
 }

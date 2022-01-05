@@ -66,10 +66,10 @@ class OpenCampusController extends Controller
 
     public function regisFNDFormStore(Request $request)
     {
-        $request->validate([
-            'bukti_follow' => "required",
-            'bukti_poster' => "required"
-        ]);
+        // $request->validate([
+        //     'bukti_follow' => "required",
+        //     'bukti_poster' => "required"
+        // ]);
 
         $peserta_event = Auth::user()->user->peserta_event;
         $peserta_event->is_fnd = true;
@@ -147,10 +147,10 @@ class OpenCampusController extends Controller
     
     public function regisIFFormStore(Request $request)
     {
-        $request->validate([
-            'bukti_follow' => "required",
-            'bukti_poster' => "required"
-        ]);
+        // $request->validate([
+        //     'bukti_follow' => "required",
+        //     'bukti_poster' => "required"
+        // ]);
 
         $peserta_event = Auth::user()->user->peserta_event;
         $peserta_event->is_its_fair = true;
@@ -181,10 +181,10 @@ class OpenCampusController extends Controller
     }
 
     public function regisFormStore(Request $request){
-        $request->validate([
-            'bukti_follow' => "required",
-            'bukti_poster' => "required"
-        ]);
+        // $request->validate([
+        //     'bukti_follow' => "required",
+        //     'bukti_poster' => "required"
+        // ]);
 
         $peserta_event = Auth::user()->user->peserta_event;
         $peserta_event->is_odl = true;

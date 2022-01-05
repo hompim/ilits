@@ -52,7 +52,7 @@ Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
     //FnD
     Route::prefix('fnd')->group(function(){
         Route::get('register', [OpenCampusController::class, 'registerFND'])->name('open-campus.fnd.register');
-        Route::get('register/form', function(){return view('open-campus.fnd-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.fnd.register-form');
+        // Route::get('register/form', function(){return view('open-campus.fnd-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.fnd.register-form');
         Route::post('register/form/store', [OpenCampusController::class, 'regisFNDFormStore'])->name('open-campus.fnd.register-form.store');
         Route::get('register/fakultas', [OpenCampusController::class, 'fakultas'])->name('open-campus.fnd.fakultas');
         Route::get('register/departemen', [OpenCampusController::class, 'opsi'])->name('open-campus.opsi');
@@ -68,14 +68,14 @@ Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
     //ITS Fair
     Route::prefix('its-fair')->group(function(){
         Route::get('register', [OpenCampusController::class, 'registerIF'])->name('open-campus.its-fair.register');
-        Route::get('register/form', function(){return view('open-campus.its-fair-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.its-fair.register-form');
+        // Route::get('register/form', function(){return view('open-campus.its-fair-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.its-fair.register-form');
         Route::post('register/form/store', [OpenCampusController::class, 'regisIFFormStore'])->name('open-campus.its-fair.register-form.store');
         Route::get('thank-you', [OpenCampusController::class, 'thxIF'])->name('open-campus.its-fair.thank-you');
     });
 
     Route::prefix('odl')->group(function(){
         Route::get('register', [OpenCampusController::class, 'register_index'])->name('open-campus.odl.register');
-        Route::get('register/form', function(){return view('open-campus.event-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.odl.register-form');
+        // Route::get('register/form', function(){return view('open-campus.event-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.odl.register-form');
         Route::post('register/form/store', [OpenCampusController::class, 'regisFormStore'])->name('open-campus.odl.register-form.store');
         Route::get('register/kelas', [OpenCampusController::class, 'regisKelas'])->name('open-campus.odl.register-kelas');
         Route::post('register/kelas/store', [OpenCampusController::class, 'regisKelasStore'])->name('open-campus.odl.register-kelas.store');
