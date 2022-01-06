@@ -33,6 +33,11 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/video-pembahasan', function(){
+    return view('peserta.video-pembahasan');
+});
+
 //Route web informasi
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('fasilitas', [FasilitasController::class,'index'])->name('fasilitas');
@@ -64,7 +69,7 @@ Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
     Route::get('choose-fnd', [OpenCampusController::class, 'chooseFnD'])->name('open-campus.choose-fnd');
     Route::get('departemen/{sesi2}/{sesi3}/{sesi4}/{sesi5}', [OpenCampusController::class, 'choosenFnD'])->name('open-campus.api-departemen');
     Route::get('kuota/{id}', [OpenCampusController::class, 'detailKuota'])->name('open-campus.api-kuota');
-    
+
     //ITS Fair
     Route::prefix('its-fair')->group(function(){
         Route::get('register', [OpenCampusController::class, 'registerIF'])->name('open-campus.its-fair.register');
@@ -138,3 +143,6 @@ Route::prefix('forda')->middleware('isforda')->group(function () {
 });
 
 Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
+
+
+
