@@ -152,4 +152,9 @@ class PesertaController extends Controller
             ]);
         }
     }
+
+    public function tanyaJawab()
+    {
+        return view('tanya-jawab');
+    }
 }
