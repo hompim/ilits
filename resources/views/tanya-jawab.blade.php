@@ -99,8 +99,10 @@
     </div>
     <div class="card-body">
       <div class="form-group">
-        <span class="textarea rounded" role="textbox" contenteditable></span>
-        <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+        <form action="" method="post">
+          <textarea name="comment" class="textarea rounded w-100" id="" rows="3" contenteditable placeholder="Tuliskan pertanyaanmu disini"></textarea>
+          <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+        </form>
       </div>
     </div>
   </div>
@@ -175,8 +177,10 @@
 
       <div class="card-footer">
         <div class="form-group">
-          <span class="textarea rounded" role="textbox" contenteditable></span>
-          <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+          <form action="" method="post">
+            <textarea name="comment" class="textarea rounded w-100" id="" rows="2" contenteditable placeholder="Tuliskan tanggapanmu disini"></textarea>
+            <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+          </form>
         </div>
       </div>
     </div>
