@@ -78,8 +78,10 @@
   </div>
 
   <div class="card">
-    <div class="card-body">
+    <div class="card-header">
       <h1>Soal 1</h1>
+    </div>
+    <div class="card-body">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eos voluptatibus tempore laudantium maxime
         autem totam illum doloremque error doloribus corporis iusto est laboriosam similique aspernatur quisquam at,
         tenetur aperiam?</p>
@@ -88,6 +90,18 @@
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, unde tempore? Rerum, inventore facere at earum
         quas consectetur adipisci corporis optio cupiditate ullam accusantium temporibus consequatur eum aperiam culpa
         nesciunt?</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3>Tuliskan Pertanyaanmu</h3>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <span class="textarea rounded" role="textbox" contenteditable></span>
+        <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+      </div>
     </div>
   </div>
 

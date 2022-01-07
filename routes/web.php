@@ -106,6 +106,8 @@ Route::middleware('isadmin')->prefix('admin')->group(function () {
     Route::get('main-event/welcome/{id}', [AdminMainEventController::class, 'welcomeForda'])->name('admin.welcome-detail');
 });
 
+Route::get('/tanya-jawab', [PesertaController::class, 'tanyaJawab'])->name('peserta.welcome.tanyaJawab');
+
 //Route untuk Peserta
 Route::prefix('peserta')->middleware('ispeserta')->group(function () {
     Route::prefix('welcome')->group(function () {
@@ -116,7 +118,6 @@ Route::prefix('peserta')->middleware('ispeserta')->group(function () {
         Route::get('/daftar', [PesertaController::class, 'registerWelcome'])->name('peserta.welcome.register');
         Route::post('/daftar', [PesertaController::class, 'storeWelcome'])->name('peserta.welcome.store');
         Route::post('/upload/bukti', [PesertaController::class, 'UploadBukti'])->name('peserta.postupload.bukti');
-        Route::get('/tanya-jawab', [PesertaController::class, 'tanyaJawab'])->name('peserta.welcome.tanyaJawab');
     });
     Route::get('/fnd', [PesertaOpenCampusController::class, 'indexFND'])->name('peserta.open-campus.dashboard-fnd');
     Route::get('/odl', [PesertaOpenCampusController::class, 'indexODL'])->name('peserta.open-campus.dashboard-odl');
