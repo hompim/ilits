@@ -6,26 +6,6 @@
   <h1>Tanya Jawab</h1>
 @endsection
 
-@section('css')
-  <style>
-    .textarea {
-      display: block;
-      resize: both;
-      min-height: 40px;
-
-      border: 1px solid #ccc;
-      padding: 1px 6px;
-      background-color: white;
-    }
-
-    .textarea[contenteditable]:empty::before {
-      content: "Tuliskan tanggapanmu di sini";
-      color: gray;
-    }
-
-  </style>
-@endsection
-
 @section('content')
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="{{ asset('img/logo.png') }}" alt="Logo ILITS 2022" height="60" width="60">
@@ -161,11 +141,20 @@
 
       <div class="card-footer">
         <div class="form-group">
-          <span class="textarea rounded" role="textbox" contenteditable></span>
+          <textarea name="" id="" rows='1' class="form-control overflow-hidden" oninput="auto_grow(this)"
+            placeholder="Tulis tanggapanmnu di sini..."></textarea>
           <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
         </div>
       </div>
     </div>
   </div>
+@endsection
 
+@section('js')
+  <script>
+    function auto_grow(e) {
+      e.style.height = "5px";
+      e.style.height = (e.scrollHeight) + "px";
+    }
+  </script>
 @endsection
