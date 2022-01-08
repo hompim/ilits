@@ -45,6 +45,9 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </div>
+      <div class="mx-1 mb-2">
+        <button type="submit" class="btn btn-primary w-100">Cari</button>
+      </div>
     </div>
     <div>
       <div class="input-group mb-3">
