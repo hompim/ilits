@@ -54,7 +54,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="validatedInputGroupPrepend"><i class="fas fa-search"></i></span>
         </div>
-        <input type="text" class="form-control" placeholder="Cari pertanyaan" aria-label="Search"
+        <input type="text" id="searchQuestion" class="form-control" placeholder="Cari pertanyaan" aria-label="Search"
           aria-describedby="basic-addon2">
       </div>
     </div>
@@ -74,10 +74,10 @@
     </div>
   </div>
 
-  <div class="card">
-    <div class="post">
-      <div class="card-header">
+  <div class="post">
 
+    <div class="card">
+      <div class="card-header">
         <div class="pl-2">
           <div class="d-flex flex-column">
             <span class="username d-flex justify-content-between align-items-center">
@@ -88,19 +88,13 @@
           </div>
         </div>
         <p>
-          Lorem ipsum represents a long-held tradition for designers,
-          typographers and the like. Some people hate it and argue for
-          its demise, but others ignore the hate as they create awesome
-          tools to help create filler text for everyone from bacon lovers
-          to Charlie Sheen fans.
+          pertanyaan 1
         </p>
-
         <span type="button" data-toggle="collapse" data-target="#drop-qna-0" aria-expanded="false"
           aria-controls="drop-qna-0">
           Lihat komentar...
         </span>
       </div>
-
       <div class="card-body collapse" id="drop-qna-0">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
@@ -114,11 +108,7 @@
               </div>
             </div>
             <p>
-              Lorem ipsum represents a long-held tradition for designers,
-              typographers and the like. Some people hate it and argue for
-              its demise, but others ignore the hate as they create awesome
-              tools to help create filler text for everyone from bacon lovers
-              to Charlie Sheen fans.
+              jawaban 1
             </p>
           </li>
           <li class="list-group-item">
@@ -132,16 +122,11 @@
               </div>
             </div>
             <p>
-              Lorem ipsum represents a long-held tradition for designers,
-              typographers and the like. Some people hate it and argue for
-              its demise, but others ignore the hate as they create awesome
-              tools to help create filler text for everyone from bacon lovers
-              to Charlie Sheen fans.
+              jawaban 2
             </p>
           </li>
         </ul>
       </div>
-
       <div class="card-footer">
         <div class="form-group">
           <textarea name="" id="" rows='1' class="form-control overflow-hidden" oninput="auto_grow(this)"
@@ -150,6 +135,67 @@
         </div>
       </div>
     </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="pl-2">
+          <div class="d-flex flex-column">
+            <span class="username d-flex justify-content-between align-items-center">
+              <a href="#">Jonathan Burke Jr.</a>
+              <span><i class="fas fa-user-times"></i></span>
+            </span>
+            <span class="description">7 Januari 2021 - 19.00</span>
+          </div>
+        </div>
+        <p>
+          pertnyaan 2
+        </p>
+        <span type="button" data-toggle="collapse" data-target="#drop-qna-0" aria-expanded="false"
+          aria-controls="drop-qna-0">
+          Lihat komentar...
+        </span>
+      </div>
+      <div class="card-body collapse" id="drop-qna-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="pl-2">
+              <div class="d-flex flex-column">
+                <span class="username d-flex justify-content-between align-items-center">
+                  <a href="#">Jonathan Burke Jr.</a>
+                  <span class="badge badge-danger">Banned</span>
+                </span>
+                <span class="description">7 Januari 2021 - 19.00</span>
+              </div>
+            </div>
+            <p>
+              jawaban 3
+            </p>
+          </li>
+          <li class="list-group-item">
+            <div class="pl-2">
+              <div class="d-flex flex-column">
+                <span class="username d-flex justify-content-between align-items-center">
+                  <a href="#">Jonathan Burke Jr.</a>
+                  <span><i class="fas fa-user-times"></i></span>
+                </span>
+                <span class="description">7 Januari 2021 - 19.00</span>
+              </div>
+            </div>
+            <p>
+              jawaban 4
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <div class="form-group">
+          <textarea name="" id="" rows='1' class="form-control overflow-hidden" oninput="auto_grow(this)"
+            placeholder="Tulis tanggapanmnu di sini..."></textarea>
+          <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 @endsection
 
@@ -159,5 +205,13 @@
       e.style.height = "5px";
       e.style.height = (e.scrollHeight) + "px";
     }
+    $(document).ready(function() {
+      $("#searchQuestion").on("keyup", function() {
+        let value = $(this).val().toLowerCase();
+        $(".post .card").filter(function(e) {
+          $(this).toggle($('.card-header p', this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
   </script>
 @endsection
