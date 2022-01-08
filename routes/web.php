@@ -35,15 +35,6 @@ use App\Services\FnDService;
 |
 */
 
-Route::get('test', function(){
-    $fnDService = new FnDService();
-    dd($fnDService->getPesertaWithSesi());
-});
-
-Route::get('pesertaFnD', function(){
-    return Excel::download(new PesertaFnD, 'pesertaFnD.xlsx');
-});
-
 Route::get('/video-pembahasan', function(){
     return view('peserta.video-pembahasan');
 });
