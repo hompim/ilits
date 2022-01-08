@@ -50,7 +50,7 @@
         <div class="d-flex align-items-center">
           <img src="{{ asset('img/icons/open-campus.svg') }}" class="mr-3 img-responsive img-fluid" alt="Open campus" style="color: white">
           <div class="dropdown-nav-link d-none">
-            <a class="nav-link" href="{{route('open-campus.its-fair.register')}}">ITS Fair</a>
+            {{-- <a class="nav-link" href="{{route('open-campus.its-fair.register')}}">ITS Fair</a> --}}
             <a class="nav-link" href="{{route('open-campus.fnd.register')}}">Faculty and Department Day</a>
             <a class="nav-link" href="{{route('open-campus.odl.register')}}">One Day Lecture</a>
             <a class="nav-link" href="{{route('peserta.welcome.register')}}">Welcome</a>
@@ -61,7 +61,7 @@
             </a>
           
             <div class="dropdown-menu" id="dropdownItemsLink">
-              <a class="dropdown-item text-wrap" href="{{route('open-campus.its-fair.register')}}">ITS Fair</a>
+              {{-- <a class="dropdown-item text-wrap" href="{{route('open-campus.its-fair.register')}}">ITS Fair</a> --}}
               <a class="dropdown-item text-wrap" href="{{route('open-campus.fnd.register')}}">Faculty and Department Day</a>
               <a class="dropdown-item text-wrap" href="{{route('open-campus.odl.register')}}">One Day Lecture</a>
               <a class="dropdown-item text-wrap" href="{{route('peserta.welcome.register')}}">Welcome</a>

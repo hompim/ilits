@@ -1,6 +1,7 @@
 <?php
 
 use App\Exports\OprecStaffExport;
+use App\Exports\PesertaFnD;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminMainEventController;
 use App\Http\Controllers\OprecStaffController;
@@ -22,7 +23,7 @@ use App\Models\OprecStaff;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 use PhpOffice\PhpSpreadsheet\Chart\Layout;
-
+use App\Services\FnDService;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,15 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('test', function(){
+    $fnDService = new FnDService();
+    dd($fnDService->getPesertaWithSesi());
+});
+
+Route::get('pesertaFnD', function(){
+    return Excel::download(new PesertaFnD, 'pesertaFnD.xlsx');
+});
 
 Route::get('/video-pembahasan', function(){
     return view('peserta.video-pembahasan');
@@ -72,10 +82,10 @@ Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
 
     //ITS Fair
     Route::prefix('its-fair')->group(function(){
-        Route::get('register', [OpenCampusController::class, 'registerIF'])->name('open-campus.its-fair.register');
+        // Route::get('register', [OpenCampusController::class, 'registerIF'])->name('open-campus.its-fair.register');
         // Route::get('register/form', function(){return view('open-campus.its-fair-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.its-fair.register-form');
-        Route::post('register/form/store', [OpenCampusController::class, 'regisIFFormStore'])->name('open-campus.its-fair.register-form.store');
-        Route::get('thank-you', [OpenCampusController::class, 'thxIF'])->name('open-campus.its-fair.thank-you');
+        // Route::post('register/form/store', [OpenCampusController::class, 'regisIFFormStore'])->name('open-campus.its-fair.register-form.store');
+        // Route::get('thank-you', [OpenCampusController::class, 'thxIF'])->name('open-campus.its-fair.thank-you');
     });
 
     Route::prefix('odl')->group(function(){
