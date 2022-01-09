@@ -9,6 +9,7 @@ use App\Models\TryoutForda;
 use App\Models\Forda;
 use App\Models\KotaKab;
 use App\Models\FordaDaerah;
+use App\Models\VideoPembahasan;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -152,4 +153,16 @@ class PesertaController extends Controller
             ]);
         }
     }
+
+    public function pembahasan(){
+        if(Auth::user()->tryoutUser){
+            $pilihan = Auth::user()->tryoutUser->pilihan_tryout;
+            $video = VideoPembahasan::where('jenis_tryout',$pilihan)->get();
+            dd($video);
+        }
+        else{
+            $video = "Anda bukan peserta Tryout";
+            dd($video);
+        }
+    }    
 }
