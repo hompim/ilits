@@ -58,7 +58,7 @@
     <img src="{{ asset("img/icons/circle-pink.svg") }}" alt="Circle icon" class="circle position-absolute">
     <article class="container text-center position-relative">
       <x-map text="Virtual Tour ITS" href="/" withLayer="true"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634595959033!2d112.79273125123773!3d-7.28235067356743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology%20(ITS)!5e0!3m2!1sen!2sid!4v1633755459057!5m2!1sen!2sid">
+        src="https://arek.its.ac.id/virtual-expo/">
         <span>Virtual Expo</span>
         {{-- <a href="" class="d-flex jusitfy-content-center align-items-center text-decoration-none">
           <i class="text-white fa fa-3x fa-arrow-right" aria-hidden="true"></i>
@@ -112,10 +112,10 @@
     <img src="{{ asset("img/icons/rec-pink.svg") }}" alt="Ring icon" class="rec-pink position-absolute">
     <img src="{{ asset("img/icons/star.svg") }}" alt="Ring icon" class="star-1 position-absolute">
     <img src="{{ asset("img/icons/star.svg") }}" alt="Ring icon" class="star-2 position-absolute">
-      
+
     <article class="container mb-5 text-center text-white">
       @include("partials.section-header", ["title" => "Kenali Fakultas Impianmu"])
-    
+
       {{-- @include('partials.section-header', ["title" => "Kenali Fakultas Impianmu!"]) --}}
       <div class="row">
         <div class="mb-5 col-lg-4 col-md-6 col-12">
@@ -195,8 +195,8 @@
       <x-carousel-with-floating-header-and-button headerTitle="Fasilitas Apa Saja Yang Ada di ITS"
         titles="{{$n}}"
         texts="{{$d}}"
-        buttonText="Kenali Lebih Lanjut" 
-        images="{{$f}}" 
+        buttonText="Kenali Lebih Lanjut"
+        images="{{$f}}"
         routeTo="{{route('fasilitas')}}"
         />
       </div>
@@ -278,7 +278,7 @@
           console.log(xhr.responseText);
         }
       });
-    window.location.href = "https://inilho.its.ac.id/#fakultasPilihan";    
+    window.location.href = "https://inilho.its.ac.id/#fakultasPilihan";
     }
   </script>
 @endpush

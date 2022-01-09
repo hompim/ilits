@@ -298,6 +298,12 @@ return [
                     'can'   => ['peserta-tryout']
                 ],
                 [
+                    'text'  => 'Video Pembahasan',
+                    'icon'  => 'fab fa-youtube',
+                    'url'   => 'peserta/welcome/pembahasan',
+                    'can'   => ['peserta-tryout']
+                ],
+                [
                     'text'  => 'Daftar Welcome',
                     'icon'  => 'fas fa-edit',
                     'url'   => 'peserta/welcome/daftar',
@@ -340,6 +346,12 @@ return [
                     'can'   => ['forda-dashboard']
                 ],
                 [
+                    'text'  => 'Edit Waktu Pelaksanaan',
+                    'icon'  => 'fas fa-clock',
+                    'url'   => 'forda/edit-sesi',
+                    'can'   => ['forda-dashboard']
+                ],
+                [
                     'text'  => 'Verifikasi Biaya',
                     'icon'  => 'fas fa-money-check-alt',
                     'url'   => 'forda/verif-bayar',
@@ -373,6 +385,7 @@ return [
             ],
             'can' => ['peserta-odl', 'peserta-fnd', 'peserta-its-fair']
         ]
+
     ],
 
     /*

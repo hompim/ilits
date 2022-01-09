@@ -86,6 +86,12 @@ class AdminMainEventController extends Controller
 
     public function welcomeForda($id){
         $forda = Forda::find($id);
+        $peserta_konfirmasi = User::whereHas('peserta', function($q) use($forda){
+            $q->where('forda_id', $forda->id);
+        })
+        ->whereHas('tryoutUser', function($q){
+            $q->where('status_bayar', 'aktif');
+        })->count();
         $pesertas = User::with(["tryoutUser", "user"])
             ->whereHas('peserta', function($q) use($id){
                 $q->where('forda_id', $id);
@@ -95,7 +101,8 @@ class AdminMainEventController extends Controller
         $context = $this->headerInfo();
         $context['pesertas'] = $pesertas;
         $context['forda'] = $forda;
-        
+        $context['jumlah'] = $peserta_konfirmasi;
+
         return view('admin.main-event.welcome-detail', $context);
     }
 

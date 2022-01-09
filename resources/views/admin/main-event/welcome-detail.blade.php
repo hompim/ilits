@@ -72,6 +72,8 @@
           <h1 class="card-title">
             Daftar Peserta
           </h1>
+          <br>
+          <h4>Jumlah peserta terverifikasi: {{$jumlah?$jumlah:0}}</h4>
         </div>
         <!-- card-body -->
         <div class="card-body">
