@@ -82,14 +82,16 @@
       <h1>Soal 1</h1>
     </div>
     <div class="card-body">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eos voluptatibus tempore laudantium maxime
+        {{-- mendapatkan image --}}
+        <img src="../img/soal/{{$getImage}}" alt="">
+      {{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eos voluptatibus tempore laudantium maxime
         autem totam illum doloremque error doloribus corporis iusto est laboriosam similique aspernatur quisquam at,
         tenetur aperiam?</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque minima aut ab fuga nostrum neque excepturi unde,
         odio assumenda a dolor iusto maiores cum deserunt sint nesciunt rerum modi quos?</p>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, unde tempore? Rerum, inventore facere at earum
         quas consectetur adipisci corporis optio cupiditate ullam accusantium temporibus consequatur eum aperiam culpa
-        nesciunt?</p>
+        nesciunt?</p> --}}
     </div>
   </div>
 
@@ -109,25 +111,20 @@
 
   <div class="card">
     <div class="post">
+    @foreach ($list as $li)
       <div class="card-header">
-
         <div class="pl-2">
           <div class="d-flex flex-column">
             <span class="username d-flex justify-content-between align-items-center">
-              <a href="#">Jonathan Burke Jr.</a>
+              <a href="#">{{ $li->name }}</a>
               <span><i class="fas fa-user-times"></i></span>
             </span>
             <span class="description">7 Januari 2021 - 19.00</span>
           </div>
         </div>
         <p>
-          Lorem ipsum represents a long-held tradition for designers,
-          typographers and the like. Some people hate it and argue for
-          its demise, but others ignore the hate as they create awesome
-          tools to help create filler text for everyone from bacon lovers
-          to Charlie Sheen fans.
+            {{ $li->comment }}
         </p>
-
         <span type="button" data-toggle="collapse" data-target="#drop-qna-0" aria-expanded="false"
           aria-controls="drop-qna-0">
           Lihat komentar...
@@ -147,33 +144,19 @@
               </div>
             </div>
             <p>
-              Lorem ipsum represents a long-held tradition for designers,
-              typographers and the like. Some people hate it and argue for
-              its demise, but others ignore the hate as they create awesome
-              tools to help create filler text for everyone from bacon lovers
-              to Charlie Sheen fans.
-            </p>
-          </li>
-          <li class="list-group-item">
-            <div class="pl-2">
-              <div class="d-flex flex-column">
-                <span class="username d-flex justify-content-between align-items-center">
-                  <a href="#">Jonathan Burke Jr.</a>
-                  <span><i class="fas fa-user-times"></i></span>
-                </span>
-                <span class="description">7 Januari 2021 - 19.00</span>
-              </div>
-            </div>
-            <p>
-              Lorem ipsum represents a long-held tradition for designers,
-              typographers and the like. Some people hate it and argue for
-              its demise, but others ignore the hate as they create awesome
-              tools to help create filler text for everyone from bacon lovers
-              to Charlie Sheen fans.
+                Lorem ipsum represents a long-held tradition for designers,
+                typographers and the like. Some people hate it and argue for
+                its demise, but others ignore the hate as they create awesome
+                tools to help create filler text for everyone from bacon lovers
+                to Charlie Sheen fans.
             </p>
           </li>
         </ul>
       </div>
+    @endforeach
+
+      {{-- List Comment (Paginations) --}}
+      {{ $list->links() }}
 
       <div class="card-footer">
         <div class="form-group">
@@ -183,6 +166,8 @@
           </form>
         </div>
       </div>
+
+
     </div>
   </div>
 
