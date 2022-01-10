@@ -298,6 +298,12 @@ return [
                     'can'   => ['peserta-tryout']
                 ],
                 [
+                    'text'  => 'Tanya Jawab',
+                    'icon'  => 'fas fa-question',
+                    'url'   => 'peserta/welcome/tanya-jawab',
+                    'can'   => ['peserta-tryout', 'admin-dashboard']
+                ],
+                [
                     'text'  => 'Video Pembahasan',
                     'icon'  => 'fab fa-youtube',
                     'url'   => 'peserta/welcome/video-pembahasan',
