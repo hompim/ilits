@@ -1,6 +1,7 @@
 <?php
 
 use App\Exports\OprecStaffExport;
+use App\Exports\PesertaFnD;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminMainEventController;
 use App\Http\Controllers\OprecStaffController;
@@ -22,7 +23,7 @@ use App\Models\OprecStaff;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 use PhpOffice\PhpSpreadsheet\Chart\Layout;
-
+use App\Services\FnDService;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,7 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 //Route web informasi
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('fasilitas', [FasilitasController::class,'index'])->name('fasilitas');
@@ -64,13 +66,13 @@ Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
     Route::get('choose-fnd', [OpenCampusController::class, 'chooseFnD'])->name('open-campus.choose-fnd');
     Route::get('departemen/{sesi2}/{sesi3}/{sesi4}/{sesi5}', [OpenCampusController::class, 'choosenFnD'])->name('open-campus.api-departemen');
     Route::get('kuota/{id}', [OpenCampusController::class, 'detailKuota'])->name('open-campus.api-kuota');
-    
+
     //ITS Fair
     Route::prefix('its-fair')->group(function(){
-        Route::get('register', [OpenCampusController::class, 'registerIF'])->name('open-campus.its-fair.register');
+        // Route::get('register', [OpenCampusController::class, 'registerIF'])->name('open-campus.its-fair.register');
         // Route::get('register/form', function(){return view('open-campus.its-fair-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.its-fair.register-form');
-        Route::post('register/form/store', [OpenCampusController::class, 'regisIFFormStore'])->name('open-campus.its-fair.register-form.store');
-        Route::get('thank-you', [OpenCampusController::class, 'thxIF'])->name('open-campus.its-fair.thank-you');
+        // Route::post('register/form/store', [OpenCampusController::class, 'regisIFFormStore'])->name('open-campus.its-fair.register-form.store');
+        // Route::get('thank-you', [OpenCampusController::class, 'thxIF'])->name('open-campus.its-fair.thank-you');
     });
 
     Route::prefix('odl')->group(function(){
@@ -112,6 +114,7 @@ Route::prefix('peserta')->middleware('ispeserta')->group(function () {
         Route::post('/daftar', [PesertaController::class, 'storeWelcome'])->name('peserta.welcome.store');
         Route::post('/upload/bukti', [PesertaController::class, 'UploadBukti'])->name('peserta.postupload.bukti');
         Route::get('/tanya-jawab', [PesertaController::class, 'tanyaJawab'])->name('peserta.welcome.tanyaJawab');
+        Route::get('/video-pembahasan', [PesertaController::class, 'videoPembahasan'])->name('peserta.welcome.video-pembahasan');
     });
     Route::get('/fnd', [PesertaOpenCampusController::class, 'indexFND'])->name('peserta.open-campus.dashboard-fnd');
     Route::get('/odl', [PesertaOpenCampusController::class, 'indexODL'])->name('peserta.open-campus.dashboard-odl');
@@ -139,3 +142,6 @@ Route::prefix('forda')->middleware('isforda')->group(function () {
 });
 
 Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
+
+
+

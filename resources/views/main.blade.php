@@ -252,7 +252,9 @@
     <article class="container">
       @include('partials.section-header', ["title" => "Sponsor & Media Partner"])
       <div class="text-center">
-        <img class="w-50" src="{{asset('/img/sponsor/ln.png')}}" alt="Lulus Negeri">
+        <img class="w-50 pb-5" src="{{asset('/img/sponsor/ln.png')}}" alt="Lulus Negeri">
+        <img class="w-50 py-2" src="{{asset('/img/sponsor/blp.png')}}" alt="Bumi Lingga Pertiwi">
+        <img class="w-50 pt-5" src="{{asset('/img/sponsor/pdams.jpg')}}" alt="PDAM Surya Sembada Surabaya">
       </div>
     </article>
   </section>

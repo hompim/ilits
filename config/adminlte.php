@@ -304,6 +304,12 @@ return [
                     'can'   => ['peserta-tryout', 'admin-dashboard']
                 ],
                 [
+                    'text'  => 'Video Pembahasan',
+                    'icon'  => 'fab fa-youtube',
+                    'url'   => 'peserta/welcome/video-pembahasan',
+                    'can'   => ['peserta-tryout']
+                ],
+                [
                     'text'  => 'Daftar Welcome',
                     'icon'  => 'fas fa-edit',
                     'url'   => 'peserta/welcome/daftar',
@@ -385,6 +391,7 @@ return [
             ],
             'can' => ['peserta-odl', 'peserta-fnd', 'peserta-its-fair']
         ]
+
     ],
 
     /*

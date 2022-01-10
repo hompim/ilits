@@ -37,11 +37,16 @@ class PesertaController extends Controller
         return view('peserta.absensi');
     }
 
+    public function videoPembahasan()
+    {
+        return view('peserta.video-pembahasan');
+    }
+
     public function registerWelcome(){
         if(Auth::user()->tryoutUser){
             return redirect(route('peserta'));
         }
-        
+
         $peserta = Auth::user()->user;
         $kab = KotaKab::all();
 
@@ -72,7 +77,7 @@ class PesertaController extends Controller
                     'status' => 'danger'
                 ]);
             }
-        } 
+        }
         if ($keterangan_absen != null) {
             $tryout_user->status_absen = "tidak_hadir";
             $tryout_user->keterangan_absen = $keterangan_absen;
@@ -117,7 +122,7 @@ class PesertaController extends Controller
         $this->validate($request, [
             'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg|max:4096'
         ]);
-        
+
         try{
             $bukti_pembayaran = $request->file('bukti_bayar');
             $bukti_pembayaran_name = Carbon::now()->format('YmdHis') . '.jpg';
@@ -138,7 +143,7 @@ class PesertaController extends Controller
             }
             Storage::disk('public')->put('images/bukti_pembayaran/' . $bukti_pembayaran_name, (string)$img_resize->encode('jpg'), 75);
             $bukti_pembayaran->storeAs('images/bukti_pembayaran', $bukti_pembayaran_name, 'public');
-    
+
             $peserta = Auth::user()->tryoutUser;
             $peserta->status_bayar = 'pending_pembayaran';
             $peserta->bukti_bayar = $bukti_pembayaran_name;

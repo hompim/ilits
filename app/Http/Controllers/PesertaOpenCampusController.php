@@ -54,8 +54,8 @@ class PesertaOpenCampusController extends Controller
     public function indexODL(){
         $peserta_event = Auth::user()->user->peserta_event;
         $sesi1 = DB::table('departemens')
-                    ->select(DB::raw("tmp.link_zoom, GROUP_CONCAT(departemens.nama SEPARATOR ' dan ') as nama, tmp.link_wa, tmp.sesi_id, tmp.peserta_id"))
-                    ->join(DB::raw('(SELECT kelas.id as kelas_id, kelas.link_zoom, kelas.link_wa, kelas.sesi_id, peserta_odl.peserta_id FROM kelas JOIN peserta_odl ON peserta_odl.kelas_id=kelas.id) as tmp'), function($join){
+                    ->select(DB::raw("tmp.link_zoom, GROUP_CONCAT(departemens.nama SEPARATOR ' dan ') as nama, tmp.link_wa, tmp.sesi_id, tmp.peserta_id, tmp.nomor_kelas"))
+                    ->join(DB::raw('(SELECT kelas.id as kelas_id, kelas.link_zoom, kelas.link_wa, kelas.sesi_id, kelas.nomor_kelas, peserta_odl.peserta_id FROM kelas JOIN peserta_odl ON peserta_odl.kelas_id=kelas.id) as tmp'), function($join){
                         $join->on('departemens.kelas_id', '=', 'tmp.kelas_id');
                     })
                     ->whereNotNull('departemens.kelas_id')
@@ -64,8 +64,8 @@ class PesertaOpenCampusController extends Controller
                     ->groupBy('departemens.kelas_id')
                     ->first();
         $sesi2 = DB::table('departemens')
-                    ->select(DB::raw("tmp.link_zoom, GROUP_CONCAT(departemens.nama SEPARATOR ' dan ') as nama, tmp.link_wa, tmp.sesi_id, tmp.peserta_id"))
-                    ->join(DB::raw('(SELECT kelas.id as kelas_id, kelas.link_zoom, kelas.link_wa, kelas.sesi_id, peserta_odl.peserta_id FROM kelas JOIN peserta_odl ON peserta_odl.kelas_id=kelas.id) as tmp'), function($join){
+                    ->select(DB::raw("tmp.link_zoom, GROUP_CONCAT(departemens.nama SEPARATOR ' dan ') as nama, tmp.link_wa, tmp.sesi_id, tmp.peserta_id, tmp.nomor_kelas"))
+                    ->join(DB::raw('(SELECT kelas.id as kelas_id, kelas.link_zoom, kelas.link_wa, kelas.sesi_id, kelas.nomor_kelas, peserta_odl.peserta_id FROM kelas JOIN peserta_odl ON peserta_odl.kelas_id=kelas.id) as tmp'), function($join){
                         $join->on('departemens.kelas_id', '=', 'tmp.kelas_id');
                     })
                     ->whereNotNull('departemens.kelas_id')
@@ -74,8 +74,8 @@ class PesertaOpenCampusController extends Controller
                     ->groupBy('departemens.kelas_id')
                     ->first();
         $sesi3 = DB::table('departemens')
-                    ->select(DB::raw("tmp.link_zoom, GROUP_CONCAT(departemens.nama SEPARATOR ' dan ') as nama, tmp.link_wa, tmp.sesi_id, tmp.peserta_id"))
-                    ->join(DB::raw('(SELECT kelas.id as kelas_id, kelas.link_zoom, kelas.link_wa, kelas.sesi_id, peserta_odl.peserta_id FROM kelas JOIN peserta_odl ON peserta_odl.kelas_id=kelas.id) as tmp'), function($join){
+                    ->select(DB::raw("tmp.link_zoom, GROUP_CONCAT(departemens.nama SEPARATOR ' dan ') as nama, tmp.link_wa, tmp.sesi_id, tmp.peserta_id, tmp.nomor_kelas"))
+                    ->join(DB::raw('(SELECT kelas.id as kelas_id, kelas.link_zoom, kelas.link_wa, kelas.sesi_id, kelas.nomor_kelas, peserta_odl.peserta_id FROM kelas JOIN peserta_odl ON peserta_odl.kelas_id=kelas.id) as tmp'), function($join){
                         $join->on('departemens.kelas_id', '=', 'tmp.kelas_id');
                     })
                     ->whereNotNull('departemens.kelas_id')
@@ -84,8 +84,8 @@ class PesertaOpenCampusController extends Controller
                     ->groupBy('departemens.kelas_id')
                     ->first();
         $sesi4 = DB::table('departemens')
-                    ->select(DB::raw("tmp.link_zoom, GROUP_CONCAT(departemens.nama SEPARATOR ' dan ') as nama, tmp.link_wa, tmp.sesi_id, tmp.peserta_id"))
-                    ->join(DB::raw('(SELECT kelas.id as kelas_id, kelas.link_zoom, kelas.link_wa, kelas.sesi_id, peserta_odl.peserta_id FROM kelas JOIN peserta_odl ON peserta_odl.kelas_id=kelas.id) as tmp'), function($join){
+                    ->select(DB::raw("tmp.link_zoom, GROUP_CONCAT(departemens.nama SEPARATOR ' dan ') as nama, tmp.link_wa, tmp.sesi_id, tmp.peserta_id, tmp.nomor_kelas"))
+                    ->join(DB::raw('(SELECT kelas.id as kelas_id, kelas.link_zoom, kelas.link_wa, kelas.sesi_id, kelas.nomor_kelas, peserta_odl.peserta_id FROM kelas JOIN peserta_odl ON peserta_odl.kelas_id=kelas.id) as tmp'), function($join){
                         $join->on('departemens.kelas_id', '=', 'tmp.kelas_id');
                     })
                     ->whereNotNull('departemens.kelas_id')
