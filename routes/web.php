@@ -35,10 +35,6 @@ use App\Services\FnDService;
 |
 */
 
-Route::get('/video-pembahasan', function(){
-    return view('peserta.video-pembahasan');
-});
-
 //Route web informasi
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('fasilitas', [FasilitasController::class,'index'])->name('fasilitas');
@@ -117,6 +113,7 @@ Route::prefix('peserta')->middleware('ispeserta')->group(function () {
         Route::get('/daftar', [PesertaController::class, 'registerWelcome'])->name('peserta.welcome.register');
         Route::post('/daftar', [PesertaController::class, 'storeWelcome'])->name('peserta.welcome.store');
         Route::post('/upload/bukti', [PesertaController::class, 'UploadBukti'])->name('peserta.postupload.bukti');
+        Route::get('/video-pembahasan', [PesertaController::class, 'videoPembahasan'])->name('peserta.welcome.video-pembahasan');
     });
     Route::get('/fnd', [PesertaOpenCampusController::class, 'indexFND'])->name('peserta.open-campus.dashboard-fnd');
     Route::get('/odl', [PesertaOpenCampusController::class, 'indexODL'])->name('peserta.open-campus.dashboard-odl');
