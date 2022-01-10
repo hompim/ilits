@@ -170,5 +170,16 @@ class PesertaController extends Controller
         else{
             return redirect(route('peserta.welcome.register'));
         }
-    }    
+    }
+    
+    public function chooseVideo($id){
+        $pilihan = VideoPembahasan::find($id);
+        $res = [
+            'id' => $pilihan->id,
+            'jenis_tryout' => $pilihan->jenis_tryout,
+            'subbab' => "red",
+            'link_video' =>$pilihan->link_video,
+        ];
+        return json_encode($res);
+    }
 }
