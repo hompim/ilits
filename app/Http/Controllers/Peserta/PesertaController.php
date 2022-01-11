@@ -9,6 +9,7 @@ use App\Models\TryoutForda;
 use App\Models\Forda;
 use App\Models\KotaKab;
 use App\Models\FordaDaerah;
+use App\Models\Comments;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -155,6 +156,8 @@ class PesertaController extends Controller
 
     public function tanyaJawab()
     {
-        return view('tanya-jawab');
+        $data = DB::table('comments')->where('comments.user_id', '=', Auth::user()->id)->count();
+        return view('tanya-jawab', ['data' => $data]);
     }
+
 }

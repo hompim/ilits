@@ -112,6 +112,7 @@ Route::middleware('isadmin')->prefix('admin')->group(function () {
 });
 
 Route::get('/tanya-jawab', [PesertaController::class, 'tanyaJawab'])->name('peserta.welcome.tanyaJawab');
+Route::post('/tanya-jawab', [QnAController::class, 'postComment'])->name('peserta.welcome.postComment');
 
 //Route Masih bingung
 Route::get('/tanya-jawab', [QnAController::class, 'getComment'])->name('peserta.welcome.listComment');

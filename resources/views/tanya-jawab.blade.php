@@ -101,7 +101,8 @@
     </div>
     <div class="card-body">
       <div class="form-group">
-        <form action="" method="post">
+        <form action="{{route('peserta.welcome.postComment')}}" method="post">
+          @csrf
           <textarea name="comment" class="textarea rounded w-100" id="" rows="3" contenteditable placeholder="Tuliskan pertanyaanmu disini"></textarea>
           <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
         </form>
@@ -156,7 +157,7 @@
     @endforeach
 
       {{-- List Comment (Paginations) --}}
-      {{ $list->links() }}
+      {{-- {{ $list->links() }} --}}
 
       <div class="card-footer">
         <div class="form-group">
