@@ -11,6 +11,7 @@ class Comments extends Model
 
     protected $table = 'comments';
     protected $guard = [];
+    protected $fillable =['comment', 'subtes_id', 'kode_soal', 'nomer_soal', 'user_id'];
 
     public function replies(){
         if(!$this->parent_id){
