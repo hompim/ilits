@@ -306,7 +306,7 @@ return [
                 [
                     'text'  => 'Video Pembahasan',
                     'icon'  => 'fab fa-youtube',
-                    'url'   => 'peserta/welcome/video-pembahasan',
+                    'url'   => 'peserta/welcome/pembahasan',
                     'can'   => ['peserta-tryout']
                 ],
                 [

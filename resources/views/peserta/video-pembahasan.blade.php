@@ -23,15 +23,15 @@
                 <!-- Video Pembahasan -->
                 <div class="card elevation-2">
                     <div class="card-header">
-                        <h4 class="font-weight-bold">
-                            Soal <span class="text-info">Saintek</span>
+                        <h4 id="judul" class="font-weight-bold">
+                            Soal <span class="text-info" style="text-transform:capitalize">{{$video[0]->jenis_tryout}}</span>
                         </h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-10 col-12">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SOZp_exSqgw"
+                                    <iframe id="video" class="embed-responsive-item" src="{{$video[0]->link_video}}"
                                         frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen></iframe>
@@ -40,17 +40,13 @@
                             <div class="col-lg-2 col-12 border pt-2">
                                 <h5 class="font-weight-bold text-center">Subbab</h5>
                                 <div class="link-soal d-flex flex-lg-column flex-row flex-wrap justify-content-around">
-                                    <a href="#" class="btn btn-primary m-1 flex-grow-1">01</a>
-                                    <a href="#" class="btn btn-info m-1 flex-grow-1">02</a>
-                                    <a href="#" class="btn btn-info m-1 flex-grow-1">03</a>
-                                    <a href="#" class="btn btn-info m-1 flex-grow-1">04</a>
-                                    <a href="#" class="btn btn-info m-1 flex-grow-1">05</a>
-                                    <a href="#" class="btn btn-info m-1 flex-grow-1">06</a>
-                                    <a href="#" class="btn btn-info m-1 flex-grow-1">07</a>
-                                    <a href="#" class="btn btn-info m-1 flex-grow-1">08</a>
+                                    @foreach ($video as $v)
+                                    <a onclick="chooseVideo({{$v->id}})" href="#" class="btn btn-primary m-1 flex-grow-1">{{$v->subbab}}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
+                        {{--
                         <div class="row">
                             <div class="col-lg mt-3 pt-3 border ">
                                 <h5 class="font-weight-bold">Soal <span class="text-info">00</span></h5>
@@ -74,13 +70,12 @@
                                             ratione sint, accusantium eligendi voluptate laborum tempora!</p>
 
                                         <p>
-                                            {{-- redirect ke website tanya jawab --}}
                                             Masih ada pertanyaan? Silahkan tanyakan disini <a href="#">Tanya Jawab</a>
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!-- Akhir Video Pembahasan -->
@@ -99,3 +94,19 @@
 @section('css')
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 @stop
+<script>
+    function chooseVideo(id) {
+      $.ajax({
+        url: './choose-video/'+id,
+        type: 'GET',
+        data: {},
+        dataType: "JSON",
+        success: function(res) {
+          $("iframe").attr("src",res.link_video);
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          console.log(xhr.responseText);
+        }
+      });
+    }
+</script>
