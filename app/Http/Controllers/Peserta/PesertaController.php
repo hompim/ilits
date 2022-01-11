@@ -164,7 +164,7 @@ class PesertaController extends Controller
         return view('tanya-jawab');
     }
     public function pembahasan(){
-        if(Auth::user()->tryoutUser){
+        if(Auth::user()->tryoutUser && Auth::user()->tryoutUser->status_bayar == 'aktif'){
             $pilihan = Auth::user()->tryoutUser->pilihan_tryout;
             $video = VideoPembahasan::where('jenis_tryout',$pilihan)->get();
             return view('peserta.video-pembahasan',[
@@ -181,7 +181,7 @@ class PesertaController extends Controller
         $res = [
             'id' => $pilihan->id,
             'jenis_tryout' => $pilihan->jenis_tryout,
-            'subbab' => "red",
+            'subbab' => $pilihan->subbab,
             'link_video' =>$pilihan->link_video,
         ];
         return json_encode($res);
