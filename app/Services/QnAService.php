@@ -1,21 +1,33 @@
 <?php
 namespace App\Services;
 
-class QnAService extends Controller {
-    //Do something
-    public function postComment(Request $request)
+use App\Models\Comments;
+use App\Models\Soal;
+
+class QnAService {
+    public function getImageQuestion($data)
     {
-    	$request->validate([
-            'comment'=>'required|max:256',
-            // reply peserta max:3
-        ]);
-        
-        //subtes_id, kode_soal, nomer_soal, user_id, parent_id
-        $input = $request->all();
-        $input['user_id'] = Auth::user()->id;
-    
-        Comments::create($input);
-   
-        return back();
+        $subtes = $data['subtes'];
+        $kode_soal = $data['kode_soal'];
+        $nomer_soal = $data['nomer_soal'];
+        $getimage = Soal::select('link_gambar')
+            ->where('subtes', $subtes)
+            ->where('kode_soal', '=', $kode_soal)
+            ->where('nomer_soal', '=', $nomer_soal)
+            ->first();
+        return $getimage;
+    }
+
+    public function getComments($data){
+        $subtes = $data['subtes'];
+        $kode_soal = $data['kode_soal'];
+        $nomer_soal = $data['nomer_soal'];
+        $list = Comments::join('users', 'comments.user_id', '=', 'users.id')
+                ->where('subtes', $subtes)
+                ->where('kode_soal', '=', $kode_soal)
+                ->where('nomer_soal', '=', $nomer_soal)
+                ->where('parent_id', '=', null)
+                ->paginate(15);
+        return $list;
     }
 }

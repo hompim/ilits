@@ -111,10 +111,6 @@ Route::middleware('isadmin')->prefix('admin')->group(function () {
 Route::get('/tanya-jawab', [PesertaController::class, 'tanyaJawab'])->name('peserta.welcome.tanyaJawab');
 Route::post('/tanya-jawab', [QnAController::class, 'postComment'])->name('peserta.welcome.postComment');
 
-//Route Masih bingung
-Route::get('/tanya-jawab', [QnAController::class, 'getComment'])->name('peserta.welcome.listComment');
-Route::get('/tanya-jawab', [QnAController::class, 'getImageQuestion'])->name('peserta.welcome.getImageQuestion');
-
 //Route untuk Peserta
 Route::prefix('peserta')->middleware('ispeserta')->group(function () {
     Route::prefix('welcome')->group(function () {
