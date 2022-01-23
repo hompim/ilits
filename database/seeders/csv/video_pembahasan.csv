@@ -1,15 +1,19 @@
-id;jenis_tryout;subbab;link_video
-1;saintek;Fisika;https://www.youtube.com/embed/iik25wqIuFo
-2;saintek;Kimia;https://www.youtube.com/embed/iik25wqIuFo
-3;saintek;Biologi;https://www.youtube.com/embed/iik25wqIuFo
-4;saintek;Bahasa Inggris;https://www.youtube.com/embed/iik25wqIuFo
-5;saintek;TPA;https://www.youtube.com/embed/iik25wqIuFo
-6;saintek;TPS;https://www.youtube.com/embed/iik25wqIuFo
-7;saintek;TPU;https://www.youtube.com/embed/iik25wqIuFo
-8;soshum;Sejarah;https://www.youtube.com/embed/iik25wqIuFo
-9;soshum;Ekonomi;https://www.youtube.com/embed/iik25wqIuFo
-10;soshum;Sosiologi;https://www.youtube.com/embed/iik25wqIuFo
-11;soshum;Bahasa Inggris;https://www.youtube.com/embed/iik25wqIuFo
-12;soshum;TPA;https://www.youtube.com/embed/iik25wqIuFo
-13;soshum;TPS;https://www.youtube.com/embed/iik25wqIuFo
-14;soshum;TPU;https://www.youtube.com/embed/iik25wqIuFo
+﻿id;jenis_tryout;subbab;link_video
+1;saintek;PU;https://www.youtube.com/embed/pxrWwK6teXA
+2;saintek;PBM;https://www.youtube.com/embed/lrePIy1KU20
+3;saintek;PPU;https://www.youtube.com/embed/x6bHIUe6XAQ
+4;saintek;Bahasa Inggris;https://www.youtube.com/embed/_50X8uMrgEA
+5;saintek;PK;https://www.youtube.com/embed/KcfFCMF42ls
+6;saintek;Matematika;https://www.youtube.com/embed/M0SOCuvUQ9c
+7;saintek;Fisika;https://www.youtube.com/embed/PWpJOtQZod0
+8;saintek;Kimia;https://www.youtube.com/embed/aU2ghtQloyE
+9;saintek;Biologi;https://www.youtube.com/embed/395RJEQsj_c
+10;soshum;PU;https://www.youtube.com/embed/pxrWwK6teXA
+11;soshum;PBM;https://www.youtube.com/embed/lrePIy1KU20
+12;soshum;PPU;https://www.youtube.com/embed/x6bHIUe6XAQ
+13;soshum;Bahasa Inggris;https://www.youtube.com/embed/_50X8uMrgEA
+14;soshum;PK;https://www.youtube.com/embed/KcfFCMF42ls
+15;soshum;Geografi;https://www.youtube.com/embed/S8xWHwauSGQ
+16;soshum;Sejarah;https://www.youtube.com/embed/jFGMwUpx3Q8
+17;soshum;Sosiologi;https://www.youtube.com/embed/4AN3Yc-b3iY
+18;soshum;Ekonomi;https://www.youtube.com/embed/F3q95QMFYcI

@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{--
+
                         <div class="row">
                             <div class="col-lg mt-3 pt-3 border ">
                                 <h5 class="font-weight-bold">Soal <span class="text-info">00</span></h5>
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
                 <!-- Akhir Video Pembahasan -->

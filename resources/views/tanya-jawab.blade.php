@@ -17,7 +17,7 @@
           aria-expanded="false">
           Dropdown button
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">          
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
@@ -61,34 +61,53 @@
   </div>
 
   <div class="card">
-    <div class="card-body">
+    <div class="card-header">
       <h1>Soal 1</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eos voluptatibus tempore laudantium maxime
+    </div>
+    <div class="card-body">
+        {{-- mendapatkan image --}}
+        <img src="../img/soal/{{$getImage}}" alt="">
+      {{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eos voluptatibus tempore laudantium maxime
         autem totam illum doloremque error doloribus corporis iusto est laboriosam similique aspernatur quisquam at,
         tenetur aperiam?</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque minima aut ab fuga nostrum neque excepturi unde,
         odio assumenda a dolor iusto maiores cum deserunt sint nesciunt rerum modi quos?</p>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, unde tempore? Rerum, inventore facere at earum
         quas consectetur adipisci corporis optio cupiditate ullam accusantium temporibus consequatur eum aperiam culpa
-        nesciunt?</p>
+        nesciunt?</p> --}}
     </div>
   </div>
 
-  <div class="post">
+  <div class="card">
+    <div class="card-header">
+      <h3>Tuliskan Pertanyaanmu</h3>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <form action="{{route('peserta.welcome.postComment')}}" method="post">
+          @csrf
+          <textarea name="comment" class="textarea rounded w-100" id="" rows="3" contenteditable placeholder="Tuliskan pertanyaanmu disini"></textarea>
+          <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-    <div class="card">
+  <div class="card">
+    <div class="post">
+    @foreach ($list as $li)
       <div class="card-header">
         <div class="pl-2">
           <div class="d-flex flex-column">
             <span class="username d-flex justify-content-between align-items-center">
-              <a href="#">Jonathan Burke Jr.</a>
+              <a href="#">{{ $li->name }}</a>
               <span><i class="fas fa-user-times"></i></span>
             </span>
             <span class="description">7 Januari 2021 - 19.00</span>
           </div>
         </div>
         <p>
-          pertanyaan 1
+            {{ $li->comment }}
         </p>
         <span type="button" data-toggle="collapse" data-target="#drop-qna-0" aria-expanded="false"
           aria-controls="drop-qna-0">
@@ -108,33 +127,29 @@
               </div>
             </div>
             <p>
-              jawaban 1
-            </p>
-          </li>
-          <li class="list-group-item">
-            <div class="pl-2">
-              <div class="d-flex flex-column">
-                <span class="username d-flex justify-content-between align-items-center">
-                  <a href="#">Jonathan Burke Jr.</a>
-                  <span><i class="fas fa-user-times"></i></span>
-                </span>
-                <span class="description">7 Januari 2021 - 19.00</span>
-              </div>
-            </div>
-            <p>
-              jawaban 2
+                Lorem ipsum represents a long-held tradition for designers,
+                typographers and the like. Some people hate it and argue for
+                its demise, but others ignore the hate as they create awesome
+                tools to help create filler text for everyone from bacon lovers
+                to Charlie Sheen fans.
             </p>
           </li>
         </ul>
       </div>
       <div class="card-footer">
         <div class="form-group">
-          <textarea name="" id="" rows='1' class="form-control overflow-hidden" oninput="auto_grow(this)"
-            placeholder="Tulis tanggapanmnu di sini..."></textarea>
-          <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+          <form action="" method="post">
+            <textarea name="" id="" rows='1' class="form-control overflow-hidden" oninput="auto_grow(this)"
+              placeholder="Tulis tanggapanmnu di sini..."></textarea>
+            <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+          </form>
         </div>
       </div>
     </div>
+    @endforeach
+
+      {{-- List Comment (Paginations) --}}
+      {{-- {{ $list->links() }} --}}
 
     <div class="card">
       <div class="card-header">
@@ -189,11 +204,14 @@
       </div>
       <div class="card-footer">
         <div class="form-group">
-          <textarea name="" id="" rows='1' class="form-control overflow-hidden" oninput="auto_grow(this)"
-            placeholder="Tulis tanggapanmnu di sini..."></textarea>
-          <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+          <form action="" method="post">
+            <textarea name="comment" class="textarea rounded w-100" id="" rows="2" contenteditable placeholder="Tuliskan tanggapanmu disini"></textarea>
+            <button type="submit" class="btn btn-primary w-100 mt-1">Kirim</button>
+          </form>
         </div>
       </div>
+
+
     </div>
 
   </div>

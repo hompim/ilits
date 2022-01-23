@@ -10,6 +10,7 @@ use App\Models\Forda;
 use App\Models\KotaKab;
 use App\Models\FordaDaerah;
 use App\Models\VideoPembahasan;
+use App\Models\Comments;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -161,7 +162,8 @@ class PesertaController extends Controller
 
     public function tanyaJawab()
     {
-        return view('tanya-jawab');
+        $data = DB::table('comments')->where('comments.user_id', '=', Auth::user()->id)->count();
+        return view('tanya-jawab', ['data' => $data]);
     }
     public function pembahasan(){
         if(Auth::user()->tryoutUser && Auth::user()->tryoutUser->status_bayar == 'aktif'){
