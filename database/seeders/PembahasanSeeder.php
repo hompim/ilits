@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use League\Csv\Reader;
-use App\Models\VideoPembahasan;
+use App\Models\Pembahasan;
 
-class VideoPembahasanSeeder extends Seeder
+class PembahasanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,15 +15,15 @@ class VideoPembahasanSeeder extends Seeder
      */
     public function run()
     {
-        $records = Reader::createFromPath("database/seeders/csv/video_pembahasan.csv", 'r');
+        $records = Reader::createFromPath("database/seeders/csv/pembahasan.csv", 'r');
         $records->setDelimiter(';');
         $records->setHeaderOffset(0);
         foreach($records as $record){
-            $video_pembahasan = VideoPembahasan::create([
+            $pembahasan = Pembahasan::create([
                 'id' => $record['id'],
                 'jenis_tryout' => $record['jenis_tryout'],
-                'subbab' => $record['subbab'],
-                'link_video' => $record['link_video'],
+                'judul' => $record['judul'],
+                'link_download' => $record['link_download'],
             ]);
         }
     }

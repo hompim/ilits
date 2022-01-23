@@ -11,6 +11,7 @@ use App\Models\KotaKab;
 use App\Models\FordaDaerah;
 use App\Models\VideoPembahasan;
 use App\Models\Comments;
+use App\Models\Pembahasan;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -168,9 +169,11 @@ class PesertaController extends Controller
     public function pembahasan(){
         if(Auth::user()->tryoutUser && Auth::user()->tryoutUser->status_bayar == 'aktif'){
             $pilihan = Auth::user()->tryoutUser->pilihan_tryout;
+            $pembahasan = Pembahasan::where('jenis_tryout',$pilihan)->get();
             $video = VideoPembahasan::where('jenis_tryout',$pilihan)->get();
             return view('peserta.video-pembahasan',[
-                'video' => $video
+                'video' => $video,
+                'pembahasan' => $pembahasan
             ]);
         }
         else{

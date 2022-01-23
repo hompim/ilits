@@ -46,28 +46,23 @@
                                 </div>
                             </div>
                         </div>
-
+                        @foreach ($pembahasan as $p)
                         <div class="row">
                             <div class="col-lg mt-3 pt-3 border ">
-                                <h5 class="font-weight-bold">Soal <span class="text-info">00</span></h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ratione velit maxime cum
-                                    adipisci suscipit dolore voluptatum omnis voluptas ipsum, quos tempora porro esse
-                                    tempore minima, rerum quo, sint eos sequi ducimus corporis nemo! Fuga culpa repudiandae
-                                    facilis alias asperiores similique a aperiam quibusdam eius sint. Veniam asperiores a
-                                    iste.</p>
-                                <p>
-                                    <button class="btn btn-info" type="button" data-toggle="collapse"
+                                <h5 class="font-weight-bold">{{$p->judul}}</h5>
+                                    <a href="{{$p->link_download}}"><button class="btn btn-info" type="button" data-toggle="collapse"
                                         data-target="#collapsePembahasan">
-                                        Pembahasan
+                                        Download PDF Pembahasan
                                     </button>
+                                    </a>
                                 </p>
                                 <div class="collapse" id="collapsePembahasan">
                                     <div class="card card-body">
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum tenetur repellat
+                                        <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum tenetur repellat
                                             cum neque. Fugit, velit. Fugit ipsam animi sequi rerum corporis possimus dolorum
                                             minus voluptas in, unde rem necessitatibus placeat facere. Molestiae, quas!
                                             Perspiciatis odio a fugit ducimus cupiditate inventore fugiat dolores aliquid
-                                            ratione sint, accusantium eligendi voluptate laborum tempora!</p>
+                                            ratione sint, accusantium eligendi voluptate laborum tempora!</p> -->
 
                                         <p>
                                             Masih ada pertanyaan? Silahkan tanyakan disini <a href="#">Tanya Jawab</a>
@@ -76,6 +71,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
                 <!-- Akhir Video Pembahasan -->
