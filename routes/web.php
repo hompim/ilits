@@ -1,6 +1,7 @@
 <?php
 
 use App\Exports\OprecStaffExport;
+use App\Exports\PesertaFnD;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminMainEventController;
 use App\Http\Controllers\OprecStaffController;
@@ -16,13 +17,14 @@ use App\Http\Controllers\DepartemenController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\EventualController;
+use App\Http\Controllers\QnAController;
 use App\Http\Controllers\Peserta\dashboard\Home;
 use App\Http\Controllers\PesertaOpenCampusController;
 use App\Models\OprecStaff;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 use PhpOffice\PhpSpreadsheet\Chart\Layout;
-
+use App\Services\FnDService;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,22 +38,26 @@ use PhpOffice\PhpSpreadsheet\Chart\Layout;
 
 //Route web informasi
 Route::get('/', [MainController::class, 'index'])->name('main');
-Route::get('fasilitas', [FasilitasController::class,'index'])->name('fasilitas');
+Route::get('fasilitas', [FasilitasController::class, 'index'])->name('fasilitas');
 Route::get('fakultas/{slug}', [FakultasController::class, 'index'])->name('fakultas');
 Route::get('departemen/{slug}', [DepartemenController::class, 'index'])->name('departemen');
-Route::get('merchandise', [MerchController::class,'index'])->name('merch');
-Route::get('team', function(){return view('team');});
-Route::get('beasiswa', [BeasiswaController::class,'index'])->name('beasiswa');
-Route::get('eventual', function(){return view('eventual');})->name('eventual');
+Route::get('merchandise', [MerchController::class, 'index'])->name('merch');
+Route::get('team', function () {
+    return view('team');
+});
+Route::get('beasiswa', [BeasiswaController::class, 'index'])->name('beasiswa');
+Route::get('eventual', function () {
+    return view('eventual');
+})->name('eventual');
 Route::get('alumni', [AlumniController::class, 'show'])->name('alumni');
 
 //API
 Route::get('choose-fakultas/{id}', [MainController::class, 'chooseFakultas'])->name('choose-fakultas');
-Route::get('choose-event/{id}',[EventualController::class,'chooseEvent'])->name('choose-event');
+Route::get('choose-event/{id}', [EventualController::class, 'chooseEvent'])->name('choose-event');
 
-Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
+Route::prefix('open-campus')->middleware('ispeserta')->group(function () {
     //FnD
-    Route::prefix('fnd')->group(function(){
+    Route::prefix('fnd')->group(function () {
         Route::get('register', [OpenCampusController::class, 'registerFND'])->name('open-campus.fnd.register');
         // Route::get('register/form', function(){return view('open-campus.fnd-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.fnd.register-form');
         Route::post('register/form/store', [OpenCampusController::class, 'regisFNDFormStore'])->name('open-campus.fnd.register-form.store');
@@ -67,14 +73,14 @@ Route::prefix('open-campus')->middleware('ispeserta')->group(function(){
     Route::get('kuota/{id}', [OpenCampusController::class, 'detailKuota'])->name('open-campus.api-kuota');
 
     //ITS Fair
-    Route::prefix('its-fair')->group(function(){
-        Route::get('register', [OpenCampusController::class, 'registerIF'])->name('open-campus.its-fair.register');
+    // Route::prefix('its-fair')->group(function () {
+        // Route::get('register', [OpenCampusController::class, 'registerIF'])->name('open-campus.its-fair.register');
         // Route::get('register/form', function(){return view('open-campus.its-fair-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.its-fair.register-form');
-        Route::post('register/form/store', [OpenCampusController::class, 'regisIFFormStore'])->name('open-campus.its-fair.register-form.store');
-        Route::get('thank-you', [OpenCampusController::class, 'thxIF'])->name('open-campus.its-fair.thank-you');
-    });
+        // Route::post('register/form/store', [OpenCampusController::class, 'regisIFFormStore'])->name('open-campus.its-fair.register-form.store');
+        // Route::get('thank-you', [OpenCampusController::class, 'thxIF'])->name('open-campus.its-fair.thank-you');
+    // });
 
-    Route::prefix('odl')->group(function(){
+    Route::prefix('odl')->group(function () {
         Route::get('register', [OpenCampusController::class, 'register_index'])->name('open-campus.odl.register');
         // Route::get('register/form', function(){return view('open-campus.event-regist',["title" => "Form Pendaftaran"]);})->name('open-campus.odl.register-form');
         Route::post('register/form/store', [OpenCampusController::class, 'regisFormStore'])->name('open-campus.odl.register-form.store');
@@ -102,6 +108,9 @@ Route::middleware('isadmin')->prefix('admin')->group(function () {
     Route::get('main-event/welcome/{id}', [AdminMainEventController::class, 'welcomeForda'])->name('admin.welcome-detail');
 });
 
+Route::get('/tanya-jawab', [PesertaController::class, 'tanyaJawab'])->name('peserta.welcome.tanyaJawab');
+Route::post('/tanya-jawab', [QnAController::class, 'postComment'])->name('peserta.welcome.postComment');
+
 //Route untuk Peserta
 Route::prefix('peserta')->middleware('ispeserta')->group(function () {
     Route::prefix('welcome')->group(function () {
@@ -115,8 +124,8 @@ Route::prefix('peserta')->middleware('ispeserta')->group(function () {
         Route::get('/daftar', [PesertaController::class, 'registerWelcome'])->name('peserta.welcome.register');
         Route::post('/daftar', [PesertaController::class, 'storeWelcome'])->name('peserta.welcome.store');
         Route::post('/upload/bukti', [PesertaController::class, 'UploadBukti'])->name('peserta.postupload.bukti');
-        Route::get('/pembahasan', [PesertaController::class, 'pembahasan'])->name('peserta.pembahasan');
-
+        Route::get('/tanya-jawab', [PesertaController::class, 'tanyaJawab'])->name('peserta.welcome.tanyaJawab');
+        Route::get('/pembahasan', [PesertaController::class, 'pembahasan'])->name('peserta.welcome.video-pembahasan');
     });
     Route::get('/fnd', [PesertaOpenCampusController::class, 'indexFND'])->name('peserta.open-campus.dashboard-fnd');
     Route::get('/odl', [PesertaOpenCampusController::class, 'indexODL'])->name('peserta.open-campus.dashboard-odl');
@@ -144,6 +153,3 @@ Route::prefix('forda')->middleware('isforda')->group(function () {
 });
 
 Route::get('/{slug}', [LinkShortenerController::class, 'redirectHandler'])->name('link.redirect');
-
-
-
