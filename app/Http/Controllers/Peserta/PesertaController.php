@@ -9,7 +9,9 @@ use App\Models\TryoutForda;
 use App\Models\Forda;
 use App\Models\KotaKab;
 use App\Models\FordaDaerah;
+use App\Models\VideoPembahasan;
 use App\Models\Comments;
+use App\Models\Pembahasan;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -164,5 +166,29 @@ class PesertaController extends Controller
         $data = DB::table('comments')->where('comments.user_id', '=', Auth::user()->id)->count();
         return view('tanya-jawab', ['data' => $data]);
     }
+    public function pembahasan(){
+        if(Auth::user()->tryoutUser && Auth::user()->tryoutUser->status_bayar == 'aktif'){
+            $pilihan = Auth::user()->tryoutUser->pilihan_tryout;
+            $pembahasan = Pembahasan::where('jenis_tryout',$pilihan)->get();
+            $video = VideoPembahasan::where('jenis_tryout',$pilihan)->get();
+            return view('peserta.video-pembahasan',[
+                'video' => $video,
+                'pembahasan' => $pembahasan
+            ]);
+        }
+        else{
+            return redirect(route('peserta.welcome.register'));
+        }
+    }
 
+    public function chooseVideo($id){
+        $pilihan = VideoPembahasan::find($id);
+        $res = [
+            'id' => $pilihan->id,
+            'jenis_tryout' => $pilihan->jenis_tryout,
+            'subbab' => $pilihan->subbab,
+            'link_video' =>$pilihan->link_video,
+        ];
+        return json_encode($res);
+    }
 }

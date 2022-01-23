@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             BeasiswaSeeder::class,
             EventualSeeder::class,
             PrestasiSeeder::class,
+            VideoPembahasanSeeder::class,
         ]);
     }
 }

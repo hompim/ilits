@@ -114,6 +114,9 @@ Route::post('/tanya-jawab', [QnAController::class, 'postComment'])->name('pesert
 //Route untuk Peserta
 Route::prefix('peserta')->middleware('ispeserta')->group(function () {
     Route::prefix('welcome')->group(function () {
+        //API
+        Route::get('/choose-video/{id}', [PesertaController::class, 'chooseVideo'])->name('peserta.choose-video');
+
         Route::get('/', [PesertaController::class, 'index'])->name('peserta');
         Route::get('/upload', [PesertaController::class, 'UploadPage'])->name('peserta.upload');
         // Route::get('/absensi', [PesertaController::class, 'absen'])->name('peserta.absen');
@@ -122,7 +125,7 @@ Route::prefix('peserta')->middleware('ispeserta')->group(function () {
         Route::post('/daftar', [PesertaController::class, 'storeWelcome'])->name('peserta.welcome.store');
         Route::post('/upload/bukti', [PesertaController::class, 'UploadBukti'])->name('peserta.postupload.bukti');
         Route::get('/tanya-jawab', [PesertaController::class, 'tanyaJawab'])->name('peserta.welcome.tanyaJawab');
-        Route::get('/video-pembahasan', [PesertaController::class, 'videoPembahasan'])->name('peserta.welcome.video-pembahasan');
+        Route::get('/pembahasan', [PesertaController::class, 'pembahasan'])->name('peserta.welcome.video-pembahasan');
     });
     Route::get('/fnd', [PesertaOpenCampusController::class, 'indexFND'])->name('peserta.open-campus.dashboard-fnd');
     Route::get('/odl', [PesertaOpenCampusController::class, 'indexODL'])->name('peserta.open-campus.dashboard-odl');
